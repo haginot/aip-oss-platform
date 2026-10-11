@@ -1,0 +1,1 @@
+releaseと最終監査の反復を比較し、clean bootstrap、交換実証、運用検査、AC追跡のblocking findingが減っているか判定してください。修正可能ならharden-releaseへ、受入条件変更または外部承認が必要ならABORTへ進めます。

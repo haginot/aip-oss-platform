@@ -1,0 +1,18 @@
+node_modules/
+coverage/
+dist/
+build/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# TAKT runtime state; authored workflows and queued task specifications stay tracked.
+.takt/runs/
+.takt/worktrees/
+.takt/quality-gates/logs/
+.takt/persona_sessions.json
+
+# Verification command logs are ephemeral. Signed-style receipts remain tracked.
+evidence/runs/*.log
+

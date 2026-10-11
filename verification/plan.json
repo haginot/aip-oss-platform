@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "suites": [
+    {
+      "id": "supervision-mechanism",
+      "stage": "mechanism",
+      "description": "監督script、workflow schema、初期goalを検査する。",
+      "commands": [
+        ["node", "--test"],
+        ["node", "scripts/platform-control.mjs", "validate", "goal"]
+      ],
+      "inputs": [
+        "package.json",
+        "package-lock.json",
+        "PRODUCT_GOAL.md",
+        "scripts",
+        "tests",
+        ".takt/config.yaml",
+        ".takt/runtime.yaml",
+        ".takt/tasks.yaml",
+        ".takt/tasks/20261011-165645-product-goal-md-ac-001-ac-009/order.md",
+        ".takt/workflows",
+        ".takt/facets",
+        ".takt/quality-gates/platform-gate.sh",
+        "docs/DELIVERY_LOOP.md"
+      ],
+      "outputs": [],
+      "timeoutMs": 300000
+    }
+  ]
+}

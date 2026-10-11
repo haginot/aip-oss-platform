@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "milestones": [
+    {
+      "id": "M0",
+      "title": "契約と構成の固定",
+      "status": "planned",
+      "dependsOn": [],
+      "acceptanceCriteria": ["AC-002", "AC-003", "AC-008"],
+      "outcomes": ["47責務の決定", "公開Portと型の仕様", "脅威・license・運用判断"]
+    },
+    {
+      "id": "M1",
+      "title": "Platform Kernel",
+      "status": "planned",
+      "dependsOn": ["M0"],
+      "acceptanceCriteria": ["AC-002", "AC-003", "AC-004"],
+      "outcomes": ["Ontology/Object/Action", "認可", "State/Outbox/Audit", "contract test"]
+    },
+    {
+      "id": "M2",
+      "title": "Authoring・Business操作面",
+      "status": "planned",
+      "dependsOn": ["M1"],
+      "acceptanceCriteria": ["AC-001", "AC-002", "AC-003"],
+      "outcomes": ["定義公開", "型付きclient", "業務操作と可視権限"]
+    },
+    {
+      "id": "M3",
+      "title": "商品回収・代替調達の垂直slice",
+      "status": "planned",
+      "dependsOn": ["M2"],
+      "acceptanceCriteria": ["AC-004", "AC-005"],
+      "outcomes": ["正常・拒否・競合・timeoutのE2E", "追跡可能なデモ"]
+    },
+    {
+      "id": "M4",
+      "title": "BCPと復旧演習",
+      "status": "planned",
+      "dependsOn": ["M3"],
+      "acceptanceCriteria": ["AC-006"],
+      "outcomes": ["縮退mode", "照合・補償", "復元とRPO/RTO実測"]
+    },
+    {
+      "id": "M5",
+      "title": "Adapter交換実証",
+      "status": "planned",
+      "dependsOn": ["M3"],
+      "acceptanceCriteria": ["AC-007"],
+      "outcomes": ["shadow比較", "状態または意味差の移行", "切替・切戻し"]
+    },
+    {
+      "id": "M6",
+      "title": "OSS release hardening",
+      "status": "planned",
+      "dependsOn": ["M4", "M5"],
+      "acceptanceCriteria": ["AC-001", "AC-008", "AC-009"],
+      "outcomes": ["clean bootstrap", "全回帰", "SBOM/license/security", "独立監査"]
+    }
+  ]
+}
+

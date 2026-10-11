@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-12",
+  "sourceDirectory": "/Users/haginota/Repositories/pivot-ontology/output/aipf-modular-architecture-20261010",
+  "runtimeDependency": false,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "afd1c6acb4782b3ca70b03fc9ef06515a0048a3722133265cfa1c39ab9bc3d75"
+    },
+    {
+      "path": "構成設計.md",
+      "sha256": "4d038ff0a8846186529fc2bbd106695d571f52b81cb866690d8cfabd9ae18c28"
+    },
+    {
+      "path": "候補と選定条件.md",
+      "sha256": "7cd083d8ecbb1ddf9e6cdb971b1a339c5e87ac90bba9b5a100ab4d4fcb376a23"
+    },
+    {
+      "path": "契約と構成例.md",
+      "sha256": "8883dc2d68e605da660272809ef2eefaa4fe3860cab4a848ad9521c397378fa8"
+    },
+    {
+      "path": "capability-catalog.json",
+      "sha256": "020a61b613258c4b8dd34a48ea8dfb01e094dc75bec6d7c75b8f5a606b1c0843"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "5617c38898d9a228559f888688bdb5ec6ee931de0c25f47eb7e67ab014b7f523"
+    }
+  ]
+}

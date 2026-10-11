@@ -1,0 +1,7 @@
+language: ja
+concurrency: 1
+auto_requeue_max_attempts: 1
+interactive_preview_steps: 4
+
+workflow_command_gates:
+  custom_scripts: true

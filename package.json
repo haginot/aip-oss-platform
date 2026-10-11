@@ -1,0 +1,30 @@
+{
+  "name": "aip-oss-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TAKT-supervised development of a modular OSS platform inspired by Palantir AIP/Foundry capabilities.",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "takt:doctor": "takt workflow doctor platform-lifecycle",
+    "platform:preflight": "node scripts/preflight.mjs",
+    "platform:status": "node scripts/platform-control.mjs status",
+    "platform:start": "takt --workflow platform-lifecycle",
+    "platform:autonomous": "takt --workflow platform-lifecycle --task \"PRODUCT_GOAL.md を正本として、受入条件を弱めず、機械検証と独立レビューを通してプラットフォームを完成させてください。\"",
+    "platform:run": "takt run",
+    "platform:watch": "takt watch",
+    "verify:mechanism": "node scripts/platform-control.mjs run-stage mechanism && node scripts/platform-control.mjs validate mechanism",
+    "platform:validate": "node scripts/platform-control.mjs validate final",
+    "check": "npm test && npm run takt:doctor && npm run verify:mechanism"
+  },
+  "devDependencies": {
+    "takt": "0.70.0"
+  },
+  "overrides": {
+    "adm-zip": "0.6.1"
+  }
+}
+

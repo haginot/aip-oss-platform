@@ -1,0 +1,573 @@
+name: platform-lifecycle
+description: >-
+  Palantir AIP相当の公開能力を交換可能なOSSの組合せで構築し、店舗の商品回収・代替調達と
+  WAN/基幹停止BCPを実動デモできる状態まで、機械gateと独立reviewを反復して完遂する。
+max_steps: 60
+initial_step: frame-goal
+
+steps:
+  - name: frame-goal
+    session_key: product-director
+    persona: product-director
+    tags: [plan, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      `PRODUCT_GOAL.md`、元設計の固定hash、既存artifactを読み、製品目標を審査可能にしてください。
+      AC-001〜AC-009、不変条件、自律実行境界、停止条件は弱めません。不足がある場合だけ具体化し、
+      店舗商品回収・代替調達とBCPが単なるCRUDや文書デモにならないよう観測可能な完了条件を保ちます。
+      元設計は `/Users/haginota/Repositories/pivot-ontology/output/aipf-modular-architecture-20261010` にあります。
+      参照した内容が `architecture/SOURCE_BASELINE.json` のhashと一致することを確認してください。
+    quality_gates:
+      - "すべてのACが実行結果で判定でき、未達を完成に見せないこと"
+      - type: command
+        name: goal-gate
+        command: "./.takt/quality-gates/platform-gate.sh goal"
+        cwd: "."
+        timeout_ms: 300000
+    output_contracts:
+      report:
+        - name: 01-goal-frame.md
+          format: |
+            # Goal frame
+            ## Verdict
+            ## Acceptance criteria checked
+            ## Scope and autonomy boundary
+            ## Evidence inspected
+            ## Human decisions required
+    rules:
+      - condition: 目標と境界が機械検査に合格した
+        next: review-goal
+      - condition: 人の製品判断がなければ目標を確定できない
+        next: ABORT
+
+  - name: review-goal
+    session_key: goal-reviewer
+    persona: adversarial-reviewer
+    tags: [review]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      製品目標を独立審査してください。Palantirの表層模倣ではなく、Ontology、Object、Action、
+      認可、AI、監査を結ぶ公開能力が対象か、店舗業務とBCPが検証可能か、scopeと停止条件が
+      自律実行に十分かを確認します。重大な不備だけをblockingとし、証拠と再現手順を示します。
+    output_contracts:
+      report:
+        - name: 02-goal-review.md
+          format: |
+            # Goal review
+            ## Verdict
+            ## Blocking findings
+            ## Non-blocking risks
+            ## Evidence inspected
+            ## Required changes
+    rules:
+      - condition: 目標を承認できる
+        next: design-architecture
+      - condition: 目標の修正が必要
+        next: frame-goal
+      - condition: 人の明示判断が必要
+        next: ABORT
+
+  - name: design-architecture
+    session_key: platform-architect
+    persona: platform-architect
+    tags: [architecture, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      元設計と `docs/ARCHITECTURE_BASELINE.md` を根拠に初版構成を確定してください。
+      `architecture/composition.json` の47責務を一件も省かず、selected/provided/not-needed、
+      実装、固定version、license、owner、reason、公開contract、verificationで埋め、statusをapprovedにします。
+      `docs/DECISIONS.md` にOntology/Object/Action Port、信頼境界、認可合成、transaction、Outbox、
+      監査、schema release、障害意味論、Adapter交換、AI tool境界の決定と棄却案を記録します。
+      47 serviceにはせず、ローカルで再現できる最小OSS構成を優先します。製品versionとlicenseは一次資料で確認し、
+      未確認事項は採用済みにせずdecision requestへ分離します。
+    quality_gates:
+      - "製品名の列挙ではなく、意味と失敗を含む公開contractを所有すること"
+      - type: command
+        name: architecture-gate
+        command: "./.takt/quality-gates/platform-gate.sh architecture"
+        cwd: "."
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: 03-architecture.md
+          format: |
+            # Architecture decision
+            ## Minimal composition
+            ## Owned contracts
+            ## Trust and consistency boundaries
+            ## Rejected alternatives
+            ## Open risks
+    rules:
+      - condition: 47責務と公開contractが機械検査に合格した
+        next: review-architecture
+      - condition: licenseまたはscopeの人判断なしに確定できない
+        next: ABORT
+
+  - name: review-architecture
+    session_key: architecture-reviewer
+    persona: adversarial-reviewer
+    tags: [review, architecture]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      architectureを独立審査します。47責務の欠落、過剰分散、vendor SDK漏出、認可の不整合、
+      外部exactly-onceの誤主張、AIによる権限迂回、schema/Adapter移行不能、license不整合を探してください。
+      composition、決定記録、元設計を相互照合し、blocking findingには戻す箇所を示します。
+    output_contracts:
+      report:
+        - name: 04-architecture-review.md
+          format: |
+            # Architecture review
+            ## Verdict
+            ## Blocking findings
+            ## Contract gaps
+            ## Failure-model gaps
+            ## Required changes
+    rules:
+      - condition: architectureを承認できる
+        next: plan-roadmap
+      - condition: 設計の修正が必要
+        next: design-architecture
+      - condition: 人の製品またはlicense判断が必要
+        next: ABORT
+
+  - name: plan-roadmap
+    session_key: delivery-planner
+    persona: product-director
+    tags: [plan, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      `work/ROADMAP.json` を実行可能な依存graphにしてください。すべてのACをmilestoneへ割り当て、
+      各outcomeを実装、反例test、demo、証拠へ分解し、statusをapprovedにします。
+      `verification/plan.json` には現在の仕組みsuiteを保持し、後続工程が追加すべきsuite、入力、出力の原則を
+      `verification/README.md` に具体化します。文書だけで完了するmilestoneを作りません。
+    quality_gates:
+      - "すべてのACに実装と検証の到達経路があること"
+      - type: command
+        name: plan-gate
+        command: "./.takt/quality-gates/platform-gate.sh plan"
+        cwd: "."
+        timeout_ms: 300000
+    output_contracts:
+      report:
+        - name: 05-roadmap.md
+          format: |
+            # Delivery roadmap
+            ## Critical path
+            ## AC coverage
+            ## Verification strategy
+            ## Dependencies
+            ## Human decisions required
+    rules:
+      - condition: roadmapが全ACを覆い機械検査に合格した
+        next: review-roadmap
+      - condition: 優先順位または資源の人判断が必要
+        next: ABORT
+
+  - name: review-roadmap
+    session_key: roadmap-reviewer
+    persona: adversarial-reviewer
+    tags: [review, plan]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      roadmapを独立審査してください。AC漏れ、循環依存、big-bang、文書だけの完了、後で検証不能な実装順、
+      happy path偏重、BCPやAdapter交換の先送りを探します。小さな垂直sliceで証拠を増やせるか確認します。
+    output_contracts:
+      report:
+        - name: 06-roadmap-review.md
+          format: |
+            # Roadmap review
+            ## Verdict
+            ## Blocking findings
+            ## AC coverage gaps
+            ## Sequencing risks
+            ## Required changes
+    rules:
+      - condition: roadmapを承認できる
+        next: build-foundation
+      - condition: 分解または検証計画の修正が必要
+        next: plan-roadmap
+      - condition: architectureへ戻る必要がある
+        next: design-architecture
+
+  - name: build-foundation
+    session_key: platform-engineer
+    persona: platform-engineer
+    tags: [implementation, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      AC-002〜AC-004を満たす最小の実動vertical sliceを実装してください。版付きOntology、有限Object query、
+      link、expected-version更新、型付きAction、Action状態、transaction、Outbox、Auditを同じ経路に結びます。
+      actor/onBehalfOfを信頼境界で確定し、単体、一覧、検索、列、Action、AI toolで一貫した許可・拒否を行います。
+      競合、同じkeyの再送、異なる入力によるkey再利用、timeout、途中失敗、順序逆転の反例testを作ります。
+      `docs/IMPLEMENTATION.md`、実行可能なsource/test、`verification/plan.json` のimplementation suite、
+      `evidence/ACCEPTANCE_MATRIX.md` のAC-002〜AC-004を現在の証拠で更新します。設計だけやmockだけではPASSにしません。
+    quality_gates:
+      - "同じ実動経路で状態、認可、Action、Outbox、Auditの不変条件を検査すること"
+      - type: command
+        name: implementation-gate
+        command: "./.takt/quality-gates/platform-gate.sh implementation"
+        cwd: "."
+        timeout_ms: 1800000
+    output_contracts:
+      report:
+        - name: 07-foundation.md
+          format: |
+            # Foundation implementation
+            ## Working vertical slice
+            ## Security and consistency invariants
+            ## Tests and receipts
+            ## Known failures
+            ## Remaining work
+    rules:
+      - condition: AC-002〜AC-004が機械gateに合格した
+        next: review-foundation
+      - condition: 外部資源または人の承認なしに実装を継続できない
+        next: ABORT
+
+  - name: review-foundation
+    session_key: foundation-reviewer
+    persona: adversarial-reviewer
+    tags: [review, implementation]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      AC-002〜AC-004をsourceから独立審査してください。認可漏れ、TOCTOU、委任偽装、version競合、
+      冪等性key衝突、Outboxと業務状態の分離、監査欠落、testの偽陽性を攻撃的に調べます。
+      receiptが現在の入力hashに一致し、matrixのPASSが実証済みであることを確認します。
+    output_contracts:
+      report:
+        - name: 08-foundation-review.md
+          format: |
+            # Foundation review
+            ## Verdict
+            ## Blocking findings
+            ## Counterexamples attempted
+            ## Evidence inspected
+            ## Required changes
+    rules:
+      - condition: foundationを承認できる
+        next: build-store-demo
+      - condition: 実装修正が必要
+        next: build-foundation
+      - condition: 公開contractの修正が必要
+        next: design-architecture
+
+  - name: build-store-demo
+    session_key: scenario-builder
+    persona: scenario-designer
+    tags: [demo, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      AC-005の商品ロット回収・代替調達scenarioをfoundation上へ実装してください。影響店舗・在庫の特定、
+      隔離、承認、代替候補、外部反映、顧客対応、監査を一つの追跡可能なflowにします。
+      正常系だけでなく権限拒否、競合、承認待ち、外部反映失敗をUIまたはAPIから実演します。
+      `docs/DEMO_SCENARIOS.md` を実装に合わせ、`docs/DEMO_RUNBOOK.md`、seed/failure injection、E2E test、
+      demo verification suiteを追加し、AC-005の証拠を更新します。
+    quality_gates:
+      - "scenarioの各判断をOntology版、規則版、主体、Action、Auditへ追跡できること"
+      - type: command
+        name: store-demo-gate
+        command: "./.takt/quality-gates/platform-gate.sh demo"
+        cwd: "."
+        timeout_ms: 1800000
+    output_contracts:
+      report:
+        - name: 09-store-demo.md
+          format: |
+            # Store workflow demo
+            ## Business flow
+            ## Exceptional paths
+            ## Traceability
+            ## Demo command and receipt
+            ## Known limitations
+    rules:
+      - condition: AC-005が機械gateに合格した
+        next: review-store-demo
+      - condition: 実装基盤の修正が必要
+        next: build-foundation
+      - condition: 人の業務判断がなければ継続できない
+        next: ABORT
+
+  - name: review-store-demo
+    session_key: demo-reviewer
+    persona: adversarial-reviewer
+    tags: [review, demo]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      店舗demoを独立審査してください。単なるscripted happy path、基盤を迂回した状態変更、権限を無視した一覧・検索、
+      手作業でしか再現できない例外、証拠と状態の食い違いを探します。runbookどおりの再現性とAC-005を照合します。
+    output_contracts:
+      report:
+        - name: 10-store-demo-review.md
+          format: |
+            # Store demo review
+            ## Verdict
+            ## Blocking findings
+            ## Scenario paths checked
+            ## Traceability gaps
+            ## Required changes
+    rules:
+      - condition: 店舗demoを承認できる
+        next: build-bcp
+      - condition: scenario実装の修正が必要
+        next: build-store-demo
+      - condition: foundationの修正が必要
+        next: build-foundation
+
+  - name: build-bcp
+    session_key: resilience-engineer
+    persona: resilience-engineer
+    tags: [bcp, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      AC-006のBCPを実装し、実際に演習してください。WAN/基幹停止、書き戻し成功不明、process再起動、
+      復旧、再送、照合、重複排除、補償、手動保留をfailure injectionで通します。
+      `ops/BCP.md` に縮退可能なActionと禁止Action、RPO/RTO、復旧順序、判断主体を明記し、
+      BCP verification suiteとmachine-readableな演習結果を残します。宣言値ではなく実測値、損失、重複、
+      未解決件数を記録し、AC-006の証拠を更新します。
+    quality_gates:
+      - "少なくとも一回、障害注入からclean recoveryと照合まで自動完走すること"
+      - type: command
+        name: bcp-gate
+        command: "./.takt/quality-gates/platform-gate.sh bcp"
+        cwd: "."
+        timeout_ms: 1800000
+    output_contracts:
+      report:
+        - name: 11-bcp.md
+          format: |
+            # BCP exercise
+            ## Failure injected
+            ## Degraded behavior
+            ## Recovery and reconciliation
+            ## Measured RPO/RTO and unresolved items
+            ## Receipt
+    rules:
+      - condition: AC-006が機械gateに合格した
+        next: review-bcp
+      - condition: resilience実装の修正が必要
+        next: build-bcp
+      - condition: foundationの修正が必要
+        next: build-foundation
+      - condition: 人のBCP判断がなければ継続できない
+        next: ABORT
+
+  - name: review-bcp
+    session_key: bcp-reviewer
+    persona: adversarial-reviewer
+    tags: [review, bcp]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      BCP演習を独立審査してください。停止を偽装したmock、成功不明の握り潰し、再起動をまたがない冪等性、
+      復旧時の認可迂回、測定していないRPO/RTO、未解決項目の隠蔽を探します。BCP文書、実装、event/audit、
+      machine-readable結果、receiptを照合します。
+    output_contracts:
+      report:
+        - name: 12-bcp-review.md
+          format: |
+            # BCP review
+            ## Verdict
+            ## Blocking findings
+            ## Failure and recovery checks
+            ## Measurement validity
+            ## Required changes
+    rules:
+      - condition: BCPを承認できる
+        next: harden-release
+      - condition: BCP実装の修正が必要
+        next: build-bcp
+      - condition: foundationの修正が必要
+        next: build-foundation
+
+  - name: harden-release
+    session_key: release-engineer
+    persona: release-engineer
+    tags: [release, edit]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: edit
+    edit: true
+    instruction: |
+      AC-001、AC-007、AC-008を完成してください。新しい環境の一つの入口から依存導入、起動、migration、
+      seed、health、demo前提検査を行います。状態または意味差のあるAdapterをshadow比較、差分検査、切替、
+      切戻しまで実演します。license、SBOM、脆弱性、secret、backup/restore、upgrade/rollback、保持、観測を
+      自動検査し、既定経路がOSSだけで再配布可能か確認します。
+      `docs/RELEASE.md`、release suite、AC-001/007/008の証拠を更新し、AC-009は全machine gateの索引を付けて
+      READY_FOR_REVIEWにします。古いreceiptは再実行し、全source/testを現在hashへ結び直してください。
+    quality_gates:
+      - "clean bootstrap、Adapter交換、供給網、backup/restoreを実行結果で証明すること"
+      - type: command
+        name: release-gate
+        command: "./.takt/quality-gates/platform-gate.sh release"
+        cwd: "."
+        timeout_ms: 3600000
+    output_contracts:
+      report:
+        - name: 13-release.md
+          format: |
+            # Release hardening
+            ## Clean bootstrap
+            ## Adapter replacement
+            ## Operations and supply chain
+            ## Full regression receipts
+            ## Residual risks
+    rules:
+      - condition: AC-001〜AC-008がmachine gateに合格しAC-009が監査可能
+        next: final-audit
+      - condition: 実装またはrelease修正が必要
+        next: harden-release
+      - condition: 人の公開、license、外部環境判断が必要
+        next: ABORT
+
+  - name: final-audit
+    session_key: final-auditor
+    persona: adversarial-reviewer
+    tags: [review, final-gate]
+    policy: delivery-integrity
+    knowledge: platform-artifact-contract
+    capabilities: readonly
+    edit: false
+    instruction: |
+      最終独立監査を実施してください。AC-001〜AC-009を一項目ずつ、現在のsource、test、設定、receipt、
+      demo/BCP結果、既知failureへ辿ります。machine gateに通っていても、空洞化したtest、狭すぎるinput、
+      再現不能な手作業、license問題、未申告リスクがあれば承認しません。
+      完成を承認する場合は各ACの根拠と残存制約を列挙します。修正可能な場合は最も早い必要工程へ戻します。
+    quality_gates:
+      - "AC-001〜AC-008がPASS、AC-009がREADY_FOR_REVIEWで、全receiptがcurrentであること"
+      - type: command
+        name: final-machine-gate
+        command: "./.takt/quality-gates/platform-gate.sh final"
+        cwd: "."
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: 14-final-audit.md
+          format: |
+            # Final independent audit
+            ## Verdict
+            ## AC-by-AC trace
+            ## Counterexamples attempted
+            ## Residual limitations
+            ## Completion or required return point
+    rules:
+      - condition: 全ACを現在の証拠で独立承認できる
+        next: COMPLETE
+      - condition: release、bootstrap、Adapter、運用証拠の修正が必要
+        next: harden-release
+      - condition: BCPの修正が必要
+        next: build-bcp
+      - condition: 店舗scenarioの修正が必要
+        next: build-store-demo
+      - condition: foundationの修正が必要
+        next: build-foundation
+      - condition: architectureの修正が必要
+        next: design-architecture
+      - condition: 人の判断なしに完了判定できない
+        next: ABORT
+
+loop_monitors:
+  - cycle: [frame-goal, review-goal]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-goal-loop
+      rules:
+        - condition: 技術的修正による情報利得がある
+          next: frame-goal
+        - condition: 人の判断なしに同じ問題を解消できない
+          next: ABORT
+  - cycle: [design-architecture, review-architecture]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-architecture-loop
+      rules:
+        - condition: 具体的修正で解消可能
+          next: design-architecture
+        - condition: scopeまたはlicenseの人判断が不可欠
+          next: ABORT
+  - cycle: [plan-roadmap, review-roadmap]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-plan-loop
+      rules:
+        - condition: 分解または証拠計画を改善できる
+          next: plan-roadmap
+        - condition: 人の優先順位または資源判断が不可欠
+          next: ABORT
+  - cycle: [build-foundation, review-foundation]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-build-loop
+      rules:
+        - condition: 実装修正による情報利得がある
+          next: build-foundation
+        - condition: 外部資源または人の承認なしに解消不能
+          next: ABORT
+  - cycle: [build-store-demo, review-store-demo]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-build-loop
+      rules:
+        - condition: scenario修正による情報利得がある
+          next: build-store-demo
+        - condition: 人の業務判断なしに解消不能
+          next: ABORT
+  - cycle: [build-bcp, review-bcp]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-build-loop
+      rules:
+        - condition: resilience修正による情報利得がある
+          next: build-bcp
+        - condition: 人のBCP判断なしに解消不能
+          next: ABORT
+  - cycle: [harden-release, final-audit]
+    threshold: 3
+    judge:
+      persona: adversarial-reviewer
+      instruction: monitor-release-loop
+      rules:
+        - condition: release修正による情報利得がある
+          next: harden-release
+        - condition: 人の公開またはlicense判断が不可欠
+          next: ABORT

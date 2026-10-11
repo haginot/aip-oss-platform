@@ -1,0 +1,6 @@
+runs/
+worktrees/
+logs/
+*.lock
+.*.lock.*
+*.lock.guard/

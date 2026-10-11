@@ -1,0 +1,1 @@
+直近のarchitecture設計とreviewを比較し、47責務、契約、信頼境界、整合性、licenseのblocking findingが収束しているか判定してください。具体的な修正で解消可能ならdesign-architectureへ、scope変更またはlicense判断が不可欠ならABORTへ進めます。

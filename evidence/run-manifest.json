@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "runs": [
+    {
+      "id": "20261011165702489-mechanism-73168a",
+      "stage": "mechanism",
+      "startedAt": "2026-10-11T16:57:02.489Z",
+      "finishedAt": "2026-10-11T16:57:03.373Z",
+      "status": "passed",
+      "suites": [
+        {
+          "id": "supervision-mechanism",
+          "status": "passed",
+          "planDigest": "15f5ab0ddd62323db9e8b8d778f1e8657d291a6cb700bd430c9df4039a13d1bb",
+          "inputs": {
+            "digest": "73975543375c4a9b74e03a443b18d5398e44fa6434a452be849436cc5416aa8c",
+            "fileCount": 22
+          },
+          "outputs": {
+            "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "fileCount": 0,
+            "artifacts": []
+          },
+          "commands": [
+            {
+              "argv": [
+                "node",
+                "--test"
+              ],
+              "exitCode": 0,
+              "durationMs": 820,
+              "stdoutSha256": "477f133857c10b1e5cf72c957021c5bae83ff1403868c648e4a781a22d8d8e50",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node",
+                "scripts/platform-control.mjs",
+                "validate",
+                "goal"
+              ],
+              "exitCode": 0,
+              "durationMs": 57,
+              "stdoutSha256": "c2e712939a003010d831258637c7d7a9b31c0659f95709d947e0a2d17efecba1",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20261011165803658-mechanism-55bf0d",
+      "stage": "mechanism",
+      "startedAt": "2026-10-11T16:58:03.658Z",
+      "finishedAt": "2026-10-11T16:58:04.421Z",
+      "status": "passed",
+      "suites": [
+        {
+          "id": "supervision-mechanism",
+          "status": "passed",
+          "planDigest": "15f5ab0ddd62323db9e8b8d778f1e8657d291a6cb700bd430c9df4039a13d1bb",
+          "inputs": {
+            "digest": "5215faa98fd9b836690670c0e47debadb50858dcdd84b4c046702532e44a30cf",
+            "fileCount": 22
+          },
+          "outputs": {
+            "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "fileCount": 0,
+            "artifacts": []
+          },
+          "commands": [
+            {
+              "argv": [
+                "node",
+                "--test"
+              ],
+              "exitCode": 0,
+              "durationMs": 700,
+              "stdoutSha256": "83d3b6f1b78de749bdf5398fb46bbc873f5e1a8ed71a14086ef6f7083c823c1d",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node",
+                "scripts/platform-control.mjs",
+                "validate",
+                "goal"
+              ],
+              "exitCode": 0,
+              "durationMs": 57,
+              "stdoutSha256": "c2e712939a003010d831258637c7d7a9b31c0659f95709d947e0a2d17efecba1",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20261011165818402-mechanism-c11fe7",
+      "stage": "mechanism",
+      "startedAt": "2026-10-11T16:58:18.402Z",
+      "finishedAt": "2026-10-11T16:58:19.172Z",
+      "status": "passed",
+      "suites": [
+        {
+          "id": "supervision-mechanism",
+          "status": "passed",
+          "planDigest": "2f9b9cc8bfbd37561b82c9ec139932774953234251bf53a678240f96e27b4305",
+          "inputs": {
+            "digest": "ad367eb82f338dc844355830bbde4981f17661698e55c6f59acc26bd612b2276",
+            "fileCount": 27
+          },
+          "outputs": {
+            "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "fileCount": 0,
+            "artifacts": []
+          },
+          "commands": [
+            {
+              "argv": [
+                "node",
+                "--test"
+              ],
+              "exitCode": 0,
+              "durationMs": 701,
+              "stdoutSha256": "d58e66565240656e6af47f4952d1d2731f702f1b752d7511bd3b2ec9b898615c",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node",
+                "scripts/platform-control.mjs",
+                "validate",
+                "goal"
+              ],
+              "exitCode": 0,
+              "durationMs": 61,
+              "stdoutSha256": "c2e712939a003010d831258637c7d7a9b31c0659f95709d947e0a2d17efecba1",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

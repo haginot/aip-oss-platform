@@ -1,0 +1,14 @@
+tasks:
+  - worktree: true
+    auto_pr: false
+    draft_pr: false
+    name: product-goal-md-wo-toshite-ac
+    status: pending
+    slug: product-goal-md-wo-toshite-ac
+    summary: PRODUCT_GOAL.mdを正本として、機械検証と独立レビューを通し、店舗業務とBCPを実演できるOSSプラットフォームを完成させる
+    task_dir: .takt/tasks/20261011-165645-product-goal-md-ac-001-ac-009
+    created_at: 2026-10-11T16:56:45.998Z
+    started_at: null
+    completed_at: null
+    owner_pid: null
+    workflow: platform-lifecycle

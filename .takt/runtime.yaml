@@ -1,0 +1,58 @@
+version: 1
+
+provider:
+  profiles:
+    builder:
+      provider: codex
+      model: gpt-6.1-sol
+      options:
+        reasoning_effort: medium
+    reviewer:
+      provider: codex
+      model: gpt-6.1-sol
+      options:
+        reasoning_effort: high
+    economical:
+      provider: codex
+      model: gpt-6.1-sol
+      options:
+        reasoning_effort: low
+
+  defaults:
+    profile: builder
+
+  targets:
+    tags:
+      review:
+        profile: reviewer
+      final-gate:
+        profile: reviewer
+    personas:
+      adversarial-reviewer:
+        profile: reviewer
+    internal_agents:
+      loop-judge:
+        profile: reviewer
+      review-completion-judge:
+        profile: reviewer
+
+  assignments:
+    cost:
+      defaults:
+        profile: economical
+      targets:
+        personas:
+          adversarial-reviewer:
+            profile: builder
+        tags:
+          review:
+            profile: builder
+          final-gate:
+            profile: builder
+    quality:
+      defaults:
+        profile: reviewer
+
+loop_analysis:
+  enabled: false
+  output: file
