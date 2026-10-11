@@ -2,7 +2,7 @@
 
 ## 判定
 
-現段階は製品実装前の開発ループである。目標、出典、workflow、モデル配分、検証script、隔離queue、実行手順を再レビューし、下記の不備を修正した。ローカル検査は合格している。commit済みのクリーンなコピーからの検査とstrict起動前検査は、最終確認後にこの記録へ追記する。
+現段階は製品実装前の開発ループである。目標、出典、workflow、モデル配分、検証script、隔離queue、実行手順を再レビューし、下記の不備を修正した。ローカル検査、commit済みのクリーンなコピーからの検査、strict起動前検査が合格し、初回runを開始できる状態になった。製品の完成判定ではない。
 
 今回のレビューはこの変更を行ったCodexによる実行準備レビューであり、製品完成時に要求する別sessionの独立最終監査を代替しない。長時間の開発run、製品実装、実店舗への接続、外部公開、push、PRは実施していない。
 
@@ -33,8 +33,8 @@
 | 実モデル接続 | Luna/low、Sol/medium、Sol/high、Astra/highの4設定がTAKT CodexProvider経由でPASS。接続記録はmodel-smoke.json、24時間有効。 |
 | ローカルpreflight | Node、固定TAKT、queue、gate実行権限、モデル配分、CLI認証、接続receipt、mechanism receiptが合格。 |
 | 開発依存audit | npm auditで報告された脆弱性は0件。この時点の既知情報であり、将来選定する製品OSSのlicense/SBOM/security検査ではない。 |
-| クリーンコピー | 最終確認待ち。 |
-| strict dry-run | 最終確認待ち。実開発runは開始しない。 |
+| クリーンコピー | 修正commit `1c16c1e` からローカルcloneし、node_modulesのない状態から `npm ci --offline` が成功。続く `npm run check` で39件、workflow doctor、mechanismがすべて合格。ネットワークなしの依存導入はこのmachineのnpm cacheを使ったもので、製品の起動検証ではない。 |
+| strict dry-run | commit後のrootで `npm run platform:run -- --dry-run` が合格し、`isolated launch ready` を確認。TAKTの開発runは起動していない。 |
 
 ## 製品の現在地と残る制約
 
