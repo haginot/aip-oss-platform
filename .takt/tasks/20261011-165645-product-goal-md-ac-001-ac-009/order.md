@@ -12,4 +12,4 @@
 
 ## 自律実行の境界
 
-ローカルのsource、test、container、synthetic data、文書、証拠は自律的に作成・修正してよい。外部公開、push、PR、課金、実データ、credential変更、既存環境への書き戻しは行わない。人の判断が必要な場合は `work/DECISION_REQUESTS.md` に影響、選択肢、既定案、再開点を残して停止する。
+ローカルのsource、test、container、synthetic data、文書、証拠は自律的に作成・修正してよい。最初に `npm ci` で隔離cloneの依存を導入する。開発用モデルは `.takt/runtime.yaml` のLuna/Sol/Astraと認証済みCodexアカウントを初回60工程の範囲で利用してよい。外部公開、push、PR、新規課金資源、実データ、credential変更、既存環境への書き戻しは行わない。人の判断が必要な場合は `work/DECISION_REQUESTS.md` に影響、選択肢、既定案、再開点を残して停止する。

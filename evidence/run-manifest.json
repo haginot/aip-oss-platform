@@ -141,6 +141,130 @@
           ]
         }
       ]
+    },
+    {
+      "id": "20261011180051766-mechanism-2c0afa",
+      "stage": "mechanism",
+      "startedAt": "2026-10-11T18:00:51.766Z",
+      "finishedAt": "2026-10-11T18:00:56.020Z",
+      "status": "passed",
+      "suites": [
+        {
+          "id": "supervision-mechanism",
+          "status": "passed",
+          "planDigest": "548ce005e9db86c8b40da6ff356818a76af076c4c9fe4ea20da2e872a60fe7c7",
+          "inputs": {
+            "digest": "27487cf8c8fe852f575c06f75d57adc3af7314ef8dd3dbbc6b3780e2bbf9ddb6",
+            "fileCount": 34
+          },
+          "outputs": {
+            "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "fileCount": 0,
+            "artifacts": []
+          },
+          "commands": [
+            {
+              "argv": [
+                "node",
+                "--test",
+                "tests/platform-control.test.mjs",
+                "tests/model-routing.test.mjs",
+                "tests/codex-runtime.test.mjs"
+              ],
+              "exitCode": 0,
+              "durationMs": 3669,
+              "stdoutSha256": "8f5c5b3dfcbdd4d74f1aef55713c43c28879abdd6e9e3da7ec156b9a52b6156d",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node_modules/.bin/takt",
+                "workflow",
+                "doctor",
+                "platform-lifecycle"
+              ],
+              "exitCode": 0,
+              "durationMs": 517,
+              "stdoutSha256": "5f9777396d343613e2241b8eabe51ba27955931a65f939a950ea6e6279a16320",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node",
+                "scripts/platform-control.mjs",
+                "validate",
+                "goal"
+              ],
+              "exitCode": 0,
+              "durationMs": 58,
+              "stdoutSha256": "c2e712939a003010d831258637c7d7a9b31c0659f95709d947e0a2d17efecba1",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20261011180252056-mechanism-1a11b2",
+      "stage": "mechanism",
+      "startedAt": "2026-10-11T18:02:52.056Z",
+      "finishedAt": "2026-10-11T18:02:56.445Z",
+      "status": "passed",
+      "suites": [
+        {
+          "id": "supervision-mechanism",
+          "status": "passed",
+          "planDigest": "548ce005e9db86c8b40da6ff356818a76af076c4c9fe4ea20da2e872a60fe7c7",
+          "inputs": {
+            "digest": "59f0ade92d2fd03276a45f220887e7eec6320c5c8f6de7cba3d2f9f3e28f3ace",
+            "fileCount": 34
+          },
+          "outputs": {
+            "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "fileCount": 0,
+            "artifacts": []
+          },
+          "commands": [
+            {
+              "argv": [
+                "node",
+                "--test",
+                "tests/platform-control.test.mjs",
+                "tests/model-routing.test.mjs",
+                "tests/codex-runtime.test.mjs"
+              ],
+              "exitCode": 0,
+              "durationMs": 3792,
+              "stdoutSha256": "3894d7ba63f0403bc403056b74bccca39a75402455414294b44b4d314a5993a9",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node_modules/.bin/takt",
+                "workflow",
+                "doctor",
+                "platform-lifecycle"
+              ],
+              "exitCode": 0,
+              "durationMs": 527,
+              "stdoutSha256": "5f9777396d343613e2241b8eabe51ba27955931a65f939a950ea6e6279a16320",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "argv": [
+                "node",
+                "scripts/platform-control.mjs",
+                "validate",
+                "goal"
+              ],
+              "exitCode": 0,
+              "durationMs": 59,
+              "stdoutSha256": "c2e712939a003010d831258637c7d7a9b31c0659f95709d947e0a2d17efecba1",
+              "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

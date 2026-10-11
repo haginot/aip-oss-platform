@@ -7,50 +7,71 @@ provider:
       model: gpt-6.1-sol
       options:
         reasoning_effort: medium
+        permission_control: takt
+        network_access: true
     reviewer:
       provider: codex
       model: gpt-6.1-sol
       options:
         reasoning_effort: high
+        permission_control: takt
+        network_access: true
     economical:
       provider: codex
-      model: gpt-6.1-sol
+      model: gpt-6-luna
       options:
         reasoning_effort: low
+        permission_control: takt
+        network_access: true
+    critical:
+      provider: codex
+      model: gpt-6-astra
+      options:
+        reasoning_effort: high
+        permission_control: takt
+        network_access: true
 
   defaults:
-    profile: builder
+    profile: economical
 
   targets:
+    steps:
+      frame-goal:
+        ladder: [economical, builder, critical]
+      plan-roadmap:
+        ladder: [economical, builder, critical]
+      design-architecture:
+        ladder: [builder, critical]
+      build-foundation:
+        ladder: [builder, critical]
+      build-store-demo:
+        ladder: [builder, critical]
+      build-bcp:
+        ladder: [builder, critical]
+      harden-release:
+        ladder: [builder, critical]
+      review-architecture:
+        profile: critical
+      review-foundation:
+        profile: critical
+      review-bcp:
+        profile: critical
+      final-audit:
+        profile: critical
     tags:
       review:
-        profile: reviewer
-      final-gate:
         profile: reviewer
     personas:
       adversarial-reviewer:
         profile: reviewer
     internal_agents:
-      loop-judge:
-        profile: reviewer
-      review-completion-judge:
-        profile: reviewer
-
-  assignments:
-    cost:
-      defaults:
+      assistant:
         profile: economical
-      targets:
-        personas:
-          adversarial-reviewer:
-            profile: builder
-        tags:
-          review:
-            profile: builder
-          final-gate:
-            profile: builder
-    quality:
-      defaults:
+      selector:
+        profile: economical
+      loop-judge:
+        profile: critical
+      review-completion-judge:
         profile: reviewer
 
 loop_analysis:

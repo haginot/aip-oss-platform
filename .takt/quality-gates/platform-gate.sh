@@ -27,6 +27,7 @@ case "$stage" in
     node scripts/platform-control.mjs validate bcp
     ;;
   release)
+    node scripts/platform-control.mjs run-stage mechanism
     node scripts/platform-control.mjs run-stage implementation
     node scripts/platform-control.mjs run-stage demo
     node scripts/platform-control.mjs run-stage bcp

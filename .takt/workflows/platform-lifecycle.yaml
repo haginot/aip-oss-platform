@@ -7,6 +7,7 @@ initial_step: frame-goal
 
 steps:
   - name: frame-goal
+    promotion: [{at: 2}, {at: 3}]
     session_key: product-director
     persona: product-director
     tags: [plan, edit]
@@ -15,6 +16,8 @@ steps:
     capabilities: edit
     edit: true
     instruction: |
+      隔離cloneにはnode_modulesがありません。最初に `npm ci` でlockfileどおりの開発依存を導入します。
+      `npm run platform:routing` でモデル配分を確認してください。
       `PRODUCT_GOAL.md`、元設計の固定hash、既存artifactを読み、製品目標を審査可能にしてください。
       AC-001〜AC-009、不変条件、自律実行境界、停止条件は弱めません。不足がある場合だけ具体化し、
       店舗商品回収・代替調達とBCPが単なるCRUDや文書デモにならないよう観測可能な完了条件を保ちます。
@@ -42,6 +45,7 @@ steps:
         next: review-goal
       - condition: 人の製品判断がなければ目標を確定できない
         next: ABORT
+        command_gates: skip
 
   - name: review-goal
     session_key: goal-reviewer
@@ -74,6 +78,7 @@ steps:
         next: ABORT
 
   - name: design-architecture
+    promotion: [{at: 3}]
     session_key: platform-architect
     persona: platform-architect
     tags: [architecture, edit]
@@ -111,6 +116,7 @@ steps:
         next: review-architecture
       - condition: licenseまたはscopeの人判断なしに確定できない
         next: ABORT
+        command_gates: skip
 
   - name: review-architecture
     session_key: architecture-reviewer
@@ -143,6 +149,7 @@ steps:
         next: ABORT
 
   - name: plan-roadmap
+    promotion: [{at: 2}, {at: 3}]
     session_key: delivery-planner
     persona: product-director
     tags: [plan, edit]
@@ -177,6 +184,7 @@ steps:
         next: review-roadmap
       - condition: 優先順位または資源の人判断が必要
         next: ABORT
+        command_gates: skip
 
   - name: review-roadmap
     session_key: roadmap-reviewer
@@ -208,6 +216,7 @@ steps:
         next: design-architecture
 
   - name: build-foundation
+    promotion: [{at: 3}]
     session_key: platform-engineer
     persona: platform-engineer
     tags: [implementation, edit]
@@ -244,6 +253,7 @@ steps:
         next: review-foundation
       - condition: 外部資源または人の承認なしに実装を継続できない
         next: ABORT
+        command_gates: skip
 
   - name: review-foundation
     session_key: foundation-reviewer
@@ -276,6 +286,7 @@ steps:
         next: design-architecture
 
   - name: build-store-demo
+    promotion: [{at: 3}]
     session_key: scenario-builder
     persona: scenario-designer
     tags: [demo, edit]
@@ -311,8 +322,10 @@ steps:
         next: review-store-demo
       - condition: 実装基盤の修正が必要
         next: build-foundation
+        command_gates: skip
       - condition: 人の業務判断がなければ継続できない
         next: ABORT
+        command_gates: skip
 
   - name: review-store-demo
     session_key: demo-reviewer
@@ -344,6 +357,7 @@ steps:
         next: build-foundation
 
   - name: build-bcp
+    promotion: [{at: 3}]
     session_key: resilience-engineer
     persona: resilience-engineer
     tags: [bcp, edit]
@@ -381,8 +395,10 @@ steps:
         next: build-bcp
       - condition: foundationの修正が必要
         next: build-foundation
+        command_gates: skip
       - condition: 人のBCP判断がなければ継続できない
         next: ABORT
+        command_gates: skip
 
   - name: review-bcp
     session_key: bcp-reviewer
@@ -415,6 +431,7 @@ steps:
         next: build-foundation
 
   - name: harden-release
+    promotion: [{at: 3}]
     session_key: release-engineer
     persona: release-engineer
     tags: [release, edit]
@@ -453,6 +470,7 @@ steps:
         next: harden-release
       - condition: 人の公開、license、外部環境判断が必要
         next: ABORT
+        command_gates: skip
 
   - name: final-audit
     session_key: final-auditor
@@ -489,16 +507,22 @@ steps:
         next: COMPLETE
       - condition: release、bootstrap、Adapter、運用証拠の修正が必要
         next: harden-release
+        command_gates: skip
       - condition: BCPの修正が必要
         next: build-bcp
+        command_gates: skip
       - condition: 店舗scenarioの修正が必要
         next: build-store-demo
+        command_gates: skip
       - condition: foundationの修正が必要
         next: build-foundation
+        command_gates: skip
       - condition: architectureの修正が必要
         next: design-architecture
+        command_gates: skip
       - condition: 人の判断なしに完了判定できない
         next: ABORT
+        command_gates: skip
 
 loop_monitors:
   - cycle: [frame-goal, review-goal]

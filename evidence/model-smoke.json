@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-11T17:55:27.810Z",
+  "transport": "takt-codex-provider",
+  "cli": {
+    "path": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "version": "0.162.0-alpha.17.2"
+  },
+  "runtimeDigest": "579ee4d14d186a55ea227e280dcffb83f3b07b7839eef05ea803dd56f3e07c19",
+  "status": "passed",
+  "results": [
+    {
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "status": "passed",
+      "providerStatus": "done",
+      "usage": {
+        "inputTokens": 16294,
+        "outputTokens": 5,
+        "totalTokens": 16299,
+        "usageMissing": false,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "status": "passed",
+      "providerStatus": "done",
+      "usage": {
+        "inputTokens": 15752,
+        "outputTokens": 5,
+        "totalTokens": 15757,
+        "usageMissing": false,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "status": "passed",
+      "providerStatus": "done",
+      "usage": {
+        "inputTokens": 15752,
+        "outputTokens": 5,
+        "totalTokens": 15757,
+        "usageMissing": false,
+        "cachedInputTokens": 15616
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "status": "passed",
+      "providerStatus": "done",
+      "usage": {
+        "inputTokens": 15688,
+        "outputTokens": 5,
+        "totalTokens": 15693,
+        "usageMissing": false,
+        "cachedInputTokens": 0
+      }
+    }
+  ]
+}

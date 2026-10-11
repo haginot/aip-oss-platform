@@ -8,6 +8,7 @@ import {
   mkdirSync,
   readFileSync,
   readdirSync,
+  realpathSync,
   writeFileSync,
 } from 'node:fs';
 import { dirname, relative, resolve, sep } from 'node:path';
@@ -51,6 +52,13 @@ function projectPath(path) {
   const absolute = resolve(projectRoot, path);
   if (absolute !== projectRoot && !absolute.startsWith(`${projectRoot}${sep}`)) {
     fail(`project外のpathは使用できません: ${path}`);
+  }
+  let ancestor = absolute;
+  while (!existsSync(ancestor) && ancestor !== projectRoot) ancestor = dirname(ancestor);
+  const actual = realpathSync(ancestor);
+  const actualRoot = realpathSync(projectRoot);
+  if (actual !== actualRoot && !actual.startsWith(`${actualRoot}${sep}`)) {
+    fail(`symlink経由でproject外のpathは使用できません: ${path}`);
   }
   return absolute;
 }
@@ -188,7 +196,7 @@ function validatePlan() {
   const ids = new Set();
   const covered = new Set();
   for (const milestone of roadmap.milestones) {
-    if (typeof milestone.id !== 'string' || ids.has(milestone.id)) fail(`milestone idが不正または重複しています: ${milestone.id}`);
+    if (typeof milestone.id !== 'string' || milestone.id.trim() === '' || ids.has(milestone.id)) fail(`milestone idが不正または重複しています: ${milestone.id}`);
     ids.add(milestone.id);
     if (!['planned', 'active', 'completed', 'blocked'].includes(milestone.status)) {
       fail(`${milestone.id}のstatusが不正です`);
@@ -196,13 +204,29 @@ function validatePlan() {
     if (!Array.isArray(milestone.dependsOn) || !Array.isArray(milestone.acceptanceCriteria) || !Array.isArray(milestone.outcomes) || milestone.outcomes.length === 0) {
       fail(`${milestone.id}のdependsOn、acceptanceCriteria、outcomesが不正です`);
     }
-    milestone.acceptanceCriteria.forEach((id) => covered.add(id));
+    if (milestone.outcomes.some((outcome) => typeof outcome !== 'string' || outcome.trim() === '')) fail(`${milestone.id}のoutcomeが空です`);
+    for (const id of milestone.acceptanceCriteria) {
+      if (!goalIds.includes(id)) fail(`${milestone.id}に未知の受入条件があります: ${id}`);
+      covered.add(id);
+    }
   }
   for (const milestone of roadmap.milestones) {
     for (const dependency of milestone.dependsOn) {
       if (!ids.has(dependency) || dependency === milestone.id) fail(`${milestone.id}のdependencyが不正です: ${dependency}`);
     }
   }
+  const visiting = new Set();
+  const visited = new Set();
+  const byId = new Map(roadmap.milestones.map((milestone) => [milestone.id, milestone]));
+  const visit = (id) => {
+    if (visiting.has(id)) fail(`ROADMAPに循環依存があります: ${[...visiting, id].join(' -> ')}`);
+    if (visited.has(id)) return;
+    visiting.add(id);
+    byId.get(id).dependsOn.forEach(visit);
+    visiting.delete(id);
+    visited.add(id);
+  };
+  ids.forEach(visit);
   const uncovered = goalIds.filter((id) => !covered.has(id));
   if (uncovered.length > 0) fail(`ROADMAPに未対応の受入条件があります: ${uncovered.join(', ')}`);
   requireText('work/DECISION_REQUESTS.md', 300);
@@ -211,8 +235,8 @@ function validatePlan() {
 const ignoredDirectories = new Set(['.git', 'node_modules', 'runs', 'worktrees', 'logs']);
 
 function collectFiles(path) {
-  if (path === '.' || path === './') fail('verification input/outputにproject rootは指定できません');
   const absolute = projectPath(path);
+  if (absolute === projectRoot) fail('verification input/outputにproject rootは指定できません');
   if (!existsSync(absolute)) fail(`verification対象がありません: ${path}`);
   const stat = lstatSync(absolute);
   if (stat.isSymbolicLink()) fail(`verification対象にsymlinkは使用できません: ${path}`);
@@ -233,7 +257,11 @@ function collectFiles(path) {
 }
 
 function digestPaths(paths) {
-  const files = [...new Set(paths.flatMap(collectFiles))].sort();
+  const files = [...new Set(paths.flatMap((path) => {
+    const entries = collectFiles(path);
+    if (entries.length === 0) fail(`verification対象にfileがありません: ${path}`);
+    return entries;
+  }))].sort();
   const entries = files.map((path) => ({ path, sha256: sha256File(path) }));
   const digest = sha256(Buffer.from(entries.map((entry) => `${entry.path}\0${entry.sha256}\n`).join(''), 'utf8'));
   return { digest, fileCount: entries.length, entries };
@@ -274,10 +302,12 @@ function suiteDigest(suite) {
   return sha256(Buffer.from(JSON.stringify(suite), 'utf8'));
 }
 
-function appendRun(run) {
+function saveRun(run) {
   const manifest = readJson('evidence/run-manifest.json');
   if (manifest.schemaVersion !== 1 || !Array.isArray(manifest.runs)) fail('run manifestのschemaが不正です');
-  manifest.runs.push(run);
+  const index = manifest.runs.findIndex((candidate) => candidate.id === run.id);
+  if (index < 0) manifest.runs.push(run);
+  else manifest.runs[index] = run;
   writeJson('evidence/run-manifest.json', manifest);
 }
 
@@ -294,49 +324,64 @@ function runStage(stage) {
     status: 'running',
     suites: [],
   };
+  saveRun(run);
   let passed = true;
   for (const suite of suites) {
     process.stdout.write(`\n[${suite.id}] ${suite.description}\n`);
     const commandResults = [];
-    for (const argv of suite.commands) {
-      const commandStarted = Date.now();
-      process.stdout.write(`$ ${argv.join(' ')}\n`);
-      const result = spawnSync(argv[0], argv.slice(1), {
-        cwd: projectRoot,
-        encoding: 'utf8',
-        timeout: suite.timeoutMs,
-        env: process.env,
-      });
-      if (result.stdout) process.stdout.write(result.stdout);
-      if (result.stderr) process.stderr.write(result.stderr);
-      const exitCode = result.status ?? 1;
-      commandResults.push({
-        argv,
-        exitCode,
-        durationMs: Date.now() - commandStarted,
-        stdoutSha256: sha256(Buffer.from(result.stdout ?? '', 'utf8')),
-        stderrSha256: sha256(Buffer.from(result.stderr ?? result.error?.message ?? '', 'utf8')),
-      });
-      if (exitCode !== 0 || result.error) {
-        passed = false;
-        break;
+    let inputs;
+    let outputs;
+    let suiteError;
+    try {
+      inputs = digestPaths(suite.inputs);
+      for (const argv of suite.commands) {
+        const commandStarted = Date.now();
+        process.stdout.write(`$ ${argv.join(' ')}\n`);
+        const result = spawnSync(argv[0], argv.slice(1), {
+          cwd: projectRoot,
+          encoding: 'utf8',
+          timeout: suite.timeoutMs,
+          env: process.env,
+          maxBuffer: 16 * 1024 * 1024,
+        });
+        if (result.stdout) process.stdout.write(result.stdout);
+        if (result.stderr) process.stderr.write(result.stderr);
+        const exitCode = result.status ?? 1;
+        commandResults.push({
+          argv,
+          exitCode,
+          durationMs: Date.now() - commandStarted,
+          stdoutSha256: sha256(Buffer.from(result.stdout ?? '', 'utf8')),
+          stderrSha256: sha256(Buffer.from(result.stderr ?? result.error?.message ?? '', 'utf8')),
+          ...(result.error ? { error: result.error.message } : {}),
+        });
+        if (exitCode !== 0 || result.error) {
+          passed = false;
+          break;
+        }
       }
+      if (inputs.digest !== digestPaths(suite.inputs).digest) fail(`${suite.id}の実行中に入力が変更されています`);
+      outputs = digestPaths(suite.outputs);
+    } catch (error) {
+      passed = false;
+      suiteError = error.message;
+      process.stderr.write(`${suiteError}\n`);
     }
-    const inputs = digestPaths(suite.inputs);
-    const outputs = suite.outputs.length > 0 ? digestPaths(suite.outputs) : { digest: sha256(Buffer.alloc(0)), fileCount: 0, entries: [] };
     run.suites.push({
       id: suite.id,
-      status: commandResults.length === suite.commands.length && commandResults.every((command) => command.exitCode === 0) ? 'passed' : 'failed',
+      status: !suiteError && commandResults.length === suite.commands.length && commandResults.every((command) => command.exitCode === 0 && !command.error) ? 'passed' : 'failed',
       planDigest: suiteDigest(suite),
-      inputs: { digest: inputs.digest, fileCount: inputs.fileCount },
-      outputs: { digest: outputs.digest, fileCount: outputs.fileCount, artifacts: outputs.entries },
+      inputs: inputs ? { digest: inputs.digest, fileCount: inputs.fileCount } : null,
+      outputs: outputs ? { digest: outputs.digest, fileCount: outputs.fileCount, artifacts: outputs.entries } : null,
       commands: commandResults,
+      ...(suiteError ? { error: suiteError } : {}),
     });
+    saveRun(run);
     if (!passed) break;
   }
   run.finishedAt = new Date().toISOString();
   run.status = passed && run.suites.length === suites.length ? 'passed' : 'failed';
-  appendRun(run);
+  saveRun(run);
   if (run.status !== 'passed') fail(`verification stage failed: ${stage} (${run.id})`);
   process.stdout.write(`verification stage passed: ${stage} (${run.id})\n`);
 }
@@ -346,11 +391,15 @@ function validateStageEvidence(stage) {
   const suites = plan.suites.filter((suite) => suite.stage === stage);
   if (suites.length === 0) fail(`stage ${stage} のverification suiteがありません`);
   const manifest = readJson('evidence/run-manifest.json');
-  const run = [...manifest.runs].reverse().find((candidate) => candidate.stage === stage && candidate.status === 'passed');
-  if (!run) fail(`stage ${stage} の成功receiptがありません`);
+  if (manifest.schemaVersion !== 1 || !Array.isArray(manifest.runs)) fail('run manifestのschemaが不正です');
+  const run = [...manifest.runs].reverse().find((candidate) => candidate.stage === stage);
+  if (!run || run.status !== 'passed') fail(`stage ${stage} の最新receiptが成功ではありません: ${run?.status ?? '未実行'}`);
   for (const suite of suites) {
     const receipt = run.suites?.find((candidate) => candidate.id === suite.id && candidate.status === 'passed');
     if (!receipt) fail(`${run.id}にsuite ${suite.id}の成功記録がありません`);
+    if (!Array.isArray(receipt.commands) || receipt.commands.length !== suite.commands.length || receipt.commands.some((command, index) => command.exitCode !== 0 || command.error || JSON.stringify(command.argv) !== JSON.stringify(suite.commands[index]))) {
+      fail(`${suite.id}のcommand成功記録が不正です`);
+    }
     if (receipt.planDigest !== suiteDigest(suite)) fail(`${suite.id}は成功後にsuite定義が変更されています`);
     const inputs = digestPaths(suite.inputs);
     if (receipt.inputs?.digest !== inputs.digest) fail(`${suite.id}は成功後に入力が変更されています`);
@@ -419,6 +468,7 @@ function validateRelease() {
 }
 
 function validateFinal() {
+  validateStageEvidence('mechanism');
   validateRelease();
   const matrix = acceptanceMatrix();
   for (const id of acceptanceIdsFromGoal().filter((candidate) => candidate !== 'AC-009')) {
@@ -493,4 +543,3 @@ try {
     throw error;
   }
 }
-

@@ -6,7 +6,8 @@
       "stage": "mechanism",
       "description": "監督script、workflow schema、初期goalを検査する。",
       "commands": [
-        ["node", "--test"],
+        ["node", "--test", "tests/platform-control.test.mjs", "tests/model-routing.test.mjs", "tests/codex-runtime.test.mjs"],
+        ["node_modules/.bin/takt", "workflow", "doctor", "platform-lifecycle"],
         ["node", "scripts/platform-control.mjs", "validate", "goal"]
       ],
       "inputs": [
@@ -17,12 +18,13 @@
         "tests",
         ".takt/config.yaml",
         ".takt/runtime.yaml",
-        ".takt/tasks.yaml",
         ".takt/tasks/20261011-165645-product-goal-md-ac-001-ac-009/order.md",
         ".takt/workflows",
         ".takt/facets",
         ".takt/quality-gates/platform-gate.sh",
-        "docs/DELIVERY_LOOP.md"
+        "docs/DELIVERY_LOOP.md",
+        "docs/MODEL_POLICY.md",
+        "architecture/SOURCE_BASELINE.json"
       ],
       "outputs": [],
       "timeoutMs": 300000

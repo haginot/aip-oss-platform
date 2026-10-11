@@ -13,6 +13,5 @@ build/
 .takt/quality-gates/logs/
 .takt/persona_sessions.json
 
-# Verification command logs are ephemeral. Signed-style receipts remain tracked.
+# Verification command logs are ephemeral. Fingerprinted receipts remain tracked (not signed).
 evidence/runs/*.log
-
