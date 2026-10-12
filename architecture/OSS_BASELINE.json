@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-12",
+  "verificationMethod": "Primary release and license pages inspected; selection is not installation or vulnerability clearance",
+  "products": [
+    {
+      "id": "node",
+      "version": "22.23.3",
+      "license": "MIT AND bundled third-party notices",
+      "versionSource": "https://nodejs.org/en/blog/release/v22.23.3",
+      "licenseSource": "https://raw.githubusercontent.com/nodejs/node/v22.23.3/LICENSE",
+      "use": "Pinned Kernel and synthetic ERP runtime; release bootstrap verifies actual version"
+    },
+    {
+      "id": "postgresql",
+      "version": "18.6",
+      "license": "PostgreSQL",
+      "versionSource": "https://www.postgresql.org/docs/release/18.6/",
+      "licenseSource": "https://www.postgresql.org/about/licence/",
+      "use": "Authoritative platform database and isolated synthetic ERP database"
+    },
+    {
+      "id": "pg",
+      "version": "8.16.3",
+      "license": "MIT",
+      "versionSource": "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/packages/pg/package.json",
+      "licenseSource": "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/LICENSE",
+      "use": "Pure JavaScript StatePort adapter; complete runtime closure pinned in package-lock.json"
+    }
+  ],
+  "internalLicenseDecision": {
+    "status": "approved",
+    "license": "MIT",
+    "decisionRef": "DR-ARCH-001",
+    "decidedAt": "2026-10-12",
+    "scope": "Repository-owned source only; third-party licenses and notices remain independently applicable"
+  },
+  "supplyChainGate": "AC-008: complete locked transitive closure, bundled notices, SBOM, vulnerability/secret scan and redistribution review before release; no native pg or paid service required"
+}

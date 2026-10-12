@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "sourceCatalogSha256": "020a61b613258c4b8dd34a48ea8dfb01e094dc75bec6d7c75b8f5a606b1c0843",
+  "roles": [
+    {
+      "id": "ingest",
+      "group": "data",
+      "responsibility": "外部データを再開可能な処理で受け取り、元データの位置と取り込み時刻を残す。",
+      "contract": "IngestPort：source、cursor、schema、snapshot/changes、provenance、再開・重複の扱い。",
+      "migration": "ソース別のカーソル・取り込み済み範囲を移し、二重取り込みと欠損を照合。"
+    },
+    {
+      "id": "cdc",
+      "group": "data",
+      "responsibility": "業務ソースの追加・更新・削除を捕捉し、スナップショットと変更ログを接続する。",
+      "contract": "ChangeSourcePort：source position、key、before/after、delete、snapshot境界。",
+      "migration": "ログ位置とスナップショット境界を引き継ぎ、削除・スキーマ変更を照合。"
+    },
+    {
+      "id": "pipeline",
+      "group": "data",
+      "responsibility": "バッチ処理の依存関係・再実行・実行履歴を管理する。業務承認の状態管理とは分ける。",
+      "contract": "PipelinePort：run、asset/input version、dependency、retry、cancel、status。",
+      "migration": "DAGと履歴を移行。実行中のジョブは旧環境で完了させるか再実行を検証。"
+    },
+    {
+      "id": "transform",
+      "group": "data",
+      "responsibility": "ソースデータを正規化し、決められた意味・型・単位へ変換する。",
+      "contract": "TransformPort：input/output schema、versioned job、determinism、lineage。",
+      "migration": "SQL方言・UDF・実行モデルを変換し、同一入力の差分を検証。"
+    },
+    {
+      "id": "quality",
+      "group": "data",
+      "responsibility": "型・必須値・範囲・参照整合性・鮮度を検査し、隔離や公開停止を判断する。",
+      "contract": "QualityPort：check version、target revision、result、severity、evidence。",
+      "migration": "検査定義と履歴を移し、同じ異常データで判定の一致を確認。"
+    },
+    {
+      "id": "identity-map",
+      "group": "data",
+      "responsibility": "ソースごとのIDを安定したObject IDへ対応付け、統合・分割・人による訂正を管理する。",
+      "contract": "IdentityMapPort：source key → Object ID、mapping version、merge/split、confidence、review。",
+      "migration": "ID対応を製品依存から分離。ID再発番は原則禁止し、リンク・権限・索引の参照を保持。"
+    },
+    {
+      "id": "blob",
+      "group": "data",
+      "responsibility": "文書・画像・音声・原本データを保管し、参照・保持・暗号化を管理する。",
+      "contract": "BlobPort：URI、content hash、version、range read、retention、access context。",
+      "migration": "ハッシュとバージョンを照合。署名URL・IAM・保持設定は個別に移行。"
+    },
+    {
+      "id": "lake-table",
+      "group": "data",
+      "responsibility": "大量データのスナップショット・スキーマ進化・分析用更新を管理する。業務Actionのトランザクションとは別。",
+      "contract": "AnalyticTablePort：snapshot ID、schema evolution、partition、read/write capabilities。",
+      "migration": "形式間の互換性を仮定せず、書き換え・スナップショット移行・削除反映を検証。"
+    },
+    {
+      "id": "analytics",
+      "group": "data",
+      "responsibility": "集計・探索・大量スキャンを実行する。業務Object更新の正本とは分ける。",
+      "contract": "AnalyticsPort：承認済みquery/model、parameters、snapshot、result schema、cost/time limits。",
+      "migration": "SQL方言・型・時刻・NULL・精度・料金と性能を検証。"
+    },
+    {
+      "id": "ontology",
+      "group": "semantic",
+      "responsibility": "Object・Property・Link・Actionの意味、型、単位、制約、所有権、バージョンを管理する。",
+      "contract": "OntologyRegistryPort：immutable schema version、definition diff、validation、publish/rollback。",
+      "migration": "意味の変換をレビュー。RDFの推論と業務型定義を自動的に同等視しない。"
+    },
+    {
+      "id": "object-api",
+      "group": "semantic",
+      "responsibility": "Objectの取得・一覧・リンク辿り・購読を提供し、行・列認可と版整合性を適用する。",
+      "contract": "ObjectPort：get/query/traverse、有限のQuery AST、cursor、revision、freshness、projection。",
+      "migration": "型・NULL・並び順・ページング・認可・鮮度の契約テストを通して交換。"
+    },
+    {
+      "id": "object-store",
+      "group": "semantic",
+      "responsibility": "編集可能な業務状態を保持し、版競合とトランザクションを管理する。ソース側が正本の場合は属性ごとに所有権を定義。",
+      "contract": "StatePort / UnitOfWork：expected revision、atomic object＋action log＋outbox、conflict、idempotency。",
+      "migration": "snapshot＋CDC、更新停止点、再開位置、照合、ロールバックを定義。汎用CRUDへの置換は不可。"
+    },
+    {
+      "id": "graph",
+      "group": "semantic",
+      "responsibility": "業務Object間の関係を問い合わせる。認可の関係モデルとは別に管理する。",
+      "contract": "GraphPort：typed edges、direction、bounded traversal、revision、consistency profile。",
+      "migration": "プロパティグラフ・RDF・SQLの意味差を検証。派生投影なら原本から再構築。"
+    },
+    {
+      "id": "text-search",
+      "group": "semantic",
+      "responsibility": "文字列・フィールド・文書の索引を管理し、検索の根拠と鮮度を返す。",
+      "contract": "TextSearchPort：query、filters、tenant、source revision、score/rank、snippet、index watermark。",
+      "migration": "原本から再索引。解析器・日本語処理・ランキング・削除反映を評価。"
+    },
+    {
+      "id": "retrieval",
+      "group": "semantic",
+      "responsibility": "埋め込み検索・全文との複合検索・必要な媒体の検索を行い、根拠を返す。",
+      "contract": "RetrievalPort：filter、topK、search mode、Object ID、chunk/source revision、embedding version、watermark。",
+      "migration": "原本・埋め込みから再構築し、検索品質・ACL漏れ・削除・コストを評価。"
+    },
+    {
+      "id": "history",
+      "group": "semantic",
+      "responsibility": "Objectの過去状態と訂正を参照する。業務上の有効時刻と記録時刻を区別する。",
+      "contract": "HistoryPort：asOf、valid time、recorded time、revision、retention、replay policy。",
+      "migration": "時刻意味・削除・訂正・保存期間を照合。イベントログから状態が再現可能か検証。"
+    },
+    {
+      "id": "metrics",
+      "group": "semantic",
+      "responsibility": "売上・在庫などの指標定義と集計粒度を管理する。Object・Action全体のOntologyとは別の範囲。",
+      "contract": "MetricPort：metric ID、grain、dimensions、time semantics、definition version、lineage。",
+      "migration": "粒度・集計・時刻・結合の意味を照合。BI式の自動移植を仮定しない。"
+    },
+    {
+      "id": "rules",
+      "group": "kinetic",
+      "responsibility": "閾値・条件・計算・決定表を版管理し、決定の根拠を返す。認可ポリシーの責務とは区別する。",
+      "contract": "DecisionPort：rule version、typed input、outcome、explanation、determinism、effective period。",
+      "migration": "ルール言語を変換し、代表・境界・例外の判定コーパスで差分評価。"
+    },
+    {
+      "id": "compute",
+      "group": "kinetic",
+      "responsibility": "需要予測、割り当て、計画などの関数・モデル・数理最適化を実行する。",
+      "contract": "FunctionPort：typed I/O、implementation version、limits、seed、result/evidence。",
+      "migration": "入力型・精度・乱数・許容誤差・最適化の制約を検証。"
+    },
+    {
+      "id": "action",
+      "group": "kinetic",
+      "responsibility": "型検証、認可、業務制約、版競合、重複防止、承認、更新、監査、イベント発行を束ねる。",
+      "contract": "ActionPort：validate/submit/status、expected revision、idempotency key、actor/onBehalfOf、evidence。",
+      "migration": "Actionの意味・状態・履歴を維持し、atomic outboxと権限の契約を検証。"
+    },
+    {
+      "id": "workflow",
+      "group": "kinetic",
+      "responsibility": "承認待ち・タイマー・再試行・補償を含む業務フローの状態を保持する。",
+      "contract": "WorkflowPort：start/signal/cancel/status、workflow version、approval identity、retry/compensation。",
+      "migration": "実行中の処理は旧エンジンで完了し、新規開始を新エンジンへ。状態移植は別検証。"
+    },
+    {
+      "id": "writeback",
+      "group": "kinetic",
+      "responsibility": "ERP・CRM等へActionの結果を届け、成功不明・再試行・部分失敗を照合する。",
+      "contract": "WritebackPort：operation ID、target、expected version、idempotency、ack、reconcile/compensate。",
+      "migration": "送信済みと確定済みを照合。外部APIの非冪等操作を再送しない仕組みを検証。"
+    },
+    {
+      "id": "event",
+      "group": "dynamic",
+      "responsibility": "Object変更・Action結果を購読者へ配送し、再送と再生を支える。",
+      "contract": "EventPort：CloudEvents envelope＋schema/revision/tenant/causation、ack、retention、ordering profile。",
+      "migration": "位置・保持・順序・再配送を検証。少なくとも1回配送＋受信側冪等性を基本。"
+    },
+    {
+      "id": "stream",
+      "group": "dynamic",
+      "responsibility": "継続集計、時間窓、イベント条件を評価し、再評価やAction提案へつなぐ。",
+      "contract": "StreamPort：event time、watermark、window、late data、checkpoint、output version。",
+      "migration": "遅延データ・順序逆転・再生・集計結果の差分を検証。"
+    },
+    {
+      "id": "trigger",
+      "group": "dynamic",
+      "responsibility": "日時・変更・閾値で処理を開始し、重複起動を防ぐ。",
+      "contract": "TriggerPort：schedule/subscription、version、fire ID、missed run、deduplication。",
+      "migration": "タイムゾーン・起動漏れ・二重起動を確認。既存基盤の機能を優先。"
+    },
+    {
+      "id": "agent",
+      "group": "ai",
+      "responsibility": "根拠検索、推論、ツール呼び出し、承認待ちを編成し、Actionの提案を作る。",
+      "contract": "AgentPort：run/context、typed tools、checkpoint、budget、cancel、proposal/evidence。",
+      "migration": "ツール契約を維持。内部グラフ・checkpointは別途移行し、品質を再評価。"
+    },
+    {
+      "id": "model",
+      "group": "ai",
+      "responsibility": "推論を呼び出し、モデル・費用・制限・ツール対応を管理する。",
+      "contract": "ModelPort：typed messages/tools/output、model version、timeout、usage、capabilities、errors。",
+      "migration": "共通APIでも挙動は同等ではない。品質・ツール・安全性・費用の回帰評価を実施。"
+    },
+    {
+      "id": "embedding",
+      "group": "ai",
+      "responsibility": "テキスト・必要な媒体を埋め込み、検索結果を並べ直す。検索ストアと独立して選ぶ。",
+      "contract": "EmbeddingPort：model/version、dimensions、distance profile、normalization、media type。",
+      "migration": "モデル変更は原則再埋め込み。次元だけで互換と判断せず検索品質を検証。"
+    },
+    {
+      "id": "parse",
+      "group": "ai",
+      "responsibility": "文書を段落・表・画像等へ分け、ページ位置と原文参照を保つ。",
+      "contract": "DocumentPort：source hash、parser version、chunks、page/bbox、media、confidence。",
+      "migration": "抽出結果を比較。chunk IDと引用位置の変化に合わせて索引を再作成。"
+    },
+    {
+      "id": "ai-eval",
+      "group": "ai",
+      "responsibility": "Prompt・モデル・検索・ツールの版を記録し、品質・費用・失敗を比較する。",
+      "contract": "EvaluationPort：dataset version、run/model/prompt/retrieval versions、metrics、traces、release decision。",
+      "migration": "評価セット・指標を維持。追跡製品と評価ライブラリは併用可能で同等製品ではない。"
+    },
+    {
+      "id": "guard",
+      "group": "ai",
+      "responsibility": "型・引用・機密・許されるツールを検査し、違反を拒否・再試行する。認可判定の代替にはしない。",
+      "contract": "GuardPort：input/output/tool request、policy version、decision、reason、redaction。",
+      "migration": "代表的な違反・攻撃入力・誤検知の回帰評価。最終的なAction認可は常に実行。"
+    },
+    {
+      "id": "feature",
+      "group": "ai",
+      "responsibility": "オンライン・オフラインの特徴量を時点に合わせて取得する。LLMのみなら専用基盤は不要。",
+      "contract": "FeaturePort：entity ID、feature version、point-in-time join、freshness、training/serving consistency。",
+      "migration": "過去時点の結合と予測への未来情報混入を検証。"
+    },
+    {
+      "id": "identity",
+      "group": "security",
+      "responsibility": "人を認証し、信頼できる主体・所属・セッションを提供する。",
+      "contract": "IdentityPort：OIDC/OAuth profile、issuer/audience、principal、tenant、assurance、expiry。",
+      "migration": "主体ID対応・セッション期限・クレームの意味を保つ。ログイン成功だけで業務権限を与えない。"
+    },
+    {
+      "id": "relationship-auth",
+      "group": "security",
+      "responsibility": "所有者・所属・共有・委任などの権限関係からアクセスを判定する。",
+      "contract": "RelationshipPolicyPort：check/batch/list candidates、model/tuple version、consistency、revocation。",
+      "migration": "主体・資源ID・関係モデル・tupleを移行。認可の反例セットで拒否の一致を確認。"
+    },
+    {
+      "id": "attribute-auth",
+      "group": "security",
+      "responsibility": "主体・資源・環境・操作の条件を評価し、行・列・Actionの許可範囲を返す。",
+      "contract": "PolicyPort：authorize、constraints/masks、trusted context、policy version、deny reason、fail closed。",
+      "migration": "Rego・Cedar等は自動互換ではない。ポリシー移植と検索・実行の認可差分を検証。"
+    },
+    {
+      "id": "delegation",
+      "group": "security",
+      "responsibility": "サービスの実行主体、利用者代理、許可したツール範囲、期限を検証する。",
+      "contract": "DelegationPort：actor、onBehalfOf、audience、scope、expiry、workload identity、delegation evidence。",
+      "migration": "ID・トークン交換・委任の意味を検証。AIが申告した主体情報を信頼しない。"
+    },
+    {
+      "id": "secrets",
+      "group": "security",
+      "responsibility": "接続秘密、鍵、更新、暗号化ポリシーを管理する。",
+      "contract": "SecretPort / KeyPort：opaque reference、lease、rotation、encrypt/decrypt authorization、audit。",
+      "migration": "秘密値をログに出さず参照を移す。鍵移行・再暗号化・復旧可能性を別検証。"
+    },
+    {
+      "id": "metadata",
+      "group": "ops",
+      "responsibility": "データ・Object・処理の出所と依存を記録する。Ontologyの業務意味・Action定義の代替ではない。",
+      "contract": "MetadataPort：asset ID、version、lineage edges、owner、classification、run correlation。",
+      "migration": "ID対応と履歴を移し、欠けたLineageを照合。"
+    },
+    {
+      "id": "audit",
+      "group": "ops",
+      "responsibility": "誰が、何を、どの版の根拠・権限・ルールで変更したか記録する。",
+      "contract": "AuditPort：actor/onBehalfOf、action/object revision、policy/rule/model version、evidence、retention。",
+      "migration": "追跡IDと履歴を維持。改ざん防止・保持・消去ポリシーは保存先別に検証。"
+    },
+    {
+      "id": "observability",
+      "group": "ops",
+      "responsibility": "取り込みからAction・書き戻しまでを結び、遅延・エラー・費用を観測する。",
+      "contract": "TelemetryPort：trace context、metrics/log schema、PII handling、SLO、budget。",
+      "migration": "計測項目・trace ID・アラート・保存期間を移す。"
+    },
+    {
+      "id": "schema-release",
+      "group": "ops",
+      "responsibility": "API・Event・Ontology・Rule・Policyの互換性を検査し、公開とロールバックを管理する。",
+      "contract": "ReleasePort：artifact digest、compatibility profile、migration plan、approver、rollback target。",
+      "migration": "製品のスキーマ互換性と業務意味の互換性を別に確認。"
+    },
+    {
+      "id": "deployment",
+      "group": "ops",
+      "responsibility": "選択したAdapterと機能プロファイルを宣言し、配備・更新・秘密参照を管理する。",
+      "contract": "CompositionPort：slot → adapter/version/config、capabilities、dependencies、health、rollback。",
+      "migration": "環境ごとの設定・権限・状態・依存を検証。Kubernetesを前提に固定しない。"
+    },
+    {
+      "id": "gateway",
+      "group": "ops",
+      "responsibility": "APIの入口、流量、接続制限を管理する。業務認可はObject APIとActionにも適用。",
+      "contract": "GatewayPort：identity propagation、rate/size limits、timeouts、trace、error profile。",
+      "migration": "ヘッダー・timeout・ルーティング・認証連携を照合。"
+    },
+    {
+      "id": "cache",
+      "group": "ops",
+      "responsibility": "派生結果を一時保持し、版・期限・失効に従って破棄する。正本にしない。",
+      "contract": "CachePort：namespaced key、revision/policy version、TTL、invalidate、tenant isolation。",
+      "migration": "移行時は破棄・再構築可能にする。認可変更を古い許可で上書きしない。"
+    },
+    {
+      "id": "recovery",
+      "group": "ops",
+      "responsibility": "正本・定義・鍵・権限・実行履歴を復旧し、派生索引を再構築する。",
+      "contract": "RecoveryPort：backup set、consistent checkpoint、RPO/RTO、restore/reconcile、restore evidence。",
+      "migration": "製品ごとの復旧手順を組み合わせ、横断の整合点を実際に復元して検証。"
+    },
+    {
+      "id": "business-ui",
+      "group": "ux",
+      "responsibility": "Objectの表示・検索・Action提案・承認・実行結果を提示する。",
+      "contract": "ClientPort：generated typed SDK、Object/Action API、visible permissions、revision/error handling。",
+      "migration": "製品SDKを画面に直接持ち込まず、公開APIと表示権限を検証。"
+    },
+    {
+      "id": "authoring-ui",
+      "group": "ux",
+      "responsibility": "Ontology・Rule・Policy・Workflowを編集・比較・検証し、承認して公開する。",
+      "contract": "AuthoringPort：draft、diff、simulation cases、review、publish、release version。",
+      "migration": "各DSLの編集器は個別対応。エクスポート・公開・再評価を維持。"
+    }
+  ]
+}

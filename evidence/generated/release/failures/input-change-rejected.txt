@@ -1,0 +1,508 @@
+
+[architecture-contract-metadata] Design-only coverage and adoption metadata gate; no product AC runtime claim.
+$ node scripts/platform-control.mjs validate architecture
+platform validation passed: architecture
+$ node scripts/architecture-check.mjs
+Architecture coverage, source contract snapshot and adoption metadata verified; product AC verdicts are unchanged.
+$ node --test tests/architecture-check.test.mjs
+TAP version 13
+# Subtest: complete fixed responsibilities accepted by metadata checker
+ok 1 - complete fixed responsibilities accepted by metadata checker
+  ---
+  duration_ms: 1.777625
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: unapprovedComposition
+ok 2 - reject architecture defect: unapprovedComposition
+  ---
+  duration_ms: 0.682167
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: omittedRole
+ok 3 - reject architecture defect: omittedRole
+  ---
+  duration_ms: 1.0305
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: duplicateRole
+ok 4 - reject architecture defect: duplicateRole
+  ---
+  duration_ms: 0.431125
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: omittedContract
+ok 5 - reject architecture defect: omittedContract
+  ---
+  duration_ms: 0.41325
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: missingOwner
+ok 6 - reject architecture defect: missingOwner
+  ---
+  duration_ms: 0.314791
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: unknownProduct
+ok 7 - reject architecture defect: unknownProduct
+  ---
+  duration_ms: 0.343042
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: mutableVersion
+ok 8 - reject architecture defect: mutableVersion
+  ---
+  duration_ms: 0.343791
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: unresolvedLicense
+ok 9 - reject architecture defect: unresolvedLicense
+  ---
+  duration_ms: 0.692333
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: falseRuntimeClaim
+ok 10 - reject architecture defect: falseRuntimeClaim
+  ---
+  duration_ms: 0.614958
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: missingUnsupportedRejection
+ok 11 - reject architecture defect: missingUnsupportedRejection
+  ---
+  duration_ms: 2.077458
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: sourceDrift
+ok 12 - reject architecture defect: sourceDrift
+  ---
+  duration_ms: 0.321291
+  type: 'test'
+  ...
+# Subtest: repository license declarations match the approved decision
+ok 13 - repository license declarations match the approved decision
+  ---
+  duration_ms: 1.014958
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: missingGrant
+ok 14 - reject license declaration defect: missingGrant
+  ---
+  duration_ms: 0.8615
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: packageMismatch
+ok 15 - reject license declaration defect: packageMismatch
+  ---
+  duration_ms: 0.6685
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: lockMismatch
+ok 16 - reject license declaration defect: lockMismatch
+  ---
+  duration_ms: 0.645958
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: unapprovedLicense
+ok 17 - reject license declaration defect: unapprovedLicense
+  ---
+  duration_ms: 0.7375
+  type: 'test'
+  ...
+# Subtest: recovery design declares retention, independent discovery and executable future counterexamples
+ok 18 - recovery design declares retention, independent discovery and executable future counterexamples
+  ---
+  duration_ms: 0.517709
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: expiredKey
+ok 19 - reject recovery design defect: expiredKey
+  ---
+  duration_ms: 0.331458
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingInboxRetention
+ok 20 - reject recovery design defect: missingInboxRetention
+  ---
+  duration_ms: 0.530875
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingLedgerRetention
+ok 21 - reject recovery design defect: missingLedgerRetention
+  ---
+  duration_ms: 0.35475
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: absentMeansUnapplied
+ok 22 - reject recovery design defect: absentMeansUnapplied
+  ---
+  duration_ms: 0.327209
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: sharedLossBoundary
+ok 23 - reject recovery design defect: sharedLossBoundary
+  ---
+  duration_ms: 0.34675
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingOperationMapping
+ok 24 - reject recovery design defect: missingOperationMapping
+  ---
+  duration_ms: 0.316541
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: noEnumeration
+ok 25 - reject recovery design defect: noEnumeration
+  ---
+  duration_ms: 0.318792
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingRecoveryRange
+ok 26 - reject recovery design defect: missingRecoveryRange
+  ---
+  duration_ms: 0.308667
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: checkpointOnlyRecovery
+ok 27 - reject recovery design defect: checkpointOnlyRecovery
+  ---
+  duration_ms: 0.44125
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: checkpointWithoutDrain
+ok 28 - reject recovery design defect: checkpointWithoutDrain
+  ---
+  duration_ms: 0.430583
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: unprovenRangeOptimization
+ok 29 - reject recovery design defect: unprovenRangeOptimization
+  ---
+  duration_ms: 0.320084
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: noFence
+ok 30 - reject recovery design defect: noFence
+  ---
+  duration_ms: 0.330625
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: oracleDependency
+ok 31 - reject recovery design defect: oracleDependency
+  ---
+  duration_ms: 0.295208
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingRestoreCase
+ok 32 - reject recovery design defect: missingRestoreCase
+  ---
+  duration_ms: 0.317375
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingRolePlan
+ok 33 - reject recovery design defect: missingRolePlan
+  ---
+  duration_ms: 0.331791
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingBcpLink
+ok 34 - reject recovery design defect: missingBcpLink
+  ---
+  duration_ms: 0.484167
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: checkpointOnlyDocument
+ok 35 - reject recovery design defect: checkpointOnlyDocument
+  ---
+  duration_ms: 0.384042
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: contradictoryDocument
+ok 36 - reject recovery design defect: contradictoryDocument
+  ---
+  duration_ms: 0.328208
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 58.77925
+verification stage passed: architecture (20261012105401682-architecture-e581c2)
+
+[roadmap-contract-metadata] AC coverage and dependency graph structural validation only; semantic completeness is independently reviewed; no product AC PASS.
+$ node scripts/platform-control.mjs validate plan
+platform validation passed: plan
+verification stage passed: plan (20261012105401880-plan-d00a6c)
+
+[supervision-mechanism] 監督script、workflow schema、初期goalを検査する。
+$ node --test tests/platform-control.test.mjs tests/model-routing.test.mjs tests/codex-runtime.test.mjs
+TAP version 13
+# Subtest: launcher selects a newer bundled CLI instead of an old PATH installation
+ok 1 - launcher selects a newer bundled CLI instead of an old PATH installation
+  ---
+  duration_ms: 195.758875
+  type: 'test'
+  ...
+# Subtest: a newer PATH CLI is preserved instead of forcing the bundled binary
+ok 2 - a newer PATH CLI is preserved instead of forcing the bundled binary
+  ---
+  duration_ms: 176.896416
+  type: 'test'
+  ...
+# Subtest: explicit CLI selection is respected and is not silently replaced
+ok 3 - explicit CLI selection is respected and is not silently replaced
+  ---
+  duration_ms: 90.573583
+  type: 'test'
+  ...
+# Subtest: missing CLI produces an actionable error
+ok 4 - missing CLI produces an actionable error
+  ---
+  duration_ms: 0.646792
+  type: 'test'
+  ...
+# Subtest: run and start both use the isolated task queue rather than a direct workflow
+ok 5 - run and start both use the isolated task queue rather than a direct workflow
+  ---
+  duration_ms: 0.463875
+  type: 'test'
+  ...
+# Subtest: explicit continuation is passed as a valid run or watch option
+ok 6 - explicit continuation is passed as a valid run or watch option
+  ---
+  duration_ms: 0.139333
+  type: 'test'
+  ...
+# Subtest: launcher rejects provider overrides, pipeline mode and unknown flags
+ok 7 - launcher rejects provider overrides, pipeline mode and unknown flags
+  ---
+  duration_ms: 0.122834
+  type: 'test'
+  ...
+# Subtest: the real TAKT compiler resolves every step without tag conflicts
+ok 8 - the real TAKT compiler resolves every step without tag conflicts
+  ---
+  duration_ms: 0.414958
+  type: 'test'
+  ...
+# Subtest: light planning starts on Luna and promotes to Sol, then Astra
+ok 9 - light planning starts on Luna and promotes to Sol, then Astra
+  ---
+  duration_ms: 0.313666
+  type: 'test'
+  ...
+# Subtest: implementation starts on Sol and uses Astra from its third visit
+ok 10 - implementation starts on Sol and uses Astra from its third visit
+  ---
+  duration_ms: 0.095667
+  type: 'test'
+  ...
+# Subtest: architecture, security, BCP and final audits never downgrade from Astra
+ok 11 - architecture, security, BCP and final audits never downgrade from Astra
+  ---
+  duration_ms: 0.078833
+  type: 'test'
+  ...
+# Subtest: ordinary reviews and internal agents use their cost-conscious seats
+ok 12 - ordinary reviews and internal agents use their cost-conscious seats
+  ---
+  duration_ms: 0.101625
+  type: 'test'
+  ...
+# Subtest: human stops and backward repair routes do not require a passing gate
+ok 13 - human stops and backward repair routes do not require a passing gate
+  ---
+  duration_ms: 0.123292
+  type: 'test'
+  ...
+# Subtest: every author can retry technical failures without declaring completion or a human stop
+ok 14 - every author can retry technical failures without declaring completion or a human stop
+  ---
+  duration_ms: 0.1915
+  type: 'test'
+  ...
+# Subtest: completion is gated, bounded and isolated; reviewers do not share author sessions
+ok 15 - completion is gated, bounded and isolated; reviewers do not share author sessions
+  ---
+  duration_ms: 0.344625
+  type: 'test'
+  ...
+# Subtest: verification receipt becomes stale when an input changes
+ok 16 - verification receipt becomes stale when an input changes
+  ---
+  duration_ms: 102.90775
+  type: 'test'
+  ...
+# Subtest: a failed command is recorded and never accepted as evidence
+ok 17 - a failed command is recorded and never accepted as evidence
+  ---
+  duration_ms: 73.802583
+  type: 'test'
+  ...
+# Subtest: no-op shell commands are rejected from the verification plan
+ok 18 - no-op shell commands are rejected from the verification plan
+  ---
+  duration_ms: 26.407916
+  type: 'test'
+  ...
+# Subtest: supervision receipts track tested configuration including queue safety changes
+ok 19 - supervision receipts track tested configuration including queue safety changes
+  ---
+  duration_ms: 520.741875
+  type: 'test'
+  ...
+# Subtest: a newer failed run invalidates an earlier pass with identical definitions and inputs
+ok 20 - a newer failed run invalidates an earlier pass with identical definitions and inputs
+  ---
+  duration_ms: 126.409375
+  type: 'test'
+  ...
+# Subtest: an interrupted latest run cannot reuse a previous pass
+ok 21 - an interrupted latest run cannot reuse a previous pass
+  ---
+  duration_ms: 71.280792
+  type: 'test'
+  ...
+# Subtest: inputs are fingerprinted before execution and must not change during verification
+ok 22 - inputs are fingerprinted before execution and must not change during verification
+  ---
+  duration_ms: 51.764083
+  type: 'test'
+  ...
+# Subtest: missing outputs leave a failed receipt even when the command succeeds
+ok 23 - missing outputs leave a failed receipt even when the command succeeds
+  ---
+  duration_ms: 47.9565
+  type: 'test'
+  ...
+# Subtest: missing inputs leave a failed receipt before commands run
+ok 24 - missing inputs leave a failed receipt before commands run
+  ---
+  duration_ms: 28.082333
+  type: 'test'
+  ...
+# Subtest: changing an output invalidates its successful receipt
+ok 25 - changing an output invalidates its successful receipt
+  ---
+  duration_ms: 81.246208
+  type: 'test'
+  ...
+# Subtest: changing a suite definition invalidates a successful receipt
+ok 26 - changing a suite definition invalidates a successful receipt
+  ---
+  duration_ms: 72.282459
+  type: 'test'
+  ...
+# Subtest: incomplete or mismatched command receipts are rejected
+ok 27 - incomplete or mismatched command receipts are rejected
+  ---
+  duration_ms: 92.37375
+  type: 'test'
+  ...
+# Subtest: spawn errors are recorded as failed commands
+ok 28 - spawn errors are recorded as failed commands
+  ---
+  duration_ms: 28.547917
+  type: 'test'
+  ...
+# Subtest: timeout is a recorded failure rather than a pass
+ok 29 - timeout is a recorded failure rather than a pass
+  ---
+  duration_ms: 1033.400166
+  type: 'test'
+  ...
+# Subtest: normalized project-root aliases are rejected as verification inputs
+ok 30 - normalized project-root aliases are rejected as verification inputs
+  ---
+  duration_ms: 28.996
+  type: 'test'
+  ...
+# Subtest: a declared directory must contain actual verification files
+ok 31 - a declared directory must contain actual verification files
+  ---
+  duration_ms: 30.032417
+  type: 'test'
+  ...
+# Subtest: nonempty inputs cannot hide another declared empty input directory
+ok 32 - nonempty inputs cannot hide another declared empty input directory
+  ---
+  duration_ms: 28.682958
+  type: 'test'
+  ...
+# Subtest: nonempty outputs cannot hide another declared empty output directory
+ok 33 - nonempty outputs cannot hide another declared empty output directory
+  ---
+  duration_ms: 48.867125
+  type: 'test'
+  ...
+# Subtest: a parent symlink cannot escape the project boundary
+ok 34 - a parent symlink cannot escape the project boundary
+  ---
+  duration_ms: 28.528459
+  type: 'test'
+  ...
+# Subtest: symlinks inside input trees are not fingerprinted as regular files
+ok 35 - symlinks inside input trees are not fingerprinted as regular files
+  ---
+  duration_ms: 26.334042
+  type: 'test'
+  ...
+# Subtest: an approved complete acyclic roadmap is accepted
+ok 36 - an approved complete acyclic roadmap is accepted
+  ---
+  duration_ms: 28.417667
+  type: 'test'
+  ...
+# Subtest: roadmap cycles are rejected even if every AC is covered
+ok 37 - roadmap cycles are rejected even if every AC is covered
+  ---
+  duration_ms: 28.662042
+  type: 'test'
+  ...
+# Subtest: unknown roadmap acceptance criteria are rejected
+ok 38 - unknown roadmap acceptance criteria are rejected
+  ---
+  duration_ms: 27.090375
+  type: 'test'
+  ...
+# Subtest: roadmap outcomes must be nonempty text
+ok 39 - roadmap outcomes must be nonempty text
+  ---
+  duration_ms: 27.556625
+  type: 'test'
+  ...
+# Subtest: a roadmap cannot omit any goal acceptance criterion
+ok 40 - a roadmap cannot omit any goal acceptance criterion
+  ---
+  duration_ms: 27.17475
+  type: 'test'
+  ...
+# Subtest: self and unknown dependencies are rejected before traversal
+ok 41 - self and unknown dependencies are rejected before traversal
+  ---
+  duration_ms: 51.823958
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 41
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2779.948167
+$ node_modules/.bin/takt workflow doctor platform-lifecycle
+Workflow OK: /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/.takt/workflows/platform-lifecycle.yaml (Companion review mode: completion)
+$ node scripts/platform-control.mjs validate goal
+platform validation passed: goal
+
+[full-release-regression] Full Node test discovery under pinned runtime, sequential real process/volume tests, no skip; subsequent stages regenerate semantic outputs
+$ node scripts/release/verify.mjs full-release-regression
+full-release-regression: passed 227/227
+full-release-regressionの実行中に入力が変更されています
+platform-control: verification stage failed: mechanism (20261012105401970-mechanism-7da85c)

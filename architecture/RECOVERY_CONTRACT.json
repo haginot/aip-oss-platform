@@ -1,0 +1,96 @@
+{
+  "contractVersion": "1.0.0",
+  "status": "approved",
+  "implementationStatus": "planned",
+  "retention": {
+    "actionKey": "indefinite",
+    "consumerInbox": "indefinite",
+    "erpLedger": "indefinite",
+    "recoveryJournal": "indefinite",
+    "keyReuse": "never",
+    "auditDays": 30,
+    "unresolvedHold": true,
+    "missingRecord": "unknown-not-unapplied",
+    "expiryResponse": "INCONSISTENT_STATE",
+    "backupReplay": "all retained checkpoints; admission blocked until reconciliation complete"
+  },
+  "journal": {
+    "port": "RecoveryJournalPort",
+    "owner": "Platform operations",
+    "storage": "kernel fsync append-only journal on separate volume excluded from Kernel DB destruction/restore",
+    "lossBoundary": "Kernel DB loss only; shared host/volume loss unsupported and fail closed",
+    "fields": [
+      "tenant",
+      "store",
+      "journalEpoch",
+      "sequence",
+      "actionId",
+      "idempotencyKey",
+      "canonicalDigest",
+      "actor",
+      "onBehalfOf",
+      "typedInput",
+      "expectedRevisions",
+      "evidenceRefs",
+      "definitionVersions",
+      "operationId",
+      "target",
+      "payloadDigest",
+      "phase",
+      "commitRevisions",
+      "previousHash",
+      "recordHash"
+    ],
+    "admission": "fsync intent before DB transaction; fsync committed marker after DB commit and before durable acknowledgement or external dispatch",
+    "enumeration": "openSnapshot(tenant,store,afterSequence) -> epoch,highWatermark,chainDigest; list(snapshot,cursor,limit<=100) -> records,nextCursor,complete",
+    "fence": "stop admission and dispatch before highWatermark; verify epoch and contiguous chain through highWatermark",
+    "authorization": "current trusted tenant/store recovery service scope; audit reads and resolutions; no business/AI access",
+    "gapResponse": "INCONSISTENT_STATE",
+    "resendBeforeComplete": "blocked",
+    "oracleIndependent": true,
+    "auditRecovery": "append RecoveryObserved with original IDs/digests, journal evidence and restore checkpoint; never invent original audit commit",
+    "recoveryRange": "entire journal epoch union restored DB unresolved operations; checkpoint after admission fence, DB transaction drain and committed-marker fsync; afterSequence optimization only with proven complete union"
+  },
+  "scenarios": [
+    {
+      "id": "retention-boundary",
+      "inject": "retry at 30 days minus/at/plus one second and years later",
+      "expect": "same key/digest same action, no additional effect; no TTL at audit boundary"
+    },
+    {
+      "id": "key-mismatch",
+      "inject": "same retained key different canonical input",
+      "expect": "IDEMPOTENCY_MISMATCH, no mutation"
+    },
+    {
+      "id": "missing-ledger",
+      "inject": "ledger/inbox/key absent or hypothetical expiry outside confirmed complete history",
+      "expect": "INCONSISTENT_STATE or unknown; no automatic new execution"
+    },
+    {
+      "id": "unresolved-hold",
+      "inject": "retention/cleanup during unknown or pending compensation",
+      "expect": "all dedup and journal records retained; unresolved not deleted"
+    },
+    {
+      "id": "lost-ack-db-restore",
+      "inject": "checkpoint -> local commit -> ERP applied -> ack lost -> destroy only Kernel DB -> restore checkpoint; no controller ID input",
+      "expect": "enumerate surviving journal finds original key/digest/actor/action/operation; reconcile applied; no resend; reconstructed recovery audit; duplicate effect zero; missing local commits reported"
+    },
+    {
+      "id": "intent-crash",
+      "inject": "crash before DB commit or between DB commit and journal committed marker",
+      "expect": "intent discovered; no inferred commit or blind replay; classify manual if commit cannot be proved"
+    },
+    {
+      "id": "journal-gap",
+      "inject": "missing/truncated record, wrong epoch, hash mismatch or unavailable journal",
+      "expect": "INCONSISTENT_STATE/UNAVAILABLE; admission and dispatch remain fenced; no false completeness"
+    },
+    {
+      "id": "recovery-denied",
+      "inject": "cross-tenant enumeration or revoked recovery service scope",
+      "expect": "PERMISSION_DENIED; no keys/input leaked; no mutation"
+    }
+  ]
+}

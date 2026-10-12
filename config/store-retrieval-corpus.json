@@ -1,0 +1,1 @@
+{"schemaVersion":1,"profile":"store-seed:1","query":{"type":"InventoryPosition","search":"rice"},"expectedIds":["stock","stock2"],"checks":["ID order","type","ontologyVersion","revision","column mask","source checkpoint gap","source lineage","tombstone","scope revocation","policy outage"]}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "bcp-exercise",
+  "startedAt": "2026-10-12T15:58:36.839Z",
+  "finishedAt": "2026-10-12T15:59:05.059Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation\nok 1 - clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation\n  ---\n  duration_ms: 4299.201791\n  type: 'test'\n  ...\n# Subtest: checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold\nok 2 - checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold\n  ---\n  duration_ms: 3963.898916\n  type: 'test'\n  ...\n# Subtest: unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences\nok 3 - unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences\n  ---\n  duration_ms: 3950.394417\n  type: 'test'\n  ...\n# Subtest: store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel\nok 4 - store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel\n  ---\n  duration_ms: 4177.607541\n  type: 'test'\n  ...\n# Subtest: B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends\nok 5 - B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends\n  ---\n  duration_ms: 3931.324458\n  type: 'test'\n  ...\n# Subtest: B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target\nok 6 - B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target\n  ---\n  duration_ms: 4001.261875\n  type: 'test'\n  ...\n# Subtest: B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap\nok 7 - B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap\n  ---\n  duration_ms: 3794.595833\n  type: 'test'\n  ...\n# Subtest: export complete machine-readable BCP measurements\nok 8 - export complete machine-readable BCP measurements\n  ---\n  duration_ms: 5.139083\n  type: 'test'\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 8\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 28190.871542\n",
+  "stderr": ""
+}

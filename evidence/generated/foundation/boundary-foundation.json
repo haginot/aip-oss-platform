@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "boundary-foundation",
+  "startedAt": "2026-10-12T15:58:05.214Z",
+  "finishedAt": "2026-10-12T15:58:06.253Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: advertised unavailable capabilities reject through real HTTP with no business side effects\nok 1 - advertised unavailable capabilities reject through real HTTP with no business side effects\n  ---\n  duration_ms: 590.519584\n  type: 'test'\n  ...\n# Subtest: typed link rejects corruption and out-of-budget depth; empty links still enforce column authorization\nok 2 - typed link rejects corruption and out-of-budget depth; empty links still enforce column authorization\n  ---\n  duration_ms: 51.160792\n  type: 'test'\n  ...\n# Subtest: HTTP admission limits concurrent slow requests and request rate before mutation\nok 3 - HTTP admission limits concurrent slow requests and request rate before mutation\n  ---\n  duration_ms: 41.695875\n  type: 'test'\n  ...\n# Subtest: HTTP request-rate budget is enforced independently of concurrency\nok 4 - HTTP request-rate budget is enforced independently of concurrency\n  ---\n  duration_ms: 42.549042\n  type: 'test'\n  ...\n# Subtest: HTTP malformed/oversize/version/deadline inputs cannot mutate business state\nok 5 - HTTP malformed/oversize/version/deadline inputs cannot mutate business state\n  ---\n  duration_ms: 70.95725\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1013.918541\n",
+  "stderr": ""
+}

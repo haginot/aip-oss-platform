@@ -1,0 +1,80 @@
+{
+  "contractVersion": "1.0.0",
+  "rows": [
+    {
+      "path": "get",
+      "actor": "operator",
+      "onBehalfOf": null,
+      "policyVersion": "1.0.0",
+      "allowed": true,
+      "denied": "NOT_FOUND"
+    },
+    {
+      "path": "list",
+      "actor": "operator",
+      "onBehalfOf": null,
+      "policyVersion": "1.0.0",
+      "allowed": true,
+      "denied": "PERMISSION_DENIED"
+    },
+    {
+      "path": "search",
+      "actor": "operator",
+      "onBehalfOf": null,
+      "policyVersion": "1.0.0",
+      "allowed": true,
+      "denied": "PERMISSION_DENIED"
+    },
+    {
+      "path": "column",
+      "actor": "operator",
+      "onBehalfOf": null,
+      "policyVersion": "1.0.0",
+      "allowed": true,
+      "denied": "PERMISSION_DENIED"
+    },
+    {
+      "path": "Action",
+      "actor": "operator",
+      "onBehalfOf": null,
+      "policyVersion": "1.0.0",
+      "allowed": true,
+      "denied": "PERMISSION_DENIED"
+    },
+    {
+      "path": "AI tool",
+      "actor": "operator",
+      "onBehalfOf": null,
+      "policyVersion": "1.0.0",
+      "allowed": true,
+      "denied": "PERMISSION_DENIED"
+    }
+  ],
+  "delegated": {
+    "actionId": "1eb8cbcc-2d20-4256-8e7e-6957144ca2ac",
+    "state": "PENDING_EXTERNAL",
+    "revision": 2,
+    "operationId": "d32672be-99d4-4976-a858-345a28a6e743",
+    "result": {
+      "targetId": "stock",
+      "objectRevision": 2
+    }
+  },
+  "audit": [
+    {
+      "at": "2026-10-12T15:57:49.004Z",
+      "kind": "PENDING_EXTERNAL",
+      "actor": "agent",
+      "actionId": "1eb8cbcc-2d20-4256-8e7e-6957144ca2ac",
+      "evidence": [],
+      "onBehalfOf": "operator",
+      "inputDigest": "76a8c419b2c82c170f40d309c426d24bf8ee13267297cda46e10fa0518932787",
+      "operationId": "d32672be-99d4-4976-a858-345a28a6e743",
+      "ruleVersion": "1.0.0",
+      "policyVersion": "1.0.0",
+      "objectRevision": 2,
+      "ontologyVersion": "1.0.0",
+      "workflowVersion": "1.0.0"
+    }
+  ]
+}

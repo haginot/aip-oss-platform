@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "trigger-foundation",
+  "startedAt": "2026-10-12T15:58:03.936Z",
+  "finishedAt": "2026-10-12T15:58:05.173Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 4,
+  "passed": 4,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: public durable scheduler coalesces forward clock jump, refuses duplicate/backward fire and reauthorizes\nok 1 - public durable scheduler coalesces forward clock jump, refuses duplicate/backward fire and reauthorizes\n  ---\n  duration_ms: 622.101958\n  type: 'test'\n  ...\n# Subtest: failure between effect and fire acknowledgement resumes same fire ID with Inbox duplicate suppression\nok 2 - failure between effect and fire acknowledgement resumes same fire ID with Inbox duplicate suppression\n  ---\n  duration_ms: 87.252292\n  type: 'test'\n  ...\n# Subtest: launcher timer actually advances a persisted schedule without client tick\nok 3 - launcher timer actually advances a persisted schedule without client tick\n  ---\n  duration_ms: 120.996792\n  type: 'test'\n  ...\n# Subtest: reconcile schedule retains UNKNOWN until real ERP ledger resolves original operation\nok 4 - reconcile schedule retains UNKNOWN until real ERP ledger resolves original operation\n  ---\n  duration_ms: 163.295875\n  type: 'test'\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 4\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1213.124084\n",
+  "stderr": ""
+}

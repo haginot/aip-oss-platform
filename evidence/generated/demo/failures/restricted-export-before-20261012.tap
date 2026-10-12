@@ -1,0 +1,298 @@
+TAP version 13
+# Subtest: store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+not ok 1 - store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+  ---
+  duration_ms: 1062.105166
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:50:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: store restricted export: ordinary quarantine and lost acknowledgement
+not ok 2 - store restricted export: ordinary quarantine and lost acknowledgement
+  ---
+  duration_ms: 244.091833
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:67:55'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:82:2
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:37:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store restricted export: delegated quarantine and lost acknowledgement
+not ok 3 - store restricted export: delegated quarantine and lost acknowledgement
+  ---
+  duration_ms: 249.393042
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:67:55'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:82:2
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:37:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store restricted export: approved quarantine and lost acknowledgement
+not ok 4 - store restricted export: approved quarantine and lost acknowledgement
+  ---
+  duration_ms: 241.790625
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:67:55'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:82:2
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:37:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+not ok 5 - store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+  ---
+  duration_ms: 423.345708
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:99:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store concurrent isolation, replay and mismatched key preserve one effect
+ok 6 - store concurrent isolation, replay and mismatched key preserve one effect
+  ---
+  duration_ms: 245.686833
+  type: 'test'
+  ...
+# Subtest: store approval rechecks changed candidate and original delegation
+not ok 7 - store approval rechecks changed candidate and original delegation
+  ---
+  duration_ms: 369.457875
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:121:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store external rejection blocks customer notice; lost ack reconciles without resend
+not ok 8 - store external rejection blocks customer notice; lost ack reconciles without resend
+  ---
+  duration_ms: 434.532709
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:127:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store unknown external success reconciles without blind resend
+not ok 9 - store unknown external success reconciles without blind resend
+  ---
+  duration_ms: 363.128083
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:133:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+not ok 10 - store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+  ---
+  duration_ms: 437.837209
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:141:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store published Workflow threshold gates quarantine and low-value procurement
+not ok 11 - store published Workflow threshold gates quarantine and low-value procurement
+  ---
+  duration_ms: 397.738917
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:163:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store published Rule rejects validate and submit without business mutation
+ok 12 - store published Rule rejects validate and submit without business mutation
+  ---
+  duration_ms: 200.319958
+  type: 'test'
+  ...
+# Subtest: store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+not ok 13 - store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+  ---
+  duration_ms: 441.566417
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:190:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store quarantine dependency race keeps one isolation and rejects stale evidence
+not ok 14 - store quarantine dependency race keeps one isolation and rejects stale evidence
+  ---
+  duration_ms: 247.968334
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:215:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store replacement unknown success blocks notice until reconciliation and never resends
+not ok 15 - store replacement unknown success blocks notice until reconciliation and never resends
+  ---
+  duration_ms: 473.330958
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:227:1'
+  failureType: 'testCodeFailure'
+  error: 'restricted Object column must not enter external ERP payload'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'secret'
+  actual: 'secret'
+  operator: 'notStrictEqual'
+  stack: |-
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:16:10)
+    assertNoRestricted (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:18:3)
+    run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:44:28)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 2
+# fail 13
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6082.907

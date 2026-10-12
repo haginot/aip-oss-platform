@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "process-volume-foundation",
+  "startedAt": "2026-10-12T15:57:51.385Z",
+  "finishedAt": "2026-10-12T15:57:55.790Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 6,
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: actual SIGKILL at before-intent: reopened DB/journal never infer acknowledgement\nok 1 - actual SIGKILL at before-intent: reopened DB/journal never infer acknowledgement\n  ---\n  duration_ms: 3250.792584\n  type: 'test'\n  ...\n# Subtest: actual SIGKILL at after-intent: reopened DB/journal never infer acknowledgement\nok 2 - actual SIGKILL at after-intent: reopened DB/journal never infer acknowledgement\n  ---\n  duration_ms: 143.095167\n  type: 'test'\n  ...\n# Subtest: actual SIGKILL at before-commit: reopened DB/journal never infer acknowledgement\nok 3 - actual SIGKILL at before-commit: reopened DB/journal never infer acknowledgement\n  ---\n  duration_ms: 176.928042\n  type: 'test'\n  ...\n# Subtest: actual SIGKILL at after-commit: reopened DB/journal never infer acknowledgement\nok 4 - actual SIGKILL at after-commit: reopened DB/journal never infer acknowledgement\n  ---\n  duration_ms: 171.838542\n  type: 'test'\n  ...\n# Subtest: actual SIGKILL at after-marker: reopened DB/journal never infer acknowledgement\nok 5 - actual SIGKILL at after-marker: reopened DB/journal never infer acknowledgement\n  ---\n  duration_ms: 151.865917\n  type: 'test'\n  ...\n# Subtest: journal survives disposal of actual independently mounted PostgreSQL volume\nok 6 - journal survives disposal of actual independently mounted PostgreSQL volume\n  ---\n  duration_ms: 3629.700375\n  type: 'test'\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 4378.685875\n",
+  "stderr": ""
+}

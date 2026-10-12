@@ -1,63 +1,767 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "approved",
+  "criticalPath": [
+    "M-01",
+    "M-02",
+    "M-03",
+    "M-04",
+    "M-06",
+    "M-07",
+    "M-08",
+    "M-09"
+  ],
   "milestones": [
     {
-      "id": "M0",
-      "title": "契約と構成の固定",
+      "id": "M-01",
+      "title": "再現可能な基盤起動",
       "status": "planned",
       "dependsOn": [],
-      "acceptanceCriteria": ["AC-002", "AC-003", "AC-008"],
-      "outcomes": ["47責務の決定", "公開Portと型の仕様", "脅威・license・運用判断"]
+      "acceptanceCriteria": [
+        "AC-001"
+      ],
+      "outcomes": [
+        "実装: D-01のpinned Node/PostgreSQLと別principal/DBのsynthetic ERPを隔離compose/process構成で起動し、migration、health・seed入口を用意する。",
+        "反例test: 空DB起動、既存schema不一致、health未完了、secret未設定を検査し、有料依存なしで失敗理由を示す。",
+        "demo: 新規volumeから起動しseed店舗・商品・ロットをAPI/UIで確認する。",
+        "証拠: foundation-bootstrap (implementation) receiptへcompose/process config・migration・seed・testの入力hashと起動/health結果artifactを結ぶ。M-08で空環境から再実行する。"
+      ],
+      "exitCriteria": "AC-001はこの実装をM-08でclean bootstrap再実行して判定する。",
+      "workflowStep": "build-foundation",
+      "verificationStage": "implementation",
+      "plannedSuites": [
+        "foundation-bootstrap"
+      ]
     },
     {
-      "id": "M1",
-      "title": "Platform Kernel",
+      "id": "M-02",
+      "title": "Ontology/Object/Action・定義公開・耐久journal基盤",
       "status": "planned",
-      "dependsOn": ["M0"],
-      "acceptanceCriteria": ["AC-002", "AC-003", "AC-004"],
-      "outcomes": ["Ontology/Object/Action", "認可", "State/Outbox/Audit", "contract test"]
+      "dependsOn": [
+        "M-01"
+      ],
+      "acceptanceCriteria": [
+        "AC-002",
+        "AC-004"
+      ],
+      "outcomes": [
+        "実装: versioned Ontology、Object get/有限query/link、期待revision更新、型付きAction/state、transactional Outbox/Inbox/Audit/source checkpointを公開Port/Adapterで提供する。compositionの採用責務・非採用capabilityの契約試験入口も実装する。 元IDでjoinできるredacted構造化log/metrics、履歴・lineage・quality/quarantine・source cursor再開も採用契約に含める。",
+        "実装: Ontology/Rule/Policy/Workflowのimmutable digest付きdraft→diff→型/互換性検証・有限simulation→review→publish→利用→rollbackをAuthoring操作面に接続し、公開schemaから型付きclientを生成する（D-07）。rollbackは互換な定義への公開切戻しであり、外部効果の取消は別Actionとする。",
+        "実装: DB復元境界外の別volumeにRecoveryJournalPortを置く。元Action/event/operation ID・canonical input digest・actor/expected revision/版/証拠をINTENTとしてfsync後DB transactionを開始し、commit後COMMITTED markerをfsyncしてからdurable ack/配送を許可する。directory fsync・部分append検出・epoch/hashchain/checkpointと認可付き有限列挙を備える（D-11）。",
+        "実装: Action keyと最小結果、Inbox ID、ERP operation ledger、journal/checkpointを期限なし保持し、30日Audit保持とは分離する。synthetic ERPは別principal/DB/HTTP境界でledgerと効果を独立transactionに記録し、元operationIdを配送前に確定する（D-04/D-05/D-11）。",
+        "実装: D-08のRetrievalPort比較harness、SQL scan baseline、版/認可/削除/revision/watermark probeと共有corpus形式をfoundationで用意する。新しい永続投影と切替はM-05で担当する。",
+        "反例test: schema不整合、stale revision、並行更新、同key同入力・異入力、timeout、各write途中停止、audit失敗rollback、lease切れ・重複・逆順・poison messageで状態/Action/Outbox/Audit整合性を検査する。",
+        "反例test: 未審査/無権限publish、非互換schema、不正migration、旧新client混在、定義切替時の既存承認staleと現行版による再認可/再評価、rollback target不整合を検査する。",
+        "反例test: INTENT前・後、DB commit前・後、COMMITTED fsync前・後に停止し、journal失敗時のack/配送禁止、同ID再送、key mismatch、30日境界前後と多年後のdedup、missing ledgerをunknownとすることを検査する。既存architecture-contract-metadata suiteのarchitecture-check/testでは、RECOVERY_CONTRACT.journal.recoveryRangeの削除またはcheckpoint以前の未解決操作を除く縮小を反例fixtureで拒否する。DB破壊復元の実動横断演習はM-06で実行する。",
+        "demo: synthetic Lot→Store/InventoryPositionの参照から型付きclientでActionを実行し、state/Outbox/Audit/journalの元IDを辿る。Authoring操作面でdraft差分・simulation・審査公開・利用・互換rollbackを実行し、旧client/承認待ちへの結果を確認する。",
+        "証拠: kernel-contracts、definition-lifecycle、recovery-journal-foundation、retrieval-comparison-foundationのimplementation receiptへ実source/test/config/schema/client generator入力hashと契約結果、公開/rollback digest・approver、client互換結果、停止点別journal/DB照合、保持境界結果、比較probe artifactを結ぶ。"
+      ],
+      "exitCriteria": "定義公開/rollbackと生成clientが実操作でき、拒否・互換性・stale承認が観測される。別volume journalのINTENT→DB commit→COMMITTED→ack/配送順と期限なしdedupが実Adapter反例試験で成立するまで、M-03/M-04へ進めない。",
+      "workflowStep": "build-foundation",
+      "verificationStage": "implementation",
+      "plannedSuites": [
+        "kernel-contracts",
+        "definition-lifecycle",
+        "recovery-journal-foundation",
+        "retrieval-comparison-foundation"
+      ]
     },
     {
-      "id": "M2",
-      "title": "Authoring・Business操作面",
+      "id": "M-03",
+      "title": "信頼境界・認可・委任",
       "status": "planned",
-      "dependsOn": ["M1"],
-      "acceptanceCriteria": ["AC-001", "AC-002", "AC-003"],
-      "outcomes": ["定義公開", "型付きclient", "業務操作と可視権限"]
+      "dependsOn": [
+        "M-02"
+      ],
+      "acceptanceCriteria": [
+        "AC-003"
+      ],
+      "outcomes": [
+        "実装: trusted actor/onBehalfOf、Object/一覧/検索/列/Action/AI toolの共通policy、fail-closedと版付き判断根拠を実装する。 synthetic鍵/secretは制限fileとopaque referenceで扱い、無許可decrypt・file権限・rotation overlap・ログredactionの反例を実行する。",
+        "反例test: tenant/store越境、列・件数・snippet漏えい、失効委任、policy障害、無許可tool、根拠欠落を拒否する。 policy epoch変更とcommitの競合、失効直後read/Action、委任scope拡張・再委任、偽actor、prompt injection・根拠改ざん・型違反も固定反例として扱う。",
+        "demo: 店舗担当者と地域承認者の許可/拒否を同じRecall caseで操作し、Auditへ追跡する。",
+        "証拠: implementation suiteが主体・scope・判定理由・policy版を含む認可matrix artifactをhash付きで生成する。"
+      ],
+      "exitCriteria": "許可と拒否の全経路が信頼境界で確定した主体に基づき、漏えい・副作用なしと監査理由を示す。",
+      "workflowStep": "build-foundation",
+      "verificationStage": "implementation",
+      "plannedSuites": [
+        "authorization-delegation"
+      ]
     },
     {
-      "id": "M3",
-      "title": "商品回収・代替調達の垂直slice",
+      "id": "M-04",
+      "title": "商品回収・代替調達の実動slice",
       "status": "planned",
-      "dependsOn": ["M2"],
-      "acceptanceCriteria": ["AC-004", "AC-005"],
-      "outcomes": ["正常・拒否・競合・timeoutのE2E", "追跡可能なデモ"]
+      "dependsOn": [
+        "M-03"
+      ],
+      "acceptanceCriteria": [
+        "AC-005"
+      ],
+      "outcomes": [
+        "実装: recall impact、隔離、承認、代替transfer/purchase、顧客通知、ERP/WMS writebackを共通Action Engineへ接続する。 M-02で成立したjournal/元operationId/独立ERP ledgerを必ず使用する。",
+        "反例test: 権限拒否、競合、承認待ち、同key再送/異入力、外部明示失敗、timeout後の外部成功を独立caseで検査する。",
+        "demo: 正常・拒否・競合・承認待ち・外部反映失敗をUI/APIから操作しOntology/rule版・主体・証拠へ辿る。AIを使う場合は根拠欠落・型違反・範囲外tool・承認未了を拒否する。 定義変更後の承認stale・再評価を店舗操作面で表示する。",
+        "証拠: demo suite receipt、synthetic seed、machine-readable traceと期待/実結果を再生成可能artifactとして結ぶ。",
+        "実装: M-02の比較harnessへ店舗ロット・証拠corpusとupdate/delete/revoke・遅延checkpoint caseを追加する。",
+        "反例test: SQL scan baselineで店舗越境・削除・失効・旧revision根拠を拒否し、比較期待値を生成する。",
+        "demo: 同じ回収caseの根拠検索と権限変更/削除後の結果を操作する。",
+        "証拠: retrieval-store-corpusのdemo receiptにcorpus seed/期待値/probeと検索結果・権限/削除/revision/watermarkを記録しM-05で再利用する。"
+      ],
+      "exitCriteria": "必須5経路が同一実動基盤上で完走し、結果と失敗理由がAction/Audit相関IDで確認できる。",
+      "workflowStep": "build-store-demo",
+      "verificationStage": "demo",
+      "plannedSuites": [
+        "store-recall-procurement",
+        "retrieval-store-corpus"
+      ]
     },
     {
-      "id": "M4",
-      "title": "BCPと復旧演習",
+      "id": "M-05",
+      "title": "Adapter交換・差分移行",
       "status": "planned",
-      "dependsOn": ["M3"],
-      "acceptanceCriteria": ["AC-006"],
-      "outcomes": ["縮退mode", "照合・補償", "復元とRPO/RTO実測"]
+      "dependsOn": [
+        "M-02",
+        "M-04"
+      ],
+      "acceptanceCriteria": [
+        "AC-007"
+      ],
+      "outcomes": [
+        "実装: D-08のSQL scan→独立永続evidence projectionを同じRetrievalPortで実装する。Object/source revision、tombstone、event checkpointを保存し、snapshot backfill→差分catch-up→shadow→writer fence→cutover→cutbackの再開可能な移行を行う。",
+        "反例test: M-02 harness/M-04店舗corpusでID・型・Ontology/source/object revision・evidence digest・mask/deny・安定順序・watermark差を照合する。業務結果/認可差は許容0。重複/逆順/gap、delete/revoke直後、移行中断・再起動、切戻し、遅延/不明projectionの正本fallbackまたはUNAVAILABLEを検査し、不一致時切替を拒否する。",
+        "demo: 同じ店舗synthetic workloadを旧新Adapterでshadow比較し、バックフィル/照合・切替・切戻し後に回収根拠検索とAction traceが維持されることを実演する。",
+        "証拠: retrieval-adapter-exchangeのrelease receiptへ両Adapter/比較harness/共有corpus/migration/config/test入力hash、出力diff・checkpoint・削除/失効probe・切替/切戻し結果artifactを結ぶ。"
+      ],
+      "exitCriteria": "永続状態を持つ投影への交換をharden-releaseで完了し、D-08の意味・認可差0、移行再開・切替拒否・切戻しを実測する。foundation/demoの比較証拠だけではAC-007をPASSにしない。",
+      "workflowStep": "harden-release",
+      "verificationStage": "release",
+      "plannedSuites": [
+        "retrieval-adapter-exchange"
+      ],
+      "executionSuites": [
+        "adapter-replacement"
+      ]
     },
     {
-      "id": "M5",
-      "title": "Adapter交換実証",
+      "id": "M-06",
+      "title": "縮退運転・障害復旧BCP",
       "status": "planned",
-      "dependsOn": ["M3"],
-      "acceptanceCriteria": ["AC-007"],
-      "outcomes": ["shadow比較", "状態または意味差の移行", "切替・切戻し"]
+      "dependsOn": [
+        "M-04"
+      ],
+      "acceptanceCriteria": [
+        "AC-006"
+      ],
+      "outcomes": [
+        "実装: M-02の検証済みjournal/元ID/独立ERP ledgerを使いcontinuity mode、受付/配送fence、backup/WAL restore、epoch全列挙と復元DBのunion照合、重複排除・別operationIdの認可付き補償を運転入口に接続する。journalをここで初めて導入しない。",
+        "反例test: WAN/ERP断、ack不明、restart、DB-only restore、journal gap/deny、重複・逆順・commit不明で受付/配送fenceとno-duplicateを検査する。 RECOVERY_CONTRACTの8scenarioを全件実行し、checkpoint以前の未解決を含めて列挙する。試験oracleのIDを復旧入力へ渡さず、欠落/未適用/不明を区別しRecoveryObservedで再構成を示す。",
+        "demo: clean checkpoint後の成功不明、再起動、復旧、照合、必要な補償まで一演習を完走する。",
+        "証拠: bcp receiptにmonotonic計測、RPO/RTO、損失・重複・未解決一覧、journal/ERP/input/output hashを記録する。"
+      ],
+      "exitCriteria": "ops/BCP.mdのprocess/WAN ack-loss RPO=0、DB backup/WAL RPO≤60秒、local RTO≤120秒、pending分類≤300秒を実測する。損失/重複/未解決ID・manual repairを漏らさず、未解決の処理を完了扱いしない。target超過はFAILとする。",
+      "workflowStep": "build-bcp",
+      "verificationStage": "bcp",
+      "plannedSuites": [
+        "store-continuity-recovery"
+      ]
     },
     {
-      "id": "M6",
-      "title": "OSS release hardening",
+      "id": "M-07",
+      "title": "OSS運用・供給網hardening",
       "status": "planned",
-      "dependsOn": ["M4", "M5"],
-      "acceptanceCriteria": ["AC-001", "AC-008", "AC-009"],
-      "outcomes": ["clean bootstrap", "全回帰", "SBOM/license/security", "独立監査"]
+      "dependsOn": [
+        "M-05",
+        "M-06"
+      ],
+      "acceptanceCriteria": [
+        "AC-008"
+      ],
+      "outcomes": [
+        "実装: backup/restore、観測、upgrade/rollback、retention、license/SBOM/vulnerability/secret gateをOSS既定構成に組み込む。",
+        "反例test: license不明・禁止依存、脆弱性基準超過、secret混入、backup不整合、upgrade失敗時のrollbackを検査する。",
+        "demo: 再配布可能なOSS profileで供給網検査と隔離backup restore/rollback probeを実演する。",
+        "証拠: release suite receiptにlock/container/config/source/test入力とSBOM/license/security/restore report artifact hashを結ぶ。"
+      ],
+      "exitCriteria": "既定構成を再配布可能と検査し、運用復旧とロールバックの実行結果を残す。",
+      "workflowStep": "harden-release",
+      "verificationStage": "release",
+      "plannedSuites": [
+        "oss-operations-supply-chain"
+      ],
+      "executionSuites": [
+        "release-supply-chain",
+        "release-operations"
+      ]
+    },
+    {
+      "id": "M-08",
+      "title": "Clean bootstrap・統合gate",
+      "status": "planned",
+      "dependsOn": [
+        "M-02",
+        "M-03",
+        "M-04",
+        "M-05",
+        "M-06",
+        "M-07"
+      ],
+      "acceptanceCriteria": [
+        "AC-001",
+        "AC-002",
+        "AC-003",
+        "AC-004",
+        "AC-005",
+        "AC-006",
+        "AC-007",
+        "AC-008",
+        "AC-009"
+      ],
+      "outcomes": [
+        "実装: 一入口bootstrap、implementation/demo/bcp/release gate、Acceptance Matrixから最新receiptとsemantic evidenceへの追跡を接続する。",
+        "反例test: 入力改変によるreceipt失効、失敗後の旧PASS再利用、missing output、skip/mock、同じunit testをdemo/BCPへ流用することを拒否する。",
+        "demo: 新規環境でbootstrapから店舗sliceとBCPまでを連続再生する。",
+        "証拠: 各stageの最新成功receiptとAC別matrix evidenceを照合し、artifact再生成を確認する。",
+        "実装: final-current-input-audit checker、監査前receipt snapshot生成入口とAC索引照合をharden-releaseで実装する。release suiteとして実行し、現行hash付き機械監査artifactとAC-009 READY_FOR_REVIEWをM-09へ渡す。",
+        "反例test: stale hash・未実行suite・未解決FAIL・必須output欠落を監査checkerがnonzero exitで拒否する。",
+        "demo: 全ACの現行code/test/receipt/semantic outputへ機械的に辿り、別session reviewer用の読み取り監査一式を生成する。",
+        "証拠: final-current-input-auditのrelease receiptとcurrent-input-audit.jsonをAC-009の機械監査側の根拠とする。独立verdictはM-09で別途取得する。"
+      ],
+      "exitCriteria": "AC-001〜008のmachine gateと観測可能な意味証拠がすべて現行入力hashに一致する。",
+      "workflowStep": "harden-release",
+      "verificationStage": "release",
+      "plannedSuites": [
+        "clean-bootstrap-integration",
+        "final-current-input-audit"
+      ],
+      "executionSuites": [
+        "clean-bootstrap",
+        "final-current-input-audit"
+      ]
+    },
+    {
+      "id": "M-09",
+      "title": "独立最終監査",
+      "status": "planned",
+      "dependsOn": [
+        "M-08"
+      ],
+      "acceptanceCriteria": [
+        "AC-009"
+      ],
+      "outcomes": [
+        "実装: M-08で実装・実行された監査checker/公開操作/receipt索引をreadonlyで検査する。final-audit自身ではsource・suite・証拠を作成/更新せず、修正必要時は該当実装工程へ戻す。",
+        "反例test: M-08のstale hash・未実行suite・未解決FAIL拒否結果を確認し、readonly final gateと独立の反例確認でreviewer sessionの分離・入力十分性・意味を検査する。",
+        "demo: 別session reviewerがACごとの実動経路と正常/拒否/BCP反例を確認する。",
+        "証拠: M-08のfinal-current-input-audit release receiptを現行入力へ照合する。TAKTが保存する別session final-auditorの独立verdict/AC別根拠/対象hash/未解決項目をAC-009の最終承認証拠とし、機械receiptで独立性を代替しない。"
+      ],
+      "exitCriteria": "別sessionのreviewerが現在のコード・証拠を辿って承認し、未検証事項を完成扱いしない。",
+      "workflowStep": "final-audit",
+      "verificationStage": "release",
+      "plannedSuites": [
+        "final-current-input-audit"
+      ],
+      "suiteProducerMilestone": "M-08",
+      "implementationMilestone": "M-08",
+      "readOnlyCheck": [
+        "node",
+        "scripts/platform-control.mjs",
+        "validate",
+        "final"
+      ]
+    }
+  ],
+  "approvalScope": "Delivery plan only; all milestones remain planned and completion requires current-input successful receipts plus independent stage review. Product AC states remain authoritative in evidence/ACCEPTANCE_MATRIX.md; this approval does not change them.",
+  "parallelBranches": [
+    {
+      "after": "M-04",
+      "branches": [
+        [
+          "M-06"
+        ],
+        [
+          "M-05"
+        ]
+      ],
+      "join": "M-07",
+      "executionNote": "依存graph上は独立。TAKTではbuild-bcpでM-06、harden-releaseでM-05を実行し、両方の証拠が揃ってM-07へ進む。期間見積もりは未測定。"
+    }
+  ],
+  "responsibilityCoverage": [
+    {
+      "roleId": "ingest",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/ingest: snapshot restart, repeated cursor, delete and invalid input quarantine",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "cdc",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/cdc: snapshot/change overlap, source position gap, reorder and delete",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "pipeline",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/pipeline: crash after checkpoint, cancellation and duplicate start",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "transform",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/transform: invalid unit, deterministic rerun and lineage equality",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "quality",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/quality: bad lot, invalid quantity, quarantine and release audit",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "identity-map",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/identity-map: cross-tenant key collision and mapping-version migration",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "blob",
+      "architectureStatus": "selected",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/blob: hash mismatch, unauthorized range read and retention hold",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "lake-table",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: lake-table advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "analytics",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/analytics: aggregate leakage, parameter injection and timeout",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "ontology",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/ontology: incompatible change, publish privilege and rollback manifest",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "object-api",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/object-api: get/list/search/column parity, traversal budget and stale cursor",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "object-store",
+      "architectureStatus": "selected",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/object-store: concurrent compare-and-swap, abort at each write and unknown commit",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "graph",
+      "architectureStatus": "selected",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/graph: edge type validation, hidden endpoint and hop/time budget",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "text-search",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/text-search: ACL after index lag, count leakage and deterministic pagination",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "retrieval",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/retrieval: shadow IDs/types/revisions/masks, stale projection and cutback",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08",
+      "exchangeMilestone": "M-05",
+      "corpusMilestone": "M-04"
+    },
+    {
+      "roleId": "history",
+      "architectureStatus": "selected",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/history: asOf boundary, revoked historical access and retention",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "metrics",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/metrics: cross-region count leak and definition-version mismatch",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "rules",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-04",
+      "verificationObligation": [
+        "contract-suite/rules: rule change during approval and explainable deny",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "compute",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-04",
+      "verificationObligation": [
+        "contract-suite/compute: overflow, invalid typed input and deterministic evidence",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "action",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/action: deny, conflict, key mismatch, replay and stale approval",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "workflow",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-04",
+      "verificationObligation": [
+        "contract-suite/workflow: restart pending approval, double approver and denied compensation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "writeback",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/writeback: external succeeded/lost ack, dedup, conflict and compensation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "event",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/event: lease expiry, duplicate, reorder, poison message and restart",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "stream",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: stream advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "trigger",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/trigger: clock jump, missed run and duplicate fire",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "agent",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: agent advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "model",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: model advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "embedding",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: embedding advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "parse",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: parse advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "ai-eval",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/ai-eval: forged actor, prompt-injected tool args and unauthorized evidence",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "guard",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/guard: forged delegation, arbitrary SQL/shell and cross-tenant evidence",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "feature",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: feature advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "identity",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/identity: forged/expired session, issuer profile unsupported and isolation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "relationship-auth",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/relationship-auth: revocation on read/action and tuple version drift",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "attribute-auth",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/attribute-auth: mask parity, unknown attribute and policy store outage",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "delegation",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/delegation: replay, expired token, wrong audience and escalation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "secrets",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-03",
+      "verificationObligation": [
+        "contract-suite/secrets: file permission, rotation overlap, unauthorized decrypt and redaction",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08",
+      "hardeningMilestone": "M-07"
+    },
+    {
+      "roleId": "metadata",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/metadata: missing evidence, source mapping and trace correlation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "audit",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/audit: rollback/no orphan, tamper attempt and restore audit chain",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "observability",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/observability: failure classification, secret redaction and queue lag",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08",
+      "hardeningMilestone": "M-07"
+    },
+    {
+      "roleId": "schema-release",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/schema-release: mixed clients, invalid migration, restart and rollback compatibility",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "deployment",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-01",
+      "verificationObligation": [
+        "contract-suite/deployment: empty-directory bootstrap, pin verification and partial startup cleanup",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "gateway",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/gateway: oversize, malformed payload, deadline and trace propagation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "cache",
+      "architectureStatus": "not-needed",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "capability-profile: cache advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "recovery",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/recovery: WAN/core outage, restart, restore, unknown writeback and measured RPO/RTO",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "integrationMilestone": "M-08",
+      "exerciseMilestone": "M-06"
+    },
+    {
+      "roleId": "business-ui",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-04",
+      "verificationObligation": [
+        "contract-suite/business-ui: pending/conflict/denied/external failure rendering and raw API bypass",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
+    },
+    {
+      "roleId": "authoring-ui",
+      "architectureStatus": "provided",
+      "implementationMilestone": "M-02",
+      "verificationObligation": [
+        "contract-suite/authoring-ui: unreviewed publish, incompatible schema and approval provenance",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "integrationMilestone": "M-08"
     }
   ]
 }
-

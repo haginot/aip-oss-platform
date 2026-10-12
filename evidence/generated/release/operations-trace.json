@@ -1,0 +1,17 @@
+{
+  "checkpoint": {
+    "dump": "ee5b3314280e10a1e02d0b7a4dfa2edd2d59103b72e891be6c045189ad19759d",
+    "journal": "82516be3729d5552530d5e43c875143574ffe1ded23a8d2d1c8f41b723aed7ef"
+  },
+  "backupMode": "quiescent synthetic schema + unchanged independent journal; BCP separately tests restored older DB",
+  "upgrade": "001->002",
+  "failedUpgradeRolledBack": true,
+  "rollback": "drop disposable projection only",
+  "restoredObjects": 6,
+  "auditRows": 1,
+  "auditHead": "1e01349a39988b931e832b4daac28d237126765e56ee73b3065d1536eac298c3",
+  "retryActionId": "2dcfab0b-1df0-464a-a0d1-f435d23d8ad6",
+  "outboxCount": 1,
+  "corruptionDetected": true,
+  "scope": "owned synthetic schema only"
+}

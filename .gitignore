@@ -15,3 +15,6 @@ build/
 
 # Verification command logs are ephemeral. Fingerprinted receipts remain tracked (not signed).
 evidence/runs/*.log
+
+# Owned OSS runtime cache for release bootstrap
+.release-runtime/

@@ -6,11 +6,28 @@
       "stage": "mechanism",
       "description": "監督script、workflow schema、初期goalを検査する。",
       "commands": [
-        ["node", "--test", "tests/platform-control.test.mjs", "tests/model-routing.test.mjs", "tests/codex-runtime.test.mjs"],
-        ["node_modules/.bin/takt", "workflow", "doctor", "platform-lifecycle"],
-        ["node", "scripts/platform-control.mjs", "validate", "goal"]
+        [
+          "node",
+          "--test",
+          "tests/platform-control.test.mjs",
+          "tests/model-routing.test.mjs",
+          "tests/codex-runtime.test.mjs"
+        ],
+        [
+          "node_modules/.bin/takt",
+          "workflow",
+          "doctor",
+          "platform-lifecycle"
+        ],
+        [
+          "node",
+          "scripts/platform-control.mjs",
+          "validate",
+          "goal"
+        ]
       ],
       "inputs": [
+        "LICENSE",
         "package.json",
         "package-lock.json",
         "PRODUCT_GOAL.md",
@@ -18,16 +35,1301 @@
         "tests",
         ".takt/config.yaml",
         ".takt/runtime.yaml",
+        ".takt/tasks.yaml",
         ".takt/tasks/20261011-165645-product-goal-md-ac-001-ac-009/order.md",
         ".takt/workflows",
         ".takt/facets",
         ".takt/quality-gates/platform-gate.sh",
         "docs/DELIVERY_LOOP.md",
         "docs/MODEL_POLICY.md",
-        "architecture/SOURCE_BASELINE.json"
+        "docs/ARCHITECTURE_BASELINE.md",
+        "architecture/SOURCE_BASELINE.json",
+        "architecture/composition.json",
+        "work/DECISION_REQUESTS.md",
+        "work/ROADMAP.json",
+        "docs/DECISIONS.md",
+        "architecture/OSS_BASELINE.json",
+        "architecture/ROLE_CONTRACT_BASELINE.json",
+        "architecture/RECOVERY_CONTRACT.json",
+        "ops/BCP.md"
       ],
       "outputs": [],
       "timeoutMs": 300000
+    },
+    {
+      "id": "architecture-contract-metadata",
+      "stage": "architecture",
+      "description": "Design-only coverage and adoption metadata gate; no product AC runtime claim.",
+      "commands": [
+        [
+          "node",
+          "scripts/platform-control.mjs",
+          "validate",
+          "architecture"
+        ],
+        [
+          "node",
+          "scripts/architecture-check.mjs"
+        ],
+        [
+          "node",
+          "--test",
+          "tests/architecture-check.test.mjs"
+        ]
+      ],
+      "inputs": [
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "PRODUCT_GOAL.md",
+        "architecture",
+        "docs/ARCHITECTURE_BASELINE.md",
+        "docs/DECISIONS.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops/BCP.md",
+        "work/DECISION_REQUESTS.md",
+        "scripts/platform-control.mjs",
+        "scripts/architecture-check.mjs",
+        "tests/architecture-check.test.mjs",
+        "verification/plan.json"
+      ],
+      "outputs": [],
+      "timeoutMs": 300000
+    },
+    {
+      "id": "roadmap-contract-metadata",
+      "stage": "plan",
+      "description": "AC coverage and dependency graph structural validation only; semantic completeness is independently reviewed; no product AC PASS.",
+      "commands": [
+        [
+          "node",
+          "scripts/platform-control.mjs",
+          "validate",
+          "plan"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "architecture",
+        "docs/ARCHITECTURE_BASELINE.md",
+        "docs/DECISIONS.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops/BCP.md",
+        "work/ROADMAP.json",
+        "work/DECISION_REQUESTS.md",
+        "verification/plan.json",
+        "verification/README.md",
+        "scripts/platform-control.mjs",
+        ".takt/workflows/platform-lifecycle.yaml"
+      ],
+      "outputs": [],
+      "timeoutMs": 300000
+    },
+    {
+      "id": "full-release-regression",
+      "stage": "mechanism",
+      "description": "Full Node test discovery under pinned runtime, sequential real process/volume tests, no skip; subsequent stages regenerate semantic outputs",
+      "commands": [
+        [
+          "node",
+          "scripts/release/verify.mjs",
+          "full-release-regression"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "mise.toml",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "tests",
+        "config",
+        "migrations",
+        "scripts",
+        "docs/RELEASE.md",
+        "docs/IMPLEMENTATION.md",
+        "docs/DEMO_RUNBOOK.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops",
+        "licenses",
+        ".takt/quality-gates/platform-gate.sh",
+        "evidence/ACCEPTANCE_MATRIX.md",
+        "verification/README.md",
+        ".takt/runtime.yaml",
+        ".takt/workflows/platform-lifecycle.yaml",
+        ".takt/facets/policies/delivery-integrity.md",
+        ".gitignore",
+        "evidence/FAILURES.md"
+      ],
+      "outputs": [
+        "evidence/generated/release/full-release-regression.json"
+      ],
+      "timeoutMs": 650000
+    },
+    {
+      "id": "foundation-local-contracts",
+      "stage": "implementation",
+      "description": "Standalone typed contracts, generated client wire validation and real filesystem/process journal checks only; no joined DB or product AC PASS.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "foundation-local-contracts"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/foundation-local-contracts.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "foundation-bootstrap",
+      "stage": "implementation",
+      "description": "Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. foundation-bootstrap",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "foundation-bootstrap"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/foundation-bootstrap.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "kernel-contracts",
+      "stage": "implementation",
+      "description": "Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. kernel-contracts Authorized bounded generated-client history, as-of revision and rollback/conflict negatives.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "kernel-contracts"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/kernel-contracts.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "definition-lifecycle",
+      "stage": "implementation",
+      "description": "Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. definition-lifecycle Executable finite Policy/Rule/Workflow authoring, scoped simulation, stale-review rejection and publish/rollback runtime enforcement.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "definition-lifecycle"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/definition-lifecycle.json",
+        "evidence/generated/foundation/authoring-trace.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "recovery-journal-foundation",
+      "stage": "implementation",
+      "description": "Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. recovery-journal-foundation",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "recovery-journal-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/recovery-journal-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "retrieval-comparison-foundation",
+      "stage": "implementation",
+      "description": "Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. retrieval-comparison-foundation",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "retrieval-comparison-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/retrieval-comparison-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "authorization-delegation",
+      "stage": "implementation",
+      "description": "Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. authorization-delegation",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "authorization-delegation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/authorization-delegation.json",
+        "evidence/generated/foundation/authorization-matrix.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "writeback-foundation",
+      "stage": "implementation",
+      "description": "Real independent ERP HTTP/database ledger, lease, authorization, unknown outcome, reconciliation and ordered effects; joined Kernel/Outbox/Audit trace.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "writeback-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/writeback-foundation.json",
+        "evidence/generated/foundation/writeback-trace.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "process-volume-foundation",
+      "stage": "implementation",
+      "description": "Real Kernel SIGKILL boundaries with separately mounted task-owned APFS DB/journal volumes; no DB restore or RPO/RTO claim.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "process-volume-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/process-volume-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "retention-foundation",
+      "stage": "implementation",
+      "description": "Real PostgreSQL/ERP retained-key, Inbox, ledger and immutable Audit checks at logical application-clock 30-day ±1-second and 18-year boundaries, plus missing-ledger UNKNOWN and unresolved-INTENT fences. No wall-clock elapsed-time or DB TTL claim.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "retention-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/retention-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "secrets-foundation",
+      "stage": "implementation",
+      "description": "Restrictive synthetic file-key injection, AES-GCM opaque refs, capability-based decryption denial, rotation overlap/remote revocation and actual ERP HTTP delivery; wrong key or tampering fences effects.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "secrets-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/secrets-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "ingestion-foundation",
+      "stage": "implementation",
+      "description": "Real synthetic source cursor, quality quarantine, correction, lineage, deletion and transactional failures through authorized Kernel/HTTP.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "ingestion-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/ingestion-foundation.json",
+        "evidence/generated/foundation/ingestion-trace.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "operations-foundation",
+      "stage": "implementation",
+      "description": "Per-reference service identity authorization and durable Audit gate actual secret release/ERP HTTP; redacted scoped status observations through generated HTTP client.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "operations-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/operations-foundation.json",
+        "evidence/generated/foundation/secret-access-trace.json",
+        "evidence/generated/foundation/observability-trace.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "pipeline-foundation",
+      "stage": "implementation",
+      "description": "Durable snapshot/change pipeline, cancellation and actual process checkpoint recovery",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "pipeline-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/pipeline-foundation.json",
+        "evidence/generated/foundation/pipeline-trace.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "data-services-foundation",
+      "stage": "implementation",
+      "description": "Blob retention, reviewed identity mapping, scoped analytics and trace correlation",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "data-services-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/data-services-foundation.json",
+        "evidence/generated/foundation/data-services-trace.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "trigger-foundation",
+      "stage": "implementation",
+      "description": "Durable schedules, clock jumps, duplicate fire, retry and ERP reconciliation",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "trigger-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/trigger-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "boundary-foundation",
+      "stage": "implementation",
+      "description": "Unavailable capability profile, graph type and HTTP budgets with no business side effects",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "boundary-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/boundary-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "review-regressions-foundation",
+      "stage": "implementation",
+      "description": "Independent review B-001–004 regressions over real PostgreSQL and generated HTTP: journal namespaces/restart, original approval evidence scope and commit locks, reviewed rollback rejection and consistent search authorization.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "review-regressions-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/review-regressions-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "authoring-concurrency-foundation",
+      "stage": "implementation",
+      "description": "B-FOUNDATION-005: deterministic real PostgreSQL and generated HTTP review/edit/publication interleavings, monotonic case revision CAS, stale simulation/rollback rejection and transactional publication failure.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "authoring-concurrency-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/authoring-concurrency-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "publication-objects-foundation",
+      "stage": "implementation",
+      "description": "B-FOUNDATION-006: real DB/HTTP publication versus Action interleavings, Policy-before-Object locking, publisher serialization, checked-row protection, denial and failure rollback with fresh-review recovery.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "publication-objects-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/publication-objects-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "store-recall-procurement",
+      "stage": "demo",
+      "description": "Real HTTP store workflow, published Rule/Workflow composition, scoped approval-denial Audit, dependency races and procurement UNKNOWN reconciliation. B-FINAL-001: per-Action typed ERP export, recursive restricted-column exclusion for ordinary/delegated/approved quarantine and lost-ACK digest reconciliation. Original delegated quarantine authority expiry after ERP commit, procurement fence and renewed reconciliation through customer response.",
+      "commands": [
+        [
+          "node",
+          "scripts/demo/verify.mjs",
+          "store-recall-procurement"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs",
+        "scripts/demo",
+        "tests/demo",
+        "docs/DEMO_SCENARIOS.md",
+        "docs/DEMO_RUNBOOK.md"
+      ],
+      "outputs": [
+        "evidence/generated/demo/store-recall-procurement.json",
+        "evidence/generated/demo/normal.json",
+        "evidence/generated/demo/denials.json",
+        "evidence/generated/demo/conflict.json",
+        "evidence/generated/demo/stale-approval.json",
+        "evidence/generated/demo/external-failure.json",
+        "evidence/generated/demo/definition-change.json",
+        "evidence/generated/demo/unknown-success.json",
+        "evidence/generated/demo/published-workflow.json",
+        "evidence/generated/demo/published-rule.json",
+        "evidence/generated/demo/approval-denial-context.json",
+        "evidence/generated/demo/quarantine-race.json",
+        "evidence/generated/demo/procurement-unknown.json",
+        "evidence/generated/demo/restricted-export-ordinary.json",
+        "evidence/generated/demo/restricted-export-delegated.json",
+        "evidence/generated/demo/restricted-export-approved.json",
+        "evidence/generated/demo/quarantine-authority-expiry.json",
+        "evidence/generated/demo/worker-denial-context.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "retrieval-store-corpus",
+      "stage": "demo",
+      "description": "Real HTTP store workflow and authoritative evidence corpus with normal and exceptional paths.",
+      "commands": [
+        [
+          "node",
+          "scripts/demo/verify.mjs",
+          "retrieval-store-corpus"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs",
+        "scripts/demo",
+        "tests/demo",
+        "docs/DEMO_SCENARIOS.md",
+        "docs/DEMO_RUNBOOK.md"
+      ],
+      "outputs": [
+        "evidence/generated/demo/retrieval-store-corpus.json",
+        "evidence/generated/demo/retrieval-corpus.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "bcp-exercise",
+      "stage": "bcp",
+      "description": "Real WAN TCP loss, ERP rollback/lost ACK, SIGKILL, separate-volume journal, destructive synthetic pg_dump restore, full discovery/reconciliation, approved compensation, manual holds and measured losses/RPO/RTO; restricted export and payload digest consistency across store recovery and every ERP ledger; restored worker denial Audit/telemetry linkage and mutation-loss accounting for manual fences.",
+      "commands": [
+        [
+          "node",
+          "scripts/bcp/verify.mjs",
+          "bcp-exercise"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs",
+        "scripts/demo",
+        "tests/demo",
+        "docs/DEMO_SCENARIOS.md",
+        "docs/DEMO_RUNBOOK.md",
+        "scripts/bcp",
+        "tests/bcp",
+        "ops/BCP.md"
+      ],
+      "outputs": [
+        "evidence/generated/bcp/bcp-exercise.json",
+        "evidence/generated/bcp/exercise.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "clean-bootstrap",
+      "stage": "release",
+      "description": "clean-bootstrap real synthetic release exercise; no commercial credentials",
+      "commands": [
+        [
+          "node",
+          "scripts/release/verify.mjs",
+          "clean-bootstrap"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "mise.toml",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "tests",
+        "config",
+        "migrations",
+        "scripts",
+        "docs/RELEASE.md",
+        "docs/IMPLEMENTATION.md",
+        "docs/DEMO_RUNBOOK.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops",
+        "licenses",
+        ".takt/quality-gates/platform-gate.sh",
+        "evidence/ACCEPTANCE_MATRIX.md",
+        "verification/README.md",
+        ".takt/runtime.yaml",
+        ".takt/workflows/platform-lifecycle.yaml",
+        ".takt/facets/policies/delivery-integrity.md",
+        ".gitignore",
+        "evidence/FAILURES.md"
+      ],
+      "outputs": [
+        "evidence/generated/release/clean-bootstrap.json",
+        "evidence/generated/release/clean-bootstrap-trace.json"
+      ],
+      "timeoutMs": 650000
+    },
+    {
+      "id": "adapter-replacement",
+      "stage": "release",
+      "description": "adapter-replacement real synthetic release exercise; no commercial credentials",
+      "commands": [
+        [
+          "node",
+          "scripts/release/verify.mjs",
+          "adapter-replacement"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "mise.toml",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "tests",
+        "config",
+        "migrations",
+        "scripts",
+        "docs/RELEASE.md",
+        "docs/IMPLEMENTATION.md",
+        "docs/DEMO_RUNBOOK.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops",
+        "licenses",
+        ".takt/quality-gates/platform-gate.sh",
+        "evidence/ACCEPTANCE_MATRIX.md",
+        "verification/README.md",
+        ".takt/runtime.yaml",
+        ".takt/workflows/platform-lifecycle.yaml",
+        ".takt/facets/policies/delivery-integrity.md",
+        ".gitignore"
+      ],
+      "outputs": [
+        "evidence/generated/release/adapter-replacement.json",
+        "evidence/generated/release/adapter-trace.json"
+      ],
+      "timeoutMs": 240000
+    },
+    {
+      "id": "release-operations",
+      "stage": "release",
+      "description": "release-operations real synthetic release exercise; no commercial credentials",
+      "commands": [
+        [
+          "node",
+          "scripts/release/verify.mjs",
+          "release-operations"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "mise.toml",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "tests",
+        "config",
+        "migrations",
+        "scripts",
+        "docs/RELEASE.md",
+        "docs/IMPLEMENTATION.md",
+        "docs/DEMO_RUNBOOK.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops",
+        "licenses",
+        ".takt/quality-gates/platform-gate.sh",
+        "evidence/ACCEPTANCE_MATRIX.md",
+        "verification/README.md",
+        ".takt/runtime.yaml",
+        ".takt/workflows/platform-lifecycle.yaml",
+        ".takt/facets/policies/delivery-integrity.md",
+        ".gitignore"
+      ],
+      "outputs": [
+        "evidence/generated/release/release-operations.json",
+        "evidence/generated/release/operations-trace.json"
+      ],
+      "timeoutMs": 240000
+    },
+    {
+      "id": "release-supply-chain",
+      "stage": "release",
+      "description": "Locked runtime license/notices, CycloneDX, live npm audits, vendor security floor and repository secret scan",
+      "commands": [
+        [
+          "node",
+          "scripts/release/supply-chain.mjs"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "mise.toml",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "tests",
+        "config",
+        "migrations",
+        "scripts",
+        "docs/RELEASE.md",
+        "docs/IMPLEMENTATION.md",
+        "docs/DEMO_RUNBOOK.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops",
+        "licenses",
+        ".takt/quality-gates/platform-gate.sh",
+        "evidence/ACCEPTANCE_MATRIX.md",
+        "verification/README.md",
+        ".takt/runtime.yaml",
+        ".takt/workflows/platform-lifecycle.yaml",
+        ".takt/facets/policies/delivery-integrity.md",
+        "evidence/generated/release/clean-bootstrap-trace.json",
+        ".gitignore"
+      ],
+      "outputs": [
+        "evidence/generated/release/sbom.cdx.json",
+        "evidence/generated/release/THIRD_PARTY_NOTICES.md",
+        "evidence/generated/release/locked-inventory.json",
+        "evidence/generated/release/audit-all.json",
+        "evidence/generated/release/audit-runtime.json",
+        "evidence/generated/release/secret-scan.json",
+        "evidence/generated/release/runtime-security.json",
+        "evidence/generated/release/runtime-platform.json"
+      ],
+      "timeoutMs": 240000
+    },
+    {
+      "id": "final-current-input-audit",
+      "stage": "release",
+      "description": "Current upstream receipt snapshot, full source/test/script coverage and stale/missing/latest-failure counterexamples; post-gate includes release",
+      "commands": [
+        [
+          "node",
+          "--test",
+          "tests/release/current-input-audit.test.mjs"
+        ],
+        [
+          "node",
+          "scripts/release/current-input-audit.mjs"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "mise.toml",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "tests",
+        "config",
+        "migrations",
+        "scripts",
+        "docs/RELEASE.md",
+        "docs/IMPLEMENTATION.md",
+        "docs/DEMO_RUNBOOK.md",
+        "docs/DEMO_SCENARIOS.md",
+        "ops",
+        "licenses",
+        ".takt/quality-gates/platform-gate.sh",
+        "evidence/ACCEPTANCE_MATRIX.md",
+        "verification/README.md",
+        ".takt/runtime.yaml",
+        ".takt/workflows/platform-lifecycle.yaml",
+        ".takt/facets/policies/delivery-integrity.md",
+        ".gitignore"
+      ],
+      "outputs": [
+        "evidence/generated/release/current-input-audit.json"
+      ],
+      "timeoutMs": 240000
+    },
+    {
+      "id": "authentication-expiry-foundation",
+      "stage": "implementation",
+      "description": "B-FOUNDATION-007: real PostgreSQL/HTTP session and delegation expiry across authentication and execution lock waits, approval and pre-COMMIT rollback",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "authentication-expiry-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/authentication-expiry-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "deadlines-foundation",
+      "stage": "implementation",
+      "description": "B-FINAL-002: preserve caller absolute deadline and cancellation through real HTTP, admission waits, SQL locks, secret resolution, ERP delivery and recovery; retain uncertain sends and reconcile with a new request.",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "deadlines-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/deadlines-foundation.json"
+      ],
+      "timeoutMs": 180000
+    },
+    {
+      "id": "worker-authority-expiry-foundation",
+      "stage": "implementation",
+      "description": "B-FOUNDATION-008: saved Action delegation expiry across worker consume, ERP delivery and ledger reconciliation; real DB rollback, uncertainty and deduplication",
+      "commands": [
+        [
+          "node",
+          "scripts/foundation/verify.mjs",
+          "worker-authority-expiry-foundation"
+        ]
+      ],
+      "inputs": [
+        "PRODUCT_GOAL.md",
+        "LICENSE",
+        "package.json",
+        "package-lock.json",
+        "architecture",
+        "work/ROADMAP.json",
+        "verification/plan.json",
+        "src",
+        "config",
+        "migrations",
+        "scripts/foundation",
+        "tests/foundation",
+        "docs/IMPLEMENTATION.md",
+        "mise.toml",
+        ".takt/quality-gates/platform-gate.sh",
+        "scripts/platform-control.mjs"
+      ],
+      "outputs": [
+        "evidence/generated/foundation/worker-authority-expiry-foundation.json"
+      ],
+      "timeoutMs": 180000
     }
   ]
 }

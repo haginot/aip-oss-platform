@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "pipeline-foundation",
+  "startedAt": "2026-10-12T15:58:01.576Z",
+  "finishedAt": "2026-10-12T15:58:02.664Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 4,
+  "passed": 4,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: HTTP snapshot/change overlap, duplicate start, delete and dependency use durable job/source receipts\nok 1 - HTTP snapshot/change overlap, duplicate start, delete and dependency use durable job/source receipts\n  ---\n  duration_ms: 580.933208\n  type: 'test'\n  ...\n# Subtest: snapshot mismatch, source gap/reorder, cancellation and revoked scope reject without advancing state\nok 2 - snapshot mismatch, source gap/reorder, cancellation and revoked scope reject without advancing state\n  ---\n  duration_ms: 50.727292\n  type: 'test'\n  ...\n# Subtest: SIGKILL pipeline-before-checkpoint: restart from atomic checkpoint has no duplicate history or source effect\nok 3 - SIGKILL pipeline-before-checkpoint: restart from atomic checkpoint has no duplicate history or source effect\n  ---\n  duration_ms: 123.474917\n  type: 'test'\n  ...\n# Subtest: SIGKILL pipeline-after-checkpoint: restart from atomic checkpoint has no duplicate history or source effect\nok 4 - SIGKILL pipeline-after-checkpoint: restart from atomic checkpoint has no duplicate history or source effect\n  ---\n  duration_ms: 102.994125\n  type: 'test'\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 4\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1064.011042\n",
+  "stderr": ""
+}

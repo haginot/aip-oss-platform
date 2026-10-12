@@ -1,0 +1,82 @@
+{
+  "diff": {
+    "version": "1.1.0",
+    "baselineDigest": "be41eac5ff6e6d358b3af32d3d539d752dc21542d0a8de0ff9ea552cada9bc06",
+    "digest": "ea9d5f7d33d0643c58685e7e37fd014fb588ca79ce8b4221011ec3d26dc26977",
+    "changes": [
+      {
+        "path": "/ruleVersion",
+        "before": "1.0.0",
+        "after": "1.1.0"
+      },
+      {
+        "path": "/ontologyVersion",
+        "before": "1.0.0",
+        "after": "1.1.0"
+      },
+      {
+        "path": "/programs",
+        "before": null,
+        "after": {
+          "rule": {
+            "allowRelease": false,
+            "minimumQuantity": null
+          },
+          "policy": {
+            "denyOperations": []
+          },
+          "workflow": {
+            "approvalAtQuantity": null
+          }
+        }
+      }
+    ],
+    "cases": []
+  },
+  "simulation": {
+    "casesDigest": "981edec6c436741b517c60c5f2b6a1db2eb3831fad97fd126ecccaef4685152b",
+    "casesRevision": 2,
+    "caseResults": [
+      {
+        "id": "stock",
+        "expected": "RULE_REJECTED",
+        "isolated": false,
+        "revision": 1,
+        "actual": "RULE_REJECTED",
+        "passed": true
+      }
+    ],
+    "objectsChecked": 2,
+    "digest": "ea9d5f7d33d0643c58685e7e37fd014fb588ca79ce8b4221011ec3d26dc26977",
+    "baselineDigest": "be41eac5ff6e6d358b3af32d3d539d752dc21542d0a8de0ff9ea552cada9bc06",
+    "compatible": true,
+    "decisions": [
+      {
+        "id": "stock",
+        "revision": 1,
+        "isolated": true,
+        "state": "PENDING_EXTERNAL"
+      },
+      {
+        "id": "stock",
+        "revision": 1,
+        "isolated": false,
+        "state": "RULE_REJECTED"
+      },
+      {
+        "id": "stock2",
+        "revision": 1,
+        "isolated": true,
+        "state": "PENDING_EXTERNAL"
+      },
+      {
+        "id": "stock2",
+        "revision": 1,
+        "isolated": false,
+        "state": "RULE_REJECTED"
+      }
+    ]
+  },
+  "rollback": "1.0.0",
+  "mutationDuringSimulation": false
+}

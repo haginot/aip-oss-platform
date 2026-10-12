@@ -63,11 +63,27 @@ test('human stops and backward repair routes do not require a passing gate', () 
   const indexes = new Map(workflow.steps.map((item, index) => [item.name, index]));
   for (const item of workflow.steps.filter((candidate) => candidate.quality_gates?.some((gate) => gate.type === 'command'))) {
     for (const rule of item.rules) {
-      if (rule.next === 'ABORT' || indexes.get(rule.next) < indexes.get(item.name)) {
+      if (rule.next === 'ABORT' || indexes.get(rule.next) <= indexes.get(item.name)) {
         assert.equal(rule.command_gates, 'skip', `${item.name} -> ${rule.next}`);
       }
     }
   }
+});
+
+test('every author can retry technical failures without declaring completion or a human stop', () => {
+  for (const item of workflow.steps.filter((candidate) => candidate.edit)) {
+    const retry = item.rules.find((rule) => rule.next === item.name);
+    assert.ok(retry, `${item.name} needs a local repair route`);
+    assert.equal(retry.command_gates, 'skip');
+    const forward = item.rules.filter((rule) => rule.next !== item.name && rule.next !== 'ABORT')
+      .find((rule) => workflow.steps.findIndex((candidate) => candidate.name === rule.next)
+        > workflow.steps.indexOf(item));
+    assert.ok(forward, `${item.name} needs a gated approval route`);
+    assert.notEqual(forward.command_gates, 'skip');
+  }
+  const goal = workflow.steps.find((item) => item.name === 'frame-goal');
+  assert.match(goal.instruction, /終了コード0.*待ち/);
+  assert.match(goal.instruction, /並行実行しません/);
 });
 
 test('completion is gated, bounded and isolated; reviewers do not share author sessions', () => {

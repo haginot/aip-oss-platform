@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "publication-objects-foundation",
+  "startedAt": "2026-10-12T15:58:09.891Z",
+  "finishedAt": "2026-10-12T15:58:11.184Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: Action commit while publication waits invalidates the reviewed Object; fresh review can publish\nok 1 - Action commit while publication waits invalidates the reviewed Object; fresh review can publish\n  ---\n  duration_ms: 599.948917\n  type: 'test'\n  ...\n# Subtest: checked Object rows stay locked until publication commits, including writers without Policy locks\nok 2 - checked Object rows stay locked until publication commits, including writers without Policy locks\n  ---\n  duration_ms: 171.107291\n  type: 'test'\n  ...\n# Subtest: publication first makes a waiting Action revalidate the committed definition\nok 3 - publication first makes a waiting Action revalidate the committed definition\n  ---\n  duration_ms: 114.92025\n  type: 'test'\n  ...\n# Subtest: failed publication releases locks and rolls back all state before a waiting Action resumes\nok 4 - failed publication releases locks and rolls back all state before a waiting Action resumes\n  ---\n  duration_ms: 93.505833\n  type: 'test'\n  ...\n# Subtest: concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock\nok 5 - concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock\n  ---\n  duration_ms: 60.7795\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1269.716958\n",
+  "stderr": ""
+}

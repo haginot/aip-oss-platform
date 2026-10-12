@@ -1,0 +1,1535 @@
+
+> aip-oss-platform@0.1.0 test
+> node --test
+
+TAP version 13
+# Subtest: complete fixed responsibilities accepted by metadata checker
+ok 1 - complete fixed responsibilities accepted by metadata checker
+  ---
+  duration_ms: 5.06375
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: unapprovedComposition
+ok 2 - reject architecture defect: unapprovedComposition
+  ---
+  duration_ms: 0.994292
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: omittedRole
+ok 3 - reject architecture defect: omittedRole
+  ---
+  duration_ms: 2.354792
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: duplicateRole
+ok 4 - reject architecture defect: duplicateRole
+  ---
+  duration_ms: 3.006416
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: omittedContract
+ok 5 - reject architecture defect: omittedContract
+  ---
+  duration_ms: 0.481542
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: missingOwner
+ok 6 - reject architecture defect: missingOwner
+  ---
+  duration_ms: 0.336416
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: unknownProduct
+ok 7 - reject architecture defect: unknownProduct
+  ---
+  duration_ms: 0.417708
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: mutableVersion
+ok 8 - reject architecture defect: mutableVersion
+  ---
+  duration_ms: 0.3725
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: unresolvedLicense
+ok 9 - reject architecture defect: unresolvedLicense
+  ---
+  duration_ms: 0.66925
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: falseRuntimeClaim
+ok 10 - reject architecture defect: falseRuntimeClaim
+  ---
+  duration_ms: 0.573958
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: missingUnsupportedRejection
+ok 11 - reject architecture defect: missingUnsupportedRejection
+  ---
+  duration_ms: 4.246042
+  type: 'test'
+  ...
+# Subtest: reject architecture defect: sourceDrift
+ok 12 - reject architecture defect: sourceDrift
+  ---
+  duration_ms: 0.411334
+  type: 'test'
+  ...
+# Subtest: repository license declarations match the approved decision
+ok 13 - repository license declarations match the approved decision
+  ---
+  duration_ms: 2.222208
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: missingGrant
+ok 14 - reject license declaration defect: missingGrant
+  ---
+  duration_ms: 0.869291
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: packageMismatch
+ok 15 - reject license declaration defect: packageMismatch
+  ---
+  duration_ms: 1.799625
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: lockMismatch
+ok 16 - reject license declaration defect: lockMismatch
+  ---
+  duration_ms: 0.811709
+  type: 'test'
+  ...
+# Subtest: reject license declaration defect: unapprovedLicense
+ok 17 - reject license declaration defect: unapprovedLicense
+  ---
+  duration_ms: 0.8465
+  type: 'test'
+  ...
+# Subtest: recovery design declares retention, independent discovery and executable future counterexamples
+ok 18 - recovery design declares retention, independent discovery and executable future counterexamples
+  ---
+  duration_ms: 2.6465
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: expiredKey
+ok 19 - reject recovery design defect: expiredKey
+  ---
+  duration_ms: 0.853
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingInboxRetention
+ok 20 - reject recovery design defect: missingInboxRetention
+  ---
+  duration_ms: 0.7535
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingLedgerRetention
+ok 21 - reject recovery design defect: missingLedgerRetention
+  ---
+  duration_ms: 0.410917
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: absentMeansUnapplied
+ok 22 - reject recovery design defect: absentMeansUnapplied
+  ---
+  duration_ms: 4.063333
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: sharedLossBoundary
+ok 23 - reject recovery design defect: sharedLossBoundary
+  ---
+  duration_ms: 0.441458
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingOperationMapping
+ok 24 - reject recovery design defect: missingOperationMapping
+  ---
+  duration_ms: 0.374417
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: noEnumeration
+ok 25 - reject recovery design defect: noEnumeration
+  ---
+  duration_ms: 0.367625
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingRecoveryRange
+ok 26 - reject recovery design defect: missingRecoveryRange
+  ---
+  duration_ms: 0.363042
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: checkpointOnlyRecovery
+ok 27 - reject recovery design defect: checkpointOnlyRecovery
+  ---
+  duration_ms: 0.335083
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: checkpointWithoutDrain
+ok 28 - reject recovery design defect: checkpointWithoutDrain
+  ---
+  duration_ms: 0.43925
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: unprovenRangeOptimization
+ok 29 - reject recovery design defect: unprovenRangeOptimization
+  ---
+  duration_ms: 1.174792
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: noFence
+ok 30 - reject recovery design defect: noFence
+  ---
+  duration_ms: 0.459583
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: oracleDependency
+ok 31 - reject recovery design defect: oracleDependency
+  ---
+  duration_ms: 0.357208
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingRestoreCase
+ok 32 - reject recovery design defect: missingRestoreCase
+  ---
+  duration_ms: 0.350792
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingRolePlan
+ok 33 - reject recovery design defect: missingRolePlan
+  ---
+  duration_ms: 0.344333
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: missingBcpLink
+ok 34 - reject recovery design defect: missingBcpLink
+  ---
+  duration_ms: 0.435292
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: checkpointOnlyDocument
+ok 35 - reject recovery design defect: checkpointOnlyDocument
+  ---
+  duration_ms: 0.404917
+  type: 'test'
+  ...
+# Subtest: reject recovery design defect: contradictoryDocument
+ok 36 - reject recovery design defect: contradictoryDocument
+  ---
+  duration_ms: 0.824583
+  type: 'test'
+  ...
+# Subtest: clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+ok 37 - clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+  ---
+  duration_ms: 6155.072542
+  type: 'test'
+  ...
+# Subtest: checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+ok 38 - checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+  ---
+  duration_ms: 4337.170125
+  type: 'test'
+  ...
+# Subtest: unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+ok 39 - unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+  ---
+  duration_ms: 4850.359583
+  type: 'test'
+  ...
+# Subtest: store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+ok 40 - store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+  ---
+  duration_ms: 5170.973958
+  type: 'test'
+  ...
+# Subtest: B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+ok 41 - B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+  ---
+  duration_ms: 3906.128667
+  type: 'test'
+  ...
+# Subtest: B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+ok 42 - B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+  ---
+  duration_ms: 3803.384625
+  type: 'test'
+  ...
+# Subtest: B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+ok 43 - B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+  ---
+  duration_ms: 3474.8725
+  type: 'test'
+  ...
+# Subtest: export complete machine-readable BCP measurements
+ok 44 - export complete machine-readable BCP measurements
+  ---
+  duration_ms: 1.673375
+  type: 'test'
+  ...
+# Subtest: launcher selects a newer bundled CLI instead of an old PATH installation
+ok 45 - launcher selects a newer bundled CLI instead of an old PATH installation
+  ---
+  duration_ms: 511.809167
+  type: 'test'
+  ...
+# Subtest: a newer PATH CLI is preserved instead of forcing the bundled binary
+ok 46 - a newer PATH CLI is preserved instead of forcing the bundled binary
+  ---
+  duration_ms: 317.192167
+  type: 'test'
+  ...
+# Subtest: explicit CLI selection is respected and is not silently replaced
+ok 47 - explicit CLI selection is respected and is not silently replaced
+  ---
+  duration_ms: 115.669834
+  type: 'test'
+  ...
+# Subtest: missing CLI produces an actionable error
+ok 48 - missing CLI produces an actionable error
+  ---
+  duration_ms: 1.005333
+  type: 'test'
+  ...
+# Subtest: run and start both use the isolated task queue rather than a direct workflow
+ok 49 - run and start both use the isolated task queue rather than a direct workflow
+  ---
+  duration_ms: 0.545666
+  type: 'test'
+  ...
+# Subtest: explicit continuation is passed as a valid run or watch option
+ok 50 - explicit continuation is passed as a valid run or watch option
+  ---
+  duration_ms: 0.150375
+  type: 'test'
+  ...
+# Subtest: launcher rejects provider overrides, pipeline mode and unknown flags
+ok 51 - launcher rejects provider overrides, pipeline mode and unknown flags
+  ---
+  duration_ms: 0.128709
+  type: 'test'
+  ...
+# Subtest: store retrieval corpus: ordered evidence, masking, delayed source, deletion, revocation and fail closed over HTTP
+ok 52 - store retrieval corpus: ordered evidence, masking, delayed source, deletion, revocation and fail closed over HTTP
+  ---
+  duration_ms: 2957.474667
+  type: 'test'
+  ...
+# Subtest: store export contract excludes extra and nested fields for every Action and refuses unsupported shapes
+ok 53 - store export contract excludes extra and nested fields for every Action and refuses unsupported shapes
+  ---
+  duration_ms: 2161.86875
+  type: 'test'
+  ...
+# Subtest: store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+ok 54 - store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+  ---
+  duration_ms: 2163.169833
+  type: 'test'
+  ...
+# Subtest: store restricted export: ordinary quarantine and lost acknowledgement
+ok 55 - store restricted export: ordinary quarantine and lost acknowledgement
+  ---
+  duration_ms: 1534.144791
+  type: 'test'
+  ...
+# Subtest: store restricted export: delegated quarantine and lost acknowledgement
+ok 56 - store restricted export: delegated quarantine and lost acknowledgement
+  ---
+  duration_ms: 1016.298375
+  type: 'test'
+  ...
+# Subtest: store restricted export: approved quarantine and lost acknowledgement
+ok 57 - store restricted export: approved quarantine and lost acknowledgement
+  ---
+  duration_ms: 1540.729292
+  type: 'test'
+  ...
+# Subtest: store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+ok 58 - store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+  ---
+  duration_ms: 1941.921208
+  type: 'test'
+  ...
+# Subtest: store concurrent isolation, replay and mismatched key preserve one effect
+ok 59 - store concurrent isolation, replay and mismatched key preserve one effect
+  ---
+  duration_ms: 1532.903917
+  type: 'test'
+  ...
+# Subtest: store approval rechecks changed candidate and original delegation
+ok 60 - store approval rechecks changed candidate and original delegation
+  ---
+  duration_ms: 1974.473208
+  type: 'test'
+  ...
+# Subtest: store external rejection blocks customer notice; lost ack reconciles without resend
+ok 61 - store external rejection blocks customer notice; lost ack reconciles without resend
+  ---
+  duration_ms: 1705.011417
+  type: 'test'
+  ...
+# Subtest: store unknown external success reconciles without blind resend
+ok 62 - store unknown external success reconciles without blind resend
+  ---
+  duration_ms: 1422.842
+  type: 'test'
+  ...
+# Subtest: store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+not ok 63 - store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+  ---
+  duration_ms: 2007.842916
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:158:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'e385f37c-2474-4d0a-a4ec-564b5c52da88'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'e385f37c-2474-4d0a-a4ec-564b5c52da88'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:164:9
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:54:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store published Workflow threshold gates quarantine and low-value procurement
+ok 64 - store published Workflow threshold gates quarantine and low-value procurement
+  ---
+  duration_ms: 1389.5355
+  type: 'test'
+  ...
+# Subtest: store published Rule rejects validate and submit without business mutation
+ok 65 - store published Rule rejects validate and submit without business mutation
+  ---
+  duration_ms: 516.060583
+  type: 'test'
+  ...
+# Subtest: store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+ok 66 - store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+  ---
+  duration_ms: 734.930292
+  type: 'test'
+  ...
+# Subtest: store quarantine dependency race keeps one isolation and rejects stale evidence
+ok 67 - store quarantine dependency race keeps one isolation and rejects stale evidence
+  ---
+  duration_ms: 468.79325
+  type: 'test'
+  ...
+# Subtest: store replacement unknown success blocks notice until reconciliation and never resends
+ok 68 - store replacement unknown success blocks notice until reconciliation and never resends
+  ---
+  duration_ms: 786.833458
+  type: 'test'
+  ...
+# Subtest: review cannot overwrite a concurrent case edit; corrected cases can be reviewed and published
+ok 69 - review cannot overwrite a concurrent case edit; corrected cases can be reviewed and published
+  ---
+  duration_ms: 2413.993584
+  type: 'test'
+  ...
+# Subtest: publish cannot use a review invalidated by a concurrent case edit
+ok 70 - publish cannot use a review invalidated by a concurrent case edit
+  ---
+  duration_ms: 340.591542
+  type: 'test'
+  ...
+# Subtest: publish independently rejects a stored simulation bound to different cases
+ok 71 - publish independently rejects a stored simulation bound to different cases
+  ---
+  duration_ms: 438.801459
+  type: 'test'
+  ...
+# Subtest: editing cases back to their original content still invalidates an in-flight review
+ok 72 - editing cases back to their original content still invalidates an in-flight review
+  ---
+  duration_ms: 652.282666
+  type: 'test'
+  ...
+# Subtest: an edit arriving during publication waits for commit and cannot change PUBLISHED cases
+ok 73 - an edit arriving during publication waits for commit and cannot change PUBLISHED cases
+  ---
+  duration_ms: 477.876167
+  type: 'test'
+  ...
+# Subtest: publication failure before Audit rolls back definition, live pointer and Policy together
+ok 74 - publication failure before Audit rolls back definition, live pointer and Policy together
+  ---
+  duration_ms: 414.322042
+  type: 'test'
+  ...
+# Subtest: rollback also rejects mismatched case binding on a previously published definition
+ok 75 - rollback also rejects mismatched case binding on a previously published definition
+  ---
+  duration_ms: 386.945
+  type: 'test'
+  ...
+# Subtest: HTTP Authoring diff and editable simulation cases bind independent review and invalidate changed cases
+ok 76 - HTTP Authoring diff and editable simulation cases bind independent review and invalidate changed cases
+  ---
+  duration_ms: 2314.786709
+  type: 'test'
+  ...
+# Subtest: changed Object revision invalidates reviewed simulation before publication
+ok 77 - changed Object revision invalidates reviewed simulation before publication
+  ---
+  duration_ms: 324.739917
+  type: 'test'
+  ...
+# Subtest: empty isolated database migrates, seeds and probes public contract; fixed versions are mandatory
+ok 78 - empty isolated database migrates, seeds and probes public contract; fixed versions are mandatory
+  ---
+  duration_ms: 2960.843584
+  type: 'test'
+  ...
+# Subtest: documented serve entry boots isolated Kernel and ERP, completes HTTP Action and disposes its data
+ok 79 - documented serve entry boots isolated Kernel and ERP, completes HTTP Action and disposes its data
+  ---
+  duration_ms: 5210.632
+  type: 'test'
+  ...
+# Subtest: partial startup failure after real ERP creation cleans only owned resources and exits nonzero
+ok 80 - partial startup failure after real ERP creation cleans only owned resources and exits nonzero
+  ---
+  duration_ms: 5278.765166
+  type: 'test'
+  ...
+# Subtest: advertised unavailable capabilities reject through real HTTP with no business side effects
+ok 81 - advertised unavailable capabilities reject through real HTTP with no business side effects
+  ---
+  duration_ms: 2273.734833
+  type: 'test'
+  ...
+# Subtest: typed link rejects corruption and out-of-budget depth; empty links still enforce column authorization
+ok 82 - typed link rejects corruption and out-of-budget depth; empty links still enforce column authorization
+  ---
+  duration_ms: 250.120542
+  type: 'test'
+  ...
+# Subtest: HTTP admission limits concurrent slow requests and request rate before mutation
+ok 83 - HTTP admission limits concurrent slow requests and request rate before mutation
+  ---
+  duration_ms: 410.045125
+  type: 'test'
+  ...
+# Subtest: HTTP request-rate budget is enforced independently of concurrency
+ok 84 - HTTP request-rate budget is enforced independently of concurrency
+  ---
+  duration_ms: 314.165792
+  type: 'test'
+  ...
+# Subtest: HTTP malformed/oversize/version/deadline inputs cannot mutate business state
+ok 85 - HTTP malformed/oversize/version/deadline inputs cannot mutate business state
+  ---
+  duration_ms: 611.499125
+  type: 'test'
+  ...
+# Subtest: generated declarations compile with strict pinned TypeScript and reject invalid client inputs
+ok 86 - generated declarations compile with strict pinned TypeScript and reject invalid client inputs
+  ---
+  duration_ms: 522.6815
+  type: 'test'
+  ...
+# Subtest: generated runtime and declarations reproduce the versioned Ontology and reject source drift
+ok 87 - generated runtime and declarations reproduce the versioned Ontology and reject source drift
+  ---
+  duration_ms: 1.864583
+  type: 'test'
+  ...
+# Subtest: client wire envelope binds opaque credentials and validates responses without retrying unknown success
+ok 88 - client wire envelope binds opaque credentials and validates responses without retrying unknown success
+  ---
+  duration_ms: 29.701125
+  type: 'test'
+  ...
+# Subtest: canonical digest is stable while typed input, actor injection and unsupported version are rejected
+ok 89 - canonical digest is stable while typed input, actor injection and unsupported version are rejected
+  ---
+  duration_ms: 0.9195
+  type: 'test'
+  ...
+# Subtest: finite typed query rejects arbitrary expressions, restricted filters and unbounded inputs
+ok 90 - finite typed query rejects arbitrary expressions, restricted filters and unbounded inputs
+  ---
+  duration_ms: 0.426041
+  type: 'test'
+  ...
+# Subtest: compatibility preserves type, unit, field, action semantics and optional additions
+ok 91 - compatibility preserves type, unit, field, action semantics and optional additions
+  ---
+  duration_ms: 1.208667
+  type: 'test'
+  ...
+# Subtest: real fsync journal survives reopen, enumerates scoped stable snapshot and denies cross scope
+ok 92 - real fsync journal survives reopen, enumerates scoped stable snapshot and denies cross scope
+  ---
+  duration_ms: 99.202209
+  type: 'test'
+  ...
+# Subtest: journal hash tampering, truncation and gap fail closed
+ok 93 - journal hash tampering, truncation and gap fail closed
+  ---
+  duration_ms: 64.808667
+  type: 'test'
+  ...
+# Subtest: blob content digest/range authorization, immutable retention and transactional Audit use real HTTP/database
+ok 94 - blob content digest/range authorization, immutable retention and transactional Audit use real HTTP/database
+  ---
+  duration_ms: 2278.444916
+  type: 'test'
+  ...
+# Subtest: finite inventory metrics filter scope before aggregation and reject injection/version/deadline
+ok 95 - finite inventory metrics filter scope before aggregation and reject injection/version/deadline
+  ---
+  duration_ms: 428.34925
+  type: 'test'
+  ...
+# Subtest: identity namespace collisions, reviewed mapping merge/split migration and source ingestion preserve Object references
+ok 96 - identity namespace collisions, reviewed mapping merge/split migration and source ingestion preserve Object references
+  ---
+  duration_ms: 434.200917
+  type: 'test'
+  ...
+# Subtest: telemetry joins public trace with Action/Outbox/Audit, classifies errors and excludes payload/secret values
+ok 97 - telemetry joins public trace with Action/Outbox/Audit, classifies errors and excludes payload/secret values
+  ---
+  duration_ms: 795.488375
+  type: 'test'
+  ...
+# Subtest: telemetry failure after commit leaves transactional evidence intact and same-key recovery has no duplicate effect
+ok 98 - telemetry failure after commit leaves transactional evidence intact and same-key recovery has no duplicate effect
+  ---
+  duration_ms: 534.455708
+  type: 'test'
+  ...
+# Subtest: dispatch refuses expired caller budget before any business or ERP effect
+ok 99 - dispatch refuses expired caller budget before any business or ERP effect
+  ---
+  duration_ms: 3021.626125
+  type: 'test'
+  ...
+# Subtest: dispatch refuses cancelled caller budget before any business or ERP effect
+ok 100 - dispatch refuses cancelled caller budget before any business or ERP effect
+  ---
+  duration_ms: 1742.094958
+  type: 'test'
+  ...
+# Subtest: reconcile refuses expired caller budget before any business or ERP effect
+ok 101 - reconcile refuses expired caller budget before any business or ERP effect
+  ---
+  duration_ms: 1101.454083
+  type: 'test'
+  ...
+# Subtest: reconcile refuses cancelled caller budget before any business or ERP effect
+ok 102 - reconcile refuses cancelled caller budget before any business or ERP effect
+  ---
+  duration_ms: 549.762666
+  type: 'test'
+  ...
+# Subtest: continuitySet refuses expired caller budget before any business or ERP effect
+ok 103 - continuitySet refuses expired caller budget before any business or ERP effect
+  ---
+  duration_ms: 813.229291
+  type: 'test'
+  ...
+# Subtest: continuitySet refuses cancelled caller budget before any business or ERP effect
+ok 104 - continuitySet refuses cancelled caller budget before any business or ERP effect
+  ---
+  duration_ms: 1697.526209
+  type: 'test'
+  ...
+# Subtest: recover refuses expired caller budget before any business or ERP effect
+ok 105 - recover refuses expired caller budget before any business or ERP effect
+  ---
+  duration_ms: 1430.84675
+  type: 'test'
+  ...
+# Subtest: recover refuses cancelled caller budget before any business or ERP effect
+ok 106 - recover refuses cancelled caller budget before any business or ERP effect
+  ---
+  duration_ms: 1019.60525
+  type: 'test'
+  ...
+# Subtest: compensate refuses expired caller budget before any business or ERP effect
+ok 107 - compensate refuses expired caller budget before any business or ERP effect
+  ---
+  duration_ms: 1571.196833
+  type: 'test'
+  ...
+# Subtest: compensate refuses cancelled caller budget before any business or ERP effect
+ok 108 - compensate refuses cancelled caller budget before any business or ERP effect
+  ---
+  duration_ms: 1118.275375
+  type: 'test'
+  ...
+# Subtest: HTTP admission wait consumes original deadline and never resurrects a new send budget
+ok 109 - HTTP admission wait consumes original deadline and never resurrects a new send budget
+  ---
+  duration_ms: 1664.057167
+  type: 'test'
+  ...
+# Subtest: after lease cancelled budget prevents HTTP; fresh reconciliation retains uncertainty
+ok 110 - after lease cancelled budget prevents HTTP; fresh reconciliation retains uncertainty
+  ---
+  duration_ms: 1496.116666
+  type: 'test'
+  ...
+# Subtest: after lease expired budget prevents HTTP; fresh reconciliation retains uncertainty
+ok 111 - after lease expired budget prevents HTTP; fresh reconciliation retains uncertainty
+  ---
+  duration_ms: 1790.728333
+  type: 'test'
+  ...
+# Subtest: ERP in flight cancelled is not a rollback claim; fresh ledger reconciliation resolves once
+ok 112 - ERP in flight cancelled is not a rollback claim; fresh ledger reconciliation resolves once
+  ---
+  duration_ms: 894.710291
+  type: 'test'
+  ...
+# Subtest: ERP in flight expired is not a rollback claim; fresh ledger reconciliation resolves once
+ok 113 - ERP in flight expired is not a rollback claim; fresh ledger reconciliation resolves once
+  ---
+  duration_ms: 749.524834
+  type: 'test'
+  ...
+# Subtest: HTTP client disconnect cancels in-flight writeback while preserving uncertain delivery
+ok 114 - HTTP client disconnect cancels in-flight writeback while preserving uncertain delivery
+  ---
+  duration_ms: 517.12075
+  type: 'test'
+  ...
+# Subtest: recovery ledger wait uses caller cancellation and leaves classification unchanged
+ok 115 - recovery ledger wait uses caller cancellation and leaves classification unchanged
+  ---
+  duration_ms: 449.087208
+  type: 'test'
+  ...
+# Subtest: cancel blocked SQL Action before commit; rollback and same-key retry remain safe
+ok 116 - cancel blocked SQL Action before commit; rollback and same-key retry remain safe
+  ---
+  duration_ms: 318.797834
+  type: 'test'
+  ...
+# Subtest: other public control/read/authoring methods reject cancelled budget before effects
+ok 117 - other public control/read/authoring methods reject cancelled budget before effects
+  ---
+  duration_ms: 299.537667
+  type: 'test'
+  ...
+# Subtest: immutable draft, distinct reviewer, simulation, publish, old key lookup and compatible rollback
+ok 118 - immutable draft, distinct reviewer, simulation, publish, old key lookup and compatible rollback
+  ---
+  duration_ms: 1925.700042
+  type: 'test'
+  ...
+# Subtest: mixed generated HTTP clients enforce published versions, replay provenance and rollback
+ok 119 - mixed generated HTTP clients enforce published versions, replay provenance and rollback
+  ---
+  duration_ms: 668.447834
+  type: 'test'
+  ...
+# Subtest: schema, rule or expected revision change invalidates approval without mutation
+ok 120 - schema, rule or expected revision change invalidates approval without mutation
+  ---
+  duration_ms: 506.7015
+  type: 'test'
+  ...
+# Subtest: quality gate selects pinned tools even when ambient node is unusable
+ok 121 - quality gate selects pinned tools even when ambient node is unusable
+  ---
+  duration_ms: 82.523833
+  type: 'test'
+  ...
+# Subtest: missing mise fails instead of falling back to ambient node
+ok 122 - missing mise fails instead of falling back to ambient node
+  ---
+  duration_ms: 16.682625
+  type: 'test'
+  ...
+# Subtest: failed tool selection preserves exit code and stops before validation
+ok 123 - failed tool selection preserves exit code and stops before validation
+  ---
+  duration_ms: 236.413458
+  type: 'test'
+  ...
+# Subtest: bounded generated HTTP history joins immutable revisions to original Actions and redacts restricted columns
+ok 124 - bounded generated HTTP history joins immutable revisions to original Actions and redacts restricted columns
+  ---
+  duration_ms: 3066.153084
+  type: 'test'
+  ...
+# Subtest: history rejects row scope, secret projection, malformed bounds and permission loss even on empty pages
+ok 125 - history rejects row scope, secret projection, malformed bounds and permission loss even on empty pages
+  ---
+  duration_ms: 477.385
+  type: 'test'
+  ...
+# Subtest: rollback and conflict cannot create extra history revisions
+ok 126 - rollback and conflict cannot create extra history revisions
+  ---
+  duration_ms: 446.900291
+  type: 'test'
+  ...
+# Subtest: HTTP source ingestion joins checkpoint, quality, links, authorized history, Action and Audit; quarantine release has lineage
+ok 127 - HTTP source ingestion joins checkpoint, quality, links, authorized history, Action and Audit; quarantine release has lineage
+  ---
+  duration_ms: 3876.685541
+  type: 'test'
+  ...
+# Subtest: source gap, transform error, cross-store scope and source owner conflict never advance checkpoint
+ok 128 - source gap, transform error, cross-store scope and source owner conflict never advance checkpoint
+  ---
+  duration_ms: 186.250542
+  type: 'test'
+  ...
+# Subtest: source transaction rolls back Object/history/checkpoint/receipt on both injected partial failure boundaries
+ok 129 - source transaction rolls back Object/history/checkpoint/receipt on both injected partial failure boundaries
+  ---
+  duration_ms: 330.842917
+  type: 'test'
+  ...
+# Subtest: parallel same source position serializes, tombstone hides query/link, resurrection preserves revision and Action ownership
+ok 130 - parallel same source position serializes, tombstone hides query/link, resurrection preserves revision and Action ownership
+  ---
+  duration_ms: 568.255417
+  type: 'test'
+  ...
+# Subtest: fsynced INTENT and COMMITTED survive actual SIGKILL and new process reopen
+ok 131 - fsynced INTENT and COMMITTED survive actual SIGKILL and new process reopen
+  ---
+  duration_ms: 331.99725
+  type: 'test'
+  ...
+# Subtest: actual SIGKILL at before-intent: reopened DB/journal never infer acknowledgement
+ok 132 - actual SIGKILL at before-intent: reopened DB/journal never infer acknowledgement
+  ---
+  duration_ms: 3846.854042
+  type: 'test'
+  ...
+# Subtest: actual SIGKILL at after-intent: reopened DB/journal never infer acknowledgement
+ok 133 - actual SIGKILL at after-intent: reopened DB/journal never infer acknowledgement
+  ---
+  duration_ms: 260.699584
+  type: 'test'
+  ...
+# Subtest: actual SIGKILL at before-commit: reopened DB/journal never infer acknowledgement
+ok 134 - actual SIGKILL at before-commit: reopened DB/journal never infer acknowledgement
+  ---
+  duration_ms: 238.329042
+  type: 'test'
+  ...
+# Subtest: actual SIGKILL at after-commit: reopened DB/journal never infer acknowledgement
+ok 135 - actual SIGKILL at after-commit: reopened DB/journal never infer acknowledgement
+  ---
+  duration_ms: 325.163958
+  type: 'test'
+  ...
+# Subtest: actual SIGKILL at after-marker: reopened DB/journal never infer acknowledgement
+ok 136 - actual SIGKILL at after-marker: reopened DB/journal never infer acknowledgement
+  ---
+  duration_ms: 398.375667
+  type: 'test'
+  ...
+# Subtest: transaction joins object, Action, history, Outbox, Audit, journal and deduplicated consumer
+ok 137 - transaction joins object, Action, history, Outbox, Audit, journal and deduplicated consumer
+  ---
+  duration_ms: 2635.583833
+  type: 'test'
+  ...
+# Subtest: concurrent expected revision accepts one and records conflict for the other
+ok 138 - concurrent expected revision accepts one and records conflict for the other
+  ---
+  duration_ms: 346.745583
+  type: 'test'
+  ...
+# Subtest: partial failure after-intent rolls back all state and retries same key
+ok 139 - partial failure after-intent rolls back all state and retries same key
+  ---
+  duration_ms: 435.985625
+  type: 'test'
+  ...
+# Subtest: partial failure after-action rolls back all state and retries same key
+ok 140 - partial failure after-action rolls back all state and retries same key
+  ---
+  duration_ms: 571.54475
+  type: 'test'
+  ...
+# Subtest: partial failure after-object rolls back all state and retries same key
+ok 141 - partial failure after-object rolls back all state and retries same key
+  ---
+  duration_ms: 443.9035
+  type: 'test'
+  ...
+# Subtest: partial failure after-outbox rolls back all state and retries same key
+ok 142 - partial failure after-outbox rolls back all state and retries same key
+  ---
+  duration_ms: 443.127042
+  type: 'test'
+  ...
+# Subtest: partial failure before-audit rolls back all state and retries same key
+ok 143 - partial failure before-audit rolls back all state and retries same key
+  ---
+  duration_ms: 421.997
+  type: 'test'
+  ...
+# Subtest: partial failure before-commit rolls back all state and retries same key
+ok 144 - partial failure before-commit rolls back all state and retries same key
+  ---
+  duration_ms: 492.998209
+  type: 'test'
+  ...
+# Subtest: timeout and cancellation do not acknowledge or mutate
+ok 145 - timeout and cancellation do not acknowledge or mutate
+  ---
+  duration_ms: 228.035667
+  type: 'test'
+  ...
+# Subtest: commit before acknowledgement failure fences replay and dispatch
+ok 146 - commit before acknowledgement failure fences replay and dispatch
+  ---
+  duration_ms: 342.958334
+  type: 'test'
+  ...
+# Subtest: reverse event order parks gap; inbox failure rolls back; ordered redelivery converges
+ok 147 - reverse event order parks gap; inbox failure rolls back; ordered redelivery converges
+  ---
+  duration_ms: 425.288625
+  type: 'test'
+  ...
+# Subtest: audit write failure prevents object, action, history and outbox commit
+ok 148 - audit write failure prevents object, action, history and outbox commit
+  ---
+  duration_ms: 394.204375
+  type: 'test'
+  ...
+# Subtest: poison event is retained as dead letter, never applied or marked successful
+ok 149 - poison event is retained as dead letter, never applied or marked successful
+  ---
+  duration_ms: 322.870125
+  type: 'test'
+  ...
+# Subtest: per-reference service authorization and Audit gate actual outbound ERP delivery and identity revocation
+ok 150 - per-reference service authorization and Audit gate actual outbound ERP delivery and identity revocation
+  ---
+  duration_ms: 3982.932666
+  type: 'test'
+  ...
+# Subtest: Audit failure prevents secret release and external HTTP effect
+ok 151 - Audit failure prevents secret release and external HTTP effect
+  ---
+  duration_ms: 1552.662167
+  type: 'test'
+  ...
+# Subtest: redacted scoped operational observations expose unknown delivery and reject unauthorized/foreign views over HTTP
+ok 152 - redacted scoped operational observations expose unknown delivery and reject unauthorized/foreign views over HTTP
+  ---
+  duration_ms: 1362.733459
+  type: 'test'
+  ...
+# Subtest: HTTP snapshot/change overlap, duplicate start, delete and dependency use durable job/source receipts
+ok 153 - HTTP snapshot/change overlap, duplicate start, delete and dependency use durable job/source receipts
+  ---
+  duration_ms: 2552.912333
+  type: 'test'
+  ...
+# Subtest: snapshot mismatch, source gap/reorder, cancellation and revoked scope reject without advancing state
+ok 154 - snapshot mismatch, source gap/reorder, cancellation and revoked scope reject without advancing state
+  ---
+  duration_ms: 414.720292
+  type: 'test'
+  ...
+# Subtest: SIGKILL pipeline-before-checkpoint: restart from atomic checkpoint has no duplicate history or source effect
+ok 155 - SIGKILL pipeline-before-checkpoint: restart from atomic checkpoint has no duplicate history or source effect
+  ---
+  duration_ms: 601.289458
+  type: 'test'
+  ...
+# Subtest: SIGKILL pipeline-after-checkpoint: restart from atomic checkpoint has no duplicate history or source effect
+ok 156 - SIGKILL pipeline-after-checkpoint: restart from atomic checkpoint has no duplicate history or source effect
+  ---
+  duration_ms: 413.952875
+  type: 'test'
+  ...
+# Subtest: executable Rule/Workflow simulation and distinct publication enforce rejection, approval and rollback over HTTP
+ok 157 - executable Rule/Workflow simulation and distinct publication enforce rejection, approval and rollback over HTTP
+  ---
+  duration_ms: 3406.496542
+  type: 'test'
+  ...
+# Subtest: published Policy rejects all action/search/tool entry points, records policy version, and can be rolled back
+ok 158 - published Policy rejects all action/search/tool entry points, records policy version, and can be rolled back
+  ---
+  duration_ms: 563.541625
+  type: 'test'
+  ...
+# Subtest: unversioned or code-bearing programs and out-of-scope authoring reject without publication
+ok 159 - unversioned or code-bearing programs and out-of-scope authoring reject without publication
+  ---
+  duration_ms: 374.099875
+  type: 'test'
+  ...
+# Subtest: review baseline changes and published programs invalidate stale review and prior approval
+ok 160 - review baseline changes and published programs invalidate stale review and prior approval
+  ---
+  duration_ms: 379.804834
+  type: 'test'
+  ...
+# Subtest: published Policy revocation fences queued projection and ERP delivery, without rewriting original Action
+ok 161 - published Policy revocation fences queued projection and ERP delivery, without rewriting original Action
+  ---
+  duration_ms: 1678.612875
+  type: 'test'
+  ...
+# Subtest: Policy change after durable INTENT aborts before state mutation and leaves a classified journal
+ok 162 - Policy change after durable INTENT aborts before state mutation and leaves a classified journal
+  ---
+  duration_ms: 383.114292
+  type: 'test'
+  ...
+# Subtest: Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+ok 163 - Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+  ---
+  duration_ms: 3284.587875
+  type: 'test'
+  ...
+# Subtest: checked Object rows stay locked until publication commits, including writers without Policy locks
+ok 164 - checked Object rows stay locked until publication commits, including writers without Policy locks
+  ---
+  duration_ms: 422.85325
+  type: 'test'
+  ...
+# Subtest: publication first makes a waiting Action revalidate the committed definition
+ok 165 - publication first makes a waiting Action revalidate the committed definition
+  ---
+  duration_ms: 543.807083
+  type: 'test'
+  ...
+# Subtest: failed publication releases locks and rolls back all state before a waiting Action resumes
+ok 166 - failed publication releases locks and rolls back all state before a waiting Action resumes
+  ---
+  duration_ms: 348.435792
+  type: 'test'
+  ...
+# Subtest: concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock
+ok 167 - concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock
+  ---
+  duration_ms: 309.505958
+  type: 'test'
+  ...
+# (node:63578) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 30 days minus one second
+ok 168 - retained Action key, Inbox, ERP ledger and Audit survive 30 days minus one second
+  ---
+  duration_ms: 4879.510083
+  type: 'test'
+  ...
+# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 30 days
+ok 169 - retained Action key, Inbox, ERP ledger and Audit survive 30 days
+  ---
+  duration_ms: 993.448875
+  type: 'test'
+  ...
+# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 30 days plus one second
+ok 170 - retained Action key, Inbox, ERP ledger and Audit survive 30 days plus one second
+  ---
+  duration_ms: 1484.504458
+  type: 'test'
+  ...
+# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 18 years
+ok 171 - retained Action key, Inbox, ERP ledger and Audit survive 18 years
+  ---
+  duration_ms: 1426.817333
+  type: 'test'
+  ...
+# Subtest: missing ERP ledger after years stays UNKNOWN and cannot cause automatic resend
+ok 172 - missing ERP ledger after years stays UNKNOWN and cannot cause automatic resend
+  ---
+  duration_ms: 1425.457083
+  type: 'test'
+  ...
+# Subtest: unresolved commit INTENT does not age out with Audit retention or process reopening
+ok 173 - unresolved commit INTENT does not age out with Audit retention or process reopening
+  ---
+  duration_ms: 941.643583
+  type: 'test'
+  ...
+# Subtest: authoritative retrieval corpus checks ID/order/type/version/revision/mask/denial/deletion/watermark
+ok 174 - authoritative retrieval corpus checks ID/order/type/version/revision/mask/denial/deletion/watermark
+  ---
+  duration_ms: 3972.377708
+  type: 'test'
+  ...
+# Subtest: B-001: approval journal does not shadow a public key with :approval suffix, including reopen
+ok 175 - B-001: approval journal does not shadow a public key with :approval suffix, including reopen
+  ---
+  duration_ms: 3567.289583
+  type: 'test'
+  ...
+# Subtest: B-001: legacy approval records are separated by provenance, never by suffix
+ok 176 - B-001: legacy approval records are separated by provenance, never by suffix
+  ---
+  duration_ms: 406.112708
+  type: 'test'
+  ...
+# Subtest: B-002: approval rejects changed non-target AI evidence without business mutation
+ok 177 - B-002: approval rejects changed non-target AI evidence without business mutation
+  ---
+  duration_ms: 491.308
+  type: 'test'
+  ...
+# Subtest: B-002: approval uses original evidence principal authority
+ok 178 - B-002: approval uses original evidence principal authority
+  ---
+  duration_ms: 400.190375
+  type: 'test'
+  ...
+# Subtest: B-002: approval uses original evidence delegation authority
+ok 179 - B-002: approval uses original evidence delegation authority
+  ---
+  duration_ms: 508.706958
+  type: 'test'
+  ...
+# Subtest: B-002: approval uses original evidence columns authority
+ok 180 - B-002: approval uses original evidence columns authority
+  ---
+  duration_ms: 430.536208
+  type: 'test'
+  ...
+# Subtest: B-002: unchanged delegated evidence succeeds despite wider approver columns; evidence is locked to commit
+ok 181 - B-002: unchanged delegated evidence succeeds despite wider approver columns; evidence is locked to commit
+  ---
+  duration_ms: 457.841125
+  type: 'test'
+  ...
+# Subtest: B-003: rollback cannot first-publish a REVIEWED definition after object changed
+ok 182 - B-003: rollback cannot first-publish a REVIEWED definition after object changed
+  ---
+  duration_ms: 573.8435
+  type: 'test'
+  ...
+# Subtest: B-003: rollback cannot first-publish a REVIEWED definition after baseline changed
+ok 183 - B-003: rollback cannot first-publish a REVIEWED definition after baseline changed
+  ---
+  duration_ms: 358.194291
+  type: 'test'
+  ...
+# Subtest: B-004: query/search/tool enforce search permission at policy boundary
+ok 184 - B-004: query/search/tool enforce search permission at policy boundary
+  ---
+  duration_ms: 332.000584
+  type: 'test'
+  ...
+# Subtest: B-004: query/search/tool enforce search permission at principal boundary
+ok 185 - B-004: query/search/tool enforce search permission at principal boundary
+  ---
+  duration_ms: 263.676083
+  type: 'test'
+  ...
+# Subtest: B-004: query/search/tool enforce search permission at delegation boundary
+ok 186 - B-004: query/search/tool enforce search permission at delegation boundary
+  ---
+  duration_ms: 379.034375
+  type: 'test'
+  ...
+# Subtest: encrypted opaque reference is injected into actual ERP HTTP writeback; unauthorized resolution rejects
+ok 187 - encrypted opaque reference is injected into actual ERP HTTP writeback; unauthorized resolution rejects
+  ---
+  duration_ms: 4306.200458
+  type: 'test'
+  ...
+# Subtest: rotation overlap, expiration and remote old-token revocation preserve one ERP effect per operation
+ok 188 - rotation overlap, expiration and remote old-token revocation preserve one ERP effect per operation
+  ---
+  duration_ms: 1160.296542
+  type: 'test'
+  ...
+# Subtest: unsafe permissions, wrong key and modified ciphertext reject; missing secret holds unknown without HTTP
+ok 189 - unsafe permissions, wrong key and modified ciphertext reject; missing secret holds unknown without HTTP
+  ---
+  duration_ms: 1233.945
+  type: 'test'
+  ...
+# Subtest: get/list/search/link/column/Action/tool share tenant and store scope without counts or secret snippets
+ok 190 - get/list/search/link/column/Action/tool share tenant and store scope without counts or secret snippets
+  ---
+  duration_ms: 3475.781958
+  type: 'test'
+  ...
+# Subtest: trusted delegated identity, invalid delegation and actor forgery are audited
+ok 191 - trusted delegated identity, invalid delegation and actor forgery are audited
+  ---
+  duration_ms: 324.644375
+  type: 'test'
+  ...
+# Subtest: policy outage, session expiry, revocation and cursor changes fail closed
+ok 192 - policy outage, session expiry, revocation and cursor changes fail closed
+  ---
+  duration_ms: 250.023916
+  type: 'test'
+  ...
+# Subtest: AI proposal is typed, grounded, permission intersected and cannot execute directly
+ok 193 - AI proposal is typed, grounded, permission intersected and cannot execute directly
+  ---
+  duration_ms: 571.322292
+  type: 'test'
+  ...
+# Subtest: public envelope rejects spoofed tenant and actor and retains versions
+ok 194 - public envelope rejects spoofed tenant and actor and retains versions
+  ---
+  duration_ms: 289.464375
+  type: 'test'
+  ...
+# Subtest: delegation subject change between journal intent and transaction is denied without mixed identity
+ok 195 - delegation subject change between journal intent and transaction is denied without mixed identity
+  ---
+  duration_ms: 402.587959
+  type: 'test'
+  ...
+# Subtest: approval revalidates original delegation scope, audience and subject
+ok 196 - approval revalidates original delegation scope, audience and subject
+  ---
+  duration_ms: 493.167166
+  type: 'test'
+  ...
+# Subtest: authorization matrix records actual allowed and denied calls with policy and trusted subjects
+ok 197 - authorization matrix records actual allowed and denied calls with policy and trusted subjects
+  ---
+  duration_ms: 447.878833
+  type: 'test'
+  ...
+# Subtest: public durable scheduler coalesces forward clock jump, refuses duplicate/backward fire and reauthorizes
+ok 198 - public durable scheduler coalesces forward clock jump, refuses duplicate/backward fire and reauthorizes
+  ---
+  duration_ms: 3491.990916
+  type: 'test'
+  ...
+# Subtest: failure between effect and fire acknowledgement resumes same fire ID with Inbox duplicate suppression
+ok 199 - failure between effect and fire acknowledgement resumes same fire ID with Inbox duplicate suppression
+  ---
+  duration_ms: 597.01425
+  type: 'test'
+  ...
+# Subtest: launcher timer actually advances a persisted schedule without client tick
+ok 200 - launcher timer actually advances a persisted schedule without client tick
+  ---
+  duration_ms: 368.293458
+  type: 'test'
+  ...
+# Subtest: reconcile schedule retains UNKNOWN until real ERP ledger resolves original operation
+ok 201 - reconcile schedule retains UNKNOWN until real ERP ledger resolves original operation
+  ---
+  duration_ms: 1636.4865
+  type: 'test'
+  ...
+# Subtest: journal survives disposal of actual independently mounted PostgreSQL volume
+ok 202 - journal survives disposal of actual independently mounted PostgreSQL volume
+  ---
+  duration_ms: 3932.286209
+  type: 'test'
+  ...
+# Subtest: independent ERP HTTP ledger, effect and Kernel completion preserve original IDs
+ok 203 - independent ERP HTTP ledger, effect and Kernel completion preserve original IDs
+  ---
+  duration_ms: 4482.324041
+  type: 'test'
+  ...
+# Subtest: generated HTTP client joins authorization, Action, projection Inbox, ERP and Audit
+ok 204 - generated HTTP client joins authorization, Action, projection Inbox, ERP and Audit
+  ---
+  duration_ms: 1535.582125
+  type: 'test'
+  ...
+# Subtest: ERP success with lost acknowledgement is UNKNOWN until ledger reconciliation; never resent
+ok 205 - ERP success with lost acknowledgement is UNKNOWN until ledger reconciliation; never resent
+  ---
+  duration_ms: 820.803458
+  type: 'test'
+  ...
+# Subtest: partial ERP transaction rolls ledger and effect back; missing ledger remains UNKNOWN
+ok 206 - partial ERP transaction rolls ledger and effect back; missing ledger remains UNKNOWN
+  ---
+  duration_ms: 538.977292
+  type: 'test'
+  ...
+# Subtest: reverse delivery parks GAP, ordered delivery and ERP duplicate/key mismatch preserve one effect
+ok 207 - reverse delivery parks GAP, ordered delivery and ERP duplicate/key mismatch preserve one effect
+  ---
+  duration_ms: 369.274625
+  type: 'test'
+  ...
+# Subtest: worker denial, delegation revocation and policy outage precede HTTP dispatch
+ok 208 - worker denial, delegation revocation and policy outage precede HTTP dispatch
+  ---
+  duration_ms: 420.60675
+  type: 'test'
+  ...
+# Subtest: explicit external rejection and lease ownership prevent false success
+ok 209 - explicit external rejection and lease ownership prevent false success
+  ---
+  duration_ms: 336.128375
+  type: 'test'
+  ...
+# Subtest: failure after external apply leaves durable SENDING fence and reconciliation recovers
+ok 210 - failure after external apply leaves durable SENDING fence and reconciliation recovers
+  ---
+  duration_ms: 302.221291
+  type: 'test'
+  ...
+# Subtest: the real TAKT compiler resolves every step without tag conflicts
+ok 211 - the real TAKT compiler resolves every step without tag conflicts
+  ---
+  duration_ms: 0.409167
+  type: 'test'
+  ...
+# Subtest: light planning starts on Luna and promotes to Sol, then Astra
+ok 212 - light planning starts on Luna and promotes to Sol, then Astra
+  ---
+  duration_ms: 0.33825
+  type: 'test'
+  ...
+# Subtest: implementation starts on Sol and uses Astra from its third visit
+ok 213 - implementation starts on Sol and uses Astra from its third visit
+  ---
+  duration_ms: 0.109875
+  type: 'test'
+  ...
+# Subtest: architecture, security, BCP and final audits never downgrade from Astra
+ok 214 - architecture, security, BCP and final audits never downgrade from Astra
+  ---
+  duration_ms: 0.082792
+  type: 'test'
+  ...
+# Subtest: ordinary reviews and internal agents use their cost-conscious seats
+ok 215 - ordinary reviews and internal agents use their cost-conscious seats
+  ---
+  duration_ms: 0.103125
+  type: 'test'
+  ...
+# Subtest: human stops and backward repair routes do not require a passing gate
+ok 216 - human stops and backward repair routes do not require a passing gate
+  ---
+  duration_ms: 0.15075
+  type: 'test'
+  ...
+# Subtest: every author can retry technical failures without declaring completion or a human stop
+ok 217 - every author can retry technical failures without declaring completion or a human stop
+  ---
+  duration_ms: 0.189833
+  type: 'test'
+  ...
+# Subtest: completion is gated, bounded and isolated; reviewers do not share author sessions
+ok 218 - completion is gated, bounded and isolated; reviewers do not share author sessions
+  ---
+  duration_ms: 0.8515
+  type: 'test'
+  ...
+# Subtest: verification receipt becomes stale when an input changes
+ok 219 - verification receipt becomes stale when an input changes
+  ---
+  duration_ms: 155.033917
+  type: 'test'
+  ...
+# Subtest: a failed command is recorded and never accepted as evidence
+ok 220 - a failed command is recorded and never accepted as evidence
+  ---
+  duration_ms: 147.139833
+  type: 'test'
+  ...
+# Subtest: no-op shell commands are rejected from the verification plan
+ok 221 - no-op shell commands are rejected from the verification plan
+  ---
+  duration_ms: 46.3635
+  type: 'test'
+  ...
+# Subtest: supervision receipts track tested configuration including queue safety changes
+ok 222 - supervision receipts track tested configuration including queue safety changes
+  ---
+  duration_ms: 961.821292
+  type: 'test'
+  ...
+# Subtest: a newer failed run invalidates an earlier pass with identical definitions and inputs
+ok 223 - a newer failed run invalidates an earlier pass with identical definitions and inputs
+  ---
+  duration_ms: 158.869958
+  type: 'test'
+  ...
+# Subtest: an interrupted latest run cannot reuse a previous pass
+ok 224 - an interrupted latest run cannot reuse a previous pass
+  ---
+  duration_ms: 108.673584
+  type: 'test'
+  ...
+# Subtest: inputs are fingerprinted before execution and must not change during verification
+ok 225 - inputs are fingerprinted before execution and must not change during verification
+  ---
+  duration_ms: 60.861833
+  type: 'test'
+  ...
+# Subtest: missing outputs leave a failed receipt even when the command succeeds
+ok 226 - missing outputs leave a failed receipt even when the command succeeds
+  ---
+  duration_ms: 112.601375
+  type: 'test'
+  ...
+# Subtest: missing inputs leave a failed receipt before commands run
+ok 227 - missing inputs leave a failed receipt before commands run
+  ---
+  duration_ms: 45.086666
+  type: 'test'
+  ...
+# Subtest: changing an output invalidates its successful receipt
+ok 228 - changing an output invalidates its successful receipt
+  ---
+  duration_ms: 126.331084
+  type: 'test'
+  ...
+# Subtest: changing a suite definition invalidates a successful receipt
+ok 229 - changing a suite definition invalidates a successful receipt
+  ---
+  duration_ms: 116.973125
+  type: 'test'
+  ...
+# Subtest: incomplete or mismatched command receipts are rejected
+ok 230 - incomplete or mismatched command receipts are rejected
+  ---
+  duration_ms: 149.959416
+  type: 'test'
+  ...
+# Subtest: spawn errors are recorded as failed commands
+ok 231 - spawn errors are recorded as failed commands
+  ---
+  duration_ms: 63.993833
+  type: 'test'
+  ...
+# Subtest: timeout is a recorded failure rather than a pass
+ok 232 - timeout is a recorded failure rather than a pass
+  ---
+  duration_ms: 1072.839459
+  type: 'test'
+  ...
+# Subtest: normalized project-root aliases are rejected as verification inputs
+ok 233 - normalized project-root aliases are rejected as verification inputs
+  ---
+  duration_ms: 54.012167
+  type: 'test'
+  ...
+# Subtest: a declared directory must contain actual verification files
+ok 234 - a declared directory must contain actual verification files
+  ---
+  duration_ms: 64.262334
+  type: 'test'
+  ...
+# Subtest: nonempty inputs cannot hide another declared empty input directory
+ok 235 - nonempty inputs cannot hide another declared empty input directory
+  ---
+  duration_ms: 52.216584
+  type: 'test'
+  ...
+# Subtest: nonempty outputs cannot hide another declared empty output directory
+ok 236 - nonempty outputs cannot hide another declared empty output directory
+  ---
+  duration_ms: 69.246292
+  type: 'test'
+  ...
+# Subtest: a parent symlink cannot escape the project boundary
+ok 237 - a parent symlink cannot escape the project boundary
+  ---
+  duration_ms: 64.062584
+  type: 'test'
+  ...
+# Subtest: symlinks inside input trees are not fingerprinted as regular files
+ok 238 - symlinks inside input trees are not fingerprinted as regular files
+  ---
+  duration_ms: 74.304125
+  type: 'test'
+  ...
+# Subtest: an approved complete acyclic roadmap is accepted
+ok 239 - an approved complete acyclic roadmap is accepted
+  ---
+  duration_ms: 65.095667
+  type: 'test'
+  ...
+# Subtest: roadmap cycles are rejected even if every AC is covered
+ok 240 - roadmap cycles are rejected even if every AC is covered
+  ---
+  duration_ms: 77.82825
+  type: 'test'
+  ...
+# Subtest: unknown roadmap acceptance criteria are rejected
+ok 241 - unknown roadmap acceptance criteria are rejected
+  ---
+  duration_ms: 61.65375
+  type: 'test'
+  ...
+# Subtest: roadmap outcomes must be nonempty text
+ok 242 - roadmap outcomes must be nonempty text
+  ---
+  duration_ms: 87.701458
+  type: 'test'
+  ...
+# Subtest: a roadmap cannot omit any goal acceptance criterion
+ok 243 - a roadmap cannot omit any goal acceptance criterion
+  ---
+  duration_ms: 75.736875
+  type: 'test'
+  ...
+# Subtest: self and unknown dependencies are rejected before traversal
+ok 244 - self and unknown dependencies are rejected before traversal
+  ---
+  duration_ms: 128.288958
+  type: 'test'
+  ...
+# Subtest: persistent index: shadow semantics, corruption fence, cutover, commit/retry, stale index and rollback
+ok 245 - persistent index: shadow semantics, corruption fence, cutover, commit/retry, stale index and rollback
+  ---
+  duration_ms: 3632.340958
+  type: 'test'
+  ...
+# Subtest: single bootstrap entry from pristine source, empty HOME and npm cache; no credentials or dev dependencies
+ok 246 - single bootstrap entry from pristine source, empty HOME and npm cache; no credentials or dev dependencies
+  ---
+  duration_ms: 46153.862542
+  type: 'test'
+  ...
+# Subtest: current-input audit rejects stale input/output, latest FAIL, unexecuted suite and missing artifact
+ok 247 - current-input audit rejects stale input/output, latest FAIL, unexecuted suite and missing artifact
+  ---
+  duration_ms: 61.993375
+  type: 'test'
+  ...
+# Subtest: actual dump/journal backup integrity, additive upgrade, transactional failed upgrade, rollback and schema restore preserve business receipts
+ok 248 - actual dump/journal backup integrity, additive upgrade, transactional failed upgrade, rollback and schema restore preserve business receipts
+  ---
+  duration_ms: 2598.901208
+  type: 'test'
+  ...
+# Subtest: secret scanner rejects actual key-shaped content and undistributed env file
+ok 249 - secret scanner rejects actual key-shaped content and undistributed env file
+  ---
+  duration_ms: 34.369625
+  type: 'test'
+  ...
+# Subtest: runtime redistribution policy rejects unknown/prohibited license and advisory threshold
+ok 250 - runtime redistribution policy rejects unknown/prohibited license and advisory threshold
+  ---
+  duration_ms: 0.873375
+  type: 'test'
+  ...
+1..250
+# tests 250
+# suites 0
+# pass 249
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 64588.91875

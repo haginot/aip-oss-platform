@@ -1,56 +1,1162 @@
 {
   "schemaVersion": 1,
   "name": "aip-oss-platform-default",
-  "status": "draft",
+  "status": "approved",
   "decisionPolicy": "Every role must become selected, provided, or not-needed before the architecture gate passes.",
   "roles": [
-    { "id": "ingest", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "cdc", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "pipeline", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "transform", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "quality", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "identity-map", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "blob", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "lake-table", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "analytics", "group": "data", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "ontology", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "object-api", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "object-store", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "graph", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "text-search", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "retrieval", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "history", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "metrics", "group": "semantic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "rules", "group": "kinetic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "compute", "group": "kinetic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "action", "group": "kinetic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "workflow", "group": "kinetic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "writeback", "group": "kinetic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "event", "group": "dynamic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "stream", "group": "dynamic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "trigger", "group": "dynamic", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "agent", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "model", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "embedding", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "parse", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "ai-eval", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "guard", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "feature", "group": "ai", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "identity", "group": "security", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "relationship-auth", "group": "security", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "attribute-auth", "group": "security", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "delegation", "group": "security", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "secrets", "group": "security", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "metadata", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "audit", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "observability", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "schema-release", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "deployment", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "gateway", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "cache", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "recovery", "group": "ops", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "business-ui", "group": "ux", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" },
-    { "id": "authoring-ui", "group": "ux", "status": "undecided", "reason": "初回アーキテクチャ審査で決定する" }
-  ]
+    {
+      "id": "ingest",
+      "group": "data",
+      "status": "provided",
+      "reason": "Source cursor and content hash are checkpointed atomically; replay cannot resurrect deleted lots.",
+      "sourceResponsibility": "外部データを再開可能な処理で受け取り、元データの位置と取り込み時刻を残す。",
+      "contracts": [
+        "IngestPort：source、cursor、schema、snapshot/changes、provenance、再開・重複の扱い。"
+      ],
+      "migration": "ソース別のカーソル・取り込み済み範囲を移し、二重取り込みと欠損を照合。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Synthetic snapshot/change importer",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/ingest: snapshot restart, repeated cursor, delete and invalid input quarantine",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "cdc",
+      "group": "data",
+      "status": "provided",
+      "reason": "Only the demo source change log is supported; monotonic positions and snapshot barrier replace a vendor CDC product.",
+      "sourceResponsibility": "業務ソースの追加・更新・削除を捕捉し、スナップショットと変更ログを接続する。",
+      "contracts": [
+        "ChangeSourcePort：source position、key、before/after、delete、snapshot境界。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "ログ位置とスナップショット境界を引き継ぎ、削除・スキーマ変更を照合。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Synthetic ERP change-log adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/cdc: snapshot/change overlap, source position gap, reorder and delete",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "pipeline",
+      "group": "data",
+      "status": "provided",
+      "reason": "Runs reference immutable input and job versions in the same state store; restart resumes persisted checkpoints.",
+      "sourceResponsibility": "バッチ処理の依存関係・再実行・実行履歴を管理する。業務承認の状態管理とは分ける。",
+      "contracts": [
+        "PipelinePort：run、asset/input version、dependency、retry、cancel、status。"
+      ],
+      "migration": "DAGと履歴を移行。実行中のジョブは旧環境で完了させるか再実行を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel durable job runner",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/pipeline: crash after checkpoint, cancellation and duplicate start",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "transform",
+      "group": "data",
+      "status": "provided",
+      "reason": "Canonical IDs, units and UTC times precede object binding; transform failure cannot advance source cursor.",
+      "sourceResponsibility": "ソースデータを正規化し、決められた意味・型・単位へ変換する。",
+      "contracts": [
+        "TransformPort：input/output schema、versioned job、determinism、lineage。"
+      ],
+      "migration": "SQL方言・UDF・実行モデルを変換し、同一入力の差分を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Versioned pure normalization functions",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/transform: invalid unit, deterministic rerun and lineage equality",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "quality",
+      "group": "data",
+      "status": "provided",
+      "reason": "Negative inventory and missing lot/tenant references are quarantined with evidence, never silently coerced.",
+      "sourceResponsibility": "型・必須値・範囲・参照整合性・鮮度を検査し、隔離や公開停止を判断する。",
+      "contracts": [
+        "QualityPort：check version、target revision、result、severity、evidence。"
+      ],
+      "migration": "検査定義と履歴を移し、同じ異常データで判定の一致を確認。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Typed schema and domain validators",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/quality: bad lot, invalid quantity, quarantine and release audit",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "identity-map",
+      "group": "data",
+      "status": "provided",
+      "reason": "Tenant/source/type/key identifies an Object; merge/split requires reviewed mapping release, not fuzzy automatic merging.",
+      "sourceResponsibility": "ソースごとのIDを安定したObject IDへ対応付け、統合・分割・人による訂正を管理する。",
+      "contracts": [
+        "IdentityMapPort：source key → Object ID、mapping version、merge/split、confidence、review。"
+      ],
+      "migration": "ID対応を製品依存から分離。ID再発番は原則禁止し、リンク・権限・索引の参照を保持。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Namespaced deterministic ID map",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/identity-map: cross-tenant key collision and mapping-version migration",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "blob",
+      "group": "data",
+      "status": "selected",
+      "reason": "Small synthetic evidence stored as immutable bytes with digest, authorized range read and explicit retention.",
+      "sourceResponsibility": "文書・画像・音声・原本データを保管し、参照・保持・暗号化を管理する。",
+      "contracts": [
+        "BlobPort：URI、content hash、version、range read、retention、access context。"
+      ],
+      "migration": "ハッシュとバージョンを照合。署名URL・IAM・保持設定は個別に移行。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Content-addressed database evidence adapter",
+      "version": "PostgreSQL@18.6 + pg@8.16.3 + platform-contract@1.0.0",
+      "license": "MIT (repository-owned code); PostgreSQL; MIT (pg)",
+      "verification": [
+        "contract-suite/blob: hash mismatch, unauthorized range read and retention hold",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node",
+        "postgresql",
+        "pg"
+      ]
+    },
+    {
+      "id": "lake-table",
+      "group": "data",
+      "status": "not-needed",
+      "reason": "Demo authoritative data and bounded reports fit the transactional store; no lake snapshots or partitioned table writes are promised.",
+      "sourceResponsibility": "大量データのスナップショット・スキーマ進化・分析用更新を管理する。業務Actionのトランザクションとは別。",
+      "contracts": [
+        "AnalyticTablePort：snapshot ID、schema evolution、partition、read/write capabilities。"
+      ],
+      "migration": "形式間の互換性を仮定せず、書き換え・スナップショット移行・削除反映を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: lake-table advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "analytics",
+      "group": "data",
+      "status": "provided",
+      "reason": "Reports use finite typed templates over an authorized snapshot; arbitrary SQL is not a public capability.",
+      "sourceResponsibility": "集計・探索・大量スキャンを実行する。業務Object更新の正本とは分ける。",
+      "contracts": [
+        "AnalyticsPort：承認済みquery/model、parameters、snapshot、result schema、cost/time limits。"
+      ],
+      "migration": "SQL方言・型・時刻・NULL・精度・料金と性能を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Approved bounded SQL report adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/analytics: aggregate leakage, parameter injection and timeout",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "ontology",
+      "group": "semantic",
+      "status": "provided",
+      "reason": "Published schema, policy and rule manifests use independent immutable versions and compatibility checks.",
+      "sourceResponsibility": "Object・Property・Link・Actionの意味、型、単位、制約、所有権、バージョンを管理する。",
+      "contracts": [
+        "OntologyRegistryPort：immutable schema version、definition diff、validation、publish/rollback。"
+      ],
+      "migration": "意味の変換をレビュー。RDFの推論と業務型定義を自動的に同等視しない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel immutable Ontology registry",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/ontology: incompatible change, publish privilege and rollback manifest",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "object-api",
+      "group": "semantic",
+      "status": "provided",
+      "reason": "All get/query/traverse paths apply identical trusted constraints and masks before pagination/count/snippets.",
+      "sourceResponsibility": "Objectの取得・一覧・リンク辿り・購読を提供し、行・列認可と版整合性を適用する。",
+      "contracts": [
+        "ObjectPort：get/query/traverse、有限のQuery AST、cursor、revision、freshness、projection。"
+      ],
+      "migration": "型・NULL・並び順・ページング・認可・鮮度の契約テストを通して交換。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel finite Object API",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/object-api: get/list/search/column parity, traversal budget and stale cursor",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "object-store",
+      "group": "semantic",
+      "status": "selected",
+      "reason": "Expected revisions, unique idempotency and state/action/outbox/audit commit in one transaction.",
+      "sourceResponsibility": "編集可能な業務状態を保持し、版競合とトランザクションを管理する。ソース側が正本の場合は属性ごとに所有権を定義。",
+      "contracts": [
+        "StatePort / UnitOfWork：expected revision、atomic object＋action log＋outbox、conflict、idempotency。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "snapshot＋CDC、更新停止点、再開位置、照合、ロールバックを定義。汎用CRUDへの置換は不可。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "PostgreSQL StatePort and UnitOfWork via pg",
+      "version": "PostgreSQL@18.6 + pg@8.16.3 + platform-contract@1.0.0",
+      "license": "MIT (repository-owned code); PostgreSQL; MIT (pg)",
+      "verification": [
+        "contract-suite/object-store: concurrent compare-and-swap, abort at each write and unknown commit",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node",
+        "postgresql",
+        "pg"
+      ]
+    },
+    {
+      "id": "graph",
+      "group": "semantic",
+      "status": "selected",
+      "reason": "Finite one/two-hop typed traversal suffices for lot/store/supplier impact; no unrestricted graph language.",
+      "sourceResponsibility": "業務Object間の関係を問い合わせる。認可の関係モデルとは別に管理する。",
+      "contracts": [
+        "GraphPort：typed edges、direction、bounded traversal、revision、consistency profile。"
+      ],
+      "migration": "プロパティグラフ・RDF・SQLの意味差を検証。派生投影なら原本から再構築。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "PostgreSQL typed link table adapter",
+      "version": "PostgreSQL@18.6 + pg@8.16.3 + platform-contract@1.0.0",
+      "license": "MIT (repository-owned code); PostgreSQL; MIT (pg)",
+      "verification": [
+        "contract-suite/graph: edge type validation, hidden endpoint and hop/time budget",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node",
+        "postgresql",
+        "pg"
+      ]
+    },
+    {
+      "id": "text-search",
+      "group": "semantic",
+      "status": "provided",
+      "reason": "Explicit lexical matching and stable ID order; authoritative recheck excludes revoked/deleted objects.",
+      "sourceResponsibility": "文字列・フィールド・文書の索引を管理し、検索の根拠と鮮度を返す。",
+      "contracts": [
+        "TextSearchPort：query、filters、tenant、source revision、score/rank、snippet、index watermark。"
+      ],
+      "migration": "原本から再索引。解析器・日本語処理・ランキング・削除反映を評価。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Authorized SQL lexical search adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/text-search: ACL after index lag, count leakage and deterministic pagination",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "retrieval",
+      "group": "semantic",
+      "status": "provided",
+      "reason": "Lexical evidence only, topK bounded and source revisions returned; AC-007 replaces scan with separately persisted projection.",
+      "sourceResponsibility": "埋め込み検索・全文との複合検索・必要な媒体の検索を行い、根拠を返す。",
+      "contracts": [
+        "RetrievalPort：filter、topK、search mode、Object ID、chunk/source revision、embedding version、watermark。"
+      ],
+      "migration": "原本・埋め込みから再構築し、検索品質・ACL漏れ・削除・コストを評価。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "SQL scan evidence adapter with durable projection replacement",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/retrieval: shadow IDs/types/revisions/masks, stale projection and cutback",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "history",
+      "group": "semantic",
+      "status": "selected",
+      "reason": "Recorded-time history and source valid-time are distinct; historical reads still use current authorization.",
+      "sourceResponsibility": "Objectの過去状態と訂正を参照する。業務上の有効時刻と記録時刻を区別する。",
+      "contracts": [
+        "HistoryPort：asOf、valid time、recorded time、revision、retention、replay policy。"
+      ],
+      "migration": "時刻意味・削除・訂正・保存期間を照合。イベントログから状態が再現可能か検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Immutable object revision ledger",
+      "version": "PostgreSQL@18.6 + pg@8.16.3 + platform-contract@1.0.0",
+      "license": "MIT (repository-owned code); PostgreSQL; MIT (pg)",
+      "verification": [
+        "contract-suite/history: asOf boundary, revoked historical access and retention",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node",
+        "postgresql",
+        "pg"
+      ]
+    },
+    {
+      "id": "metrics",
+      "group": "semantic",
+      "status": "provided",
+      "reason": "Counts use authorized rows and explicit grain/window/definition version; no unrestricted OLAP engine.",
+      "sourceResponsibility": "売上・在庫などの指標定義と集計粒度を管理する。Object・Action全体のOntologyとは別の範囲。",
+      "contracts": [
+        "MetricPort：metric ID、grain、dimensions、time semantics、definition version、lineage。"
+      ],
+      "migration": "粒度・集計・時刻・結合の意味を照合。BI式の自動移植を仮定しない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Versioned business metric templates",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/metrics: cross-region count leak and definition-version mismatch",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "rules",
+      "group": "kinetic",
+      "status": "provided",
+      "reason": "Typed outcomes retain rule revision, reason and evidence; approval revalidates effective rules.",
+      "sourceResponsibility": "閾値・条件・計算・決定表を版管理し、決定の根拠を返す。認可ポリシーの責務とは区別する。",
+      "contracts": [
+        "DecisionPort：rule version、typed input、outcome、explanation、determinism、effective period。"
+      ],
+      "migration": "ルール言語を変換し、代表・境界・例外の判定コーパスで差分評価。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Deterministic recall and substitution rule evaluator",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/rules: rule change during approval and explainable deny",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "compute",
+      "group": "kinetic",
+      "status": "provided",
+      "reason": "No arbitrary user code or shell; quantities and dependency evidence computed with explicit limits.",
+      "sourceResponsibility": "需要予測、割り当て、計画などの関数・モデル・数理最適化を実行する。",
+      "contracts": [
+        "FunctionPort：typed I/O、implementation version、limits、seed、result/evidence。"
+      ],
+      "migration": "入力型・精度・乱数・許容誤差・最適化の制約を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Bounded pure typed functions",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/compute: overflow, invalid typed input and deterministic evidence",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "action",
+      "group": "kinetic",
+      "status": "provided",
+      "reason": "Proposal, validation and execution differ; revisions, actor/delegation and canonical key input bind every submit.",
+      "sourceResponsibility": "型検証、認可、業務制約、版競合、重複防止、承認、更新、監査、イベント発行を束ねる。",
+      "contracts": [
+        "ActionPort：validate/submit/status、expected revision、idempotency key、actor/onBehalfOf、evidence。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "Actionの意味・状態・履歴を維持し、atomic outboxと権限の契約を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel typed Action service",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/action: deny, conflict, key mismatch, replay and stale approval",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "workflow",
+      "group": "kinetic",
+      "status": "provided",
+      "reason": "Approval and compensation are durable typed transitions, each reauthorized; no separate workflow engine.",
+      "sourceResponsibility": "承認待ち・タイマー・再試行・補償を含む業務フローの状態を保持する。",
+      "contracts": [
+        "WorkflowPort：start/signal/cancel/status、workflow version、approval identity、retry/compensation。"
+      ],
+      "migration": "実行中の処理は旧エンジンで完了し、新規開始を新エンジンへ。状態移植は別検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel persisted approval state machine",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/workflow: restart pending approval, double approver and denied compensation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "writeback",
+      "group": "kinetic",
+      "status": "provided",
+      "reason": "Stable operation ID plus target expected revision; timeout becomes unknown and requires reconciliation before retry.",
+      "sourceResponsibility": "ERP・CRM等へActionの結果を届け、成功不明・再試行・部分失敗を照合する。",
+      "contracts": [
+        "WritebackPort：operation ID、target、expected version、idempotency、ack、reconcile/compensate。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "送信済みと確定済みを照合。外部APIの非冪等操作を再送しない仕組みを検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "HTTP synthetic ERP adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/writeback: external succeeded/lost ack, dedup, conflict and compensation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "event",
+      "group": "dynamic",
+      "status": "provided",
+      "reason": "At-least-once per-aggregate sequence delivery with consumer dedup; no global ordering or external exactly-once claim.",
+      "sourceResponsibility": "Object変更・Action結果を購読者へ配送し、再送と再生を支える。",
+      "contracts": [
+        "EventPort：CloudEvents envelope＋schema/revision/tenant/causation、ack、retention、ordering profile。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "位置・保持・順序・再配送を検証。少なくとも1回配送＋受信側冪等性を基本。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Transactional outbox/inbox adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/event: lease expiry, duplicate, reorder, poison message and restart",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "stream",
+      "group": "dynamic",
+      "status": "not-needed",
+      "reason": "Finite source changes and persisted jobs need no event-time windows; unsupported late-data windows must be rejected explicitly.",
+      "sourceResponsibility": "継続集計、時間窓、イベント条件を評価し、再評価やAction提案へつなぐ。",
+      "contracts": [
+        "StreamPort：event time、watermark、window、late data、checkpoint、output version。"
+      ],
+      "migration": "遅延データ・順序逆転・再生・集計結果の差分を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: stream advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "trigger",
+      "group": "dynamic",
+      "status": "provided",
+      "reason": "Fire IDs and missed-run policy persist; periodic reconcile and projection catch-up share outbox dedup.",
+      "sourceResponsibility": "日時・変更・閾値で処理を開始し、重複起動を防ぐ。",
+      "contracts": [
+        "TriggerPort：schedule/subscription、version、fire ID、missed run、deduplication。"
+      ],
+      "migration": "タイムゾーン・起動漏れ・二重起動を確認。既存基盤の機能を優先。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel persisted scheduler",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/trigger: clock jump, missed run and duplicate fire",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "agent",
+      "group": "ai",
+      "status": "not-needed",
+      "reason": "Default demo uses human typed actions and deterministic rules; no autonomous agent or simulated LLM run is claimed.",
+      "sourceResponsibility": "根拠検索、推論、ツール呼び出し、承認待ちを編成し、Actionの提案を作る。",
+      "contracts": [
+        "AgentPort：run/context、typed tools、checkpoint、budget、cancel、proposal/evidence。"
+      ],
+      "migration": "ツール契約を維持。内部グラフ・checkpointは別途移行し、品質を再評価。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: agent advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "model",
+      "group": "ai",
+      "status": "not-needed",
+      "reason": "No inference model is needed on the default execution path; future inference requires separately reviewed model/license/evaluation adoption.",
+      "sourceResponsibility": "推論を呼び出し、モデル・費用・制限・ツール対応を管理する。",
+      "contracts": [
+        "ModelPort：typed messages/tools/output、model version、timeout、usage、capabilities、errors。"
+      ],
+      "migration": "共通APIでも挙動は同等ではない。品質・ツール・安全性・費用の回帰評価を実施。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: model advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "embedding",
+      "group": "ai",
+      "status": "not-needed",
+      "reason": "Evidence retrieval is explicitly lexical; no vector similarity, dimensions or embedding compatibility are claimed.",
+      "sourceResponsibility": "テキスト・必要な媒体を埋め込み、検索結果を並べ直す。検索ストアと独立して選ぶ。",
+      "contracts": [
+        "EmbeddingPort：model/version、dimensions、distance profile、normalization、media type。"
+      ],
+      "migration": "モデル変更は原則再埋め込み。次元だけで互換と判断せず検索品質を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: embedding advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "parse",
+      "group": "ai",
+      "status": "not-needed",
+      "reason": "Inputs are typed synthetic JSON and immutable evidence bytes; OCR/PDF parsing is outside this initial supported capability profile.",
+      "sourceResponsibility": "文書を段落・表・画像等へ分け、ページ位置と原文参照を保つ。",
+      "contracts": [
+        "DocumentPort：source hash、parser version、chunks、page/bbox、media、confidence。"
+      ],
+      "migration": "抽出結果を比較。chunk IDと引用位置の変化に合わせて索引を再作成。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: parse advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "ai-eval",
+      "group": "ai",
+      "status": "provided",
+      "reason": "Boundary attacks are evaluated without claiming language model accuracy; future model adoption needs full model/prompt corpus gate.",
+      "sourceResponsibility": "Prompt・モデル・検索・ツールの版を記録し、品質・費用・失敗を比較する。",
+      "contracts": [
+        "EvaluationPort：dataset version、run/model/prompt/retrieval versions、metrics、traces、release decision。"
+      ],
+      "migration": "評価セット・指標を維持。追跡製品と評価ライブラリは併用可能で同等製品ではない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Versioned tool safety and evidence evaluation harness",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/ai-eval: forged actor, prompt-injected tool args and unauthorized evidence",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "guard",
+      "group": "ai",
+      "status": "provided",
+      "reason": "Untrusted tool payload cannot choose actor or policy; output is schema-validated and policy filtered.",
+      "sourceResponsibility": "型・引用・機密・許されるツールを検査し、違反を拒否・再試行する。認可判定の代替にはしない。",
+      "contracts": [
+        "GuardPort：input/output/tool request、policy version、decision、reason、redaction。"
+      ],
+      "migration": "代表的な違反・攻撃入力・誤検知の回帰評価。最終的なAction認可は常に実行。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel typed tool request guard",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/guard: forged delegation, arbitrary SQL/shell and cross-tenant evidence",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "feature",
+      "group": "ai",
+      "status": "not-needed",
+      "reason": "No predictive training/serving pipeline is required for rule-driven recall and substitute procurement; point-in-time feature joins unsupported.",
+      "sourceResponsibility": "オンライン・オフラインの特徴量を時点に合わせて取得する。LLMのみなら専用基盤は不要。",
+      "contracts": [
+        "FeaturePort：entity ID、feature version、point-in-time join、freshness、training/serving consistency。"
+      ],
+      "migration": "過去時点の結合と予測への未来情報混入を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: feature advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "identity",
+      "group": "security",
+      "status": "provided",
+      "reason": "Random opaque expiring session bound to provisioned principal; no user-supplied role header and no OIDC claim.",
+      "sourceResponsibility": "人を認証し、信頼できる主体・所属・セッションを提供する。",
+      "contracts": [
+        "IdentityPort：OIDC/OAuth profile、issuer/audience、principal、tenant、assurance、expiry。"
+      ],
+      "migration": "主体ID対応・セッション期限・クレームの意味を保つ。ログイン成功だけで業務権限を与えない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Security team",
+      "implementation": "Local synthetic session identity adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/identity: forged/expired session, issuer profile unsupported and isolation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "relationship-auth",
+      "group": "security",
+      "status": "provided",
+      "reason": "Store/region assignment tuples are transactionally versioned and revoked with the same policy snapshot.",
+      "sourceResponsibility": "所有者・所属・共有・委任などの権限関係からアクセスを判定する。",
+      "contracts": [
+        "RelationshipPolicyPort：check/batch/list candidates、model/tuple version、consistency、revocation。"
+      ],
+      "migration": "主体・資源ID・関係モデル・tupleを移行。認可の反例セットで拒否の一致を確認。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Security team",
+      "implementation": "PostgreSQL versioned relationship evaluator",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/relationship-auth: revocation on read/action and tuple version drift",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "attribute-auth",
+      "group": "security",
+      "status": "provided",
+      "reason": "Tenant AND relationship AND attribute AND delegation AND action preconditions; deny overrides, failures close.",
+      "sourceResponsibility": "主体・資源・環境・操作の条件を評価し、行・列・Actionの許可範囲を返す。",
+      "contracts": [
+        "PolicyPort：authorize、constraints/masks、trusted context、policy version、deny reason、fail closed。"
+      ],
+      "migration": "Rego・Cedar等は自動互換ではない。ポリシー移植と検索・実行の認可差分を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Security team",
+      "implementation": "Kernel PolicyPort constraint/mask evaluator",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/attribute-auth: mask parity, unknown attribute and policy store outage",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "delegation",
+      "group": "security",
+      "status": "provided",
+      "reason": "Server establishes actor; onBehalfOf needs audience, scope, expiry, no widening and recorded evidence.",
+      "sourceResponsibility": "サービスの実行主体、利用者代理、許可したツール範囲、期限を検証する。",
+      "contracts": [
+        "DelegationPort：actor、onBehalfOf、audience、scope、expiry、workload identity、delegation evidence。"
+      ],
+      "migration": "ID・トークン交換・委任の意味を検証。AIが申告した主体情報を信頼しない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Security team",
+      "implementation": "Local signed scope-limited delegation adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/delegation: replay, expired token, wrong audience and escalation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "secrets",
+      "group": "security",
+      "status": "provided",
+      "reason": "Generated local synthetic keys in restricted files; APIs take references and never emit secret values to receipts.",
+      "sourceResponsibility": "接続秘密、鍵、更新、暗号化ポリシーを管理する。",
+      "contracts": [
+        "SecretPort / KeyPort：opaque reference、lease、rotation、encrypt/decrypt authorization、audit。"
+      ],
+      "migration": "秘密値をログに出さず参照を移す。鍵移行・再暗号化・復旧可能性を別検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Security team",
+      "implementation": "Local ephemeral key/opaque-secret adapter",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/secrets: file permission, rotation overlap, unauthorized decrypt and redaction",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "metadata",
+      "group": "ops",
+      "status": "provided",
+      "reason": "Input content hashes and schema/run/object revisions form immutable lineage for each business mutation.",
+      "sourceResponsibility": "データ・Object・処理の出所と依存を記録する。Ontologyの業務意味・Action定義の代替ではない。",
+      "contracts": [
+        "MetadataPort：asset ID、version、lineage edges、owner、classification、run correlation。"
+      ],
+      "migration": "ID対応と履歴を移し、欠けたLineageを照合。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Kernel lineage ledger",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/metadata: missing evidence, source mapping and trace correlation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "audit",
+      "group": "ops",
+      "status": "provided",
+      "reason": "DB application role cannot alter old audit; denied calls also recorded and audit failure blocks business execution.",
+      "sourceResponsibility": "誰が、何を、どの版の根拠・権限・ルールで変更したか記録する。",
+      "contracts": [
+        "AuditPort：actor/onBehalfOf、action/object revision、policy/rule/model version、evidence、retention。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "追跡IDと履歴を維持。改ざん防止・保持・消去ポリシーは保存先別に検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Transactional append-only audit ledger",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/audit: rollback/no orphan, tamper attempt and restore audit chain",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "observability",
+      "group": "ops",
+      "status": "provided",
+      "reason": "Correlation IDs join action/outbox/ERP without making traces authoritative; sensitive fields excluded.",
+      "sourceResponsibility": "取り込みからAction・書き戻しまでを結び、遅延・エラー・費用を観測する。",
+      "contracts": [
+        "TelemetryPort：trace context、metrics/log schema、PII handling、SLO、budget。"
+      ],
+      "migration": "計測項目・trace ID・アラート・保存期間を移す。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Structured local logs and metrics endpoints",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/observability: failure classification, secret redaction and queue lag",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "schema-release",
+      "group": "ops",
+      "status": "provided",
+      "reason": "Expand/migrate/check/cutover before contract retirement; approval references immutable digest.",
+      "sourceResponsibility": "API・Event・Ontology・Rule・Policyの互換性を検査し、公開とロールバックを管理する。",
+      "contracts": [
+        "ReleasePort：artifact digest、compatibility profile、migration plan、approver、rollback target。"
+      ],
+      "migration": "製品のスキーマ互換性と業務意味の互換性を別に確認。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Manifest and migration release manager",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/schema-release: mixed clients, invalid migration, restart and rollback compatibility",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "deployment",
+      "group": "ops",
+      "status": "provided",
+      "reason": "Kernel, database and synthetic ERP run on loopback with distinct credentials and health checks.",
+      "sourceResponsibility": "選択したAdapterと機能プロファイルを宣言し、配備・更新・秘密参照を管理する。",
+      "contracts": [
+        "CompositionPort：slot → adapter/version/config、capabilities、dependencies、health、rollback。"
+      ],
+      "migration": "環境ごとの設定・権限・状態・依存を検証。Kubernetesを前提に固定しない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Pinned local process composition scripts",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/deployment: empty-directory bootstrap, pin verification and partial startup cleanup",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "gateway",
+      "group": "ops",
+      "status": "provided",
+      "reason": "Request size/rate/time budgets precede typed parsing and identity validation; public errors have stable codes.",
+      "sourceResponsibility": "APIの入口、流量、接続制限を管理する。業務認可はObject APIとActionにも適用。",
+      "contracts": [
+        "GatewayPort：identity propagation、rate/size limits、timeouts、trace、error profile。"
+      ],
+      "migration": "ヘッダー・timeout・ルーティング・認証連携を照合。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Node HTTP boundary in Kernel",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/gateway: oversize, malformed payload, deadline and trace propagation",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "cache",
+      "group": "ops",
+      "status": "not-needed",
+      "reason": "Authorization-sensitive reads go to the authoritative store; removing shared cache avoids stale policy and deletion exposure.",
+      "sourceResponsibility": "派生結果を一時保持し、版・期限・失効に従って破棄する。正本にしない。",
+      "contracts": [
+        "CachePort：namespaced key、revision/policy version、TTL、invalidate、tenant isolation。"
+      ],
+      "migration": "移行時は破棄・再構築可能にする。認可変更を古い許可で上書きしない。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "Disabled capability endpoint",
+      "version": "platform-contract@1.0.0",
+      "license": "Not applicable: no additional artifact selected",
+      "verification": [
+        "capability-profile: cache advertised unavailable; invocation rejects UNSUPPORTED_CAPABILITY without side effect; required common contracts remain enforced"
+      ],
+      "productRefs": []
+    },
+    {
+      "id": "recovery",
+      "group": "ops",
+      "status": "provided",
+      "reason": "Consistent DB backup/WAL checkpoint includes state/outbox/audit; restore verifies before reconnecting ERP.",
+      "sourceResponsibility": "正本・定義・鍵・権限・実行履歴を復旧し、派生索引を再構築する。",
+      "contracts": [
+        "RecoveryPort：backup set、consistent checkpoint、RPO/RTO、restore/reconcile、restore evidence。",
+        "Recovery retention/discovery profile 1.0.0: architecture/RECOVERY_CONTRACT.json and docs/DECISIONS.md D-11; indefinite dedup, fenced journal enumeration outside DB restore boundary; absence is not unapplied."
+      ],
+      "migration": "製品ごとの復旧手順を組み合わせ、横断の整合点を実際に復元して検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform operations",
+      "implementation": "PostgreSQL backup plus restore/reconcile runner",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/recovery: WAN/core outage, restart, restore, unknown writeback and measured RPO/RTO",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract",
+        "planned recovery-profile: execute RECOVERY_CONTRACT.scenarios retention-boundary/key-mismatch/missing-ledger/unresolved-hold/lost-ack-db-restore/intent-crash/journal-gap/recovery-denied; oracle IDs forbidden as recovery input; no duplicate effect, explicit recovered audit and local loss report."
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "business-ui",
+      "group": "ux",
+      "status": "provided",
+      "reason": "Recall and substitution screen uses only public Object/Action contracts; hides unavailable actions but server enforces.",
+      "sourceResponsibility": "Objectの表示・検索・Action提案・承認・実行結果を提示する。",
+      "contracts": [
+        "ClientPort：generated typed SDK、Object/Action API、visible permissions、revision/error handling。"
+      ],
+      "migration": "製品SDKを画面に直接持ち込まず、公開APIと表示権限を検証。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel-served HTML/JavaScript typed client",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/business-ui: pending/conflict/denied/external failure rendering and raw API bypass",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    },
+    {
+      "id": "authoring-ui",
+      "group": "ux",
+      "status": "provided",
+      "reason": "Draft diff, simulation, reviewed publish and rollback are separate from live business mutation.",
+      "sourceResponsibility": "Ontology・Rule・Policy・Workflowを編集・比較・検証し、承認して公開する。",
+      "contracts": [
+        "AuthoringPort：draft、diff、simulation cases、review、publish、release version。"
+      ],
+      "migration": "各DSLの編集器は個別対応。エクスポート・公開・再評価を維持。",
+      "contractVersion": "1.0.0",
+      "implementationStatus": "planned",
+      "owner": "Platform team",
+      "implementation": "Kernel-served manifest review interface",
+      "version": "platform-contract@1.0.0 on Node.js@22.23.3",
+      "license": "MIT (repository-owned code); MIT and bundled notices (Node.js)",
+      "verification": [
+        "contract-suite/authoring-ui: unreviewed publish, incompatible schema and approval provenance",
+        "planned: foundation/demo/bcp/release receipt required; architecture checks do not execute this contract"
+      ],
+      "productRefs": [
+        "node"
+      ]
+    }
+  ],
+  "approvalScope": "Architecture decisions only; full role contract acceptance remains planned; product AC verdicts require current acceptance evidence and independent review",
+  "internalLicenseDecision": "MIT; approved by DR-ARCH-001 on 2026-10-12",
+  "deployables": [
+    {
+      "id": "kernel",
+      "runtime": "node@22.23.3",
+      "modules": [
+        "domain",
+        "ports",
+        "http",
+        "workers",
+        "ui"
+      ],
+      "owner": "Platform team"
+    },
+    {
+      "id": "state",
+      "runtime": "postgresql@18.6",
+      "owner": "Platform operations"
+    },
+    {
+      "id": "synthetic-erp",
+      "runtime": "node@22.23.3",
+      "owner": "Demo adapter team",
+      "storage": "isolated PostgreSQL database, separate credential; not shared UnitOfWork"
+    }
+  ],
+  "sourceContractDigest": "605a4d46b890737c6a327e2df89963b108a90308aec5e14649d1f68408ce2824"
 }
-

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "foundation-local-contracts",
+  "startedAt": "2026-10-12T07:32:52.159Z",
+  "finishedAt": "2026-10-12T07:32:52.658Z",
+  "node": "v25.4.0",
+  "exitCode": 0,
+  "tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: generated declarations compile with strict pinned TypeScript and reject invalid client inputs\nok 1 - generated declarations compile with strict pinned TypeScript and reject invalid client inputs\n  ---\n  duration_ms: 388.497583\n  type: 'test'\n  ...\n# Subtest: generated runtime and declarations reproduce the versioned Ontology and reject source drift\nok 2 - generated runtime and declarations reproduce the versioned Ontology and reject source drift\n  ---\n  duration_ms: 1.266167\n  type: 'test'\n  ...\n# Subtest: client wire envelope binds opaque credentials and validates responses without retrying unknown success\nok 3 - client wire envelope binds opaque credentials and validates responses without retrying unknown success\n  ---\n  duration_ms: 21.360958\n  type: 'test'\n  ...\n# Subtest: canonical digest is stable while typed input, actor injection and unsupported version are rejected\nok 4 - canonical digest is stable while typed input, actor injection and unsupported version are rejected\n  ---\n  duration_ms: 1.591167\n  type: 'test'\n  ...\n# Subtest: finite typed query rejects arbitrary expressions, restricted filters and unbounded inputs\nok 5 - finite typed query rejects arbitrary expressions, restricted filters and unbounded inputs\n  ---\n  duration_ms: 0.190292\n  type: 'test'\n  ...\n# Subtest: compatibility preserves type, unit, field, action semantics and optional additions\nok 6 - compatibility preserves type, unit, field, action semantics and optional additions\n  ---\n  duration_ms: 0.387375\n  type: 'test'\n  ...\n# Subtest: real fsync journal survives reopen, enumerates scoped stable snapshot and denies cross scope\nok 7 - real fsync journal survives reopen, enumerates scoped stable snapshot and denies cross scope\n  ---\n  duration_ms: 21.979834\n  type: 'test'\n  ...\n# Subtest: journal hash tampering, truncation and gap fail closed\nok 8 - journal hash tampering, truncation and gap fail closed\n  ---\n  duration_ms: 18.071125\n  type: 'test'\n  ...\n# Subtest: fsynced INTENT and COMMITTED survive actual SIGKILL and new process reopen\nok 9 - fsynced INTENT and COMMITTED survive actual SIGKILL and new process reopen\n  ---\n  duration_ms: 246.785208\n  type: 'test'\n  ...\n1..9\n# tests 9\n# suites 0\n# pass 9\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 451.970875\n",
+  "stderr": ""
+}

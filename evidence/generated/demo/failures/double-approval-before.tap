@@ -1,0 +1,85 @@
+TAP version 13
+# Subtest: store retrieval corpus: ordered evidence, masking, delayed source, deletion, revocation and fail closed over HTTP
+ok 1 - store retrieval corpus: ordered evidence, masking, delayed source, deletion, revocation and fail closed over HTTP
+  ---
+  duration_ms: 757.457291
+  type: 'test'
+  ...
+# Subtest: store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+ok 2 - store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+  ---
+  duration_ms: 836.038458
+  type: 'test'
+  ...
+# Subtest: store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+ok 3 - store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+  ---
+  duration_ms: 240.13525
+  type: 'test'
+  ...
+# Subtest: store concurrent isolation, replay and mismatched key preserve one effect
+ok 4 - store concurrent isolation, replay and mismatched key preserve one effect
+  ---
+  duration_ms: 144.920042
+  type: 'test'
+  ...
+# Subtest: store approval rechecks changed candidate and original delegation
+ok 5 - store approval rechecks changed candidate and original delegation
+  ---
+  duration_ms: 301.739792
+  type: 'test'
+  ...
+# Subtest: store external rejection blocks customer notice; lost ack reconciles without resend
+ok 6 - store external rejection blocks customer notice; lost ack reconciles without resend
+  ---
+  duration_ms: 243.600708
+  type: 'test'
+  ...
+# Subtest: store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+not ok 7 - store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+  ---
+  duration_ms: 216.56225
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:98:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      Comparison {
+    +   code: 'PERMISSION_DENIED'
+    -   code: 'RULE_REJECTED'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    code: 'RULE_REJECTED'
+  actual:
+  error: 'PERMISSION_DENIED'
+  stack: |-
+    call (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/client-transport.mjs:18:27)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async waitForActual (node:assert:644:5)
+    async Function.rejects (node:assert:767:25)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:107:41
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:29:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  operator: 'rejects'
+  stack: |-
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:107:41
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:29:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2196.793542

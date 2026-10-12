@@ -1,0 +1,202 @@
+{
+  "starts": [
+    {
+      "id": "snapshot-tail",
+      "state": "READY",
+      "cursor": 0,
+      "total": 3,
+      "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+      "jobVersion": "1.0.0",
+      "barrier": 1
+    },
+    {
+      "id": "snapshot-tail",
+      "state": "READY",
+      "cursor": 0,
+      "total": 3,
+      "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+      "jobVersion": "1.0.0",
+      "barrier": 1
+    }
+  ],
+  "steps": [
+    {
+      "id": "snapshot-tail",
+      "state": "RUNNING",
+      "cursor": 1,
+      "total": 3,
+      "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+      "jobVersion": "1.0.0",
+      "barrier": 1,
+      "receipt": {
+        "state": "APPLIED",
+        "source": "inventory",
+        "position": 1,
+        "objectId": "source:rice",
+        "revision": 1,
+        "inputDigest": "ce3d79a849ecd00debc6fabb15c42f246a23b031df53292d5fdae580d07473e4",
+        "ontologyVersion": "1.0.0",
+        "transformVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "reasons": [],
+        "releases": null,
+        "validAt": "2026-10-12T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "snapshot-tail",
+      "state": "RUNNING",
+      "cursor": 2,
+      "total": 3,
+      "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+      "jobVersion": "1.0.0",
+      "barrier": 1,
+      "receipt": {
+        "state": "APPLIED",
+        "source": "inventory",
+        "reasons": [],
+        "validAt": "2026-10-12T00:00:00.000Z",
+        "objectId": "source:rice",
+        "position": 1,
+        "releases": null,
+        "revision": 1,
+        "inputDigest": "ce3d79a849ecd00debc6fabb15c42f246a23b031df53292d5fdae580d07473e4",
+        "qualityVersion": "1.0.0",
+        "ontologyVersion": "1.0.0",
+        "transformVersion": "1.0.0"
+      }
+    },
+    {
+      "id": "snapshot-tail",
+      "state": "SUCCEEDED",
+      "cursor": 3,
+      "total": 3,
+      "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+      "jobVersion": "1.0.0",
+      "barrier": 1,
+      "receipt": {
+        "state": "DELETED",
+        "source": "inventory",
+        "position": 2,
+        "objectId": "source:rice",
+        "revision": 2,
+        "inputDigest": "6b70750ca3a70842a3f967295a0ec392ab4cba89506e1fc59732404d29db837e",
+        "ontologyVersion": "1.0.0",
+        "transformVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "reasons": [],
+        "releases": null,
+        "validAt": "2026-10-12T00:00:00.000Z"
+      }
+    }
+  ],
+  "done": {
+    "id": "snapshot-tail",
+    "state": "SUCCEEDED",
+    "cursor": 3,
+    "total": 3,
+    "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+    "jobVersion": "1.0.0",
+    "barrier": 1
+  },
+  "audit": [
+    {
+      "record": {
+        "at": "2026-10-12T15:58:02.200Z",
+        "kind": "SourceIngested",
+        "actor": "manager",
+        "state": "APPLIED",
+        "store": "s1",
+        "source": "inventory",
+        "tenant": "t1",
+        "reasons": [],
+        "traceId": "8b069d8d-dcea-4104-8aba-6b38bb0fdb78",
+        "validAt": "2026-10-12T00:00:00.000Z",
+        "objectId": "source:rice",
+        "position": 1,
+        "releases": null,
+        "revision": 1,
+        "requestId": "970179fc-7fcf-4f7b-ba55-d5b5f99de06f",
+        "onBehalfOf": null,
+        "inputDigest": "ce3d79a849ecd00debc6fabb15c42f246a23b031df53292d5fdae580d07473e4",
+        "policyVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "ontologyVersion": "1.0.0",
+        "transformVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:02.200Z",
+        "kind": "PipelineCheckpoint",
+        "actor": "manager",
+        "jobId": "snapshot-tail",
+        "state": "RUNNING",
+        "store": "s1",
+        "cursor": 1,
+        "tenant": "t1",
+        "traceId": "8b069d8d-dcea-4104-8aba-6b38bb0fdb78",
+        "requestId": "970179fc-7fcf-4f7b-ba55-d5b5f99de06f",
+        "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+        "sourcePosition": 1
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:02.203Z",
+        "kind": "PipelineCheckpoint",
+        "actor": "manager",
+        "jobId": "snapshot-tail",
+        "state": "RUNNING",
+        "store": "s1",
+        "cursor": 2,
+        "tenant": "t1",
+        "traceId": "237e7130-9eb1-40e5-9035-2c521ea919c9",
+        "requestId": "270b718d-a8d5-4d25-a7dc-7f01d92f3e65",
+        "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+        "sourcePosition": 1
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:02.208Z",
+        "kind": "SourceIngested",
+        "actor": "manager",
+        "state": "DELETED",
+        "store": "s1",
+        "source": "inventory",
+        "tenant": "t1",
+        "reasons": [],
+        "traceId": "dc406588-89e0-427f-8b4f-d15567c91c38",
+        "validAt": "2026-10-12T00:00:00.000Z",
+        "objectId": "source:rice",
+        "position": 2,
+        "releases": null,
+        "revision": 2,
+        "requestId": "37d096bd-5319-4739-b2df-a407c8bd1748",
+        "onBehalfOf": null,
+        "inputDigest": "6b70750ca3a70842a3f967295a0ec392ab4cba89506e1fc59732404d29db837e",
+        "policyVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "ontologyVersion": "1.0.0",
+        "transformVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:02.209Z",
+        "kind": "PipelineCheckpoint",
+        "actor": "manager",
+        "jobId": "snapshot-tail",
+        "state": "SUCCEEDED",
+        "store": "s1",
+        "cursor": 3,
+        "tenant": "t1",
+        "traceId": "dc406588-89e0-427f-8b4f-d15567c91c38",
+        "requestId": "37d096bd-5319-4739-b2df-a407c8bd1748",
+        "inputDigest": "a851003fb1bb756e1a1c38b376ad8607576b4ea3ae9604641842ce1920cce054",
+        "sourcePosition": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+# OSS release 0.1.0
+
+このreleaseはPRODUCT_GOAL.mdのローカルsynthetic API実演を対象にする。Node.js 22.23.3、PostgreSQL 18.6、pg 8.16.3を固定する。Node 22.22.0からは公式July 2026 security fixesを含む版へ更新した。正本のAC、設計出典hash、既存の失敗証拠は変更しない。47責務の採用判断はarchitecture/composition.json、固定出典はarchitecture/SOURCE_BASELINE.jsonにある。設計元checkoutを実行時に読む必要はない。
+
+## 一つの起動入口
+
+前提は非rootのmacOS、OSS mise（実測版2026.1.7）、インターネット接続、PostgreSQLをmiseで導入するための標準build tools（Xcode command line tools、C compiler、make、pkg-config、GnuPG）である。BCPの独立volume演習にはmacOS hdiutil/APFSが必要であり、Linux上のBCP gate通過を主張しない。miseの導入は公式手順 https://mise.jdx.dev/getting-started.html に従う。runtimeとnpm registryの公開download以外のservice、商用credential、開発者のDBは必要ない。
+
+repository rootで次の一つの入口を実行する。
+
+```sh
+bash scripts/release/bootstrap.sh
+```
+
+入口がmise installの終了を確認し、固定runtime内でnpm ci --omit=dev --ignore-scriptsを完了してから起動する。lockfileのintegrityに従ってruntime依存だけを導入する。TAKT、モデルSDK、Codex認証は製品runtimeに含めない。空のtask専用DB clusterを作り、001-foundation migration、Ontology 1.1.0の公開seed、2店舗の商品回収と代替候補seed、実synthetic ERP、loopback HTTP gateway、schedulerを起動する。公開HTTP契約からOntology・在庫revision・RecallCase・scope付きobserveを検査してからhealth PASSとURLを出す。失敗は非zero終了する。
+
+生成されたsynthetic-sessions.jsonはtask専用一時directory内の0600 fileであり、stdoutはそのpathだけを返す。本文のtokenをログへコピーしない。docs/DEMO_RUNBOOK.mdのAPI手順にこのURLとsessionを渡す。終了はSIGTERMまたはCtrl-C。所有するcluster、ERP、session、key、一時directoryだけを除去する。この入口は永続店舗データ用のservice installerではない。起動ごとにsynthetic seedを作ることは既存DBのmigrationを意味しない。
+
+```sh
+bash scripts/release/bootstrap.sh --check
+```
+
+checkは同じ起動・health・demo検査を行い、正常終了時に所有データを片付ける。clean-bootstrap suiteはsourceだけを新directoryへ複製し、空HOME、空npm cache、credentialなし、node_modulesなしからこの入口を実行する。mise data/cacheも空にし、Nodeの署名検査付きdownloadとPostgreSQLのsource compile/installを実行済みである。GnuPG agentには所有する短い一時pathを用い、終了時にagentとpathを除去する。入口の通常cacheは.release-runtime配下に置き、既存global PostgreSQL binaryを流用しない。mise設定とnpm userconfig/cacheも専用pathへ隔離して開発者のnpm credentialを読まない。OS build toolsは明示した前提であり、OS image/toolchain全体を固定したcontainer再現ではない。
+
+## 状態を持つAdapter交換
+
+既定はPostgresStateである。交換候補IndexedPostgresStateは002-search-projection migrationで作る永続JSONB read indexを実際に読む。Action、認可、委任、Audit、transaction retryは共通Kernel/UnitOfWorkを通す。単なる同じ検索関数のwrapper比較ではない。refreshProjectionはowner側のtransactionでObject、Outbox、source receipt/checkpointをwriter fenceでlockし、Outboxの連続sequenceとevent digest、source checkpointのgapを検査してindexと永続checkpointを同一transactionで作り直す。catch-upはsynthetic corpusのbounded snapshot replayであり、重複実行は冪等である。削除tombstoneとsource/object revisionを保持する。candidateは一つのSQL snapshotで正本とindexを照合し、不一致をINCONSISTENT_STATEとして拒否する。性能改善を目的にしないreference実装である。
+
+adapter-replacement suiteは移行、許可・拒否・委任・別tenant・列mask・Object型/版/revision/orderのshadow corpusを検査する。quantityを実index内で999へ改変すると差分が生じ、cutoverを拒否する。再構築後に切替、同じActionの再送と入力不一致拒否、更新後のstale index拒否、index再構築、新Adapter instanceで永続状態を読む、baselineへの切戻し、再送してOutboxが1件であることを検査する。共有店舗corpus、source event重複・逆順/gap、Outbox gap、削除tombstone、移行中断のrollback、checkpoint欠損、権限失効直後、deadline超過も検査する。Policy unavailable時は両Adapterともfail closedする。
+
+AdapterSwitchはrelease演習controllerでありHTTP管理APIではない。外部から任意のshadow結果を渡して切替する公開endpointはない。実運用の交換前には静止点で同じcorpusを再実行し、差分が一件でもあればbaselineを維持する。切戻しはKernelのStatePortをbaselineへ戻す。正本とAction keyを巻き戻さず、projectionだけを破棄できる。
+
+## 供給網と再配布
+
+repository-owned sourceは承認済みMIT LICENSEに従う。runtimeはNode MITとbundled third-party notices、PostgreSQL License、14のnpm runtime packagesのMIT/ISCである。供給網suiteは全runtime lock entryの固定version、registry URL、SHA512 integrity、許可license、実license本文を確認する。pg-typesとpgpassの配布物はREADMEにlicense本文を持つため、README本文もnoticeへ保持する。NodeとPostgreSQLの固定版上流licenseはlicenses/へ同梱し、生成noticeへ収録する。runtime-platform.jsonはclean bootstrapで実行したbinary hash、otoolの動的リンク、PostgreSQL configureを保存する。実測済みprofileはmacOS arm64であり、他のOS/CPUを検査済みにしない。既定入口はrepository専用mise data/cacheでPostgreSQLを--without-icu --without-readline --without-zlibでcompileし、外部OpenSSL/ICUへのリンクを拒否する。Nodeのbundled OpenSSLは固定Nodeの署名付き配布物とbundled licenseに含まれる。
+
+evidence/generated/release/sbom.cdx.jsonはCycloneDX 1.5で14 npm packagesとNode/PostgreSQLの16 componentsを記録する。locked-inventory.jsonは開発専用も含む全lock entryを区分する。第三者へのruntime配布時はLICENSE、licenses、生成THIRD_PARTY_NOTICES.mdとlockfileを同梱する。開発専用TAKT/SDKをruntime配布へ混ぜない。Node/PostgreSQL binary内部の全bundled libraryを個別componentとして列挙したSBOMではなく、vendor license本文を保持する。Node/PostgreSQLのbundled libraryとOS共有library全体の脆弱性照合、OS/base image、build toolchainまでの完全なbinary provenanceは未検査である。
+
+npm auditをruntimeのみとdevを含む全体で実行し、registryへの通信失敗、nonzero終了、1件以上の既知advisoryをgate失敗にする。Nodeの公式July 2026 security release、PostgreSQL 18 security pageの取得hashと検査日時を残し、現在runtimeと既知修正版floorを検査する。未知の脆弱性の不存在は保証しない。secret scannerはrepositoryに対してprivate key、AWS/GitHub/API keyの既知形式と未配布env fileを拒否し、反例で実検出を確認する。license不明・禁止依存と脆弱性閾値超過も、本番gateと同じ判定関数の反例で拒否する。一般的な任意entropyのcredential検出器ではない。開発run/cache、依存配布物、vendor license本文はscan対象外である。
+
+## Backup、upgrade、rollback、保持と観測
+
+release-operationsは実pg_dumpとjournalのcheckpoint hashを保存し、復元前の検査関数でdump/journalの破損を拒否し、その双方の反例を検査する。synthetic schemaを破壊してpsql ON_ERROR_STOPで復元し、Object全件、revision、Action再送、Outbox1件、Audit chainを照合する。002追加migrationを適用し、失敗migrationのtransaction rollback、002のderived tableだけの削除による切戻しを実演する。DB major upgrade/downgradeや全hostの同時喪失復旧は対象外である。
+
+backupはDB snapshotと独立journal及びそのheadを一組として保管する。稼働中backupからの復元を未送信判定に使わない。復元後はops/BCP.mdの手順で受付を止め、全journal発見、配送開始、承認commit、ERP statusを照合し、手動保留を解消するまで対象への再送・更新を拒否する。BCP suiteは古いDBと継続journal、実SIGKILL、lost ACK、独立volume、復元後の成功不明、missing journalを追加で検査する。外部へのexactly-onceは主張しない。
+
+外部contract 1.0.0はAction別のscalar許可項目へ投影する。内部Object/Outboxに保存した制限列はERPへ転送しない。配送と復元後の照合は同じimmutable eventからpayloadを作り、operationIdとpayload digestを確認する。最終監査B-FINAL-001で検出した旧QuarantineInventoryの制限列送信は、通常・委任・承認付きの実HTTP/ERP反例とBCPの配送前snapshot復元で再検査する。未知Action/版・許可項目の型違反はlease/HTTP前に拒否する。送信済み旧payloadのledger digestを書き換えるmigrationはない。不一致はUNKNOWNとして手動照合へ残し、未送信扱いの再送や過去ledgerの書換えで解消しない。保存済み失敗trace/TAPはevidence/FAILURES.mdから追跡する。
+
+Action key、inbox、ERP ledger、recovery journalは無期限保持、key再利用は不可、未解決holdはpurge不可。Auditは最低30日を下回らず現実装は自動purgeを行わない。backupを削除する前に未解決とretention依存を人が確認する。retention-foundation suiteは30日前後と長期clockの再送、ledger欠損、journal未解決を実DBで検査する。実18年経過を測定したものではない。長期の容量管理とarchive/purge実装は未実施。
+
+operations-foundationとdata-services-foundationの公開observe/telemetry検査でAction状態、UNKNOWN Outbox、古いqueue、checkpoint、主体scope、secret redaction、観測保存失敗を検査する。監視対象は同じ公開契約であり商用監視製品は不要。UNKNOWN、未解決hold、queue増大、Policy/secret/Audit障害は人による調査対象にする。
+
+## Gateと独立監査
+
+```sh
+mise exec -- npm ci
+bash .takt/quality-gates/platform-gate.sh release
+bash .takt/quality-gates/platform-gate.sh final
+```
+
+verification/plan.jsonのrelease suite及び上流suiteはsource、test、config、文書の現在hashと出力hashをreceiptへ結ぶ。入力変更後は再実行する。manifestの各stage最後のrunを選び、過去成功だけを選別しない。AC-009の索引はevidence/ACCEPTANCE_MATRIX.mdにある。release機械PASSは独立reviewerの承認と製品完成宣言を代替しない。AC-009はREADY_FOR_REVIEWで止め、別session final-auditへ引き渡す。
+
+release gateはarchitecture、plan、mechanism、implementation、demo、bcp、releaseを順に再生成する。final-current-input-auditは上流6stageの最新receiptを読み、個々の入力/output hash、command/exit、全src/tests/scriptsのcoverageを再計算し、current-input-audit.jsonへ読み取りsnapshotを保存する。runnerが同時に書くmanifestを入力へ直接含めない。release完了後のcurrent-input-audit.mjs --allは7stageすべてを再照合してstdoutへ結果を返し、snapshotや他の出力を変更しない。final gateもこのreadonly照合を呼ぶ。
+
+初回の既定mise buildが既存OpenSSL 3.6.1をリンクすることを検出し、公式OpenSSL 3.6.2 security fixesに照らしてrelease既定profileには採用しなかった。外部TLS/ICU依存を除いたlocalhost専用buildへ変更し、実binaryリンクを自動検査する。hostのHomebrewや既存runtimeは変更していない。検査用上流suiteの既存runtimeはrelease配布物ではない。
+
+mechanism stageのfull-release-regressionは全Node test discoveryを単独・逐次実行し、skip 0と終了コードをJSONへ保存する。試験が出力した上流traceは後続implementation/demo/bcpで再生成するため、各receiptの鮮度を保つ。既定cache、外部依存配布物はsecret scanから除き、著者管理の.takt設定は検査する。
+
+## 2026-10-13の再検証範囲
+
+第4回review-bcpは、復元後のdispatch/reconcile拒否Auditと保存Action・新process telemetryの結合を確認してAPPROVEした。承認範囲はAC-006の宣言済みローカル演習であり、製品完成やAC-009の承認ではない。release再検証では同じ反例を含む全Node試験とimplementation/demo/bcp/releaseを逐次実行し、期限・取消、認証と元委任の期限、外部payload投影、復元後の拒否追跡を含む現在source/testをreceiptへ結ぶ。
+
+監査担当者はまず `bash .takt/quality-gates/platform-gate.sh final` で7stageすべての最新receiptと現在hashを読み取り照合し、ACCEPTANCE_MATRIXの各ACからsource、試験、traceへ辿る。`current-input-audit.json`はrelease実行途中に取得した上流6stageのsnapshotであり、release自体を含む照合はfinal gateの `--all` 出力で確認する。独立審査の判定は別sessionのfinal-auditで付与し、機械PASSだけでAC-009をPASSへ変更しない。

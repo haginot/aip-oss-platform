@@ -1,0 +1,127 @@
+TAP version 13
+# Subtest: clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+ok 1 - clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+  ---
+  duration_ms: 4126.798708
+  type: 'test'
+  ...
+# Subtest: checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+ok 2 - checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+  ---
+  duration_ms: 3737.08125
+  type: 'test'
+  ...
+# Subtest: unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+ok 3 - unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+  ---
+  duration_ms: 3710.861208
+  type: 'test'
+  ...
+# Subtest: store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+ok 4 - store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+  ---
+  duration_ms: 3720.265
+  type: 'test'
+  ...
+# Subtest: B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+not ok 5 - B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+  ---
+  duration_ms: 3728.997042
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:191:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:205:63
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async setup (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:30:274)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+not ok 6 - B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+  ---
+  duration_ms: 3774.956958
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:217:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:228:10
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async setup (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:30:274)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+not ok 7 - B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+  ---
+  duration_ms: 3467.091375
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:239:1'
+  failureType: 'testCodeFailure'
+  error: 'restart silently bootstrapped a missing journal'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'fail'
+  stack: |-
+    refused (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:242:200)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:244:3
+    async setup (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:30:274)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: export complete machine-readable BCP measurements
+not ok 8 - export complete machine-readable BCP measurements
+  ---
+  duration_ms: 0.431709
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:254:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    4 !== 7
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 7
+  actual: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:255:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 4
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 26327.661834

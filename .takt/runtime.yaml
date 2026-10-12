@@ -5,6 +5,7 @@ provider:
     builder:
       provider: codex
       model: gpt-6.1-sol
+      permission_mode: full
       options:
         reasoning_effort: medium
         permission_control: takt
@@ -26,6 +27,7 @@ provider:
     critical:
       provider: codex
       model: gpt-6-astra
+      permission_mode: full
       options:
         reasoning_effort: high
         permission_control: takt

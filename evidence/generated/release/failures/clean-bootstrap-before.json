@@ -1,0 +1,13 @@
+{
+  "suite": "clean-bootstrap",
+  "node": "v22.23.3",
+  "finishedAt": "2026-10-12T10:34:53.852Z",
+  "exitCode": 1,
+  "tests": 1,
+  "passed": 0,
+  "failed": 1,
+  "skipped": 0,
+  "stdout": "TAP version 13\n# Subtest: single bootstrap entry from pristine source, empty HOME and npm cache; no credentials or dev dependencies\nnot ok 1 - single bootstrap entry from pristine source, empty HOME and npm cache; no credentials or dev dependencies\n  ---\n  duration_ms: 1425.225292\n  type: 'test'\n  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/release/bootstrap.test.mjs:3:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + undefined\n    - '1.1.0'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: '1.1.0'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/release/bootstrap.test.mjs:9:246)\n    async Test.run (node:internal/test_runner/test:1054:7)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 0\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1455.184083\n",
+  "stderr": "",
+  "status": "failed"
+}

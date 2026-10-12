@@ -1,0 +1,64 @@
+{
+  "action": {
+    "actionId": "040a1f5b-bf7a-4340-94ea-232c4c0555ed",
+    "state": "PENDING_EXTERNAL",
+    "revision": 2,
+    "operationId": "b2a7644a-943e-4670-9415-fc6390825c5a",
+    "result": {
+      "targetId": "stock",
+      "objectRevision": 2
+    }
+  },
+  "telemetry": {
+    "items": [
+      {
+        "sequence": 1,
+        "at": "2026-10-12T15:58:03.639Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "7f8e21ca-ba5e-4b3f-9f9e-36787a1740f0",
+        "actionId": "040a1f5b-bf7a-4340-94ea-232c4c0555ed",
+        "operation": "submit",
+        "requestId": "98208953-23a3-4d65-9991-ce8a71b4a9d9",
+        "durationMs": 29.090124999999944,
+        "onBehalfOf": null,
+        "operationId": "b2a7644a-943e-4670-9415-fc6390825c5a",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      },
+      {
+        "sequence": 2,
+        "at": "2026-10-12T15:58:03.642Z",
+        "code": "NOT_FOUND",
+        "actor": "operator",
+        "traceId": "68dd5d35-f1ae-41d9-a07c-1a30d7d4cca2",
+        "operation": "get",
+        "requestId": "2311bead-f426-4dcd-9dbf-b766581467ff",
+        "durationMs": 1.2848340000000462,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    ],
+    "next": null
+  },
+  "audit": [
+    {
+      "at": "2026-10-12T15:58:03.626Z",
+      "kind": "PENDING_EXTERNAL",
+      "actor": "operator",
+      "traceId": "7f8e21ca-ba5e-4b3f-9f9e-36787a1740f0",
+      "actionId": "040a1f5b-bf7a-4340-94ea-232c4c0555ed",
+      "evidence": [],
+      "requestId": "98208953-23a3-4d65-9991-ce8a71b4a9d9",
+      "onBehalfOf": null,
+      "inputDigest": "76a8c419b2c82c170f40d309c426d24bf8ee13267297cda46e10fa0518932787",
+      "operationId": "b2a7644a-943e-4670-9415-fc6390825c5a",
+      "ruleVersion": "1.0.0",
+      "policyVersion": "1.0.0",
+      "objectRevision": 2,
+      "ontologyVersion": "1.0.0",
+      "workflowVersion": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+TAP version 13
+# Subtest: session expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal
+not ok 1 - session expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal
+  ---
+  duration_ms: 1346.24825
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:36:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:44:10
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:15:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: delegation expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal
+not ok 2 - delegation expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal
+  ---
+  duration_ms: 747.656959
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:36:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:44:10
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:15:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: session expiry during business object lock wait rejects HTTP Action and permits same-key retry after renewal
+not ok 3 - session expiry during business object lock wait rejects HTTP Action and permits same-key retry after renewal
+  ---
+  duration_ms: 741.537
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:36:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:44:10
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:15:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: delegation expiry after business writes and Audit rolls back before commit
+not ok 4 - delegation expiry after business writes and Audit rolls back before commit
+  ---
+  duration_ms: 740.15975
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:52:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:56:9
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/authentication-expiry.test.mjs:15:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 0
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4985.044

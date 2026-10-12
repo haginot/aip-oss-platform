@@ -1,0 +1,1091 @@
+{
+  "seed": {
+    "version": "store-seed:1",
+    "recallId": "recall",
+    "stocks": [
+      "stock",
+      "stock2"
+    ],
+    "soldQuantity": 7
+  },
+  "responses": [
+    {
+      "request": {
+        "actionType": "DetectRecallImpact",
+        "actionVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "input": {
+          "targetId": "recall"
+        },
+        "expectedRevision": 1,
+        "idempotencyKey": "detect",
+        "evidence": [
+          {
+            "id": "recall",
+            "revision": 1,
+            "digest": "81e69741bfafa2a55306db20a06165166bc92d003fec2533920d04c4789a241f"
+          },
+          {
+            "id": "demo-lot",
+            "revision": 1,
+            "digest": "2463878c4400176ef73c9930cda1051c7422d6ba4c2f37bcebeedfafd0cfda95"
+          },
+          {
+            "id": "stock",
+            "revision": 1,
+            "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f"
+          },
+          {
+            "id": "stock2",
+            "revision": 1,
+            "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279"
+          }
+        ]
+      },
+      "result": {
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "state": "PENDING_EXTERNAL",
+        "revision": 2,
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "result": {
+          "targetId": "recall",
+          "objectRevision": 2
+        }
+      }
+    },
+    {
+      "request": {
+        "actionType": "QuarantineInventory",
+        "actionVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "input": {
+          "targetId": "stock",
+          "caseId": "recall"
+        },
+        "expectedRevision": 1,
+        "idempotencyKey": "restricted-export",
+        "evidence": [
+          {
+            "id": "recall",
+            "revision": 2,
+            "digest": "03ca1bdde7563ed24197c23c95701107b0a62a7446306e8679502200937e1c8e"
+          },
+          {
+            "id": "demo-lot",
+            "revision": 1,
+            "digest": "2463878c4400176ef73c9930cda1051c7422d6ba4c2f37bcebeedfafd0cfda95"
+          },
+          {
+            "id": "stock",
+            "revision": 1,
+            "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f"
+          },
+          {
+            "id": "stock2",
+            "revision": 1,
+            "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279"
+          }
+        ]
+      },
+      "result": {
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "state": "PENDING_EXTERNAL",
+        "revision": 2,
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "result": {
+          "targetId": "stock",
+          "objectRevision": 2
+        }
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+      "actor": "agent",
+      "subject": "operator",
+      "state": "SUCCEEDED",
+      "request": {
+        "input": {
+          "caseId": "recall",
+          "targetId": "stock"
+        },
+        "evidence": [
+          {
+            "id": "recall",
+            "digest": "03ca1bdde7563ed24197c23c95701107b0a62a7446306e8679502200937e1c8e",
+            "revision": 2
+          },
+          {
+            "id": "demo-lot",
+            "digest": "2463878c4400176ef73c9930cda1051c7422d6ba4c2f37bcebeedfafd0cfda95",
+            "revision": 1
+          },
+          {
+            "id": "stock",
+            "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+            "revision": 1
+          },
+          {
+            "id": "stock2",
+            "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+            "revision": 1
+          }
+        ],
+        "actionType": "QuarantineInventory",
+        "policyEpoch": 1,
+        "ruleVersion": "1.1.0",
+        "delegationId": "delegation",
+        "actionVersion": "1.0.0",
+        "policyVersion": "1.0.0",
+        "idempotencyKey": "restricted-export",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0",
+        "expectedRevision": 1
+      },
+      "result": {
+        "external": "DELIVERED",
+        "targetId": "stock",
+        "objectRevision": 2
+      },
+      "operation_id": "c42e20a7-45ba-41b4-a970-5cb956127bba"
+    },
+    {
+      "id": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+      "actor": "operator",
+      "subject": "operator",
+      "state": "SUCCEEDED",
+      "request": {
+        "input": {
+          "targetId": "recall"
+        },
+        "evidence": [
+          {
+            "id": "recall",
+            "digest": "81e69741bfafa2a55306db20a06165166bc92d003fec2533920d04c4789a241f",
+            "revision": 1
+          },
+          {
+            "id": "demo-lot",
+            "digest": "2463878c4400176ef73c9930cda1051c7422d6ba4c2f37bcebeedfafd0cfda95",
+            "revision": 1
+          },
+          {
+            "id": "stock",
+            "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+            "revision": 1
+          },
+          {
+            "id": "stock2",
+            "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+            "revision": 1
+          }
+        ],
+        "actionType": "DetectRecallImpact",
+        "policyEpoch": 1,
+        "ruleVersion": "1.1.0",
+        "delegationId": null,
+        "actionVersion": "1.0.0",
+        "policyVersion": "1.0.0",
+        "idempotencyKey": "detect",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0",
+        "expectedRevision": 1
+      },
+      "result": {
+        "external": "DELIVERED",
+        "targetId": "recall",
+        "objectRevision": 2
+      },
+      "operation_id": "054b14ae-34de-4f71-9fd6-3c9026e24f2e"
+    }
+  ],
+  "outbox": [
+    {
+      "operation_id": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+      "action_id": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+      "state": "DELIVERED",
+      "event": {
+        "actor": "operator",
+        "store": "s1",
+        "fields": {
+          "name": "rice lot recall",
+          "lotId": "demo-lot",
+          "phase": "DETECTED",
+          "deadline": 1791824309342,
+          "isolated": false,
+          "affectedIds": "[\"stock\",\"stock2\"]",
+          "candidateId": "",
+          "orderAmount": 0,
+          "soldQuantity": 7,
+          "customerCount": 0,
+          "orderQuantity": 0,
+          "affectedStores": "[\"s1\",\"s2\"]",
+          "customerMessage": "",
+          "affectedQuantity": 15
+        },
+        "tenant": "t1",
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "sequence": 1,
+        "actionType": "DetectRecallImpact",
+        "onBehalfOf": null,
+        "aggregateId": "recall",
+        "causationId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "correlationId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "schemaVersion": "1.1.0",
+        "objectRevision": 2,
+        "contractVersion": "1.0.0"
+      }
+    },
+    {
+      "operation_id": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+      "action_id": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+      "state": "DELIVERED",
+      "event": {
+        "actor": "agent",
+        "store": "s1",
+        "fields": {
+          "name": "rice recall",
+          "note": null,
+          "secret": "hidden-word",
+          "isolated": true,
+          "quantity": 10
+        },
+        "tenant": "t1",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "sequence": 1,
+        "actionType": "QuarantineInventory",
+        "onBehalfOf": "operator",
+        "aggregateId": "stock",
+        "causationId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "correlationId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "schemaVersion": "1.1.0",
+        "objectRevision": 2,
+        "contractVersion": "1.0.0"
+      }
+    }
+  ],
+  "ledger": [
+    {
+      "operation_id": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+      "digest": "e8ad20134c38223e2f2d160a15c5a2b89cc171211ca6170d61c1a8f877d70585",
+      "payload": {
+        "store": "s1",
+        "fields": {
+          "lotId": "demo-lot",
+          "phase": "DETECTED",
+          "affectedIds": "[\"stock\",\"stock2\"]",
+          "affectedStores": "[\"s1\",\"s2\"]",
+          "affectedQuantity": 15
+        },
+        "tenant": "t1",
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "isolated": false,
+        "sequence": 1,
+        "actionType": "DetectRecallImpact",
+        "aggregateId": "recall",
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "contractVersion": "1.0.0"
+      }
+    },
+    {
+      "operation_id": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+      "digest": "d44149103a4b5b868c25c93352ac15542a819fae31911b66d0c9ddce6fe1485b",
+      "payload": {
+        "store": "s1",
+        "fields": {
+          "isolated": true
+        },
+        "tenant": "t1",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "isolated": true,
+        "sequence": 1,
+        "actionType": "QuarantineInventory",
+        "aggregateId": "stock",
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "contractVersion": "1.0.0"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "sequence": "1",
+      "previous_hash": "GENESIS",
+      "hash": "c3388ecf0f2b16323830547b5eb9c085a8af99a3d19a605708a83ff07b69529e",
+      "record": {
+        "at": "2026-10-12T15:58:29.346Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "5de5af13-0d17-456b-85a9-a3d78444ca74",
+        "operation": "read",
+        "requestId": "1d1f2196-89a7-454c-8147-c1f4dddcf118",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "2",
+      "previous_hash": "c3388ecf0f2b16323830547b5eb9c085a8af99a3d19a605708a83ff07b69529e",
+      "hash": "bd76cec700e64d4f9407cb73d10891547f6a9f9d44605fd60f70f9c0cb0a7961",
+      "record": {
+        "at": "2026-10-12T15:58:29.350Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "c31bbfb3-d5b2-414c-8b5d-2ca2c5c2cfea",
+        "operation": "read",
+        "requestId": "9f5e67e0-7fe2-4005-9bc5-f9c30528bed9",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "3",
+      "previous_hash": "bd76cec700e64d4f9407cb73d10891547f6a9f9d44605fd60f70f9c0cb0a7961",
+      "hash": "9754faad02aeba65d9cc0ca98ce70938f17083b980f6a51ea053e21fb87f4685",
+      "record": {
+        "at": "2026-10-12T15:58:29.351Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "3546b4cf-5002-46ce-ab43-cabd62b2d2dd",
+        "operation": "read",
+        "requestId": "d89c4623-7b8b-473e-8b27-0221a483a68f",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "4",
+      "previous_hash": "9754faad02aeba65d9cc0ca98ce70938f17083b980f6a51ea053e21fb87f4685",
+      "hash": "69ba4c766e4494330c037c7eb07a8a4a57fdb40fa5fedf130f600dfce4f31666",
+      "record": {
+        "at": "2026-10-12T15:58:29.351Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "362c5953-1a4f-4dd1-8b1a-40b6182897b5",
+        "operation": "read",
+        "requestId": "02f2ae3e-3454-47e1-96af-a55742c68f48",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "5",
+      "previous_hash": "69ba4c766e4494330c037c7eb07a8a4a57fdb40fa5fedf130f600dfce4f31666",
+      "hash": "d03b69890acb983452fdc9b4b0853fcd030ebc9c6e700fc0164625e59165bdfb",
+      "record": {
+        "at": "2026-10-12T15:58:29.352Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "6ad9ac0d-9891-49e8-862c-f4beaccc68a4",
+        "operation": "read",
+        "requestId": "6b0c86ed-4820-4e59-86ef-5578fb2c3bef",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "6",
+      "previous_hash": "d03b69890acb983452fdc9b4b0853fcd030ebc9c6e700fc0164625e59165bdfb",
+      "hash": "95d84013cc2d6dd3681091ef4d3a4b684ea78ec76bfa25aecadebc31c141bee8",
+      "record": {
+        "at": "2026-10-12T15:58:29.372Z",
+        "kind": "PENDING_EXTERNAL",
+        "actor": "operator",
+        "traceId": "49df7ec1-1d44-4413-a7ca-7ca81fcbdd68",
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "evidence": [
+          {
+            "id": "recall",
+            "digest": "81e69741bfafa2a55306db20a06165166bc92d003fec2533920d04c4789a241f",
+            "revision": 1
+          },
+          {
+            "id": "demo-lot",
+            "digest": "2463878c4400176ef73c9930cda1051c7422d6ba4c2f37bcebeedfafd0cfda95",
+            "revision": 1
+          },
+          {
+            "id": "stock",
+            "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+            "revision": 1
+          },
+          {
+            "id": "stock2",
+            "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+            "revision": 1
+          }
+        ],
+        "requestId": "bcdd8e54-2ed3-4438-8836-a9863fda206b",
+        "onBehalfOf": null,
+        "inputDigest": "f1c968690e84df61d8d8a14f14718094565fb83d32889cbf789e76b4e44111a5",
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "objectRevision": 2,
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "7",
+      "previous_hash": "95d84013cc2d6dd3681091ef4d3a4b684ea78ec76bfa25aecadebc31c141bee8",
+      "hash": "475112d681c2d8858702aa1bbcbc5de6f3c89cbea237997f31cd0f9bc3e8723a",
+      "record": {
+        "at": "2026-10-12T15:58:29.399Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "da450d68-61fd-49fb-b4a4-f13d39293871",
+        "operation": "worker",
+        "requestId": "ff12c002-1f64-4290-b894-f0d8d9acc2f2",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "8",
+      "previous_hash": "475112d681c2d8858702aa1bbcbc5de6f3c89cbea237997f31cd0f9bc3e8723a",
+      "hash": "efdfafbc16b804642fa2b9db0a7c0995aa0b093de2777647fe1d39b4eac800de",
+      "record": {
+        "at": "2026-10-12T15:58:29.404Z",
+        "kind": "Writeback",
+        "actor": "manager",
+        "state": "DELIVERED",
+        "traceId": "da450d68-61fd-49fb-b4a4-f13d39293871",
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "requestId": "ff12c002-1f64-4290-b894-f0d8d9acc2f2",
+        "onBehalfOf": null,
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "externalState": "APPLIED",
+        "policyVersion": "1.0.0"
+      }
+    },
+    {
+      "sequence": "9",
+      "previous_hash": "efdfafbc16b804642fa2b9db0a7c0995aa0b093de2777647fe1d39b4eac800de",
+      "hash": "c5eeadb29e40318c0b66b8267ed5e6226414c1a63b6d21abfa760b3cd7c34ce4",
+      "record": {
+        "at": "2026-10-12T15:58:29.405Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "da450d68-61fd-49fb-b4a4-f13d39293871",
+        "operation": "worker",
+        "requestId": "ff12c002-1f64-4290-b894-f0d8d9acc2f2",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "10",
+      "previous_hash": "c5eeadb29e40318c0b66b8267ed5e6226414c1a63b6d21abfa760b3cd7c34ce4",
+      "hash": "c5b8419aa9c647b8900732d020ebcf673e37509ff2ec8dcb8144c7cf1382908e",
+      "record": {
+        "at": "2026-10-12T15:58:29.406Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "fd2afa93-8872-49e2-ac02-28417252ca8c",
+        "operation": "read",
+        "requestId": "c4d1a1a9-06ff-4907-9c63-b6080fcdbaa3",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "11",
+      "previous_hash": "c5b8419aa9c647b8900732d020ebcf673e37509ff2ec8dcb8144c7cf1382908e",
+      "hash": "130961a5ecc34b83e3d8d93c39c06c48fc1a24422e555278abb2604fb3024a82",
+      "record": {
+        "at": "2026-10-12T15:58:29.408Z",
+        "kind": "ReadOrControl",
+        "actor": "agent",
+        "traceId": "d1ab9ea5-ff3f-41de-b7f0-16384a1d880e",
+        "operation": "read",
+        "requestId": "7632f56b-5bad-4115-9aa1-36d3ef62f263",
+        "onBehalfOf": "operator",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "12",
+      "previous_hash": "130961a5ecc34b83e3d8d93c39c06c48fc1a24422e555278abb2604fb3024a82",
+      "hash": "948fedfc430d6e5b1f65451cee3c5be152ed4cbe95daeac1a1bb1a5c859c76ea",
+      "record": {
+        "at": "2026-10-12T15:58:29.411Z",
+        "kind": "ReadOrControl",
+        "actor": "agent",
+        "traceId": "0d8618be-e579-4eff-afd0-cf157a3d8599",
+        "operation": "read",
+        "requestId": "291ec05a-a6dc-42fd-bd0f-bf5e82b71082",
+        "onBehalfOf": "operator",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "13",
+      "previous_hash": "948fedfc430d6e5b1f65451cee3c5be152ed4cbe95daeac1a1bb1a5c859c76ea",
+      "hash": "0f0112a391b332e3f00a9ffca5c5225ec306a7a42a608df033c8b2f84d86bf2e",
+      "record": {
+        "at": "2026-10-12T15:58:29.411Z",
+        "kind": "ReadOrControl",
+        "actor": "agent",
+        "traceId": "5d8bb127-b501-4da2-bb0d-85218161adc7",
+        "operation": "read",
+        "requestId": "eb545b42-07e8-4b52-b34c-8148f807b63d",
+        "onBehalfOf": "operator",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "14",
+      "previous_hash": "0f0112a391b332e3f00a9ffca5c5225ec306a7a42a608df033c8b2f84d86bf2e",
+      "hash": "ba64525094675a2e0ca73a5568f017663a5e18b5a255255fcd27554ee170919b",
+      "record": {
+        "at": "2026-10-12T15:58:29.411Z",
+        "kind": "ReadOrControl",
+        "actor": "agent",
+        "traceId": "6701451d-7be2-4256-b770-93cb13d930ac",
+        "operation": "read",
+        "requestId": "54d7d83e-7789-4b64-9309-d84f4edca7f1",
+        "onBehalfOf": "operator",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "15",
+      "previous_hash": "ba64525094675a2e0ca73a5568f017663a5e18b5a255255fcd27554ee170919b",
+      "hash": "ddd6a0978a6171e0b438c5346f2a5ba511203643a9b8ebede442e956b40ac97c",
+      "record": {
+        "at": "2026-10-12T15:58:29.411Z",
+        "kind": "ReadOrControl",
+        "actor": "agent",
+        "traceId": "9cf21c33-afa4-43e6-9129-ae67fd89094c",
+        "operation": "read",
+        "requestId": "b64d0ed5-7948-4a07-8e59-1065c62a630d",
+        "onBehalfOf": "operator",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "16",
+      "previous_hash": "ddd6a0978a6171e0b438c5346f2a5ba511203643a9b8ebede442e956b40ac97c",
+      "hash": "ee319c3314d1b5e74c5f1d3022f33d1aea7f9ac8a822fedb26539ec08ad5c7fe",
+      "record": {
+        "at": "2026-10-12T15:58:29.430Z",
+        "kind": "PENDING_EXTERNAL",
+        "actor": "agent",
+        "traceId": "9c29bafb-6795-48cd-93c9-7673553a7ff3",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "evidence": [
+          {
+            "id": "recall",
+            "digest": "03ca1bdde7563ed24197c23c95701107b0a62a7446306e8679502200937e1c8e",
+            "revision": 2
+          },
+          {
+            "id": "demo-lot",
+            "digest": "2463878c4400176ef73c9930cda1051c7422d6ba4c2f37bcebeedfafd0cfda95",
+            "revision": 1
+          },
+          {
+            "id": "stock",
+            "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+            "revision": 1
+          },
+          {
+            "id": "stock2",
+            "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+            "revision": 1
+          }
+        ],
+        "requestId": "a9c3e109-5206-4978-bc6c-6f1cad866851",
+        "onBehalfOf": "operator",
+        "inputDigest": "0fd5a640d6bc323570dd6a5d4c71616843a20c7c3cf0ed81f412c4f46ce7b165",
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "objectRevision": 2,
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "17",
+      "previous_hash": "ee319c3314d1b5e74c5f1d3022f33d1aea7f9ac8a822fedb26539ec08ad5c7fe",
+      "hash": "9b527735a4ed22ce1b6fd927bc6d751add8dadec164b8761d42c3b5fa59022e0",
+      "record": {
+        "at": "2026-10-12T15:58:29.457Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "4691c368-92fb-4b22-b95f-595aa3f24d00",
+        "operation": "worker",
+        "requestId": "fb2aecd4-5722-41eb-9e11-1480f51253ca",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "18",
+      "previous_hash": "9b527735a4ed22ce1b6fd927bc6d751add8dadec164b8761d42c3b5fa59022e0",
+      "hash": "13b463c4a83336aee80d83c578ea15264e98445c7614ff207eaebcc3d8a7640f",
+      "record": {
+        "at": "2026-10-12T15:58:29.461Z",
+        "kind": "Writeback",
+        "actor": "manager",
+        "state": "UNKNOWN",
+        "traceId": "4691c368-92fb-4b22-b95f-595aa3f24d00",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "requestId": "fb2aecd4-5722-41eb-9e11-1480f51253ca",
+        "onBehalfOf": null,
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "externalState": "UNKNOWN",
+        "policyVersion": "1.0.0"
+      }
+    },
+    {
+      "sequence": "19",
+      "previous_hash": "13b463c4a83336aee80d83c578ea15264e98445c7614ff207eaebcc3d8a7640f",
+      "hash": "cf0de90c5a76f89ca85f75d40e2db251e4d3d26fcfd6f946ce976c3e0dba9872",
+      "record": {
+        "at": "2026-10-12T15:58:29.462Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "4691c368-92fb-4b22-b95f-595aa3f24d00",
+        "operation": "worker",
+        "requestId": "fb2aecd4-5722-41eb-9e11-1480f51253ca",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "20",
+      "previous_hash": "cf0de90c5a76f89ca85f75d40e2db251e4d3d26fcfd6f946ce976c3e0dba9872",
+      "hash": "c6804b49acba0df1107f3e15c965925bc15e739b148f1b760c9c91b64383f22c",
+      "record": {
+        "at": "2026-10-12T15:58:29.464Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "078ba0de-5e9f-491c-9861-d2cc9dcc1e16",
+        "operation": "worker",
+        "requestId": "2aa32dee-b9e9-4227-a28a-c8462cc6cfdb",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "21",
+      "previous_hash": "c6804b49acba0df1107f3e15c965925bc15e739b148f1b760c9c91b64383f22c",
+      "hash": "7081e0cb8cd2bae2b740178aa1f81c992395224c38703a56b44c67484fcacfe9",
+      "record": {
+        "at": "2026-10-12T15:58:29.467Z",
+        "kind": "Writeback",
+        "actor": "manager",
+        "state": "DELIVERED",
+        "traceId": "6e8780bf-f84d-43d7-87da-7a3fad737559",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "requestId": "aa7e2c9e-39e9-4feb-a322-6398f55ee298",
+        "onBehalfOf": null,
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "externalState": "APPLIED",
+        "policyVersion": "1.0.0"
+      }
+    },
+    {
+      "sequence": "22",
+      "previous_hash": "7081e0cb8cd2bae2b740178aa1f81c992395224c38703a56b44c67484fcacfe9",
+      "hash": "846c5845678922737d74dc2a7d69e9b37ad74633374d409d890ab3b71b78efa1",
+      "record": {
+        "at": "2026-10-12T15:58:29.467Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "6e8780bf-f84d-43d7-87da-7a3fad737559",
+        "operation": "worker",
+        "requestId": "aa7e2c9e-39e9-4feb-a322-6398f55ee298",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "23",
+      "previous_hash": "846c5845678922737d74dc2a7d69e9b37ad74633374d409d890ab3b71b78efa1",
+      "hash": "2193c109a681ac6c9a7e94473a7b7d30a8a7a4e49a310ec301e73ee0dbd1dca3",
+      "record": {
+        "at": "2026-10-12T15:58:29.469Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "89f77ff6-068b-4980-ba0d-689298130dac",
+        "operation": "read",
+        "requestId": "29df5cec-c387-453d-a6ce-73afbdeabab3",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "sequence": "24",
+      "previous_hash": "2193c109a681ac6c9a7e94473a7b7d30a8a7a4e49a310ec301e73ee0dbd1dca3",
+      "hash": "d812beaab5944a4a34d17c900bf1ea0a2aa2b6715bc36a22a0e2bf5db5696e2d",
+      "record": {
+        "at": "2026-10-12T15:58:29.473Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "1900e0cc-13f8-47fc-b4cc-ec5a9d3cfd74",
+        "operation": "worker",
+        "requestId": "870e4686-3f96-4d46-948a-2d01de96f5d7",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    }
+  ],
+  "telemetry": [
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.347Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "5de5af13-0d17-456b-85a9-a3d78444ca74",
+        "operation": "get",
+        "requestId": "1d1f2196-89a7-454c-8147-c1f4dddcf118",
+        "durationMs": 3.1497920000001614,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.350Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "c31bbfb3-d5b2-414c-8b5d-2ca2c5c2cfea",
+        "operation": "get",
+        "requestId": "9f5e67e0-7fe2-4005-9bc5-f9c30528bed9",
+        "durationMs": 2.005583999999999,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.352Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "3546b4cf-5002-46ce-ab43-cabd62b2d2dd",
+        "operation": "get",
+        "requestId": "d89c4623-7b8b-473e-8b27-0221a483a68f",
+        "durationMs": 3.4175840000000335,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.352Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "362c5953-1a4f-4dd1-8b1a-40b6182897b5",
+        "operation": "get",
+        "requestId": "02f2ae3e-3454-47e1-96af-a55742c68f48",
+        "durationMs": 3.7525410000000647,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.352Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "6ad9ac0d-9891-49e8-862c-f4beaccc68a4",
+        "operation": "get",
+        "requestId": "6b0c86ed-4820-4e59-86ef-5578fb2c3bef",
+        "durationMs": 4.068083999999999,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.384Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "49df7ec1-1d44-4413-a7ca-7ca81fcbdd68",
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "operation": "submit",
+        "requestId": "bcdd8e54-2ed3-4438-8836-a9863fda206b",
+        "durationMs": 31.083457999999837,
+        "onBehalfOf": null,
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.405Z",
+        "code": "OK",
+        "actor": "manager",
+        "traceId": "da450d68-61fd-49fb-b4a4-f13d39293871",
+        "operation": "dispatch",
+        "requestId": "ff12c002-1f64-4290-b894-f0d8d9acc2f2",
+        "durationMs": 19.783333999999968,
+        "onBehalfOf": null,
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.406Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "fd2afa93-8872-49e2-ac02-28417252ca8c",
+        "actionId": "e1b7f1f7-3424-4164-91fe-8dbe0c2dda6d",
+        "operation": "status",
+        "requestId": "c4d1a1a9-06ff-4907-9c63-b6080fcdbaa3",
+        "durationMs": 0.911583999999948,
+        "onBehalfOf": null,
+        "operationId": "054b14ae-34de-4f71-9fd6-3c9026e24f2e",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.408Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "d1ab9ea5-ff3f-41de-b7f0-16384a1d880e",
+        "operation": "get",
+        "requestId": "7632f56b-5bad-4115-9aa1-36d3ef62f263",
+        "durationMs": 1.0779170000000704,
+        "onBehalfOf": "operator",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.411Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "0d8618be-e579-4eff-afd0-cf157a3d8599",
+        "operation": "get",
+        "requestId": "291ec05a-a6dc-42fd-bd0f-bf5e82b71082",
+        "durationMs": 2.593166999999994,
+        "onBehalfOf": "operator",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.412Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "5d8bb127-b501-4da2-bb0d-85218161adc7",
+        "operation": "get",
+        "requestId": "eb545b42-07e8-4b52-b34c-8148f807b63d",
+        "durationMs": 2.9939999999999145,
+        "onBehalfOf": "operator",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.412Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "6701451d-7be2-4256-b770-93cb13d930ac",
+        "operation": "get",
+        "requestId": "54d7d83e-7789-4b64-9309-d84f4edca7f1",
+        "durationMs": 3.510833000000048,
+        "onBehalfOf": "operator",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.413Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "9cf21c33-afa4-43e6-9129-ae67fd89094c",
+        "operation": "get",
+        "requestId": "b64d0ed5-7948-4a07-8e59-1065c62a630d",
+        "durationMs": 3.889167000000043,
+        "onBehalfOf": "operator",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.442Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "9c29bafb-6795-48cd-93c9-7673553a7ff3",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "operation": "submit",
+        "requestId": "a9c3e109-5206-4978-bc6c-6f1cad866851",
+        "durationMs": 28.97220900000002,
+        "onBehalfOf": "operator",
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.462Z",
+        "code": "OK",
+        "actor": "manager",
+        "traceId": "4691c368-92fb-4b22-b95f-595aa3f24d00",
+        "operation": "dispatch",
+        "requestId": "fb2aecd4-5722-41eb-9e11-1480f51253ca",
+        "durationMs": 18.75583299999994,
+        "onBehalfOf": null,
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.465Z",
+        "code": "OK",
+        "actor": "manager",
+        "traceId": "078ba0de-5e9f-491c-9861-d2cc9dcc1e16",
+        "operation": "dispatch",
+        "requestId": "2aa32dee-b9e9-4227-a28a-c8462cc6cfdb",
+        "durationMs": 1.7902080000001206,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.468Z",
+        "code": "OK",
+        "actor": "manager",
+        "traceId": "6e8780bf-f84d-43d7-87da-7a3fad737559",
+        "operation": "reconcile",
+        "requestId": "aa7e2c9e-39e9-4feb-a322-6398f55ee298",
+        "durationMs": 2.429458000000068,
+        "onBehalfOf": null,
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.469Z",
+        "code": "OK",
+        "actor": "operator",
+        "traceId": "89f77ff6-068b-4980-ba0d-689298130dac",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "operation": "status",
+        "requestId": "29df5cec-c387-453d-a6ce-73afbdeabab3",
+        "durationMs": 0.8063750000001164,
+        "onBehalfOf": null,
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.471Z",
+        "code": "OK",
+        "actor": "agent",
+        "traceId": "03abb4bc-2de1-4792-87cc-5ab904a2abd4",
+        "actionId": "9463d151-008f-48e9-a22b-ae53cf9fbf86",
+        "operation": "submit",
+        "requestId": "25ea41c9-2bf1-4a70-90e7-4d39d0060844",
+        "durationMs": 1.353749999999991,
+        "onBehalfOf": "operator",
+        "operationId": "c42e20a7-45ba-41b4-a970-5cb956127bba",
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:29.473Z",
+        "code": "OK",
+        "actor": "manager",
+        "traceId": "1900e0cc-13f8-47fc-b4cc-ec5a9d3cfd74",
+        "operation": "dispatch",
+        "requestId": "870e4686-3f96-4d46-948a-2d01de96f5d7",
+        "durationMs": 1.6166250000001128,
+        "onBehalfOf": null,
+        "policyVersion": "1.0.0",
+        "schemaVersion": "1.0.0"
+      }
+    }
+  ]
+}

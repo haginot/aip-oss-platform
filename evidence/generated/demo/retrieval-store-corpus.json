@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "retrieval-store-corpus",
+  "startedAt": "2026-10-12T15:58:35.895Z",
+  "finishedAt": "2026-10-12T15:58:36.721Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 1,
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: store retrieval corpus: ordered evidence, masking, delayed source, deletion, revocation and fail closed over HTTP\nok 1 - store retrieval corpus: ordered evidence, masking, delayed source, deletion, revocation and fail closed over HTTP\n  ---\n  duration_ms: 746.426375\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 799.677375\n",
+  "stderr": ""
+}

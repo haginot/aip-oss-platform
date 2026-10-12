@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+ok 1 - Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+  ---
+  duration_ms: 560.321208
+  type: 'test'
+  ...
+# Subtest: checked Object rows stay locked until publication commits, including writers without Policy locks
+ok 2 - checked Object rows stay locked until publication commits, including writers without Policy locks
+  ---
+  duration_ms: 146.453833
+  type: 'test'
+  ...
+# Subtest: publication first makes a waiting Action revalidate the committed definition
+not ok 3 - publication first makes a waiting Action revalidate the committed definition
+  ---
+  duration_ms: 63.887916
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:59:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    3 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 3
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:67:9
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:17:36)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: failed publication releases locks and rolls back all state before a waiting Action resumes
+ok 4 - failed publication releases locks and rolls back all state before a waiting Action resumes
+  ---
+  duration_ms: 82.552083
+  type: 'test'
+  ...
+# Subtest: concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock
+ok 5 - concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock
+  ---
+  duration_ms: 55.404167
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1112.956959

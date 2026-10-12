@@ -2,10 +2,11 @@
   "name": "aip-oss-platform",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "description": "TAKT-supervised development of a modular OSS platform inspired by Palantir AIP/Foundry capabilities.",
   "engines": {
-    "node": ">=22.22.0"
+    "node": "22.23.3"
   },
   "scripts": {
     "test": "node --test",
@@ -21,13 +22,23 @@
     "platform:prepare": "npm run check && npm run platform:models && npm run platform:preflight",
     "verify:mechanism": "node scripts/platform-control.mjs run-stage mechanism && node scripts/platform-control.mjs validate mechanism",
     "platform:validate": "node scripts/platform-control.mjs validate final",
-    "check": "npm test && npm run takt:doctor && npm run verify:mechanism"
+    "check": "npm test && npm run takt:doctor && npm run verify:mechanism",
+    "foundation:test": "node scripts/platform-control.mjs run-stage implementation",
+    "foundation:serve": "node scripts/foundation/serve.mjs",
+    "demo:test": "node scripts/platform-control.mjs run-stage demo",
+    "bcp:test": "node scripts/platform-control.mjs run-stage bcp",
+    "release:bootstrap": "bash scripts/release/bootstrap.sh",
+    "release:test": "node scripts/platform-control.mjs run-stage release"
   },
   "devDependencies": {
     "takt": "0.70.0",
+    "typescript": "5.9.3",
     "yaml": "2.9.1"
   },
   "overrides": {
     "adm-zip": "0.6.1"
+  },
+  "dependencies": {
+    "pg": "8.16.3"
   }
 }

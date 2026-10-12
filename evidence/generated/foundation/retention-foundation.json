@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "retention-foundation",
+  "startedAt": "2026-10-12T15:57:55.847Z",
+  "finishedAt": "2026-10-12T15:57:57.618Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 6,
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# (node:24445) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time\n# (Use `node --trace-warnings ...` to show where the warning was created)\n# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 30 days minus one second\nok 1 - retained Action key, Inbox, ERP ledger and Audit survive 30 days minus one second\n  ---\n  duration_ms: 690.588791\n  type: 'test'\n  ...\n# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 30 days\nok 2 - retained Action key, Inbox, ERP ledger and Audit survive 30 days\n  ---\n  duration_ms: 186.587667\n  type: 'test'\n  ...\n# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 30 days plus one second\nok 3 - retained Action key, Inbox, ERP ledger and Audit survive 30 days plus one second\n  ---\n  duration_ms: 157.156167\n  type: 'test'\n  ...\n# Subtest: retained Action key, Inbox, ERP ledger and Audit survive 18 years\nok 4 - retained Action key, Inbox, ERP ledger and Audit survive 18 years\n  ---\n  duration_ms: 225.380416\n  type: 'test'\n  ...\n# Subtest: missing ERP ledger after years stays UNKNOWN and cannot cause automatic resend\nok 5 - missing ERP ledger after years stays UNKNOWN and cannot cause automatic resend\n  ---\n  duration_ms: 155.533709\n  type: 'test'\n  ...\n# Subtest: unresolved commit INTENT does not age out with Audit retention or process reopening\nok 6 - unresolved commit INTENT does not age out with Audit retention or process reopening\n  ---\n  duration_ms: 118.035708\n  type: 'test'\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1745.965791\n",
+  "stderr": ""
+}

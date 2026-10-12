@@ -1,0 +1,606 @@
+{
+  "corpus": {
+    "schemaVersion": 1,
+    "profile": "store-seed:1",
+    "query": {
+      "type": "InventoryPosition",
+      "search": "rice"
+    },
+    "expectedIds": [
+      "stock",
+      "stock2"
+    ],
+    "checks": [
+      "ID order",
+      "type",
+      "ontologyVersion",
+      "revision",
+      "column mask",
+      "source checkpoint gap",
+      "source lineage",
+      "tombstone",
+      "scope revocation",
+      "policy outage"
+    ]
+  },
+  "probes": [
+    {
+      "name": "initial",
+      "result": {
+        "items": [
+          {
+            "id": "stock",
+            "type": "InventoryPosition",
+            "revision": 1,
+            "ontologyVersion": "1.1.0",
+            "policyVersion": "1.0.0",
+            "sourcePosition": "seed:1",
+            "freshness": "authoritative",
+            "fields": {
+              "name": "rice recall",
+              "note": null,
+              "isolated": false,
+              "quantity": 10
+            }
+          },
+          {
+            "id": "stock2",
+            "type": "InventoryPosition",
+            "revision": 1,
+            "ontologyVersion": "1.1.0",
+            "policyVersion": "1.0.0",
+            "sourcePosition": "seed:1",
+            "freshness": "authoritative",
+            "fields": {
+              "name": "rice second",
+              "note": null,
+              "isolated": false,
+              "quantity": 5,
+              "inTransit": true
+            }
+          }
+        ],
+        "count": 2,
+        "nextCursor": null,
+        "ontologyVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "watermark": "authoritative"
+      },
+      "evidence": [
+        {
+          "id": "stock",
+          "revision": 1,
+          "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+          "ontologyVersion": "1.1.0"
+        },
+        {
+          "id": "stock2",
+          "revision": 1,
+          "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+          "ontologyVersion": "1.1.0"
+        }
+      ]
+    },
+    {
+      "name": "source-applied",
+      "result": {
+        "items": [
+          {
+            "id": "source:rice",
+            "type": "InventoryPosition",
+            "revision": 1,
+            "ontologyVersion": "1.1.0",
+            "policyVersion": "1.0.0",
+            "sourcePosition": "inventory:1",
+            "freshness": "authoritative",
+            "fields": {
+              "name": "source rice",
+              "note": null,
+              "isolated": false,
+              "quantity": 9
+            }
+          },
+          {
+            "id": "stock",
+            "type": "InventoryPosition",
+            "revision": 1,
+            "ontologyVersion": "1.1.0",
+            "policyVersion": "1.0.0",
+            "sourcePosition": "seed:1",
+            "freshness": "authoritative",
+            "fields": {
+              "name": "rice recall",
+              "note": null,
+              "isolated": false,
+              "quantity": 10
+            }
+          },
+          {
+            "id": "stock2",
+            "type": "InventoryPosition",
+            "revision": 1,
+            "ontologyVersion": "1.1.0",
+            "policyVersion": "1.0.0",
+            "sourcePosition": "seed:1",
+            "freshness": "authoritative",
+            "fields": {
+              "name": "rice second",
+              "note": null,
+              "isolated": false,
+              "quantity": 5,
+              "inTransit": true
+            }
+          }
+        ],
+        "count": 3,
+        "nextCursor": null,
+        "ontologyVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "watermark": "authoritative"
+      },
+      "history": {
+        "items": [
+          {
+            "id": "source:rice",
+            "type": "InventoryPosition",
+            "revision": 1,
+            "ontologyVersion": "1.1.0",
+            "policyVersion": "1.0.0",
+            "sourcePosition": "inventory:1",
+            "freshness": "authoritative",
+            "fields": {
+              "name": "source rice",
+              "note": null,
+              "isolated": false,
+              "quantity": 9
+            },
+            "actionId": null,
+            "validAt": "2026-10-12T00:00:00.000Z",
+            "recordedAt": "2026-10-12T15:58:36.521Z",
+            "deleted": false
+          }
+        ],
+        "nextRevision": null,
+        "ontologyVersion": "1.1.0",
+        "policyVersion": "1.0.0"
+      }
+    },
+    {
+      "name": "revoked",
+      "result": {
+        "items": [],
+        "count": 0,
+        "nextCursor": null,
+        "ontologyVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "watermark": "authoritative"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.504Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "76e64db4-4e84-4d51-a4fb-ba83f4f613c8",
+        "operation": "search",
+        "requestId": "e1c4d5da-289c-43be-849a-822804a58d0a",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.512Z",
+        "code": "SOURCE_GAP",
+        "kind": "Denied",
+        "actor": "manager",
+        "traceId": "c8ac547f-73da-406f-b721-c5ac37b98bea",
+        "operation": "ingest",
+        "requestId": "26e218d8-984b-45a8-8785-87a61b279f9f",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.513Z",
+        "code": "SOURCE_GAP",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "gateway",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.513Z",
+        "code": "SOURCE_GAP",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "http",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.516Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "cb37f1e1-3d90-497b-bf27-916e623d9ec9",
+        "operation": "ingest",
+        "requestId": "ef636a26-c305-4bff-a255-ff2195280628",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.519Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "d310fb32-61e8-461b-ba07-2a9c284e07d0",
+        "operation": "search",
+        "requestId": "092587bb-758c-46d8-85ef-98fe44932fde",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.524Z",
+        "kind": "SourceIngested",
+        "actor": "manager",
+        "state": "APPLIED",
+        "store": "s1",
+        "source": "inventory",
+        "tenant": "t1",
+        "reasons": [],
+        "traceId": "d700203a-cc02-4825-8dcf-c5971bb08ae6",
+        "validAt": "2026-10-12T00:00:00.000Z",
+        "objectId": "source:rice",
+        "position": 1,
+        "releases": null,
+        "revision": 1,
+        "requestId": "7fc7f1e7-11c4-4e17-b522-cfa5dcac79f3",
+        "onBehalfOf": null,
+        "inputDigest": "fb314b6ed767579d0eb210127a608ca4a21e8f19d589bb706ffb15eb0b089b4a",
+        "policyVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "transformVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.524Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "d700203a-cc02-4825-8dcf-c5971bb08ae6",
+        "operation": "ingest",
+        "requestId": "7fc7f1e7-11c4-4e17-b522-cfa5dcac79f3",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.528Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "67167f9c-7161-4f82-a505-eb91881ab9ac",
+        "operation": "read",
+        "requestId": "1d5fdde1-ade7-4331-ba19-d0e094985445",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.531Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "cbe45336-6abd-430c-b3ee-c0ee45bf1deb",
+        "operation": "search",
+        "requestId": "77465c3d-e339-4b1e-a661-f77000395a6d",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.534Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "c393b4c7-bfa3-4a6e-a481-9ae32e031f6d",
+        "operation": "read",
+        "requestId": "44c22356-a7a9-4724-9cc7-4f0086603480",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.539Z",
+        "kind": "SourceIngested",
+        "actor": "manager",
+        "state": "APPLIED",
+        "store": "s1",
+        "source": "inventory",
+        "tenant": "t1",
+        "reasons": [],
+        "traceId": "09d0308e-7a6d-4fb2-8256-8c59ca7d45bf",
+        "validAt": "2026-10-12T00:00:00.000Z",
+        "objectId": "source:rice",
+        "position": 2,
+        "releases": null,
+        "revision": 2,
+        "requestId": "9eb1e114-3b43-4418-bca1-29528455f54d",
+        "onBehalfOf": null,
+        "inputDigest": "319bcfc972c5a50b59d7c25553f91057979b5059f283ab501764a17e29d6d9e6",
+        "policyVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "transformVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.539Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "09d0308e-7a6d-4fb2-8256-8c59ca7d45bf",
+        "operation": "ingest",
+        "requestId": "9eb1e114-3b43-4418-bca1-29528455f54d",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.542Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "21ccb1e7-7a19-4aaa-80cb-79073cec9391",
+        "operation": "read",
+        "requestId": "1b377a0b-cfab-4370-8bf5-14449c8a7070",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.548Z",
+        "code": "INVALID_EVIDENCE",
+        "kind": "Denied",
+        "actor": "operator",
+        "traceId": "61d013b5-2811-4225-a755-00b3ffcd5569",
+        "targetId": "stock",
+        "operation": "submit",
+        "requestId": "523c7741-8744-4091-b56d-1e293c924294",
+        "actionType": "SetIsolation",
+        "onBehalfOf": null,
+        "inputDigest": "f1134d17a0d5e60d16891753f391b9cfc5d3ed96cd322cd07bfac084070a5f4e",
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.549Z",
+        "code": "INVALID_EVIDENCE",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "gateway",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.549Z",
+        "code": "INVALID_EVIDENCE",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "http",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.552Z",
+        "kind": "SourceIngested",
+        "actor": "manager",
+        "state": "DELETED",
+        "store": "s1",
+        "source": "inventory",
+        "tenant": "t1",
+        "reasons": [],
+        "traceId": "043b77a9-8273-4547-981c-9dec06bf7539",
+        "validAt": "2026-10-12T00:00:00.000Z",
+        "objectId": "source:rice",
+        "position": 3,
+        "releases": null,
+        "revision": 3,
+        "requestId": "c052a160-9fad-4a20-8a71-6d72620354f8",
+        "onBehalfOf": null,
+        "inputDigest": "db59c28c5c0d40581c7e4bdf96b5ffbef672544b14ccfb55d107b62f0eaf3e13",
+        "policyVersion": "1.0.0",
+        "qualityVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "transformVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.552Z",
+        "kind": "ReadOrControl",
+        "actor": "manager",
+        "traceId": "043b77a9-8273-4547-981c-9dec06bf7539",
+        "operation": "ingest",
+        "requestId": "c052a160-9fad-4a20-8a71-6d72620354f8",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.554Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "4ab924b3-aeb5-4211-ab04-755bb36c1976",
+        "operation": "search",
+        "requestId": "8f5a1434-cee2-4cd2-bece-2ae19d60d9dd",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.556Z",
+        "code": "NOT_FOUND",
+        "kind": "Denied",
+        "actor": "operator",
+        "traceId": "19be830a-dac9-46ac-b36a-0693f717eff2",
+        "operation": "read",
+        "requestId": "0a7ed8ec-0d97-4797-ad99-90105312b7bd",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.556Z",
+        "code": "NOT_FOUND",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "gateway",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.557Z",
+        "code": "NOT_FOUND",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "http",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.559Z",
+        "kind": "ReadOrControl",
+        "actor": "operator",
+        "traceId": "cf5945fb-278e-4131-83c0-907656626a8e",
+        "operation": "search",
+        "requestId": "0563e7ec-426d-4e4c-9f28-6b426866fa81",
+        "onBehalfOf": null,
+        "ruleVersion": "1.1.0",
+        "policyVersion": "1.0.0",
+        "ontologyVersion": "1.1.0",
+        "workflowVersion": "1.1.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.560Z",
+        "code": "UNAVAILABLE",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "gateway",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:58:36.560Z",
+        "code": "UNAVAILABLE",
+        "kind": "Denied",
+        "actor": "unverified",
+        "operation": "http",
+        "onBehalfOf": null,
+        "ruleVersion": null,
+        "policyVersion": null,
+        "ontologyVersion": null,
+        "workflowVersion": null
+      }
+    }
+  ],
+  "checks": [
+    "SOURCE_GAP",
+    "tombstone",
+    "revocation",
+    "UNAVAILABLE"
+  ]
+}

@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+ok 1 - store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+  ---
+  duration_ms: 748.572416
+  type: 'test'
+  ...
+# Subtest: store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+ok 2 - store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+  ---
+  duration_ms: 244.7375
+  type: 'test'
+  ...
+# Subtest: store concurrent isolation, replay and mismatched key preserve one effect
+ok 3 - store concurrent isolation, replay and mismatched key preserve one effect
+  ---
+  duration_ms: 143.621667
+  type: 'test'
+  ...
+# Subtest: store approval rechecks changed candidate and original delegation
+ok 4 - store approval rechecks changed candidate and original delegation
+  ---
+  duration_ms: 213.878167
+  type: 'test'
+  ...
+# Subtest: store external rejection blocks customer notice; lost ack reconciles without resend
+ok 5 - store external rejection blocks customer notice; lost ack reconciles without resend
+  ---
+  duration_ms: 212.810959
+  type: 'test'
+  ...
+# Subtest: store unknown external success reconciles without blind resend
+ok 6 - store unknown external success reconciles without blind resend
+  ---
+  duration_ms: 181.763875
+  type: 'test'
+  ...
+# Subtest: store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+ok 7 - store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+  ---
+  duration_ms: 251.651417
+  type: 'test'
+  ...
+# Subtest: store published Workflow threshold gates quarantine and low-value procurement
+ok 8 - store published Workflow threshold gates quarantine and low-value procurement
+  ---
+  duration_ms: 212.160542
+  type: 'test'
+  ...
+# Subtest: store published Rule rejects validate and submit without business mutation
+ok 9 - store published Rule rejects validate and submit without business mutation
+  ---
+  duration_ms: 134.610125
+  type: 'test'
+  ...
+# Subtest: store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+not ok 10 - store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+  ---
+  duration_ms: 204.538458
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:146:1'
+  failureType: 'testCodeFailure'
+  error: 'column "stores" is of type jsonb but expression is of type text[]'
+  code: '42804'
+  name: 'error'
+  stack: |-
+    /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/node_modules/pg-pool/index.js:45:11
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:165:2
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:29:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store quarantine dependency race keeps one isolation and rejects stale evidence
+ok 11 - store quarantine dependency race keeps one isolation and rejects stale evidence
+  ---
+  duration_ms: 138.463334
+  type: 'test'
+  ...
+# Subtest: store replacement unknown success blocks notice until reconciliation and never resends
+ok 12 - store replacement unknown success blocks notice until reconciliation and never resends
+  ---
+  duration_ms: 219.513833
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 11
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3129.901833

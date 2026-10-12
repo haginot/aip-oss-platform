@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "authentication-expiry-foundation",
+  "startedAt": "2026-10-12T15:58:11.226Z",
+  "finishedAt": "2026-10-12T15:58:19.268Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: session expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal\nok 1 - session expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal\n  ---\n  duration_ms: 1280.8905\n  type: 'test'\n  ...\n# Subtest: delegation expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal\nok 2 - delegation expiry during business policy lock wait rejects HTTP Action and permits same-key retry after renewal\n  ---\n  duration_ms: 812.244541\n  type: 'test'\n  ...\n# Subtest: session expiry during business object lock wait rejects HTTP Action and permits same-key retry after renewal\nok 3 - session expiry during business object lock wait rejects HTTP Action and permits same-key retry after renewal\n  ---\n  duration_ms: 781.986541\n  type: 'test'\n  ...\n# Subtest: delegation expiry after business writes and Audit rolls back before commit\nok 4 - delegation expiry after business writes and Audit rolls back before commit\n  ---\n  duration_ms: 730.067458\n  type: 'test'\n  ...\n# Subtest: session expiry during initial HTTP authentication rejects before journal admission\nok 5 - session expiry during initial HTTP authentication rejects before journal admission\n  ---\n  duration_ms: 696.792583\n  type: 'test'\n  ...\n# Subtest: delegation expiry during initial HTTP authentication rejects before journal admission\nok 6 - delegation expiry during initial HTTP authentication rejects before journal admission\n  ---\n  duration_ms: 705.137625\n  type: 'test'\n  ...\n# Subtest: original delegation expiry during approval rolls back and preserves pending Action\nok 7 - original delegation expiry during approval rolls back and preserves pending Action\n  ---\n  duration_ms: 865.972166\n  type: 'test'\n  ...\n# Subtest: expiry after final SQL and before COMMIT rolls back authenticated transaction\nok 8 - expiry after final SQL and before COMMIT rolls back authenticated transaction\n  ---\n  duration_ms: 704.710042\n  type: 'test'\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 8\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 8013.082958\n",
+  "stderr": ""
+}

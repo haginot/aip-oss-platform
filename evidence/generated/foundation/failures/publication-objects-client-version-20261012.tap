@@ -1,0 +1,96 @@
+TAP version 13
+# Subtest: review cannot overwrite a concurrent case edit; corrected cases can be reviewed and published
+ok 1 - review cannot overwrite a concurrent case edit; corrected cases can be reviewed and published
+  ---
+  duration_ms: 653.071083
+  type: 'test'
+  ...
+# Subtest: publish cannot use a review invalidated by a concurrent case edit
+ok 2 - publish cannot use a review invalidated by a concurrent case edit
+  ---
+  duration_ms: 71.778792
+  type: 'test'
+  ...
+# Subtest: publish independently rejects a stored simulation bound to different cases
+ok 3 - publish independently rejects a stored simulation bound to different cases
+  ---
+  duration_ms: 60.908292
+  type: 'test'
+  ...
+# Subtest: editing cases back to their original content still invalidates an in-flight review
+ok 4 - editing cases back to their original content still invalidates an in-flight review
+  ---
+  duration_ms: 50.425708
+  type: 'test'
+  ...
+# Subtest: an edit arriving during publication waits for commit and cannot change PUBLISHED cases
+ok 5 - an edit arriving during publication waits for commit and cannot change PUBLISHED cases
+  ---
+  duration_ms: 64.257417
+  type: 'test'
+  ...
+# Subtest: publication failure before Audit rolls back definition, live pointer and Policy together
+ok 6 - publication failure before Audit rolls back definition, live pointer and Policy together
+  ---
+  duration_ms: 70.50125
+  type: 'test'
+  ...
+# Subtest: rollback also rejects mismatched case binding on a previously published definition
+ok 7 - rollback also rejects mismatched case binding on a previously published definition
+  ---
+  duration_ms: 62.508834
+  type: 'test'
+  ...
+# Subtest: Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+ok 8 - Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+  ---
+  duration_ms: 666.004625
+  type: 'test'
+  ...
+# Subtest: checked Object rows stay locked until publication commits, including writers without Policy locks
+ok 9 - checked Object rows stay locked until publication commits, including writers without Policy locks
+  ---
+  duration_ms: 174.522584
+  type: 'test'
+  ...
+# Subtest: publication first makes a waiting Action revalidate the committed definition
+not ok 10 - publication first makes a waiting Action revalidate the committed definition
+  ---
+  duration_ms: 65.2555
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:59:1'
+  failureType: 'testCodeFailure'
+  error: 'UNSUPPORTED_VERSION'
+  code: 'UNSUPPORTED_VERSION'
+  stack: |-
+    fail (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/contracts.mjs:6:48)
+    checkAction (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/contracts.mjs:25:118)
+    call (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/client-transport.mjs:9:50)
+    Object.submit (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/client-transport.mjs:22:614)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:68:34
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:17:36)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: failed publication releases locks and rolls back all state before a waiting Action resumes
+ok 11 - failed publication releases locks and rolls back all state before a waiting Action resumes
+  ---
+  duration_ms: 90.434666
+  type: 'test'
+  ...
+# Subtest: concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock
+ok 12 - concurrent publishers serialize before Policy SHARE and reject the changed baseline without deadlock
+  ---
+  duration_ms: 76.326667
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 11
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1287.09025

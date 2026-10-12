@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "worker-authority-expiry-foundation",
+  "startedAt": "2026-10-12T15:58:23.954Z",
+  "finishedAt": "2026-10-12T15:58:27.767Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 7,
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: consume original delegation expires after Inbox writes: rollback then renewed retry deduplicates\nok 1 - consume original delegation expires after Inbox writes: rollback then renewed retry deduplicates\n  ---\n  duration_ms: 1317.977625\n  type: 'test'\n  ...\n# Subtest: dispatch original delegation expires after real ERP apply: preserve SENDING and reconcile without resend\nok 2 - dispatch original delegation expires after real ERP apply: preserve SENDING and reconcile without resend\n  ---\n  duration_ms: 813.926083\n  type: 'test'\n  ...\n# Subtest: reconciliation original delegation expires during ERP ledger lock wait: retain UNKNOWN until renewed request\nok 3 - reconciliation original delegation expires during ERP ledger lock wait: retain UNKNOWN until renewed request\n  ---\n  duration_ms: 823.341083\n  type: 'test'\n  ...\n# Subtest: consume rejects expired original delegation before worker effects\nok 4 - consume rejects expired original delegation before worker effects\n  ---\n  duration_ms: 192.973333\n  type: 'test'\n  ...\n# Subtest: dispatch rejects expired original delegation before worker effects\nok 5 - dispatch rejects expired original delegation before worker effects\n  ---\n  duration_ms: 127.47175\n  type: 'test'\n  ...\n# Subtest: reconcile rejects expired original delegation before worker effects\nok 6 - reconcile rejects expired original delegation before worker effects\n  ---\n  duration_ms: 127.392125\n  type: 'test'\n  ...\n# Subtest: valid original delegation permits consume, delivery and replay with one external effect\nok 7 - valid original delegation permits consume, delivery and replay with one external effect\n  ---\n  duration_ms: 164.833875\n  type: 'test'\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 3789.190041\n",
+  "stderr": ""
+}

@@ -1,0 +1,201 @@
+{
+  "contractVersion": "1.0.0",
+  "ontologyVersion": "1.1.0",
+  "policyVersion": "1.0.0",
+  "ruleVersion": "1.1.0",
+  "workflowVersion": "1.1.0",
+  "types": {
+    "Store": {
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "secret": {
+          "type": "string",
+          "restricted": true
+        }
+      }
+    },
+    "Lot": {
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "secret": {
+          "type": "string",
+          "restricted": true
+        }
+      }
+    },
+    "InventoryPosition": {
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "unit": "each"
+        },
+        "isolated": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": "string",
+          "nullable": true
+        },
+        "secret": {
+          "type": "string",
+          "restricted": true
+        },
+        "inTransit": {
+          "type": "boolean",
+          "nullable": true
+        }
+      }
+    },
+    "RecallCase": {
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "lotId": {
+          "type": "string"
+        },
+        "deadline": {
+          "type": "integer"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "affectedIds": {
+          "type": "string"
+        },
+        "affectedStores": {
+          "type": "string"
+        },
+        "affectedQuantity": {
+          "type": "integer"
+        },
+        "soldQuantity": {
+          "type": "integer"
+        },
+        "candidateId": {
+          "type": "string"
+        },
+        "orderQuantity": {
+          "type": "integer"
+        },
+        "orderAmount": {
+          "type": "integer"
+        },
+        "customerMessage": {
+          "type": "string"
+        },
+        "customerCount": {
+          "type": "integer"
+        },
+        "isolated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ReplacementCandidate": {
+      "fields": {
+        "name": {
+          "type": "string"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "recalled": {
+          "type": "boolean"
+        },
+        "capacity": {
+          "type": "integer"
+        },
+        "unitPrice": {
+          "type": "integer"
+        },
+        "supplier": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "links": {
+    "stock": {
+      "from": "Lot",
+      "to": "InventoryPosition"
+    },
+    "storeStock": {
+      "from": "Store",
+      "to": "InventoryPosition"
+    },
+    "replacement": {
+      "from": "Lot",
+      "to": "ReplacementCandidate"
+    }
+  },
+  "actions": {
+    "SetIsolation": {
+      "version": "1.0.0",
+      "targetType": "InventoryPosition",
+      "input": {
+        "targetId": {
+          "type": "string"
+        },
+        "isolated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "DetectRecallImpact": {
+      "version": "1.0.0",
+      "targetType": "RecallCase",
+      "input": {
+        "targetId": {
+          "type": "string"
+        }
+      }
+    },
+    "QuarantineInventory": {
+      "version": "1.0.0",
+      "targetType": "InventoryPosition",
+      "input": {
+        "targetId": {
+          "type": "string"
+        },
+        "caseId": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateReplacementOrder": {
+      "version": "1.0.0",
+      "targetType": "RecallCase",
+      "input": {
+        "targetId": {
+          "type": "string"
+        },
+        "candidateId": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        }
+      }
+    },
+    "PublishCustomerNotice": {
+      "version": "1.0.0",
+      "targetType": "RecallCase",
+      "input": {
+        "targetId": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

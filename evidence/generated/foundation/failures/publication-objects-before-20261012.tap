@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+not ok 1 - Action commit while publication waits invalidates the reviewed Object; fresh review can publish
+  ---
+  duration_ms: 568.534833
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:38:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    publication must reject the now-stale reviewed revision
+    + actual - expected
+    
+    + undefined
+    - 'STALE_REVIEW'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'STALE_REVIEW'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:42:9
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:17:36)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: checked Object rows stay locked until publication commits, including writers without Policy locks
+not ok 2 - checked Object rows stay locked until publication commits, including writers without Policy locks
+  ---
+  duration_ms: 3044.158375
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:49:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:53:3
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/publication-objects.test.mjs:17:36)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3830.800042

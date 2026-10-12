@@ -1,0 +1,95 @@
+TAP version 13
+# Subtest: store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+not ok 1 - store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+  ---
+  duration_ms: 835.600417
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: 'column "id" does not exist'
+  code: '42703'
+  name: 'error'
+  stack: |-
+    /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/node_modules/pg-pool/index.js:45:11
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:36:20)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+not ok 2 - store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+  ---
+  duration_ms: 237.325416
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:57:1'
+  failureType: 'testCodeFailure'
+  error: 'column "id" does not exist'
+  code: '42703'
+  name: 'error'
+  stack: |-
+    /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/node_modules/pg-pool/index.js:45:11
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:36:20)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store concurrent isolation, replay and mismatched key preserve one effect
+not ok 3 - store concurrent isolation, replay and mismatched key preserve one effect
+  ---
+  duration_ms: 140.081625
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:69:1'
+  failureType: 'testCodeFailure'
+  error: 'column "id" does not exist'
+  code: '42703'
+  name: 'error'
+  stack: |-
+    /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/node_modules/pg-pool/index.js:45:11
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:36:20)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store approval rechecks changed candidate and original delegation
+not ok 4 - store approval rechecks changed candidate and original delegation
+  ---
+  duration_ms: 197.9235
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:79:1'
+  failureType: 'testCodeFailure'
+  error: 'column "id" does not exist'
+  code: '42703'
+  name: 'error'
+  stack: |-
+    /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/node_modules/pg-pool/index.js:45:11
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:36:20)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store external rejection blocks customer notice; lost ack reconciles without resend
+not ok 5 - store external rejection blocks customer notice; lost ack reconciles without resend
+  ---
+  duration_ms: 218.8345
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:85:1'
+  failureType: 'testCodeFailure'
+  error: 'column "id" does not exist'
+  code: '42703'
+  name: 'error'
+  stack: |-
+    /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/node_modules/pg-pool/index.js:45:11
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:36:20)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 0
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1865.486541

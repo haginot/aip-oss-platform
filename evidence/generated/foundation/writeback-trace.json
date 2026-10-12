@@ -1,0 +1,101 @@
+{
+  "contractVersion": "1.0.0",
+  "action": {
+    "actionId": "44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+    "state": "PENDING_EXTERNAL",
+    "revision": 2,
+    "operationId": "1b537f1f-8989-4671-bd00-70567f3be88e",
+    "result": {
+      "targetId": "stock",
+      "objectRevision": 2
+    }
+  },
+  "final": {
+    "actionId": "44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+    "state": "SUCCEEDED",
+    "revision": 3,
+    "operationId": "1b537f1f-8989-4671-bd00-70567f3be88e",
+    "result": {
+      "external": "DELIVERED",
+      "targetId": "stock",
+      "objectRevision": 2
+    }
+  },
+  "object": {
+    "id": "stock",
+    "type": "InventoryPosition",
+    "revision": 2,
+    "ontologyVersion": "1.0.0",
+    "policyVersion": "1.0.0",
+    "sourcePosition": "action:44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+    "freshness": "authoritative",
+    "fields": {
+      "name": "rice recall",
+      "note": null,
+      "isolated": true,
+      "quantity": 10
+    }
+  },
+  "ledger": [
+    {
+      "operation_id": "1b537f1f-8989-4671-bd00-70567f3be88e",
+      "digest": "761e9ea07838d0bed9f4254b0a1d1a65f5baae0d3454913844161629024166b0",
+      "payload": {
+        "store": "s1",
+        "tenant": "t1",
+        "actionId": "44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+        "isolated": true,
+        "sequence": 1,
+        "aggregateId": "stock",
+        "operationId": "1b537f1f-8989-4671-bd00-70567f3be88e",
+        "contractVersion": "1.0.0"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "record": {
+        "at": "2026-10-12T15:57:50.053Z",
+        "kind": "PENDING_EXTERNAL",
+        "actor": "operator",
+        "traceId": "97df44da-5dad-4e98-837d-9c5452cdde0e",
+        "actionId": "44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+        "evidence": [],
+        "requestId": "3535c2db-fc6d-4b09-84b4-2fe2505a30eb",
+        "onBehalfOf": null,
+        "inputDigest": "76a8c419b2c82c170f40d309c426d24bf8ee13267297cda46e10fa0518932787",
+        "operationId": "1b537f1f-8989-4671-bd00-70567f3be88e",
+        "ruleVersion": "1.0.0",
+        "policyVersion": "1.0.0",
+        "objectRevision": 2,
+        "ontologyVersion": "1.0.0",
+        "workflowVersion": "1.0.0"
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:57:50.069Z",
+        "kind": "Consumed",
+        "actor": "manager",
+        "actionId": "44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+        "operationId": "1b537f1f-8989-4671-bd00-70567f3be88e",
+        "objectRevision": 2
+      }
+    },
+    {
+      "record": {
+        "at": "2026-10-12T15:57:50.096Z",
+        "kind": "Writeback",
+        "actor": "manager",
+        "state": "DELIVERED",
+        "traceId": "15adf932-ebfa-49a8-9206-8aedbaf0eb92",
+        "actionId": "44573f68-3115-4ca1-9ad3-0fd4744c7ee1",
+        "requestId": "29e6f476-4470-45bc-bb4c-8b3ce6a3a689",
+        "onBehalfOf": null,
+        "operationId": "1b537f1f-8989-4671-bd00-70567f3be88e",
+        "externalState": "APPLIED",
+        "policyVersion": "1.0.0"
+      }
+    }
+  ]
+}

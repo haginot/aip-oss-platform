@@ -8,34 +8,42 @@ if [[ -z "$stage" ]]; then
 fi
 
 case "$stage" in
-  goal|architecture|plan)
-    node scripts/platform-control.mjs validate "$stage"
+  goal|plan)
+    mise exec -- node scripts/platform-control.mjs validate "$stage"
+    ;;
+  architecture)
+    mise exec -- node scripts/platform-control.mjs run-stage architecture
+    mise exec -- node scripts/platform-control.mjs validate architecture-receipt
     ;;
   implementation)
-    node scripts/platform-control.mjs run-stage implementation
-    node scripts/platform-control.mjs validate implementation
+    mise exec -- node scripts/platform-control.mjs run-stage implementation
+    mise exec -- node scripts/platform-control.mjs validate implementation
     ;;
   demo)
-    node scripts/platform-control.mjs run-stage implementation
-    node scripts/platform-control.mjs run-stage demo
-    node scripts/platform-control.mjs validate demo
+    mise exec -- node scripts/platform-control.mjs run-stage implementation
+    mise exec -- node scripts/platform-control.mjs run-stage demo
+    mise exec -- node scripts/platform-control.mjs validate demo
     ;;
   bcp)
-    node scripts/platform-control.mjs run-stage implementation
-    node scripts/platform-control.mjs run-stage demo
-    node scripts/platform-control.mjs run-stage bcp
-    node scripts/platform-control.mjs validate bcp
+    mise exec -- node scripts/platform-control.mjs run-stage implementation
+    mise exec -- node scripts/platform-control.mjs run-stage demo
+    mise exec -- node scripts/platform-control.mjs run-stage bcp
+    mise exec -- node scripts/platform-control.mjs validate bcp
     ;;
   release)
-    node scripts/platform-control.mjs run-stage mechanism
-    node scripts/platform-control.mjs run-stage implementation
-    node scripts/platform-control.mjs run-stage demo
-    node scripts/platform-control.mjs run-stage bcp
-    node scripts/platform-control.mjs run-stage release
-    node scripts/platform-control.mjs validate release
+    mise exec -- node scripts/platform-control.mjs run-stage architecture
+    mise exec -- node scripts/platform-control.mjs run-stage plan
+    mise exec -- node scripts/platform-control.mjs run-stage mechanism
+    mise exec -- node scripts/platform-control.mjs run-stage implementation
+    mise exec -- node scripts/platform-control.mjs run-stage demo
+    mise exec -- node scripts/platform-control.mjs run-stage bcp
+    mise exec -- node scripts/platform-control.mjs run-stage release
+    mise exec -- node scripts/platform-control.mjs validate release
+    mise exec -- node scripts/release/current-input-audit.mjs --all
     ;;
   final)
-    node scripts/platform-control.mjs validate final
+    mise exec -- node scripts/platform-control.mjs validate final
+    mise exec -- node scripts/release/current-input-audit.mjs --all
     ;;
   *)
     echo "unknown platform gate stage: $stage" >&2

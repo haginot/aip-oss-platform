@@ -1,0 +1,96 @@
+TAP version 13
+# Subtest: clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+ok 1 - clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+  ---
+  duration_ms: 4014.315292
+  type: 'test'
+  ...
+# hdiutil: create failed - リソースが使用中です
+# Subtest: checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+not ok 2 - checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+  ---
+  duration_ms: 2324.957125
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:114:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Command failed: hdiutil create -size 512m -type SPARSE -fs APFS -volname AIP-journal -o /var/folders/6p/19gdf6g95klcf6zc_d7p06h40000gn/T/aip-volumes-TSXuAZ/journal.sparseimage
+    hdiutil: create failed - リソースが使用中です
+    
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    genericNodeError (node:internal/errors:983:15)
+    wrappedFn (node:internal/errors:537:14)
+    checkExecSyncError (node:child_process:916:11)
+    execFileSync (node:child_process:952:15)
+    command (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/scripts/foundation/volumes.mjs:9:22)
+    separateVolumes (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/scripts/foundation/volumes.mjs:14:4)
+    async setup (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:29:16)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+ok 3 - unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+  ---
+  duration_ms: 3665.956166
+  type: 'test'
+  ...
+# Subtest: store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+ok 4 - store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+  ---
+  duration_ms: 3714.478292
+  type: 'test'
+  ...
+# Subtest: B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+ok 5 - B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+  ---
+  duration_ms: 3726.450291
+  type: 'test'
+  ...
+# Subtest: B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+ok 6 - B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+  ---
+  duration_ms: 3809.744375
+  type: 'test'
+  ...
+# Subtest: B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+ok 7 - B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+  ---
+  duration_ms: 3498.499541
+  type: 'test'
+  ...
+# Subtest: export complete machine-readable BCP measurements
+not ok 8 - export complete machine-readable BCP measurements
+  ---
+  duration_ms: 0.678458
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:255:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    6 !== 7
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 7
+  actual: 6
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:256:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 6
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24810.274459

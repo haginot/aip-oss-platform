@@ -1,0 +1,117 @@
+TAP version 13
+# Subtest: blob content digest/range authorization, immutable retention and transactional Audit use real HTTP/database
+ok 1 - blob content digest/range authorization, immutable retention and transactional Audit use real HTTP/database
+  ---
+  duration_ms: 685.738209
+  type: 'test'
+  ...
+# Subtest: finite inventory metrics filter scope before aggregation and reject injection/version/deadline
+ok 2 - finite inventory metrics filter scope before aggregation and reject injection/version/deadline
+  ---
+  duration_ms: 139.550792
+  type: 'test'
+  ...
+# Subtest: identity namespace collisions, reviewed mapping merge/split migration and source ingestion preserve Object references
+ok 3 - identity namespace collisions, reviewed mapping merge/split migration and source ingestion preserve Object references
+  ---
+  duration_ms: 110.995833
+  type: 'test'
+  ...
+# Subtest: telemetry joins public trace with Action/Outbox/Audit, classifies errors and excludes payload/secret values
+ok 4 - telemetry joins public trace with Action/Outbox/Audit, classifies errors and excludes payload/secret values
+  ---
+  duration_ms: 88.984667
+  type: 'test'
+  ...
+# Subtest: get/list/search/link/column/Action/tool share tenant and store scope without counts or secret snippets
+ok 5 - get/list/search/link/column/Action/tool share tenant and store scope without counts or secret snippets
+  ---
+  duration_ms: 634.846458
+  type: 'test'
+  ...
+# Subtest: trusted delegated identity, invalid delegation and actor forgery are audited
+ok 6 - trusted delegated identity, invalid delegation and actor forgery are audited
+  ---
+  duration_ms: 80.051167
+  type: 'test'
+  ...
+# Subtest: policy outage, session expiry, revocation and cursor changes fail closed
+ok 7 - policy outage, session expiry, revocation and cursor changes fail closed
+  ---
+  duration_ms: 84.211084
+  type: 'test'
+  ...
+# Subtest: AI proposal is typed, grounded, permission intersected and cannot execute directly
+ok 8 - AI proposal is typed, grounded, permission intersected and cannot execute directly
+  ---
+  duration_ms: 99.540375
+  type: 'test'
+  ...
+# Subtest: public envelope rejects spoofed tenant and actor and retains versions
+ok 9 - public envelope rejects spoofed tenant and actor and retains versions
+  ---
+  duration_ms: 48.952416
+  type: 'test'
+  ...
+# Subtest: delegation subject change between journal intent and transaction is denied without mixed identity
+ok 10 - delegation subject change between journal intent and transaction is denied without mixed identity
+  ---
+  duration_ms: 80.538209
+  type: 'test'
+  ...
+# Subtest: approval revalidates original delegation scope, audience and subject
+ok 11 - approval revalidates original delegation scope, audience and subject
+  ---
+  duration_ms: 108.238417
+  type: 'test'
+  ...
+# Subtest: authorization matrix records actual allowed and denied calls with policy and trusted subjects
+ok 12 - authorization matrix records actual allowed and denied calls with policy and trusted subjects
+  ---
+  duration_ms: 114.249291
+  type: 'test'
+  ...
+# Subtest: public durable scheduler coalesces forward clock jump, refuses duplicate/backward fire and reauthorizes
+ok 13 - public durable scheduler coalesces forward clock jump, refuses duplicate/backward fire and reauthorizes
+  ---
+  duration_ms: 704.9045
+  type: 'test'
+  ...
+# Subtest: failure between effect and fire acknowledgement resumes same fire ID with Inbox duplicate suppression
+ok 14 - failure between effect and fire acknowledgement resumes same fire ID with Inbox duplicate suppression
+  ---
+  duration_ms: 119.371334
+  type: 'test'
+  ...
+# Subtest: launcher timer actually advances a persisted schedule without client tick
+ok 15 - launcher timer actually advances a persisted schedule without client tick
+  ---
+  duration_ms: 114.781709
+  type: 'test'
+  ...
+# Subtest: reconcile schedule retains UNKNOWN until real ERP ledger resolves original operation
+not ok 16 - reconcile schedule retains UNKNOWN until real ERP ledger resolves original operation
+  ---
+  duration_ms: 244.524792
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/trigger.test.mjs:42:1'
+  failureType: 'testCodeFailure'
+  error: 'erp.setMode is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/trigger.test.mjs:45:72
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/trigger.test.mjs:12:257)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 15
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1466.138666

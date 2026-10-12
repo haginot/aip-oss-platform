@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+ok 1 - store normal: impact, delegated quarantine, enforced approval, replacement ERP and customer response
+  ---
+  duration_ms: 795.011708
+  type: 'test'
+  ...
+# Subtest: store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+ok 2 - store denial and constraints: foreign scope, missing evidence, unsafe candidate, deadline and prerequisite
+  ---
+  duration_ms: 244.76525
+  type: 'test'
+  ...
+# Subtest: store concurrent isolation, replay and mismatched key preserve one effect
+ok 3 - store concurrent isolation, replay and mismatched key preserve one effect
+  ---
+  duration_ms: 137.390541
+  type: 'test'
+  ...
+# Subtest: store approval rechecks changed candidate and original delegation
+ok 4 - store approval rechecks changed candidate and original delegation
+  ---
+  duration_ms: 298.478541
+  type: 'test'
+  ...
+# Subtest: store external rejection blocks customer notice; lost ack reconciles without resend
+ok 5 - store external rejection blocks customer notice; lost ack reconciles without resend
+  ---
+  duration_ms: 203.114292
+  type: 'test'
+  ...
+# Subtest: store unknown external success reconciles without blind resend
+ok 6 - store unknown external success reconciles without blind resend
+  ---
+  duration_ms: 166.647167
+  type: 'test'
+  ...
+# Subtest: store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+ok 7 - store definition publication invalidates pending approval; fresh evaluation and double approval remain safe
+  ---
+  duration_ms: 243.439292
+  type: 'test'
+  ...
+# Subtest: store published Workflow threshold gates quarantine and low-value procurement
+not ok 8 - store published Workflow threshold gates quarantine and low-value procurement
+  ---
+  duration_ms: 173.721916
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:119:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'PENDING_EXTERNAL'
+    - 'PENDING_APPROVAL'
+               ^
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PENDING_APPROVAL'
+  actual: 'PENDING_EXTERNAL'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:124:93
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:29:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store published Rule rejects validate, submit and approval without business mutation
+not ok 9 - store published Rule rejects validate, submit and approval without business mutation
+  ---
+  duration_ms: 120.837875
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:135:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    code: 'RULE_REJECTED'
+  operator: 'rejects'
+  stack: |-
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:139:2
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:29:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+not ok 10 - store approval denial Audit disambiguates two pending actions and does not trust an unknown ID
+  ---
+  duration_ms: 212.117459
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:144:1'
+  failureType: 'testCodeFailure'
+  error: 'denial must name its authorized pending Action'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:152:81
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/demo/store.test.mjs:29:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 7
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2820.882875

@@ -1,0 +1,141 @@
+TAP version 13
+# Subtest: clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+not ok 1 - clean WAN outage -> local quarantine -> lost ack / real SIGKILL -> destructive restore -> reconcile -> resend -> approved compensation
+  ---
+  duration_ms: 96706.127875
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:58:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:86:10
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async setup (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:30:274)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+not ok 2 - checkpoint-before-commit restore discovers lost applied operation only from independent journal, no resend, durable manual key/target hold
+  ---
+  duration_ms: 3634.039125
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:114:1'
+  failureType: 'testCodeFailure'
+  error: 'INCONSISTENT_STATE'
+  code: 'INCONSISTENT_STATE'
+  stack: |-
+    fail (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/contracts.mjs:7:48)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:27:135
+    Array.map (<anonymous>)
+    RecoveryJournal.records (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:24:52)
+    RecoveryJournal.committed (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:55:21)
+    Writeback.checked (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/writeback.mjs:13:30)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/writeback.mjs:49:33
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/kernel.mjs:60:22
+    async PostgresState.attempt (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/postgres.mjs:24:22)
+  ...
+# Subtest: unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+not ok 3 - unknown ledger, INTENT crash, journal corruption/unavailability and cross-scope recovery all retain fences
+  ---
+  duration_ms: 3634.882541
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:131:1'
+  failureType: 'testCodeFailure'
+  error: 'INCONSISTENT_STATE'
+  code: 'INCONSISTENT_STATE'
+  stack: |-
+    fail (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/contracts.mjs:7:48)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:27:135
+    Array.map (<anonymous>)
+    RecoveryJournal.records (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:24:52)
+    RecoveryJournal.committed (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:55:21)
+    Writeback.checked (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/writeback.mjs:13:30)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/writeback.mjs:49:33
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/kernel.mjs:60:22
+    async PostgresState.attempt (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/postgres.mjs:24:22)
+  ...
+# Subtest: store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+not ok 4 - store degraded quarantine preserves approval, bounds and procurement prohibition through common Kernel
+  ---
+  duration_ms: 3514.963959
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:158:1'
+  failureType: 'testCodeFailure'
+  error: 'INCONSISTENT_STATE'
+  code: 'INCONSISTENT_STATE'
+  stack: |-
+    fail (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/contracts.mjs:7:48)
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:27:135
+    Array.map (<anonymous>)
+    RecoveryJournal.records (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:24:52)
+    RecoveryJournal.committed (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/journal.mjs:55:21)
+    Writeback.checked (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/writeback.mjs:13:30)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/writeback.mjs:49:33
+    async file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/kernel.mjs:60:22
+    async PostgresState.attempt (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/src/adapters/postgres.mjs:24:22)
+  ...
+# Subtest: B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+ok 5 - B-BCP-001: restored pre-send attempt zero plus unreachable ledger stays held until confirmed, never resends
+  ---
+  duration_ms: 3673.69125
+  type: 'test'
+  ...
+# Subtest: B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+ok 6 - B-BCP-002: pending checkpoint retains Action identity but loses approved commit, detects mutation loss and holds target
+  ---
+  duration_ms: 3749.673792
+  type: 'test'
+  ...
+# Subtest: B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+ok 7 - B-BCP-003: restart rejects both missing journal witnesses and a new empty path without auto bootstrap
+  ---
+  duration_ms: 3515.0445
+  type: 'test'
+  ...
+# Subtest: export complete machine-readable BCP measurements
+not ok 8 - export complete machine-readable BCP measurements
+  ---
+  duration_ms: 0.434416
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:255:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    3 !== 7
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 7
+  actual: 3
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/bcp/exercise.test.mjs:256:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 3
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 118483.854542

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -134,6 +134,54 @@ function prepared(t, overrides = {}) {
 }
 
 const manifest = (root) => JSON.parse(readFileSync(join(root, 'evidence/run-manifest.json'), 'utf8'));
+
+test('supervision receipts track tested configuration including queue safety changes', (t) => {
+  const suite = JSON.parse(readFileSync('verification/plan.json', 'utf8')).suites
+    .find((item) => item.id === 'supervision-mechanism');
+  const requiredInputs = [
+    '.takt/tasks.yaml',
+    'docs/ARCHITECTURE_BASELINE.md',
+    'work/DECISION_REQUESTS.md',
+    'architecture/composition.json',
+    'work/ROADMAP.json',
+  ];
+  for (const path of requiredInputs) {
+    assert.ok(suite.inputs.includes(path), `${path} must be fingerprinted`);
+  }
+
+  const root = fixture();
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  for (const path of suite.inputs) {
+    mkdirSync(dirname(join(root, path)), { recursive: true });
+    cpSync(resolve(path), join(root, path), { recursive: true });
+  }
+  symlinkSync(resolve('node_modules'), join(root, 'node_modules'), 'dir');
+  // Run the real routing and queue checks without recursively running this test.
+  const commands = [[process.execPath, '--test', 'tests/model-routing.test.mjs']];
+  write(root, 'verification/plan.json', JSON.stringify({
+    schemaVersion: 1, suites: [{ ...suite, commands }],
+  }));
+  const executed = run(root, 'run-stage', 'mechanism');
+  assert.equal(executed.status, 0, executed.stdout + executed.stderr);
+  assert.equal(run(root, 'validate', 'mechanism').status, 0);
+
+  const mutations = [
+    ['.takt/tasks.yaml', (text) => text.replace('worktree: true', 'worktree: false')],
+    ['.takt/tasks.yaml', (text) => text.replace('auto_pr: false', 'auto_pr: true')],
+    ...requiredInputs.slice(1).map((path) => [path, (text) => `${text}\n`]),
+  ];
+  for (const [path, mutate] of mutations) {
+    const original = readFileSync(join(root, path), 'utf8');
+    const changed = mutate(original);
+    assert.notEqual(changed, original, `${path} mutation must change the input`);
+    write(root, path, changed);
+    const stale = run(root, 'validate', 'mechanism');
+    assert.notEqual(stale.status, 0, `${path} must invalidate the receipt`);
+    assert.match(stale.stderr, /入力が変更/u);
+    write(root, path, original);
+    assert.equal(run(root, 'validate', 'mechanism').status, 0);
+  }
+});
 
 test('a newer failed run invalidates an earlier pass with identical definitions and inputs', (t) => {
   const root = prepared(t, { commands: [[process.execPath, '-e', "process.exit(require('fs').existsSync('fail.flag') ? 9 : 0)"]] });

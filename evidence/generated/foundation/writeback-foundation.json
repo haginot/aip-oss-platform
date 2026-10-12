@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "writeback-foundation",
+  "startedAt": "2026-10-12T15:57:49.232Z",
+  "finishedAt": "2026-10-12T15:57:51.344Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: independent ERP HTTP ledger, effect and Kernel completion preserve original IDs\nok 1 - independent ERP HTTP ledger, effect and Kernel completion preserve original IDs\n  ---\n  duration_ms: 636.891375\n  type: 'test'\n  ...\n# Subtest: generated HTTP client joins authorization, Action, projection Inbox, ERP and Audit\nok 2 - generated HTTP client joins authorization, Action, projection Inbox, ERP and Audit\n  ---\n  duration_ms: 184.164708\n  type: 'test'\n  ...\n# Subtest: ERP success with lost acknowledgement is UNKNOWN until ledger reconciliation; never resent\nok 3 - ERP success with lost acknowledgement is UNKNOWN until ledger reconciliation; never resent\n  ---\n  duration_ms: 144.070167\n  type: 'test'\n  ...\n# Subtest: partial ERP transaction rolls ledger and effect back; missing ledger remains UNKNOWN\nok 4 - partial ERP transaction rolls ledger and effect back; missing ledger remains UNKNOWN\n  ---\n  duration_ms: 180.1935\n  type: 'test'\n  ...\n# Subtest: reverse delivery parks GAP, ordered delivery and ERP duplicate/key mismatch preserve one effect\nok 5 - reverse delivery parks GAP, ordered delivery and ERP duplicate/key mismatch preserve one effect\n  ---\n  duration_ms: 214.949625\n  type: 'test'\n  ...\n# Subtest: worker denial, delegation revocation and policy outage precede HTTP dispatch\nok 6 - worker denial, delegation revocation and policy outage precede HTTP dispatch\n  ---\n  duration_ms: 150.420333\n  type: 'test'\n  ...\n# Subtest: explicit external rejection and lease ownership prevent false success\nok 7 - explicit external rejection and lease ownership prevent false success\n  ---\n  duration_ms: 138.637083\n  type: 'test'\n  ...\n# Subtest: failure after external apply leaves durable SENDING fence and reconciliation recovers\nok 8 - failure after external apply leaves durable SENDING fence and reconciliation recovers\n  ---\n  duration_ms: 204.444041\n  type: 'test'\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 8\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 2087.536125\n",
+  "stderr": ""
+}

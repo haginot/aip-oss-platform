@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "foundation-bootstrap",
+  "startedAt": "2026-10-12T15:57:37.819Z",
+  "finishedAt": "2026-10-12T15:57:40.289Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 3,
+  "passed": 3,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: empty isolated database migrates, seeds and probes public contract; fixed versions are mandatory\nok 1 - empty isolated database migrates, seeds and probes public contract; fixed versions are mandatory\n  ---\n  duration_ms: 728.924667\n  type: 'test'\n  ...\n# Subtest: documented serve entry boots isolated Kernel and ERP, completes HTTP Action and disposes its data\nok 2 - documented serve entry boots isolated Kernel and ERP, completes HTTP Action and disposes its data\n  ---\n  duration_ms: 855.386292\n  type: 'test'\n  ...\n# Subtest: partial startup failure after real ERP creation cleans only owned resources and exits nonzero\nok 3 - partial startup failure after real ERP creation cleans only owned resources and exits nonzero\n  ---\n  duration_ms: 802.669\n  type: 'test'\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 2443.178458\n",
+  "stderr": ""
+}

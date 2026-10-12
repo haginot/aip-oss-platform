@@ -1,0 +1,15 @@
+import {spawnSync} from 'node:child_process';
+import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+const groups={'bcp-exercise':['tests/bcp/exercise.test.mjs']};
+const suite=process.argv[2];if(!groups[suite])throw Error('unknown suite');
+const output=resolve('evidence/generated/bcp',suite+'.json');mkdirSync(resolve('evidence/generated/bcp'),{recursive:true});
+const startedAt=new Date().toISOString();
+const result=spawnSync(process.execPath,['--test','--test-reporter=tap',...groups[suite]],{encoding:'utf8',timeout:120000,maxBuffer:16*1024*1024});
+const stdout=result.stdout??'',stderr=result.stderr??'';
+const count=name=>Number(stdout.match(new RegExp('^# '+name+' (\\d+)$','m'))?.[1]??0);
+const report={schemaVersion:1,suite,startedAt,finishedAt:new Date().toISOString(),node:process.version,exitCode:result.status??1,tests:count('tests'),passed:count('pass'),failed:count('fail'),skipped:count('skipped'),status:result.status===0&&count('tests')>0&&count('skipped')===0?'passed':'failed',stdout,stderr,...(result.error?{error:result.error.message}:{})};
+writeFileSync(output,JSON.stringify(report,null,2)+'\n');
+process.stdout.write(`${suite}: ${report.status}, ${report.passed}/${report.tests} passed, ${report.failed} failed, ${report.skipped} skipped; ${output}\n`);
+process.exitCode=report.status==='passed'?0:1;

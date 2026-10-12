@@ -17,6 +17,8 @@ steps:
     edit: true
     instruction: |
       隔離cloneにはnode_modulesがありません。最初に `npm ci` でlockfileどおりの開発依存を導入します。
+      導入が非同期sessionになった場合は終了コード0を確認するまで待ち、routingやgateを並行実行しません。
+      導入中に出たmodule不足は完了後に再検査し、一時的な失敗を人の判断待ちと取り違えません。
       `npm run platform:routing` でモデル配分を確認してください。
       `PRODUCT_GOAL.md`、元設計の固定hash、既存artifactを読み、製品目標を審査可能にしてください。
       AC-001〜AC-009、不変条件、自律実行境界、停止条件は弱めません。不足がある場合だけ具体化し、
@@ -43,6 +45,9 @@ steps:
     rules:
       - condition: 目標と境界が機械検査に合格した
         next: review-goal
+      - condition: 人の判断は不要だが環境、検査または目標の技術的修正が必要
+        next: frame-goal
+        command_gates: skip
       - condition: 人の製品判断がなければ目標を確定できない
         next: ABORT
         command_gates: skip
@@ -114,6 +119,9 @@ steps:
     rules:
       - condition: 47責務と公開contractが機械検査に合格した
         next: review-architecture
+      - condition: 人の判断は不要だが設計または検査の技術的修正が必要
+        next: design-architecture
+        command_gates: skip
       - condition: licenseまたはscopeの人判断なしに確定できない
         next: ABORT
         command_gates: skip
@@ -182,6 +190,9 @@ steps:
     rules:
       - condition: roadmapが全ACを覆い機械検査に合格した
         next: review-roadmap
+      - condition: 人の判断は不要だがroadmapまたは検査の技術的修正が必要
+        next: plan-roadmap
+        command_gates: skip
       - condition: 優先順位または資源の人判断が必要
         next: ABORT
         command_gates: skip
@@ -251,6 +262,9 @@ steps:
     rules:
       - condition: AC-002〜AC-004が機械gateに合格した
         next: review-foundation
+      - condition: 人の判断は不要だが実装または検査の技術的修正が必要
+        next: build-foundation
+        command_gates: skip
       - condition: 外部資源または人の承認なしに実装を継続できない
         next: ABORT
         command_gates: skip
@@ -320,6 +334,9 @@ steps:
     rules:
       - condition: AC-005が機械gateに合格した
         next: review-store-demo
+      - condition: 人の判断は不要だがscenarioまたは検査の技術的修正が必要
+        next: build-store-demo
+        command_gates: skip
       - condition: 実装基盤の修正が必要
         next: build-foundation
         command_gates: skip
@@ -393,6 +410,7 @@ steps:
         next: review-bcp
       - condition: resilience実装の修正が必要
         next: build-bcp
+        command_gates: skip
       - condition: foundationの修正が必要
         next: build-foundation
         command_gates: skip
@@ -468,6 +486,7 @@ steps:
         next: final-audit
       - condition: 実装またはrelease修正が必要
         next: harden-release
+        command_gates: skip
       - condition: 人の公開、license、外部環境判断が必要
         next: ABORT
         command_gates: skip

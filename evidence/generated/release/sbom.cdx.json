@@ -1,0 +1,311 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T15:59:50.027Z",
+    "component": {
+      "type": "application",
+      "name": "aip-oss-platform",
+      "version": "0.1.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "pg",
+      "version": "8.16.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7a7c5cd61d2303f6aae6848332fab25b7abcf6b6ba5c8203660097f6f90cae7cf90c54f0fcdcb72e2da5150fa9b772fa302826ff9a36a3c1d6f618898e2fb1bf"
+        }
+      ],
+      "purl": "pkg:npm/pg@8.16.3"
+    },
+    {
+      "type": "library",
+      "name": "pg-cloudflare",
+      "version": "1.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e8f41bb05599729f44989130cb97064362daf80316a4fe3a9606dbf17f94fd7b07214c1e603342a5eb8a724e51c4bd8c755162ee4adb6c48b99d7e1987b261ad"
+        }
+      ],
+      "purl": "pkg:npm/pg-cloudflare@1.4.1"
+    },
+    {
+      "type": "library",
+      "name": "pg-connection-string",
+      "version": "2.14.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a91de418d3c12e908db73d1ebdb280d18fcc4455f0492753fa94c9bd8a7f6d74dc45e65bbd7d64cc5d08c93735427c6a17b0196ce78184d2fc47999841957f30"
+        }
+      ],
+      "purl": "pkg:npm/pg-connection-string@2.14.1"
+    },
+    {
+      "type": "library",
+      "name": "pg-int8",
+      "version": "1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "582b5a6d2eadddcf129290c15256f59233acee5ebac6c19d2a920f66c838c11f81dfebbd500ba6da8752b05f6d9efc60f348786712d6332e294633ac148a90a7"
+        }
+      ],
+      "purl": "pkg:npm/pg-int8@1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "pg-pool",
+      "version": "3.14.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "80ab4f9057503d4dc392ca2854b8bd2ec8d9c6bb015192296beeda571f8b579a4d8742b33f86657ae776a68f82a27af16ee5c6049e877deafa85d829201a416b"
+        }
+      ],
+      "purl": "pkg:npm/pg-pool@3.14.0"
+    },
+    {
+      "type": "library",
+      "name": "pg-protocol",
+      "version": "1.16.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a7d54e14c88707f65b2404deb5b83ef7d3f1b2c4d5490467cae3d243aee6375fb52813a365a67cdd943396d9f13e12704ac0b79f0563275d0354995eadb1732e"
+        }
+      ],
+      "purl": "pkg:npm/pg-protocol@1.16.1"
+    },
+    {
+      "type": "library",
+      "name": "pg-types",
+      "version": "2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a9300096b12c97cb383a211063af700ef70c21d40deb0773e688d088ecba61132eca7c5e9ce3743b9a02a4923a96c85ceac720018f2abc9d8e9ffa7e09763418"
+        }
+      ],
+      "purl": "pkg:npm/pg-types@2.2.0"
+    },
+    {
+      "type": "library",
+      "name": "pgpass",
+      "version": "1.0.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "15d5bdaff8d066149ea21b35677b08d72c4540d16f31c9e67ee8f85813144f13ab0322cc693704d5a00c0624e56cc35a5ef04242e562d11ee177cb9d0d23fbba"
+        }
+      ],
+      "purl": "pkg:npm/pgpass@1.0.5"
+    },
+    {
+      "type": "library",
+      "name": "postgres-array",
+      "version": "2.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "56966b52a53903af5e4325b6739080d63b4b79c0ac37653f6c3e958a5ac50d6ab9fb95081153bb9dacd2dd311c1dfd73b8f60efeca86bd4bd6eb683ce915d9b8"
+        }
+      ],
+      "purl": "pkg:npm/postgres-array@2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "postgres-bytea",
+      "version": "1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e7ee47a979ec64f13ae4825948c919b544404597a57a5da85d410ef2b1fcdd54bf8711f9befd6e1eab8f839c19b3cc8c01f76ff7bd4853e91c3d47338bb35505"
+        }
+      ],
+      "purl": "pkg:npm/postgres-bytea@1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "postgres-date",
+      "version": "1.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b2e0e68cb55083bf2730ad94678e788401be3805be1d03d9ea7fbe4cd0d45fe2f4fae5252f2c27a3124a0e8bb9d599becd30a3ac297436ae89f42e613fdbcafd"
+        }
+      ],
+      "purl": "pkg:npm/postgres-date@1.0.7"
+    },
+    {
+      "type": "library",
+      "name": "postgres-interval",
+      "version": "1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f5985728cfebc37e74375a2fb961db1b19c687f48d278727c4788cd2bc44e15378d70b20f0ff335a7f61bff6ee2b4d113f85af94ecabfd10438a9b72c556e465"
+        }
+      ],
+      "purl": "pkg:npm/postgres-interval@1.2.0"
+    },
+    {
+      "type": "library",
+      "name": "split2",
+      "version": "4.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "51c8dc24e5a49eb36417a3cb5fcdea70733a28781528d915eb663c6b9b980d5bfdc9d19057000730aa877498ded554d6a658c6d1662908386b09d00e607e135a"
+        }
+      ],
+      "purl": "pkg:npm/split2@4.2.0"
+    },
+    {
+      "type": "library",
+      "name": "xtend",
+      "version": "4.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2ca614d620172575200179fd5118e2bbe3168725171ecbdfa7b99cb989bd75250a2b4fc28edad4c050310fcdbf98259bb4bb068c521a774c08b28778ceb4c011"
+        }
+      ],
+      "purl": "pkg:npm/xtend@4.0.2"
+    },
+    {
+      "type": "application",
+      "name": "node",
+      "version": "22.23.3",
+      "properties": [
+        {
+          "name": "vendor-notices-sha256",
+          "value": "c738ae413cf561f174e34f6961f8ca458aae2369a73640dda6234c629b98bcc4"
+        },
+        {
+          "name": "inventory-scope",
+          "value": "vendor runtime; bundled notices retained; internal binary components not individually enumerated"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "name": "postgresql",
+      "version": "18.6",
+      "properties": [
+        {
+          "name": "vendor-notices-sha256",
+          "value": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd"
+        },
+        {
+          "name": "inventory-scope",
+          "value": "vendor runtime; bundled notices retained; internal binary components not individually enumerated"
+        }
+      ]
+    }
+  ]
+}

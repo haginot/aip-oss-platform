@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "operations-foundation",
+  "startedAt": "2026-10-12T15:58:00.132Z",
+  "finishedAt": "2026-10-12T15:58:01.526Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 3,
+  "passed": 3,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: per-reference service authorization and Audit gate actual outbound ERP delivery and identity revocation\nok 1 - per-reference service authorization and Audit gate actual outbound ERP delivery and identity revocation\n  ---\n  duration_ms: 788.314375\n  type: 'test'\n  ...\n# Subtest: Audit failure prevents secret release and external HTTP effect\nok 2 - Audit failure prevents secret release and external HTTP effect\n  ---\n  duration_ms: 203.309708\n  type: 'test'\n  ...\n# Subtest: redacted scoped operational observations expose unknown delivery and reject unauthorized/foreign views over HTTP\nok 3 - redacted scoped operational observations expose unknown delivery and reject unauthorized/foreign views over HTTP\n  ---\n  duration_ms: 164.686292\n  type: 'test'\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1369.561833\n",
+  "stderr": ""
+}

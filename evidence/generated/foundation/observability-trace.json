@@ -1,0 +1,18 @@
+{
+  "actions": [
+    {
+      "state": "PENDING_EXTERNAL",
+      "count": 1
+    }
+  ],
+  "outbox": [
+    {
+      "state": "UNKNOWN",
+      "count": 1,
+      "oldestAgeSeconds": 120.002863
+    }
+  ],
+  "sources": [],
+  "ontologyVersion": "1.0.0",
+  "policyVersion": "1.0.0"
+}

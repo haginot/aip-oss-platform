@@ -1,0 +1,91 @@
+
+[foundation-local-contracts] Standalone typed contracts, generated client wire validation and real filesystem/process journal checks only; no joined DB or product AC PASS.
+$ node scripts/foundation/verify.mjs foundation-local-contracts
+foundation-local-contracts: passed, 12/12 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/foundation-local-contracts.json
+
+[foundation-bootstrap] Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. foundation-bootstrap
+$ node scripts/foundation/verify.mjs foundation-bootstrap
+foundation-bootstrap: passed, 3/3 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/foundation-bootstrap.json
+
+[kernel-contracts] Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. kernel-contracts Authorized bounded generated-client history, as-of revision and rollback/conflict negatives.
+$ node scripts/foundation/verify.mjs kernel-contracts
+kernel-contracts: passed, 23/23 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/kernel-contracts.json
+
+[definition-lifecycle] Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. definition-lifecycle Executable finite Policy/Rule/Workflow authoring, scoped simulation, stale-review rejection and publish/rollback runtime enforcement.
+$ node scripts/foundation/verify.mjs definition-lifecycle
+definition-lifecycle: passed, 14/14 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/definition-lifecycle.json
+
+[recovery-journal-foundation] Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. recovery-journal-foundation
+$ node scripts/foundation/verify.mjs recovery-journal-foundation
+recovery-journal-foundation: passed, 19/19 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/recovery-journal-foundation.json
+
+[retrieval-comparison-foundation] Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. retrieval-comparison-foundation
+$ node scripts/foundation/verify.mjs retrieval-comparison-foundation
+retrieval-comparison-foundation: passed, 1/1 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/retrieval-comparison-foundation.json
+
+[authorization-delegation] Real foundation contract tests; native PostgreSQL bootstrap failure remains a failure, no mock fallback. authorization-delegation
+$ node scripts/foundation/verify.mjs authorization-delegation
+authorization-delegation: passed, 8/8 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/authorization-delegation.json
+
+[writeback-foundation] Real independent ERP HTTP/database ledger, lease, authorization, unknown outcome, reconciliation and ordered effects; joined Kernel/Outbox/Audit trace.
+$ node scripts/foundation/verify.mjs writeback-foundation
+writeback-foundation: passed, 8/8 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/writeback-foundation.json
+
+[process-volume-foundation] Real Kernel SIGKILL boundaries with separately mounted task-owned APFS DB/journal volumes; no DB restore or RPO/RTO claim.
+$ node scripts/foundation/verify.mjs process-volume-foundation
+process-volume-foundation: passed, 6/6 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/process-volume-foundation.json
+
+[retention-foundation] Real PostgreSQL/ERP retained-key, Inbox, ledger and immutable Audit checks at logical application-clock 30-day ±1-second and 18-year boundaries, plus missing-ledger UNKNOWN and unresolved-INTENT fences. No wall-clock elapsed-time or DB TTL claim.
+$ node scripts/foundation/verify.mjs retention-foundation
+retention-foundation: passed, 6/6 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/retention-foundation.json
+
+[secrets-foundation] Restrictive synthetic file-key injection, AES-GCM opaque refs, capability-based decryption denial, rotation overlap/remote revocation and actual ERP HTTP delivery; wrong key or tampering fences effects.
+$ node scripts/foundation/verify.mjs secrets-foundation
+secrets-foundation: passed, 3/3 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/secrets-foundation.json
+
+[ingestion-foundation] Real synthetic source cursor, quality quarantine, correction, lineage, deletion and transactional failures through authorized Kernel/HTTP.
+$ node scripts/foundation/verify.mjs ingestion-foundation
+ingestion-foundation: passed, 4/4 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/ingestion-foundation.json
+
+[operations-foundation] Per-reference service identity authorization and durable Audit gate actual secret release/ERP HTTP; redacted scoped status observations through generated HTTP client.
+$ node scripts/foundation/verify.mjs operations-foundation
+operations-foundation: passed, 3/3 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/operations-foundation.json
+
+[pipeline-foundation] Durable snapshot/change pipeline, cancellation and actual process checkpoint recovery
+$ node scripts/foundation/verify.mjs pipeline-foundation
+pipeline-foundation: passed, 4/4 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/pipeline-foundation.json
+
+[data-services-foundation] Blob retention, reviewed identity mapping, scoped analytics and trace correlation
+$ node scripts/foundation/verify.mjs data-services-foundation
+data-services-foundation: passed, 5/5 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/data-services-foundation.json
+
+[trigger-foundation] Durable schedules, clock jumps, duplicate fire, retry and ERP reconciliation
+$ node scripts/foundation/verify.mjs trigger-foundation
+trigger-foundation: passed, 4/4 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/trigger-foundation.json
+
+[boundary-foundation] Unavailable capability profile, graph type and HTTP budgets with no business side effects
+$ node scripts/foundation/verify.mjs boundary-foundation
+boundary-foundation: passed, 5/5 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/boundary-foundation.json
+
+[review-regressions-foundation] Independent review B-001–004 regressions over real PostgreSQL and generated HTTP: journal namespaces/restart, original approval evidence scope and commit locks, reviewed rollback rejection and consistent search authorization.
+$ node scripts/foundation/verify.mjs review-regressions-foundation
+review-regressions-foundation: passed, 12/12 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/review-regressions-foundation.json
+
+[authoring-concurrency-foundation] B-FOUNDATION-005: deterministic real PostgreSQL and generated HTTP review/edit/publication interleavings, monotonic case revision CAS, stale simulation/rollback rejection and transactional publication failure.
+$ node scripts/foundation/verify.mjs authoring-concurrency-foundation
+authoring-concurrency-foundation: passed, 7/7 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/authoring-concurrency-foundation.json
+
+[publication-objects-foundation] B-FOUNDATION-006: real DB/HTTP publication versus Action interleavings, Policy-before-Object locking, publisher serialization, checked-row protection, denial and failure rollback with fresh-review recovery.
+$ node scripts/foundation/verify.mjs publication-objects-foundation
+publication-objects-foundation: passed, 5/5 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/foundation/publication-objects-foundation.json
+verification stage passed: implementation (20261012085554096-implementation-3df305)
+
+[store-recall-procurement] Real HTTP store workflow and authoritative evidence corpus with normal and exceptional paths.
+$ node scripts/demo/verify.mjs store-recall-procurement
+store-recall-procurement: passed, 7/7 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/demo/store-recall-procurement.json
+
+[retrieval-store-corpus] Real HTTP store workflow and authoritative evidence corpus with normal and exceptional paths.
+$ node scripts/demo/verify.mjs retrieval-store-corpus
+retrieval-store-corpus: passed, 1/1 passed, 0 failed, 0 skipped; /Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/generated/demo/retrieval-store-corpus.json
+verification stage passed: demo (20261012085632832-demo-90deca)
+platform-control: authorization-delegationは成功後に出力artifactが変更されています

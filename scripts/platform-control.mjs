@@ -486,6 +486,7 @@ function validateFinal() {
 const validators = {
   goal: validateGoal,
   architecture: validateArchitecture,
+  'architecture-receipt': () => { validateArchitecture(); validateStageEvidence('architecture'); },
   plan: validatePlan,
   mechanism: () => validateStageEvidence('mechanism'),
   implementation: validateImplementation,
@@ -514,7 +515,7 @@ function status() {
 function usage() {
   process.stdout.write('platform-control commands:\n\n');
   process.stdout.write(`  validate <${Object.keys(validators).join('|')}>\n`);
-  process.stdout.write('  run-stage <mechanism|implementation|demo|bcp|release>\n');
+  process.stdout.write('  run-stage <mechanism|architecture|implementation|demo|bcp|release>\n');
   process.stdout.write('  status\n');
 }
 

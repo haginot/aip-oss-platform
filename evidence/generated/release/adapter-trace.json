@@ -1,0 +1,844 @@
+{
+  "shadow": [
+    {
+      "equal": true,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "note": null,
+                "isolated": false,
+                "quantity": 10
+              }
+            },
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 2,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            },
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "note": null,
+                "isolated": false,
+                "quantity": 10
+              }
+            },
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 2,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            },
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "quantity": 10
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "a832cdc0f0478bb932930019cff1eede8e52b9c604be932a9fc686cab83ce8e7",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "quantity": 10
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "a832cdc0f0478bb932930019cff1eede8e52b9c604be932a9fc686cab83ce8e7",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "note": null,
+                "isolated": false,
+                "quantity": 10
+              }
+            },
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 2,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            },
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "note": null,
+                "isolated": false,
+                "quantity": 10
+              }
+            },
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 2,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            },
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "tenant-stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice tenant",
+                "note": null,
+                "isolated": false,
+                "quantity": 30
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "tenant-stock",
+              "revision": 1,
+              "digest": "ef67d9f7945715879b185a3ff9906a67a5003db2ede84c540f2bb9dfde3f2a87",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "tenant-stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice tenant",
+                "note": null,
+                "isolated": false,
+                "quantity": 30
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "tenant-stock",
+              "revision": 1,
+              "digest": "ef67d9f7945715879b185a3ff9906a67a5003db2ede84c540f2bb9dfde3f2a87",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": false,
+        "code": "INVALID_ARGUMENT"
+      },
+      "candidate": {
+        "ok": false,
+        "code": "INVALID_ARGUMENT"
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": false,
+        "code": "PERMISSION_DENIED"
+      },
+      "candidate": {
+        "ok": false,
+        "code": "PERMISSION_DENIED"
+      }
+    }
+  ],
+  "corruption": [
+    {
+      "equal": false,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "note": null,
+                "isolated": false,
+                "quantity": 10
+              }
+            },
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 2,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            },
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": false,
+        "code": "INCONSISTENT_STATE"
+      }
+    },
+    {
+      "equal": false,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "quantity": 10
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "a832cdc0f0478bb932930019cff1eede8e52b9c604be932a9fc686cab83ce8e7",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": false,
+        "code": "INCONSISTENT_STATE"
+      }
+    },
+    {
+      "equal": false,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice recall",
+                "note": null,
+                "isolated": false,
+                "quantity": 10
+              }
+            },
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 2,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock",
+              "revision": 1,
+              "digest": "f56ec5256e7aef6ece206d83dcdd5c0f4942e5cf64679758d94a5ab2b58b806f",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            },
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": false,
+        "code": "INCONSISTENT_STATE"
+      }
+    },
+    {
+      "equal": false,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "stock2",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice second",
+                "note": null,
+                "isolated": false,
+                "quantity": 5,
+                "inTransit": true
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "stock2",
+              "revision": 1,
+              "digest": "fab99a1feeab918a2248d86b9ddae7fed5f137f9985a6a41f67f130845e2c279",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": false,
+        "code": "INCONSISTENT_STATE"
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "tenant-stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice tenant",
+                "note": null,
+                "isolated": false,
+                "quantity": 30
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "tenant-stock",
+              "revision": 1,
+              "digest": "ef67d9f7945715879b185a3ff9906a67a5003db2ede84c540f2bb9dfde3f2a87",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "ok": true,
+        "value": {
+          "items": [
+            {
+              "id": "tenant-stock",
+              "type": "InventoryPosition",
+              "revision": 1,
+              "ontologyVersion": "1.1.0",
+              "policyVersion": "1.0.0",
+              "sourcePosition": "seed:1",
+              "freshness": "authoritative",
+              "fields": {
+                "name": "rice tenant",
+                "note": null,
+                "isolated": false,
+                "quantity": 30
+              }
+            }
+          ],
+          "count": 1,
+          "nextCursor": null,
+          "ontologyVersion": "1.1.0",
+          "policyVersion": "1.0.0",
+          "watermark": "authoritative",
+          "evidence": [
+            {
+              "id": "tenant-stock",
+              "revision": 1,
+              "digest": "ef67d9f7945715879b185a3ff9906a67a5003db2ede84c540f2bb9dfde3f2a87",
+              "ontologyVersion": "1.1.0",
+              "sourcePosition": "seed:1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": false,
+        "code": "INVALID_ARGUMENT"
+      },
+      "candidate": {
+        "ok": false,
+        "code": "INVALID_ARGUMENT"
+      }
+    },
+    {
+      "equal": true,
+      "baseline": {
+        "ok": false,
+        "code": "PERMISSION_DENIED"
+      },
+      "candidate": {
+        "ok": false,
+        "code": "PERMISSION_DENIED"
+      }
+    }
+  ],
+  "storeCorpus": {
+    "schemaVersion": 1,
+    "profile": "store-seed:1",
+    "query": {
+      "type": "InventoryPosition",
+      "search": "rice"
+    },
+    "expectedIds": [
+      "stock",
+      "stock2"
+    ],
+    "checks": [
+      "ID order",
+      "type",
+      "ontologyVersion",
+      "revision",
+      "column mask",
+      "source checkpoint gap",
+      "source lineage",
+      "tombstone",
+      "scope revocation",
+      "policy outage"
+    ]
+  },
+  "catchUpReplay": true,
+  "gapRejected": true,
+  "tombstone": true,
+  "migrationInterruption": true,
+  "revocation": true,
+  "timeout": true,
+  "checkpointRequired": true,
+  "cutover": true,
+  "reopenRevision": 2,
+  "rollbackRevision": 2,
+  "retryActionId": "dc69af78-3482-424c-881a-16e15770c05a",
+  "outboxCount": 1,
+  "policyFailClosed": true
+}

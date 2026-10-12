@@ -1,0 +1,85 @@
+TAP version 13
+# Subtest: consume original delegation expires after Inbox writes: rollback then renewed retry deduplicates
+not ok 1 - consume original delegation expires after Inbox writes: rollback then renewed retry deduplicates
+  ---
+  duration_ms: 1379.819709
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:44:9
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:17:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: dispatch original delegation expires after real ERP apply: preserve SENDING and reconcile without resend
+not ok 2 - dispatch original delegation expires after real ERP apply: preserve SENDING and reconcile without resend
+  ---
+  duration_ms: 802.270459
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:54:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:57:9
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:17:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: reconciliation original delegation expires during ERP ledger lock wait: retain UNKNOWN until renewed request
+not ok 3 - reconciliation original delegation expires during ERP ledger lock wait: retain UNKNOWN until renewed request
+  ---
+  duration_ms: 863.72725
+  type: 'test'
+  location: '/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:65:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'PERMISSION_DENIED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'PERMISSION_DENIED'
+  operator: 'strictEqual'
+  stack: |-
+    file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:80:9
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async run (file:///Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/tests/foundation/worker-authority-expiry.test.mjs:17:6)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 0
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3611.022667

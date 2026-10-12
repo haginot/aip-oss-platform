@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "authoring-concurrency-foundation",
+  "startedAt": "2026-10-12T15:58:08.667Z",
+  "finishedAt": "2026-10-12T15:58:09.850Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 7,
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: review cannot overwrite a concurrent case edit; corrected cases can be reviewed and published\nok 1 - review cannot overwrite a concurrent case edit; corrected cases can be reviewed and published\n  ---\n  duration_ms: 571.794625\n  type: 'test'\n  ...\n# Subtest: publish cannot use a review invalidated by a concurrent case edit\nok 2 - publish cannot use a review invalidated by a concurrent case edit\n  ---\n  duration_ms: 72.420167\n  type: 'test'\n  ...\n# Subtest: publish independently rejects a stored simulation bound to different cases\nok 3 - publish independently rejects a stored simulation bound to different cases\n  ---\n  duration_ms: 66.399709\n  type: 'test'\n  ...\n# Subtest: editing cases back to their original content still invalidates an in-flight review\nok 4 - editing cases back to their original content still invalidates an in-flight review\n  ---\n  duration_ms: 61.126625\n  type: 'test'\n  ...\n# Subtest: an edit arriving during publication waits for commit and cannot change PUBLISHED cases\nok 5 - an edit arriving during publication waits for commit and cannot change PUBLISHED cases\n  ---\n  duration_ms: 70.51875\n  type: 'test'\n  ...\n# Subtest: publication failure before Audit rolls back definition, live pointer and Policy together\nok 6 - publication failure before Audit rolls back definition, live pointer and Policy together\n  ---\n  duration_ms: 55.450292\n  type: 'test'\n  ...\n# Subtest: rollback also rejects mismatched case binding on a previously published definition\nok 7 - rollback also rejects mismatched case binding on a previously published definition\n  ---\n  duration_ms: 47.360916\n  type: 'test'\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1158.137958\n",
+  "stderr": ""
+}

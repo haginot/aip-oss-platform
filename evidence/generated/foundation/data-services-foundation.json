@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "suite": "data-services-foundation",
+  "startedAt": "2026-10-12T15:58:02.705Z",
+  "finishedAt": "2026-10-12T15:58:03.894Z",
+  "node": "v22.23.3",
+  "exitCode": 0,
+  "tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "status": "passed",
+  "stdout": "TAP version 13\n# Subtest: blob content digest/range authorization, immutable retention and transactional Audit use real HTTP/database\nok 1 - blob content digest/range authorization, immutable retention and transactional Audit use real HTTP/database\n  ---\n  duration_ms: 607.571709\n  type: 'test'\n  ...\n# Subtest: finite inventory metrics filter scope before aggregation and reject injection/version/deadline\nok 2 - finite inventory metrics filter scope before aggregation and reject injection/version/deadline\n  ---\n  duration_ms: 98.464042\n  type: 'test'\n  ...\n# Subtest: identity namespace collisions, reviewed mapping merge/split migration and source ingestion preserve Object references\nok 3 - identity namespace collisions, reviewed mapping merge/split migration and source ingestion preserve Object references\n  ---\n  duration_ms: 85.958833\n  type: 'test'\n  ...\n# Subtest: telemetry joins public trace with Action/Outbox/Audit, classifies errors and excludes payload/secret values\nok 4 - telemetry joins public trace with Action/Outbox/Audit, classifies errors and excludes payload/secret values\n  ---\n  duration_ms: 77.916667\n  type: 'test'\n  ...\n# Subtest: telemetry failure after commit leaves transactional evidence intact and same-key recovery has no duplicate effect\nok 5 - telemetry failure after commit leaves transactional evidence intact and same-key recovery has no duplicate effect\n  ---\n  duration_ms: 73.706125\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1164.91425\n",
+  "stderr": ""
+}
