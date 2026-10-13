@@ -1,0 +1,300 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3200" height="2520" viewBox="0 0 3200 2520" role="img" aria-labelledby="title description">
+<title id="title">AIP-OSS Platform — Target Architecture</title>
+<desc id="description">Enterprise-owned ontology, objects, actions and authorization above replaceable technology adapters. Target design, not a deployment or verification status report.</desc>
+<style>text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;font-kerning:normal}text{dominant-baseline:alphabetic}*{box-sizing:border-box}</style>
+<rect x="0" y="0" width="3200" height="2520" rx="0" fill="#ffffff" stroke="none" stroke-width="1.6"/>
+<text x="96" y="83" font-size="23" fill="#147fbc" font-weight="600" letter-spacing="3">AIP–OSS  /  SYSTEM ARCHITECTURE</text>
+<text x="96" y="168" font-size="76" fill="#183341" font-weight="600" letter-spacing="-2">AIP-OSS Platform</text>
+<text x="96" y="225" font-size="31" fill="#5d737f" font-weight="400" >業務の意味・実行ルール・データ・AIを、共通の契約でつなぐ。</text>
+<text x="3104" y="92" font-size="22" fill="#5d737f" font-weight="500" text-anchor="end" letter-spacing="2">TARGET DESIGN  ·  2026.10</text>
+<text x="3104" y="153" font-size="30" fill="#183341" font-weight="500" text-anchor="end">意味とルールは企業が所有。技術は交換可能に。</text>
+<rect x="2410" y="191" width="20" height="20" rx="4" fill="#f0f8fc" stroke="#147fbc" stroke-width="1.6"/>
+<text x="2442" y="209" font-size="22" fill="#5d737f" font-weight="400" >企業が所有する契約</text>
+<rect x="2700" y="191" width="20" height="20" rx="4" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="2732" y="209" font-size="22" fill="#5d737f" font-weight="400" >実装・外部接続</text>
+<line x1="96" y1="264" x2="3104" y2="264" stroke="#d5e0e5" stroke-width="2" />
+<text x="96" y="338" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">01</text>
+<text x="96" y="382" font-size="31" fill="#183341" font-weight="600" >利用・開発</text>
+<text x="96" y="422" font-size="23" fill="#5d737f" font-weight="400" >人とAIが使う</text>
+<text x="96" y="456" font-size="23" fill="#5d737f" font-weight="400" >共通の入口</text>
+<text x="598" y="312" font-size="23" fill="#5d737f" font-weight="500" text-anchor="middle">業務担当者・承認者</text>
+<rect x="372" y="338" width="452" height="130" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="400" y="386" font-size="29" fill="#183341" font-weight="600" >Business UI</text>
+<text x="400" y="428" font-size="25" fill="#5d737f" font-weight="400" >業務画面 / 判断 / 承認</text>
+<line x1="598" y1="474" x2="598" y2="501" stroke="#879aa3" stroke-width="2" />
+<path d="M 593.6851701525621 493.10175694298664 L 598 501 L 602.3148298474379 493.10175694298664" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="1070" y="312" font-size="23" fill="#5d737f" font-weight="500" text-anchor="middle">ドメイン管理者・開発者</text>
+<rect x="844" y="338" width="452" height="130" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="872" y="386" font-size="29" fill="#183341" font-weight="600" >Authoring Studio</text>
+<text x="872" y="428" font-size="25" fill="#5d737f" font-weight="400" >Ontology / Rules / 公開</text>
+<line x1="1070" y1="474" x2="1070" y2="501" stroke="#879aa3" stroke-width="2" />
+<path d="M 1065.6851701525623 493.10175694298664 L 1070 501 L 1074.3148298474377 493.10175694298664" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="1542" y="312" font-size="23" fill="#5d737f" font-weight="500" text-anchor="middle">アプリケーション</text>
+<rect x="1316" y="338" width="452" height="130" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="1344" y="386" font-size="29" fill="#183341" font-weight="600" >API / SDK</text>
+<text x="1344" y="428" font-size="25" fill="#5d737f" font-weight="400" >Object / Action / Event</text>
+<line x1="1542" y1="474" x2="1542" y2="501" stroke="#879aa3" stroke-width="2" />
+<path d="M 1537.6851701525623 493.10175694298664 L 1542 501 L 1546.3148298474377 493.10175694298664" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="2014" y="312" font-size="23" fill="#5d737f" font-weight="500" text-anchor="middle">AIエージェント</text>
+<rect x="1788" y="338" width="452" height="130" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="1816" y="386" font-size="29" fill="#183341" font-weight="600" >Agent / MCP</text>
+<text x="1816" y="428" font-size="25" fill="#5d737f" font-weight="400" >検索 / 提案 / 型付きTool</text>
+<line x1="2014" y1="474" x2="2014" y2="501" stroke="#879aa3" stroke-width="2" />
+<path d="M 2009.6851701525623 493.10175694298664 L 2014 501 L 2018.3148298474377 493.10175694298664" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="2486" y="312" font-size="23" fill="#5d737f" font-weight="500" text-anchor="middle">運用・監査担当者</text>
+<rect x="2260" y="338" width="452" height="130" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="2288" y="386" font-size="29" fill="#183341" font-weight="600" >Operations Console</text>
+<text x="2288" y="428" font-size="25" fill="#5d737f" font-weight="400" >監査 / 運用 / 復旧</text>
+<line x1="2486" y1="474" x2="2486" y2="501" stroke="#879aa3" stroke-width="2" />
+<path d="M 2481.685170152562 493.10175694298664 L 2486 501 L 2490.314829847438 493.10175694298664" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="96" y="538" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">02</text>
+<text x="96" y="582" font-size="31" fill="#183341" font-weight="600" >信頼・認可</text>
+<text x="96" y="622" font-size="23" fill="#5d737f" font-weight="400" >主体と権限を確定</text>
+<text x="96" y="656" font-size="23" fill="#5d737f" font-weight="400" >すべての入口に適用</text>
+<rect x="372" y="510" width="2340" height="134" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="396" y="559" font-size="27" fill="#183341" font-weight="600" >Gateway</text>
+<text x="396" y="603" font-size="24" fill="#5d737f" font-weight="400" >経路 / 制限 / Trace</text>
+<line x1="762" y1="536" x2="762" y2="618" stroke="#d5e0e5" stroke-width="2" />
+<text x="786" y="559" font-size="27" fill="#183341" font-weight="600" >Identity</text>
+<text x="786" y="603" font-size="24" fill="#5d737f" font-weight="400" >OIDC / 主体</text>
+<line x1="1152" y1="536" x2="1152" y2="618" stroke="#d5e0e5" stroke-width="2" />
+<text x="1176" y="559" font-size="27" fill="#183341" font-weight="600" >Tenant context</text>
+<text x="1176" y="603" font-size="24" fill="#5d737f" font-weight="400" >テナント分離</text>
+<line x1="1542" y1="536" x2="1542" y2="618" stroke="#d5e0e5" stroke-width="2" />
+<text x="1566" y="559" font-size="27" fill="#183341" font-weight="600" >Delegation</text>
+<text x="1566" y="603" font-size="24" fill="#5d737f" font-weight="400" >委任 / 期限 / 失効</text>
+<line x1="1932" y1="536" x2="1932" y2="618" stroke="#d5e0e5" stroke-width="2" />
+<text x="1956" y="559" font-size="27" fill="#183341" font-weight="600" >Relationship auth</text>
+<text x="1956" y="603" font-size="24" fill="#5d737f" font-weight="400" >関係ベースの認可</text>
+<line x1="2322" y1="536" x2="2322" y2="618" stroke="#d5e0e5" stroke-width="2" />
+<text x="2346" y="559" font-size="27" fill="#183341" font-weight="600" >Attribute policy</text>
+<text x="2346" y="603" font-size="24" fill="#5d737f" font-weight="400" >属性 / 環境 / 拒否優先</text>
+<line x1="1542" y1="651" x2="1542" y2="686" stroke="#147fbc" stroke-width="2" />
+<path d="M 1537.6851701525623 678.1017569429866 L 1542 686 L 1546.3148298474377 678.1017569429866" fill="none" stroke="#147fbc" stroke-width="2"/>
+<text x="96" y="728" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">03</text>
+<text x="96" y="772" font-size="31" fill="#183341" font-weight="600" >業務の中核</text>
+<text x="96" y="812" font-size="23" fill="#5d737f" font-weight="400" >企業が所有する</text>
+<text x="96" y="846" font-size="23" fill="#5d737f" font-weight="400" >意味・ルール・証拠</text>
+<rect x="372" y="700" width="2340" height="400" rx="14" fill="#f0f8fc" stroke="#b6d8e9" stroke-width="2"/>
+<text x="402" y="748" font-size="25" fill="#147fbc" font-weight="650" letter-spacing="2">SEMANTIC &amp; ACTION KERNEL</text>
+<text x="2682" y="748" font-size="25" fill="#5d737f" font-weight="400" text-anchor="end">業務UI・Rules・AIは同じ契約を利用</text>
+<rect x="400" y="784" width="748" height="232" rx="12" fill="#ffffff" stroke="#c4dce8" stroke-width="1.6"/>
+<g transform="translate(428 811)" fill="none" stroke="#147fbc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="17" height="17" rx="3"/><rect x="27" y="0" width="17" height="17" rx="3"/><rect x="13.5" y="28" width="17" height="17" rx="3"/><path d="M8 17v6h27v-6M22 23v5"/></g>
+<text x="492" y="845" font-size="33" fill="#183341" font-weight="600" >Ontology &amp; Objects</text>
+<text x="428" y="902" font-size="25" fill="#5d737f" font-weight="400" >Object ID / 型 / 単位 / 関係 / 正本</text>
+<text x="428" y="942" font-size="25" fill="#5d737f" font-weight="400" >Object API / Query / Traverse / Retrieval</text>
+<text x="428" y="982" font-size="25" fill="#5d737f" font-weight="400" >Revision / 履歴 / 鮮度 / 指標</text>
+<rect x="1168" y="784" width="748" height="232" rx="12" fill="#ffffff" stroke="#c4dce8" stroke-width="1.6"/>
+<g transform="translate(1196 811)" fill="none" stroke="#147fbc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h29l9 9v28H4zM31 4v12h11M12 28l7 7 14-16"/></g>
+<text x="1260" y="845" font-size="33" fill="#183341" font-weight="600" >Actions &amp; Workflows</text>
+<text x="1196" y="902" font-size="25" fill="#5d737f" font-weight="400" >Action / Rules / Functions / Workflow</text>
+<text x="1196" y="942" font-size="25" fill="#5d737f" font-weight="400" >主体・委任・権限・制約・期待版を再検査</text>
+<text x="1196" y="982" font-size="25" fill="#5d737f" font-weight="400" >承認 / 冪等性 / 状態遷移 / 実行証拠</text>
+<rect x="1936" y="784" width="748" height="232" rx="12" fill="#ffffff" stroke="#c4dce8" stroke-width="1.6"/>
+<g transform="translate(1964 811)" fill="none" stroke="#147fbc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="38" height="30" rx="6"/><path d="M22 0v9M14 39v6M30 39v6M0 23h3M41 23h4"/><circle cx="14" cy="23" r="2"/><circle cx="30" cy="23" r="2"/></g>
+<text x="2028" y="845" font-size="33" fill="#183341" font-weight="600" >AI &amp; Typed Tools</text>
+<text x="1964" y="902" font-size="25" fill="#5d737f" font-weight="400" >権限内の検索 / 根拠付きの型付き提案</text>
+<text x="1964" y="942" font-size="25" fill="#5d737f" font-weight="400" >Agent / Model / Parse / Embedding</text>
+<text x="1964" y="982" font-size="25" fill="#5d737f" font-weight="400" >Guard / Evaluation / Feature</text>
+<line x1="418" y1="1049" x2="2670" y2="1049" stroke="#b6d8e9" stroke-width="2" />
+<text x="422" y="1080" font-size="24" fill="#174c69" font-weight="500" >READ  →  認可済みObjectと根拠</text>
+<text x="1192" y="1080" font-size="24" fill="#174c69" font-weight="500" >WRITE  →  Action境界を必ず通過</text>
+<text x="1960" y="1080" font-size="24" fill="#174c69" font-weight="500" >AI  →  提案と実行権限を分離</text>
+<line x1="662" y1="1107" x2="662" y2="1143" stroke="#147fbc" stroke-width="2" />
+<path d="M 657.6851701525621 1135.1017569429866 L 662 1143 L 666.3148298474379 1135.1017569429866" fill="none" stroke="#147fbc" stroke-width="2"/>
+<line x1="1252" y1="1107" x2="1252" y2="1143" stroke="#147fbc" stroke-width="2" />
+<path d="M 1247.6851701525623 1135.1017569429866 L 1252 1143 L 1256.3148298474377 1135.1017569429866" fill="none" stroke="#147fbc" stroke-width="2"/>
+<line x1="1842" y1="1107" x2="1842" y2="1143" stroke="#147fbc" stroke-width="2" />
+<path d="M 1837.6851701525623 1135.1017569429866 L 1842 1143 L 1846.3148298474377 1135.1017569429866" fill="none" stroke="#147fbc" stroke-width="2"/>
+<line x1="2432" y1="1107" x2="2432" y2="1143" stroke="#147fbc" stroke-width="2" />
+<path d="M 2427.685170152562 1135.1017569429866 L 2432 1143 L 2436.314829847438 1135.1017569429866" fill="none" stroke="#147fbc" stroke-width="2"/>
+<text x="96" y="1184" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">04</text>
+<text x="96" y="1228" font-size="31" fill="#183341" font-weight="600" >実行・データ</text>
+<text x="96" y="1268" font-size="23" fill="#5d737f" font-weight="400" >確定・連携・取り込み</text>
+<text x="96" y="1302" font-size="23" fill="#5d737f" font-weight="400" >失敗から回復できる設計</text>
+<rect x="372" y="1156" width="570" height="222" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="400" y="1204" font-size="28" fill="#183341" font-weight="600" >State &amp; Unit of Work</text>
+<text x="400" y="1246" font-size="25" fill="#5d737f" font-weight="400" >Object + Action + Outbox</text>
+<text x="400" y="1282" font-size="25" fill="#5d737f" font-weight="400" >同一UoWでローカル原子性</text>
+<text x="400" y="1318" font-size="25" fill="#5d737f" font-weight="400" >履歴 / revision / 同時更新</text>
+<rect x="962" y="1156" width="570" height="222" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="990" y="1204" font-size="28" fill="#183341" font-weight="600" >Events &amp; Automation</text>
+<text x="990" y="1246" font-size="25" fill="#5d737f" font-weight="400" >Event / Stream / Trigger</text>
+<text x="990" y="1282" font-size="25" fill="#5d737f" font-weight="400" >Outbox / Inbox / Worker / Timer</text>
+<text x="990" y="1318" font-size="25" fill="#5d737f" font-weight="400" >因果ID / 重複排除 / Loop上限</text>
+<rect x="1552" y="1156" width="570" height="222" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="1580" y="1204" font-size="28" fill="#183341" font-weight="600" >Writeback &amp; Reconcile</text>
+<text x="1580" y="1246" font-size="25" fill="#5d737f" font-weight="400" >外部反映 / Receipt / 照合</text>
+<text x="1580" y="1282" font-size="25" fill="#5d737f" font-weight="400" >UNKNOWN / 再試行 / 補償</text>
+<text x="1580" y="1318" font-size="25" fill="#5d737f" font-weight="400" >外部システムは別transaction</text>
+<rect x="2142" y="1156" width="570" height="222" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="2170" y="1204" font-size="28" fill="#183341" font-weight="600" >Ingest &amp; Projections</text>
+<text x="2170" y="1246" font-size="25" fill="#5d737f" font-weight="400" >CDC / Pipeline / Transform</text>
+<text x="2170" y="1282" font-size="25" fill="#5d737f" font-weight="400" >Quality / ID対応 / Checkpoint</text>
+<text x="2170" y="1318" font-size="25" fill="#5d737f" font-weight="400" >Graph / Text / Vector / 集計</text>
+<text x="96" y="1438" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">05</text>
+<text x="96" y="1482" font-size="31" fill="#183341" font-weight="600" >接続契約</text>
+<text x="96" y="1522" font-size="23" fill="#5d737f" font-weight="400" >製品依存を隔離</text>
+<rect x="372" y="1424" width="2340" height="86" rx="10" fill="#174c69" stroke="#174c69" stroke-width="1.6"/>
+<text x="400" y="1477" font-size="27" fill="#ffffff" font-weight="600" letter-spacing="1">PORTS  /  ADAPTER BOUNDARY</text>
+<text x="1072" y="1477" font-size="26" fill="#e2eff5" font-weight="400" >型・認証文脈・版・Timeout・Cancel・Trace・Typed error・Capability</text>
+<line x1="712" y1="1385" x2="712" y2="1414" stroke="#879aa3" stroke-width="2" />
+<path d="M 707.6851701525621 1406.1017569429866 L 712 1414 L 716.3148298474379 1406.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<line x1="1890" y1="1385" x2="1890" y2="1414" stroke="#879aa3" stroke-width="2" />
+<path d="M 1885.6851701525623 1406.1017569429866 L 1890 1414 L 1894.3148298474377 1406.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<line x1="712" y1="1518" x2="712" y2="1538" stroke="#879aa3" stroke-width="2" />
+<path d="M 707.6851701525621 1530.1017569429866 L 712 1538 L 716.3148298474379 1530.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<line x1="1890" y1="1518" x2="1890" y2="1538" stroke="#879aa3" stroke-width="2" />
+<path d="M 1885.6851701525623 1530.1017569429866 L 1890 1538 L 1894.3148298474377 1530.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="96" y="1578" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">06</text>
+<text x="96" y="1622" font-size="31" fill="#183341" font-weight="600" >技術の実装</text>
+<text x="96" y="1662" font-size="23" fill="#5d737f" font-weight="400" >小さく開始し</text>
+<text x="96" y="1696" font-size="23" fill="#5d737f" font-weight="400" >必要な責務から分離</text>
+<rect x="372" y="1550" width="680" height="420" rx="12" fill="#f1f8f7" stroke="#bedbd6" stroke-width="1.6"/>
+<text x="402" y="1600" font-size="22" fill="#127b78" font-weight="600" letter-spacing="1.8">MINIMAL REFERENCE</text>
+<text x="402" y="1649" font-size="34" fill="#183341" font-weight="600" >Node.js + PostgreSQL</text>
+<text x="402" y="1705" font-size="26" fill="#5d737f" font-weight="400" >状態 / Link / Action / 履歴 / Outbox</text>
+<text x="402" y="1749" font-size="26" fill="#5d737f" font-weight="400" >SQL scan ↔ JSONB projection</text>
+<text x="402" y="1793" font-size="26" fill="#5d737f" font-weight="400" >ローカルIdentity / Policy / Audit</text>
+<text x="402" y="1837" font-size="26" fill="#5d737f" font-weight="400" >Synthetic ERP / ファイルRecovery Journal</text>
+<line x1="402" y1="1866" x2="1022" y2="1866" stroke="#bedbd6" stroke-width="2" />
+<text x="402" y="1904" font-size="24" fill="#127b78" font-weight="500" >まず少数のコンポーネントで垂直に通す</text>
+<text x="402" y="1940" font-size="23" fill="#5d737f" font-weight="400" >PostgreSQL以外への置換保証とは区別</text>
+<rect x="1080" y="1550" width="1632" height="420" rx="12" fill="#ffffff" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="1108" y="1599" font-size="22" fill="#147fbc" font-weight="600" letter-spacing="1.8">EXTENSION ADAPTERS</text>
+<text x="2684" y="1599" font-size="23" fill="#5d737f" font-weight="400" text-anchor="end">候補例 · 接続・適合性の検証は別途</text>
+<line x1="1108" y1="1728" x2="1480" y2="1728" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="1108" y="1665" font-size="24" fill="#183341" font-weight="600" >Metadata</text>
+<text x="1108" y="1704" font-size="21" fill="#5d737f" font-weight="400" >OpenMetadata / DataHub</text>
+<line x1="1508" y1="1728" x2="1880" y2="1728" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="1508" y="1665" font-size="24" fill="#183341" font-weight="600" >Identity</text>
+<text x="1508" y="1704" font-size="21" fill="#5d737f" font-weight="400" >Keycloak / Dex / SPIFFE</text>
+<line x1="1908" y1="1728" x2="2280" y2="1728" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="1908" y="1665" font-size="24" fill="#183341" font-weight="600" >Policy</text>
+<text x="1908" y="1704" font-size="21" fill="#5d737f" font-weight="400" >OpenFGA / OPA / Cedar</text>
+<line x1="2308" y1="1728" x2="2680" y2="1728" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="2308" y="1665" font-size="24" fill="#183341" font-weight="600" >Workflow</text>
+<text x="2308" y="1704" font-size="21" fill="#5d737f" font-weight="400" >Temporal / Camunda</text>
+<line x1="1108" y1="1836" x2="1480" y2="1836" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="1108" y="1773" font-size="24" fill="#183341" font-weight="600" >Event &amp; Stream</text>
+<text x="1108" y="1812" font-size="21" fill="#5d737f" font-weight="400" >Kafka / Redpanda / NATS</text>
+<line x1="1508" y1="1836" x2="1880" y2="1836" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="1508" y="1773" font-size="24" fill="#183341" font-weight="600" >Search</text>
+<text x="1508" y="1812" font-size="21" fill="#5d737f" font-weight="400" >OpenSearch</text>
+<line x1="1908" y1="1836" x2="2280" y2="1836" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="1908" y="1773" font-size="24" fill="#183341" font-weight="600" >Graph</text>
+<text x="1908" y="1812" font-size="21" fill="#5d737f" font-weight="400" >Neo4j / JanusGraph</text>
+<line x1="2308" y1="1836" x2="2680" y2="1836" stroke="#d5e0e5" stroke-width="1.3" />
+<text x="2308" y="1773" font-size="24" fill="#183341" font-weight="600" >Vector</text>
+<text x="2308" y="1812" font-size="21" fill="#5d737f" font-weight="400" >pgvector / Qdrant / Milvus</text>
+<text x="1108" y="1881" font-size="24" fill="#183341" font-weight="600" >Lakehouse</text>
+<text x="1108" y="1920" font-size="21" fill="#5d737f" font-weight="400" >Iceberg / Trino / MinIO</text>
+<text x="1508" y="1881" font-size="24" fill="#183341" font-weight="600" >State store</text>
+<text x="1508" y="1920" font-size="21" fill="#5d737f" font-weight="400" >Distributed SQL / Event Store</text>
+<text x="1908" y="1881" font-size="24" fill="#183341" font-weight="600" >AI integration</text>
+<text x="1908" y="1920" font-size="21" fill="#5d737f" font-weight="400" >MCP / Model gateway</text>
+<text x="2308" y="1881" font-size="24" fill="#183341" font-weight="600" >Deployment &amp; Telemetry</text>
+<text x="2308" y="1920" font-size="21" fill="#5d737f" font-weight="400" >Kubernetes / OpenTelemetry</text>
+<rect x="2760" y="510" width="344" height="1460" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="2788" y="563" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="1.3">CROSS-CUTTING</text>
+<text x="2788" y="610" font-size="30" fill="#183341" font-weight="600" >横断コントロール</text>
+<text x="2788" y="651" font-size="23" fill="#5d737f" font-weight="400" >すべての層に適用</text>
+<line x1="2788" y1="696" x2="3076" y2="696" stroke="#d5e0e5" stroke-width="1.4" />
+<text x="2788" y="742" font-size="24" fill="#183341" font-weight="600" >Policy &amp; Audit</text>
+<text x="2788" y="786" font-size="23" fill="#5d737f" font-weight="400" >認可判断 / 実行証拠</text>
+<text x="2788" y="821" font-size="23" fill="#5d737f" font-weight="400" >拒否優先 / 失効 / 保全</text>
+<line x1="2788" y1="895" x2="3076" y2="895" stroke="#d5e0e5" stroke-width="1.4" />
+<text x="2788" y="941" font-size="24" fill="#183341" font-weight="600" >Metadata &amp; Lineage</text>
+<text x="2788" y="985" font-size="23" fill="#5d737f" font-weight="400" >カタログ / 来歴 / 正本</text>
+<text x="2788" y="1020" font-size="23" fill="#5d737f" font-weight="400" >定義とデータの対応</text>
+<line x1="2788" y1="1094" x2="3076" y2="1094" stroke="#d5e0e5" stroke-width="1.4" />
+<text x="2788" y="1140" font-size="24" fill="#183341" font-weight="600" >Release &amp; Composition</text>
+<text x="2788" y="1184" font-size="23" fill="#5d737f" font-weight="400" >Schema / Policy / Rule版</text>
+<text x="2788" y="1219" font-size="23" fill="#5d737f" font-weight="400" >Diff / Review / Publish</text>
+<line x1="2788" y1="1293" x2="3076" y2="1293" stroke="#d5e0e5" stroke-width="1.4" />
+<text x="2788" y="1339" font-size="24" fill="#183341" font-weight="600" >Verification</text>
+<text x="2788" y="1383" font-size="23" fill="#5d737f" font-weight="400" >Conformance / 意味差</text>
+<text x="2788" y="1418" font-size="23" fill="#5d737f" font-weight="400" >Shadow比較 / 業務評価</text>
+<line x1="2788" y1="1492" x2="3076" y2="1492" stroke="#d5e0e5" stroke-width="1.4" />
+<text x="2788" y="1538" font-size="24" fill="#183341" font-weight="600" >Operations</text>
+<text x="2788" y="1582" font-size="23" fill="#5d737f" font-weight="400" >可観測性 / 費用 / SLO</text>
+<text x="2788" y="1617" font-size="23" fill="#5d737f" font-weight="400" >Secrets / Cache / Deploy</text>
+<line x1="2788" y1="1691" x2="3076" y2="1691" stroke="#d5e0e5" stroke-width="1.4" />
+<text x="2788" y="1737" font-size="24" fill="#183341" font-weight="600" >Recovery &amp; Migration</text>
+<text x="2788" y="1781" font-size="23" fill="#5d737f" font-weight="400" >Journal / Checkpoint</text>
+<text x="2788" y="1816" font-size="23" fill="#5d737f" font-weight="400" >状態移行 / Rollback</text>
+<line x1="2736" y1="534" x2="2736" y2="1946" stroke="#b7cbd5" stroke-width="2" stroke-dasharray="5 7"/>
+<line x1="2718" y1="577" x2="2753" y2="577" stroke="#b7cbd5" stroke-width="2" />
+<line x1="2718" y1="898" x2="2753" y2="898" stroke="#b7cbd5" stroke-width="2" />
+<line x1="2718" y1="1267" x2="2753" y2="1267" stroke="#b7cbd5" stroke-width="2" />
+<line x1="2718" y1="1467" x2="2753" y2="1467" stroke="#b7cbd5" stroke-width="2" />
+<line x1="2718" y1="1760" x2="2753" y2="1760" stroke="#b7cbd5" stroke-width="2" />
+<text x="96" y="2064" font-size="21" fill="#147fbc" font-weight="600" letter-spacing="2">07</text>
+<text x="96" y="2108" font-size="31" fill="#183341" font-weight="600" >外部の世界</text>
+<text x="96" y="2148" font-size="23" fill="#5d737f" font-weight="400" >既存資産を接続</text>
+<text x="96" y="2182" font-size="23" fill="#5d737f" font-weight="400" >正本と責任境界を維持</text>
+<line x1="636" y1="1990" x2="636" y2="2021" stroke="#879aa3" stroke-width="2" />
+<path d="M 631.6851701525621 2013.1017569429866 L 636 2021 L 640.3148298474379 2013.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<rect x="372" y="2036" width="530.4" height="158" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="400" y="2084" font-size="28" fill="#183341" font-weight="600" >Business systems</text>
+<text x="400" y="2126" font-size="24" fill="#5d737f" font-weight="400" >ERP / CRM / WMS / MES</text>
+<text x="400" y="2162" font-size="24" fill="#5d737f" font-weight="400" >Actionの反映と結果照合</text>
+<line x1="1186.4" y1="1990" x2="1186.4" y2="2021" stroke="#879aa3" stroke-width="2" />
+<path d="M 1182.0851701525623 2013.1017569429866 L 1186.4 2021 L 1190.7148298474378 2013.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<rect x="922.4" y="2036" width="530.4" height="158" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="950.4" y="2084" font-size="28" fill="#183341" font-weight="600" >Databases &amp; CDC</text>
+<text x="950.4" y="2126" font-size="24" fill="#5d737f" font-weight="400" >RDB / Source position</text>
+<text x="950.4" y="2162" font-size="24" fill="#5d737f" font-weight="400" >取得 / 同期 / 再開位置</text>
+<line x1="1736.8" y1="1990" x2="1736.8" y2="2021" stroke="#879aa3" stroke-width="2" />
+<path d="M 1732.4851701525622 2013.1017569429866 L 1736.8 2021 L 1741.1148298474377 2013.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<rect x="1472.8" y="2036" width="530.4" height="158" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="1500.8" y="2084" font-size="28" fill="#183341" font-weight="600" >Files &amp; Documents</text>
+<text x="1500.8" y="2126" font-size="24" fill="#5d737f" font-weight="400" >Blob / PDF / Knowledge</text>
+<text x="1500.8" y="2162" font-size="24" fill="#5d737f" font-weight="400" >Parse / Index / 権限同期</text>
+<line x1="2287.2" y1="1990" x2="2287.2" y2="2021" stroke="#879aa3" stroke-width="2" />
+<path d="M 2282.885170152562 2013.1017569429866 L 2287.2 2021 L 2291.514829847438 2013.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<rect x="2023.1999999999998" y="2036" width="530.4" height="158" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="2051.2" y="2084" font-size="28" fill="#183341" font-weight="600" >Lakehouse &amp; Analytics</text>
+<text x="2051.2" y="2126" font-size="24" fill="#5d737f" font-weight="400" >Object storage / Tables / BI</text>
+<text x="2051.2" y="2162" font-size="24" fill="#5d737f" font-weight="400" >分析 / 指標 / 長期保管</text>
+<line x1="2837.6" y1="1990" x2="2837.6" y2="2021" stroke="#879aa3" stroke-width="2" />
+<path d="M 2833.285170152562 2013.1017569429866 L 2837.6 2021 L 2841.914829847438 2013.1017569429866" fill="none" stroke="#879aa3" stroke-width="2"/>
+<rect x="2573.6" y="2036" width="530.4" height="158" rx="12" fill="#f7f9fa" stroke="#d5e0e5" stroke-width="1.6"/>
+<text x="2601.6" y="2084" font-size="28" fill="#183341" font-weight="600" >Models &amp; Services</text>
+<text x="2601.6" y="2126" font-size="24" fill="#5d737f" font-weight="400" >Model provider / APIs / KMS</text>
+<text x="2601.6" y="2162" font-size="24" fill="#5d737f" font-weight="400" >推論 / 外部Tool / 鍵管理</text>
+<line x1="96" y1="2244" x2="3104" y2="2244" stroke="#d5e0e5" stroke-width="2" />
+<text x="96" y="2296" font-size="30" fill="#183341" font-weight="600" >AIから業務実行まで</text>
+<text x="96" y="2337" font-size="23" fill="#5d737f" font-weight="400" >権限と証拠を保った一本道</text>
+<text x="510" y="2283" font-size="19" fill="#147fbc" font-weight="600" letter-spacing="1">01</text>
+<text x="510" y="2329" font-size="28" fill="#183341" font-weight="600" >許可範囲の検索</text>
+<text x="510" y="2370" font-size="22" fill="#5d737f" font-weight="400" >権限外の内容を渡さない</text>
+<line x1="842" y1="2319" x2="916" y2="2319" stroke="#879aa3" stroke-width="2" />
+<path d="M 908.1017569429866 2323.314829847438 L 916 2319 L 908.1017569429866 2314.685170152562" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="943" y="2283" font-size="19" fill="#147fbc" font-weight="600" letter-spacing="1">02</text>
+<text x="943" y="2329" font-size="28" fill="#183341" font-weight="600" >型付き提案</text>
+<text x="943" y="2370" font-size="22" fill="#5d737f" font-weight="400" >Actionの候補を作る</text>
+<line x1="1275" y1="2319" x2="1349" y2="2319" stroke="#879aa3" stroke-width="2" />
+<path d="M 1341.1017569429866 2323.314829847438 L 1349 2319 L 1341.1017569429866 2314.685170152562" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="1376" y="2283" font-size="19" fill="#147fbc" font-weight="600" letter-spacing="1">03</text>
+<text x="1376" y="2329" font-size="28" fill="#183341" font-weight="600" >実行時の再検査</text>
+<text x="1376" y="2370" font-size="22" fill="#5d737f" font-weight="400" >主体・制約・版・承認</text>
+<line x1="1708" y1="2319" x2="1782" y2="2319" stroke="#879aa3" stroke-width="2" />
+<path d="M 1774.1017569429866 2323.314829847438 L 1782 2319 L 1774.1017569429866 2314.685170152562" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="1809" y="2283" font-size="19" fill="#147fbc" font-weight="600" letter-spacing="1">04</text>
+<text x="1809" y="2329" font-size="28" fill="#183341" font-weight="600" >ローカル確定</text>
+<text x="1809" y="2370" font-size="22" fill="#5d737f" font-weight="400" >Object + Action + Outbox</text>
+<line x1="2141" y1="2319" x2="2215" y2="2319" stroke="#879aa3" stroke-width="2" />
+<path d="M 2207.101756942987 2323.314829847438 L 2215 2319 L 2207.101756942987 2314.685170152562" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="2242" y="2283" font-size="19" fill="#147fbc" font-weight="600" letter-spacing="1">05</text>
+<text x="2242" y="2329" font-size="28" fill="#183341" font-weight="600" >外部反映・照合</text>
+<text x="2242" y="2370" font-size="22" fill="#5d737f" font-weight="400" >成功不明も追跡・回復</text>
+<line x1="2574" y1="2319" x2="2648" y2="2319" stroke="#879aa3" stroke-width="2" />
+<path d="M 2640.101756942987 2323.314829847438 L 2648 2319 L 2640.101756942987 2314.685170152562" fill="none" stroke="#879aa3" stroke-width="2"/>
+<text x="2675" y="2283" font-size="19" fill="#147fbc" font-weight="600" letter-spacing="1">06</text>
+<text x="2675" y="2329" font-size="28" fill="#183341" font-weight="600" >証拠・監査</text>
+<text x="2675" y="2370" font-size="22" fill="#5d737f" font-weight="400" >結果と判断根拠を保存</text>
+<line x1="96" y1="2421" x2="3104" y2="2421" stroke="#d5e0e5" stroke-width="2" />
+<text x="96" y="2470" font-size="22" fill="#5d737f" font-weight="400" >参照設計：ARCHITECTURE_BASELINE.ja.md  ·  製品名は候補を含む。実装済み・接続済み・検証済みを示す図ではありません。</text>
+<text x="3104" y="2470" font-size="22" fill="#879aa3" font-weight="500" text-anchor="end" letter-spacing="1.5">AIP–OSS  /  01</text>
+</svg>
