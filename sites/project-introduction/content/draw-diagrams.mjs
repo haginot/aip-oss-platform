@@ -126,7 +126,7 @@ function architecture(lang){
   s+=line(1548,247,1548,1954,C.line,1.5)+t(1580,253,L('横断機能','SHARED'),21,600)+t(1580,284,L('すべての層へ','CONTROLS'),18);
   const controls=[['Policy','& Audit','認可 / 証拠','Access / Evidence'],['Metadata','& Lineage','来歴 / 正本','Lineage / Authority'],['Release','& Composition','版 / 公開','Version / Release'],['Verification','','適合 / 評価','Conformance / Eval'],['Operations','','監視 / SLO','Observe / SLO'],['Recovery','& Migration','復旧 / 移行','Recover / Migrate']];
   controls.forEach((c,i)=>{const y=419+i*273;s+=circle(1548,y,4,C.blue,C.blue)+line(1553,y,1575,y,C.line);s+=t(1580,y,c[0],20,500)+t(1580,y+29,c[1],20,500)+t(1580,y+66,L(c[2],c[3]),16);});
-  s+=foot(w,h,L('目標設計 / 導入・接続・検証済みの一覧ではありません。','Target design / Not a list of completed integrations or verified replacements.'),'AIP–OSS / CANLY COLORS');
+  s+=foot(w,h,L('目標設計 / 導入・接続・検証済みの一覧ではありません。','Target design / Not a list of completed integrations or verified replacements.'),'AIP–OSS / 01');
   return svg(lang,w,h,'AIP–OSS Platform — '+L('目標アーキテクチャ','Target architecture'),L('七つの層。業務オブジェクトの意味とルールを中核に、人とAI、認可、実行、契約、技術、外部システムを接続。横断機能は監査、来歴、公開、検証、運用、復旧。','Seven layers connect people and AI to trust, business definitions, execution, contracts, technology and external systems. Shared controls span audit, lineage, releases, verification, operations and recovery.'),s);
 }
 
@@ -181,7 +181,114 @@ function unknown(lang){
   return svg(lang,w,h,L('外部成功後の応答消失と復旧','Lost success responses and reconciliation'),L('ローカル確定後に外部へ送る。応答が消えればUNKNOWNとして保持。操作IDと入力ダイジェストで照合し、同じIDの違う入力は拒否する。','After a local commit, send to the external system. A lost response remains UNKNOWN. Reconcile by operation ID and input digest; reject the same ID with different input.'),s);
 }
 
-// Recolor retained detailed / legacy vector assets as well as the four new figures.
+// All article figures use the same planes, line icons, type and restrained palette.
+function node(x,y,kind,title,sub,accent=false,width=290){
+  return plane(x-width/2,y,width,85,28)+icon(kind,x,y-37,.85,accent)
+    +t(x,y+52,title,25,500,C.ink,'middle')+t(x,y+88,sub,20,400,C.ink,'middle');
+}
+function ontology(lang){
+  const L=(ja,en)=>pick(lang,ja,en),w=1600,h=1010;
+  let s=header(w,L('Ontologyは、型と関係。そして操作。','Ontology: types, relationships and actions.'),'BUSINESS MODEL / 05',L('店舗・ロット・在庫の関係と、操作の前提条件を明示する。','Make business relationships and the preconditions of each action explicit.'));
+  s+=node(245,365,'store',L('店舗 Object','Store object'),L('店舗 A','Store A'));
+  s+=node(745,365,'boxes',L('ロット Object','Lot object'),L('回収対象のロット L1','Affected lot L1'));
+  s+=node(495,635,'database',L('在庫 Object','Inventory object'),L('店舗 A × ロット L1 / revision r7','Store A × Lot L1 / revision r7'));
+  s+=route('M245 475V532H335',C.sky,1.7,'',true)+t(260,509,L('在庫を持つ','Has inventory'),19);
+  s+=route('M745 475V532H650',C.sky,1.7,'',true)+t(770,509,L('回収対象','Affected stock'),19);
+  s+=node(1260,478,'shield',L('在庫隔離 Action','Quarantine action'),'SetIsolation',true,380);
+  s+=route('M655 595H955V430H1050',C.sky,1.7,'',true)+tag(782,558,225,L('型・権限・期待版','Type / Access / Revision'));
+  s+=line(60,770,1540,770)+t(60,812,L('同じ業務の言葉を、APIとルールで使う','Use the same business vocabulary in APIs and rules.'),25,500);
+  s+=rect(60,846,715,80,C.ice,C.line)+t(85,878,L('期待 r7 = 現在 r7','Expected r7 = Current r7'),23,500)+t(85,908,L('他の条件も検査して更新する','Check the remaining conditions, then update.'),20);
+  s+=rect(815,846,725,80,C.warm,C.line)+t(840,878,L('期待 r7 ≠ 現在 r8','Expected r7 ≠ Current r8'),23,500)+t(840,908,L('古い版からの更新は競合として拒否する','Reject the stale update as a conflict.'),20);
+  s+=foot(w,h,L('個人開発のモデル例 / DDDとOntologyを同一視するものではありません。','Personal project model / Ontology and DDD are not identical concepts.'),'AIP–OSS / 05');
+  return svg(lang,w,h,L('業務の型・関係・操作','Business types, relationships and actions'),'Store and lot relate to inventory; actions check types, authority and revisions.',s);
+}
+function recovery(lang){
+  const L=(ja,en)=>pick(lang,ja,en),w=1600,h=1210;
+  let s=header(w,L('止めて、戻して、確かめる。','Stop. Restore. Verify.'),'RECOVERY EXERCISE / 06',L('プロセスの再起動だけでなく、業務を再開してよいかまで確認する。','A restarted process is not enough: verify which business operations may safely resume.'));
+  s+=node(265,370,'events',L('通信断・停止','Disconnect / Stop'),L('意図的に障害を起こす','Inject a failure'));
+  s+=node(800,370,'database',L('再起動・復元','Restart / Restore'),L('DBと記録を読み直す','Read the database and records'));
+  s+=node(1335,370,'check',L('結果を分類','Classify outcomes'),L('外部の実行結果も照合','Reconcile external effects'),true);
+  s+=route('M430 315H620',C.sky,1.7,'',true)+route('M965 315H1155',C.sky,1.7,'',true);
+  const states=[['成功','Succeeded','完了を確認','Completion confirmed'],['未実行','Not executed','未反映を確認','No effect confirmed'],['競合','Conflict','差分を調査','Investigate differences'],['不明','Unknown','保留して再照合','Hold and reconcile']];
+  states.forEach((a,i)=>{const x=60+i*380;s+=rect(x,507,340,95,i<2?C.ice:C.warm,C.line)+t(x+20,543,L(a[0],a[1]),24,500)+t(x+20,580,L(a[2],a[3]),20);});
+  s+=t(60,650,L('損失・重複・未解決と、RPO / RTOを測る','Measure loss, duplicates, unresolved outcomes, and RPO / RTO.'),24,500);
+  s+=line(60,700,1540,700)+t(60,745,L('履歴がある ≠ Event Sourcing','Having history ≠ Event Sourcing'),28,500);
+  s+=t(60,794,L('現行の参照実装','CURRENT REFERENCE'),18,500,C.blue)+t(840,794,L('設計上の比較（未採用）','COMPARISON ONLY — NOT ADOPTED'),18,500,C.blue);
+  s+=icon('database',135,924,.72)+t(225,846,L('現在状態が基準','Current state is authoritative'),25,500)+t(225,887,L('状態 → 履歴・派生索引','State → History / Projections'),21)+t(225,928,L('DBを復元し、外部結果を照合','Restore DB and reconcile external effects.'),20);
+  s+=line(795,802,795,1058)+icon('events',910,924,.72)+t(1000,846,L('順序付きイベントが基準','Ordered events are authoritative'),25,500)+t(1000,887,L('イベント → Replay → 状態','Events → Replay → State'),21)+t(1000,928,L('すべての変更をイベントから再構成','Reconstruct changes from the event log.'),20);
+  s+=t(60,1035,L('復旧できたかは、起動ログではなく業務の結果で確かめる。','Verify recovery through business outcomes, not only startup logs.'),25,500);
+  s+=foot(w,h,L('ローカル環境での復旧訓練 / 本番SLAの保証ではありません。','Local recovery exercise / Not a production SLA guarantee.'),'AIP–OSS / 06');
+  return svg(lang,w,h,L('復旧後の業務結果を確かめる','Verify business outcomes after recovery'),'Failure injection, restore, outcome classification, and a comparison with event sourcing.',s);
+}
+function replaceable(lang){
+  const L=(ja,en)=>pick(lang,ja,en),w=1600,h=1170;
+  let s=header(w,L('部品の外に、業務の契約を置く。','Keep business contracts outside the components.'),'PORTS & ADAPTERS / 07',L('業務の意味を保ったまま、実装を比較し、切り替え、戻せるようにする。','Preserve business semantics while comparing, switching and rolling back implementations.'));
+  s+=node(245,387,'document',L('業務コード','Business code'),L('店舗・在庫・操作のルール','Stores, inventory and action rules'));
+  s+=node(775,387,'hub',L('Port / 基盤契約','Port / Platform contract'),L('型・認証文脈・版・エラー','Types, auth context, version, errors'));
+  s+=route('M405 327H596',C.sky,1.7,'',true)+route('M940 327H1120V265H1180M1120 327V403H1180',C.sky,1.7,'',true);
+  s+=rect(1205,222,335,110)+t(1230,267,'Adapter A',25,500)+t(1230,303,L('部品 A / SDK・SQL','Component A / SDK, SQL'),20);
+  s+=rect(1205,367,335,110)+t(1230,411,'Adapter B',25,500)+t(1230,447,L('部品 B / SDK・SQL','Component B / SDK, SQL'),20);
+  s+=tag(592,526,365,L('比較 → 切替 → 切戻し','Compare → Switch → Roll back'));
+  s+=line(60,605,1540,605)+t(60,652,L('CQRS：更新と参照を分ける','CQRS: separate writes and reads'),28,500);
+  s+=t(60,723,'COMMAND',19,500,C.blue)+t(60,763,L('submit / approve','submit / approve'),23);
+  s+=icon('database',640,795,.75)+t(640,852,L('Objectの現在状態','Current object state'),25,500,C.ink,'middle')+t(640,891,L('更新の基準','Write authority'),20,400,C.ink,'middle');
+  s+=icon('database',1250,795,.75)+t(1250,852,L('派生インデックス','Derived index'),25,500,C.ink,'middle')+t(1250,891,L('参照用モデル','Read model'),20,400,C.ink,'middle');
+  s+=route('M300 749H550',C.sky,1.7,'',true)+route('M740 749H1150',C.sky,1.7,'',true)+t(944,722,L('再構築・照合','Rebuild / Compare'),20,400,C.ink,'middle');
+  s+=t(60,964,'QUERY',19,500,C.blue)+t(60,1004,'query / search',23)+route('M300 989H1250V921',C.sky,1.7,'',true);
+  s+=t(640,1060,L('現行は同じDB・同じスナップショットで検証','Verified within one DB and one snapshot.'),22,500,C.ink,'middle');
+  s+=foot(w,h,L('47責務は47サービスではありません / 別DBへの非同期連携は今後の課題。','47 responsibilities ≠ 47 services / Asynchronous cross-DB integration remains future work.'),'AIP–OSS / 07');
+  return svg(lang,w,h,L('交換可能な実装と業務契約','Replaceable implementations and business contracts'),'Business code depends on ports, with alternative adapters; commands update state and queries use projections.',s);
+}
+function takt(lang){
+  const L=(ja,en)=>pick(lang,ja,en),w=1600,h=850;
+  let s=header(w,L('作るAIと、確かめるAI。','One AI builds. Another checks.'),'TAKT DEVELOPMENT LOOP / 08',L('実装と審査を別セッションに分け、受入条件で確かめる。','Separate implementation from review, and check explicit acceptance criteria.'));
+  s+=node(265,391,'document',L('目標・設計・計画','Goal / Design / Plan'),L('受入条件と契約を決める','Define acceptance criteria'));
+  s+=node(800,391,'workflow',L('実装・機械検査','Implement / Test'),L('店舗デモ・BCP・リリース準備','Store demo, BCP, release checks'));
+  s+=node(1335,391,'check',L('独立した審査','Independent review'),L('別のセッションで確かめる','Check in a separate session'),true);
+  s+=route('M430 336H620',C.sky,1.7,'',true)+route('M965 336H1155',C.sky,1.7,'',true);
+  s+=route('M1335 503V588H800V508',C.orange,1.7,'',true)+t(1030,568,L('不合格：原因のある工程へ戻る','FAIL: return to the responsible stage'),21,400,C.ink,'middle');
+  s+=route('M1335 588H1478V649',C.sky,1.7,'',true)+t(1205,688,L('合格：完了判定へ','PASS: evaluate completion'),22,500);
+  s+=rect(60,638,990,91,C.ice,C.line)+t(85,674,L('入力が変わったら、過去のPASSを使わない','Changed inputs invalidate previous PASS results.'),26,500)+t(85,707,L('コード・検証定義のハッシュと、結果を紐づける','Bind results to hashes of code and verification definitions.'),21);
+  s+=foot(w,h,L('開発用のAIセッション / 製品内の実行時AIとは別の話。','Development AI sessions / Separate from a runtime AI model inside the product.'),'AIP–OSS / 08');
+  return svg(lang,w,h,L('TAKTの実装・検証・審査ループ','TAKT implementation and review loop'),'Plan, implement, test and independently review. Failed checks return to the responsible stage.',s);
+}
+function current(lang){
+  const L=(ja,en)=>pick(lang,ja,en),w=1600,h=800;
+  let s=header(w,L('できたところと、これから。','What is verified. What remains.'),'VERIFICATION SNAPSHOT / 09',L('2026-10-13に確認した受入記録。個別条件のPASSと、全体の完成は別。','Acceptance records reviewed on 2026-10-13. Passing individual checks is not overall completion.'));
+  s+=node(425,393,'check',L('個別の受入条件','Individual acceptance criteria'),'AC-001 … AC-008',false,490);
+  s+=node(1180,393,'document',L('最終の独立監査','Final independent audit'),'AC-009',false,490);
+  s+=tag(255,510,340,'PASS')+tag(960,510,440,'READY_FOR_REVIEW',true);
+  s+=line(800,245,800,593,C.orange,1.4,'6 7')+t(425,586,L('実装と機械検査の記録','Implementation and test records'),23,500,C.ink,'middle')+t(1180,586,L('レビュー待ち・承認は未取得','Awaiting review — not approved'),23,500,C.ink,'middle');
+  s+=t(800,674,L('合成データの参照実装。実店舗への導入・本番運用・本番SLAは未達。','Synthetic-data reference. No live-store deployment, production operation or production SLA.'),23,500,C.ink,'middle');
+  s+=foot(w,h,L('記録確認時点のスナップショット / 最新の全体完成を保証するものではありません。','A dated evidence snapshot / Not a guarantee of current overall completion.'),'AIP–OSS / 09');
+  return svg(lang,w,h,L('到達点と未完了の範囲','Verified progress and unfinished scope'),'Eight individual acceptance criteria passed; the final independent audit awaits review.',s);
+}
+function detail(lang){
+  const L=(ja,en)=>pick(lang,ja,en),w=1800,h=2250;
+  let s=header(w,L('責務と接続契約を、もう少し詳しく。','Responsibilities and contracts, in more detail.'),'ARCHITECTURE DETAIL / 10',L('目標設計の内訳。製品候補は、導入済み・検証済みを意味しない。','Target design detail. Product candidates do not imply completed integration or verification.'));
+  const groups=[
+    ['screen','01 / EXPERIENCE',L('利用・開発','Experience'),['Business UI / Authoring Studio / API / SDK / Agent / MCP / Operations Console',L('業務画面・判断・承認 / 定義・開発・公開 / 監査・運用・復旧','Operations, decisions, approvals / Definition, development, publishing / Audit and recovery')]],
+    ['shield','02 / TRUST',L('信頼・認可','Trust and access'),['Gateway / Identity / Tenant context / Delegation / Relationship auth / Attribute policy',L('経路・制限・Trace / OIDC・主体 / テナント分離 / 委任・期限・失効 / 拒否優先','Routes, limits, trace / OIDC and actor / Tenant isolation / Delegation, expiry, revocation / Deny wins')]],
+    ['hub','03 / BUSINESS CORE',L('業務の中核','Business core'),['Ontology & Objects — Object ID / Types / Units / Links / Authority / Revision / History','Actions & Workflows — Rules / Functions / Approval / Idempotency / State transitions',L('AI & Typed Tools — 権限内の検索・根拠付き提案 / Model・Parse・Embedding・Guard・Evaluation','AI & Typed Tools — Authorized retrieval and grounded proposals / Model, Parse, Embedding, Guard, Evaluation')]],
+    ['events','04 / EXECUTION',L('実行・データ','Execution and data'),['State & UoW — Object + Action + Outbox / History / Revision / Atomic local commit','Events & Automation — Event / Stream / Trigger / Inbox / Worker / Timer / Causality','Writeback & Reconcile — Receipt / UNKNOWN / Retry / Compensation / External transaction','Ingest & Projections — CDC / Pipeline / Transform / Quality / Identity map / Checkpoint / Graph / Text / Vector']],
+    ['link','05 / CONTRACTS',L('接続契約','Connection contracts'),['PORTS / ADAPTERS',L('型・認証文脈・版・Timeout・Cancel・Trace・Typed error・Capability','Types / Auth context / Version / Timeout / Cancel / Trace / Typed error / Capability')]],
+    ['database','06 / TECHNOLOGY',L('参照実装と拡張候補','Reference and candidates'),['REFERENCE — Node.js + PostgreSQL / SQL scan ↔ JSONB projection / Synthetic ERP',L('参照実装：状態・Action・履歴・Outbox / Local Identity・Policy・Audit / Recovery Journal','Reference: State, Action, History, Outbox / Local Identity, Policy, Audit / Recovery Journal'),'CANDIDATES — OpenMetadata / DataHub / Keycloak / Dex / SPIFFE / OpenFGA / OPA / Cedar','Temporal / Camunda / Kafka / Redpanda / NATS / OpenSearch / Neo4j / JanusGraph','pgvector / Qdrant / Milvus / Iceberg / Trino / MinIO / Distributed SQL / Event Store','MCP / Model gateway / Kubernetes / OpenTelemetry']],
+    ['store','07 / EXTERNAL',L('外部システム','External systems'),['ERP / CRM / WMS / RDB / CDC / Files / Lakehouse / BI / Models']],
+  ];
+  let y=240;
+  for(const [kind,kicker,title,rows] of groups){
+    s+=t(60,y,kicker,17,500,C.blue)+t(60,y+36,title,23,500)+plane(70,y+158,205,60,23)+icon(kind,172,y+133,.62);
+    rows.forEach((row,i)=>{s+=t(345,y+18+i*39,row,21,i===0?500:400);});
+    const step=Math.max(215,rows.length*39+58);s+=line(345,y+step-29,1740,y+step-29);y+=step;
+  }
+  s+=t(60,1975,L('全層を横断するコントロール','CROSS-CUTTING CONTROLS'),21,500,C.blue);
+  s+=t(60,2016,'Policy & Audit / Metadata & Lineage / Release & Composition',24,500)+t(60,2057,'Verification / Operations / Recovery & Migration',24,500);
+  s+=t(60,2112,L('認可・証拠 / 正本・来歴 / Schema・Policy・Rule版 / 適合性 / SLO / Journal・Checkpoint・Rollback','Authority, evidence / Lineage / Schema, policy and rule versions / Conformance / SLO / Recovery'),21);
+  s+=foot(w,h,L('企業が所有するのは意味とルール / 各技術への接続・適合性の検証は別途必要。','Own the semantics and rules / Each integration requires separate conformance verification.'),'AIP–OSS / 10');
+  return svg(lang,w,h,L('詳細アーキテクチャ','Detailed architecture'),'Seven responsibility layers with cross-cutting controls, reference components and unverified extension candidates.',s);
+}
+
+// Normalize other retained vector assets; the complete article set is redrawn below.
 const legacyColors={
   '#127b78':C.blue,'#142338':C.ink,'#147fbc':C.blue,'#174c69':C.ink,'#183341':C.ink,
   '#1c6651':C.blue,'#244fce':C.blue,'#43556c':C.ink,'#5d737f':C.ink,'#879aa3':C.note,
@@ -205,10 +312,9 @@ export async function drawDiagrams(dist){
   await normalize(assets);
   for(const lang of ['ja','en']){
     const name=`aip-oss-architecture-clean${lang==='en'?'.en':''}.svg`;
-    const original=await readFile(path.join(assets,'architecture',name),'utf8');
-    await writeFile(path.join(assets,'architecture',`aip-oss-architecture-detail${lang==='en'?'.en':''}.svg`),original);
+    await writeFile(path.join(assets,'architecture',`aip-oss-architecture-detail${lang==='en'?'.en':''}.svg`),detail(lang));
     await writeFile(path.join(assets,'architecture',name),architecture(lang));
-    for(const [name,render] of [['recall-flow',recall],['proposal-authority',authority],['unknown-success',unknown]]){
+    for(const [name,render] of [['recall-flow',recall],['proposal-authority',authority],['unknown-success',unknown],['ontology',ontology],['recovery',recovery],['replaceable-components',replaceable],['takt-loop',takt],['current-state',current]]){
       await writeFile(path.join(assets,'project-introduction',`${name}${lang==='ja'?'.ja':''}.svg`),render(lang));
     }
   }
