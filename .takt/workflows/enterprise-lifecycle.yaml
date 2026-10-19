@@ -1,0 +1,194 @@
+name: enterprise-lifecycle
+description: Deliver all 22 enterprise workflows with persisted governance, usable UI, failure evidence and independent review.
+max_steps: 60
+initial_step: design-architecture
+steps:
+  - name: design-architecture
+    promotion: [{at: 3}]
+    session_key: enterprise-architect
+    persona: platform-architect
+    tags: [architecture, edit]
+    capabilities: edit
+    edit: true
+    instruction: |
+      Read work/enterprise/DELIVERY.md, backlog.json and each issue specification. They extend the store-only scope under the current user instruction; preserve original ACs.
+      Inspect c66f5d5 product code and current baseline evidence. Preserve pre-existing changes. Read the previous final audit.
+      Design the complete enterprise architecture and threat model, identify real reusable contracts and missing capabilities, and create work/enterprise/plan.json with bounded batches, dependencies and executable acceptance tests.
+      Do not mistake a previous store approval for enterprise approval. Include a real business UI and all 22 use cases. Avoid kernel bypasses and unapproved production effects.
+      Run the catalog validation command and inspect actual model routing. Ordinary technical decisions are delegated; resolve them instead of asking a human.
+    output_contracts:
+      report:
+        - name: enterprise-01-architecture.md
+          format: |
+            # Enterprise architecture
+            ## Baseline evidence
+            ## Contracts and threat model
+            ## Batches and test plan
+            ## Remaining risks
+    rules:
+      - condition: Architecture and complete implementation plan are ready
+        next: review-architecture
+      - condition: Repairable planning problem remains
+        next: design-architecture
+      - condition: A concrete external decision prevents progress
+        next: ABORT
+  - name: review-architecture
+    session_key: enterprise-architecture-reviewer
+    persona: adversarial-reviewer
+    tags: [review]
+    capabilities: readonly
+    edit: false
+    instruction: |
+      Independently review work/enterprise/DELIVERY.md, all 52 issue specifications and the proposed plan against source. Check all 22 flows, organizational/PII/IR boundaries, SoD, revocation, durable approvals, unknown success and usable UI.
+      Require actionable reproduction or a concrete omitted requirement for blocking findings. Do not require real production access for synthetic implementation. Do not approve undocumented scope reductions.
+    output_contracts:
+      report:
+        - name: enterprise-02-architecture-review.md
+          format: |
+            # Independent architecture review
+            ## Verdict
+            ## Blocking findings
+            ## Required changes
+    rules:
+      - condition: Enterprise architecture and plan approved
+        next: build-foundation
+      - condition: Architecture or plan requires corrections
+        next: design-architecture
+  - name: build-foundation
+    promotion: [{at: 3}]
+    session_key: enterprise-builder
+    persona: platform-engineer
+    tags: [edit]
+    capabilities: edit
+    edit: true
+    instruction: |
+      Implement the next dependency-ready bounded batch in work/enterprise/plan.json. Use work/enterprise/DELIVERY.md and backlog.json as the enterprise acceptance contract.
+      First implement a real evidence validator at scripts/enterprise/verify.mjs batch|all, with tests against stale/empty/failed evidence. No fake success or status-only receipts.
+      Integrate with existing public contracts, persistent PostgreSQL, authorization, Action, Outbox and Audit. Preserve all original ACs and negative tests. Implement browser UI alongside domain slices, independent reference HTTP adapters and synthetic fixtures.
+      Address the previous review before selecting another batch. Only mark a leaf VERIFIED when an independent report approved its exact evidence; subsequent edits invalidate affected approval. Record report and source hashes.
+      Run relevant real integration tests, fault tests and the batch gate. Local implementation continues even if GitHub destination is pending. Never call real business external services or publish anything.
+    quality_gates:
+      - type: command
+        name: enterprise-batch
+        command: "mise exec -- node scripts/enterprise/verify.mjs batch"
+        cwd: "."
+        timeout_ms: 3600000
+    output_contracts:
+      report:
+        - name: enterprise-03-implementation.md
+          format: |
+            # Enterprise implementation batch
+            ## Issue IDs and changes
+            ## Commands, exits and current evidence
+            ## Negative cases and browser checks
+            ## Remaining work and limitations
+    rules:
+      - condition: A bounded batch has passed actual verification and is ready for independent review
+        next: review-foundation
+      - condition: Repairable implementation or test failures remain
+        next: build-foundation
+        command_gates: skip
+      - condition: Architecture must change to preserve the requirements
+        next: design-architecture
+        command_gates: skip
+      - condition: An indispensable external decision prevents all further work
+        next: ABORT
+        command_gates: skip
+  - name: review-foundation
+    session_key: enterprise-batch-reviewer
+    persona: adversarial-reviewer
+    tags: [review]
+    capabilities: readonly
+    edit: false
+    instruction: |
+      Independently audit the latest batch source, real integration assertions, input/output hashes and UI. Attempt counterexamples for cross-tenant/department/field leakage, SoD, stale approvals, revocation, crash/retry and uncertain external success.
+      Identify the exact issue IDs and evidence hashes approved. Do not approve the whole initiative based on one batch or on catalog tests. Check that verification CLI cannot pass missing/empty/stale evidence.
+      If this batch is accepted and further implementation remains, explicitly list it and send back to build-foundation for the next batch. Release is allowed only after every implementation/use-case leaf has reviewed evidence. Final audit/release leaves are handled later.
+    output_contracts:
+      report:
+        - name: enterprise-04-batch-review.md
+          format: |
+            # Independent batch review
+            ## Verdict and approved issue IDs
+            ## Evidence hashes
+            ## Blocking findings
+            ## Remaining batches
+    rules:
+      - condition: Latest batch approved and further implementation batches remain
+        next: build-foundation
+      - condition: Blocking implementation or verification findings require fixes
+        next: build-foundation
+      - condition: All implementation and use-case batches independently approved
+        next: harden-release
+      - condition: Architecture needs repair
+        next: design-architecture
+  - name: harden-release
+    promotion: [{at: 3}]
+    session_key: enterprise-release-engineer
+    persona: release-engineer
+    tags: [edit, release]
+    capabilities: edit
+    edit: true
+    instruction: |
+      Complete enterprise cross-domain E2E, adversarial tests, availability/recovery, clean bootstrap, supply chain and deployment runbooks (ENT-701–704). Incorporate all independent batch approvals with exact evidence references.
+      Revalidate original AC-001–009 and all enterprise tests after shared changes. Run scripts/enterprise/verify.mjs all and retain current hashes. Produce a demo entry with every use case accessible in the real UI.
+      State unsupported/unconnected production adapters and company-specific settings clearly. Do not mark final independent audit ENT-705 complete yourself. Prepare the final per-issue evidence index and residual limitations.
+    quality_gates:
+      - type: command
+        name: enterprise-release
+        command: "mise exec -- node scripts/enterprise/verify.mjs all"
+        cwd: "."
+        timeout_ms: 3600000
+    output_contracts:
+      report:
+        - name: enterprise-05-release.md
+          format: |
+            # Enterprise release
+            ## Per-issue evidence
+            ## Browser demos and recovery
+            ## Original release regression
+            ## Deployment requirements and residual risks
+    rules:
+      - condition: All fresh machine evidence is ready for independent final audit
+        next: final-audit
+      - condition: Release verification needs repair
+        next: harden-release
+        command_gates: skip
+      - condition: Business implementation needs repair
+        next: build-foundation
+        command_gates: skip
+  - name: final-audit
+    session_key: enterprise-final-auditor
+    persona: adversarial-reviewer
+    tags: [review, final-gate]
+    capabilities: readonly
+    edit: false
+    instruction: |
+      Independently audit every leaf in work/enterprise/backlog.json against current source, actual tests, browser execution, receipts and separate reviews. Require all 22 workflows, not a generic CRUD demonstration.
+      Confirm original AC regression, exact authorization/approval semantics, real persistent state and independently observable reference effects. Report production/unconnected limitations without claiming universal safety or compliance.
+      Verify current hashes and reject missing/stale/failed evidence. Give ENT-705 final approval only if every requirement passes. GitHub creation/closure unavailable means that administrative request remains unresolved; explicitly report it and do not claim the user's entire request is complete.
+    quality_gates:
+      - type: command
+        name: enterprise-final
+        command: "mise exec -- node scripts/enterprise/verify.mjs all"
+        cwd: "."
+        timeout_ms: 3600000
+    output_contracts:
+      report:
+        - name: enterprise-06-final-audit.md
+          format: |
+            # Final enterprise audit
+            ## Verdict
+            ## All issue IDs and exact evidence
+            ## Counterexamples
+            ## Unconnected services and deployment limitations
+            ## GitHub synchronization status
+    rules:
+      - condition: All enterprise product criteria independently approved with current evidence
+        next: COMPLETE
+      - condition: Business implementation or security needs repair
+        next: build-foundation
+        command_gates: skip
+      - condition: Release evidence needs repair
+        next: harden-release
+        command_gates: skip
