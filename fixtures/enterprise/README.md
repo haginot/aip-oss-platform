@@ -24,3 +24,6 @@ F/G use the seeded current-schema setup from J; their archived setup referred
 to obsolete tables. The R1F external adapter also had an unmatched closing brace.
 The preparation fixtures preserve the original scope and compiled bundle bytes;
 the test still checks their hashes and rejects mutated history and approvals.
+
+The U role manifest is preserved byte for byte as an isolated validation input.
+Its recorded paths and identities do not attest an available host or a new run.

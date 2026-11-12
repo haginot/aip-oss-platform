@@ -312,6 +312,13 @@
       "path": "fixtures/enterprise/preparation/routing-diagnosis.json",
       "originalSha256": "2816aa76a9b7a268a3dc2c426ec126e1fa6765b272695cc0b46f5d1f864eb0d7",
       "currentSha256": "2816aa76a9b7a268a3dc2c426ec126e1fa6765b272695cc0b46f5d1f864eb0d7"
+    },
+    {
+      "path": "fixtures/enterprise/design-run01d1feb5-iteration7/runtime-roles.json",
+      "originalUnit": "design-run01d1feb5-iteration7",
+      "originalName": "runtime-roles.json",
+      "originalSha256": "3fc5d8de5043c9a3f287587a6ab176804c99f53f3f6272f1970245565f54d0a4",
+      "currentSha256": "3fc5d8de5043c9a3f287587a6ab176804c99f53f3f6272f1970245565f54d0a4"
     }
   ]
 }

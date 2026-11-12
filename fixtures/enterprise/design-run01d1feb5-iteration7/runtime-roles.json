@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "purpose": "U_RUNTIME_ROLES_V1",
+  "runSlug": "20261026190543-01d1feb5",
+  "helper": {
+    "identity": {
+      "version": "0.71.0",
+      "sources": [
+        {
+          "path": "package.json",
+          "sha256": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d"
+        },
+        {
+          "path": "infra/config/paths.js",
+          "sha256": "b2366429c99ff25e60301d8cfaf72e4b35edb5a9adaf517b76915557792f1283"
+        },
+        {
+          "path": "infra/config/global/projectRegistry.js",
+          "sha256": "23f5f180b846a8d447f40f7e51fe67ab494643fc7c6c11af1d00d3eccba21015"
+        },
+        {
+          "path": "core/execution/locations.js",
+          "sha256": "6cfce29a1bd4c74abfe6b47659be445efcee72e7a8dbbdb1263b286dab807ef1"
+        },
+        {
+          "path": "infra/task/centralStateRepository.js",
+          "sha256": "fe5fa42a62dcd3f1357934fae008e9e3eac59703812f91462276ca071f26a206"
+        },
+        {
+          "path": "features/tasks/execute/workflowExecutionBundle.js",
+          "sha256": "7b39e9f54e448855c2338e7dd06ab95e2fccaab132618cafa47a761745c7a3e5"
+        },
+        {
+          "path": "infra/config/project/sessionStore.js",
+          "sha256": "9152d23efb300425776ea2e2f6858afcfc74dd42ac75a9f64cd5ba7945893e57"
+        },
+        {
+          "path": "core/workflow/engine/WorkflowRunLoop.js",
+          "sha256": "bcb373f4596c384f10df594d5edc1c4d97e10786fbbf57b14dee578b1696ba45"
+        },
+        {
+          "path": "core/workflow/engine/StepExecutor.js",
+          "sha256": "933945f1988e2ae5273f444b7df22c34cbce3f59d808d7ecc95c1703743e81c6"
+        },
+        {
+          "path": "core/workflow/quality-gates/commandGateRunner.js",
+          "sha256": "c617b0ca26ec4d02630dacfcf6069f64c799025fa9ee91bf1af84458a1febe72"
+        },
+        {
+          "path": "infra/config/loaders/workflowParser.js",
+          "sha256": "839ca884a20d63a602dc1378c34f91f1130751ab461422efd9538d61ff5bb1d0"
+        },
+        {
+          "path": "infra/config/loaders/workflowStepNormalizer.js",
+          "sha256": "d908b57be9c402b521aa2dee451f9446cf7c99fc66f1e398aba57c889c7a1cf0"
+        },
+        {
+          "path": "infra/config/loaders/capabilitySetResolver.js",
+          "sha256": "3808458d6d966e108724874fd1e6f776653c3b9ac63be93c70a9850146c4af95"
+        },
+        {
+          "path": "infra/config/providerOptions.js",
+          "sha256": "eb317e828978deef6033be18c77f7018fd4dc8bc15fb57bbf75eee5cb0f7e396"
+        },
+        {
+          "path": "../builtins/ja/provider-options/readonly.yaml",
+          "sha256": "655a4a52a9f4c9bfd70c112458c6092ff79e486e5554de86e47df905cb6f6e04"
+        },
+        {
+          "path": "../builtins/en/provider-options/readonly.yaml",
+          "sha256": "3a32032960115888e1eab0b2f98540b84b822e6dd8960f20d1868484461fd0ae"
+        }
+      ]
+    },
+    "distributionInventory": {
+      "path": "evidence/enterprise/design-run01d1feb5-iteration7/distribution-inventory.json",
+      "sha256": "6f9412eb848c0b5513dc88557fb15dc1b8eee111f72ba515ab0781d710e7bdaf",
+      "bytes": 35891158
+    },
+    "inventoryRole": "helper",
+    "legacyContextRoleOnly": true
+  },
+  "executorOrigin": {
+    "observation": {
+      "path": "evidence/enterprise/design-run01d1feb5-iteration7/role-observation.json",
+      "sha256": "2180f08f6bcb3fe94ee2db4156523c80b7841dc5de393f76cfb440908f92bc58",
+      "bytes": 10834
+    },
+    "identity": {
+      "version": "0.70.0",
+      "sources": [
+        {
+          "path": "package.json",
+          "sha256": "3192abceacd6f5c2970965ac2cc9409e9c48c00b85157953b9336400162aad5e"
+        },
+        {
+          "path": "infra/config/paths.js",
+          "sha256": "b2366429c99ff25e60301d8cfaf72e4b35edb5a9adaf517b76915557792f1283"
+        },
+        {
+          "path": "infra/config/global/projectRegistry.js",
+          "sha256": "23f5f180b846a8d447f40f7e51fe67ab494643fc7c6c11af1d00d3eccba21015"
+        },
+        {
+          "path": "core/execution/locations.js",
+          "sha256": "6cfce29a1bd4c74abfe6b47659be445efcee72e7a8dbbdb1263b286dab807ef1"
+        },
+        {
+          "path": "infra/task/centralStateRepository.js",
+          "sha256": "16fd9c491a947da1af2580c53025d09ffe64a587364c869d1cf1b28a3495c8cd"
+        },
+        {
+          "path": "features/tasks/execute/workflowExecutionBundle.js",
+          "sha256": "7b39e9f54e448855c2338e7dd06ab95e2fccaab132618cafa47a761745c7a3e5"
+        },
+        {
+          "path": "infra/config/project/sessionStore.js",
+          "sha256": "9152d23efb300425776ea2e2f6858afcfc74dd42ac75a9f64cd5ba7945893e57"
+        },
+        {
+          "path": "core/workflow/engine/WorkflowRunLoop.js",
+          "sha256": "bcb373f4596c384f10df594d5edc1c4d97e10786fbbf57b14dee578b1696ba45"
+        },
+        {
+          "path": "core/workflow/engine/StepExecutor.js",
+          "sha256": "933945f1988e2ae5273f444b7df22c34cbce3f59d808d7ecc95c1703743e81c6"
+        },
+        {
+          "path": "core/workflow/quality-gates/commandGateRunner.js",
+          "sha256": "c617b0ca26ec4d02630dacfcf6069f64c799025fa9ee91bf1af84458a1febe72"
+        },
+        {
+          "path": "infra/config/loaders/workflowParser.js",
+          "sha256": "839ca884a20d63a602dc1378c34f91f1130751ab461422efd9538d61ff5bb1d0"
+        },
+        {
+          "path": "infra/config/loaders/workflowStepNormalizer.js",
+          "sha256": "8afc030427a1851414c91c671228be7375fc29dfd50ccdbc968ade9639530e16"
+        },
+        {
+          "path": "infra/config/loaders/capabilitySetResolver.js",
+          "sha256": "3808458d6d966e108724874fd1e6f776653c3b9ac63be93c70a9850146c4af95"
+        },
+        {
+          "path": "infra/config/providerOptions.js",
+          "sha256": "e57ab56d0a700bf37559a9a33412a6506f1a0f5d8d550084d081ef056c3bf427"
+        },
+        {
+          "path": "../builtins/ja/provider-options/readonly.yaml",
+          "sha256": "655a4a52a9f4c9bfd70c112458c6092ff79e486e5554de86e47df905cb6f6e04"
+        },
+        {
+          "path": "../builtins/en/provider-options/readonly.yaml",
+          "sha256": "3a32032960115888e1eab0b2f98540b84b822e6dd8960f20d1868484461fd0ae"
+        }
+      ]
+    },
+    "distributionInventory": {
+      "path": "evidence/enterprise/design-run01d1feb5-iteration7/distribution-inventory.json",
+      "sha256": "6f9412eb848c0b5513dc88557fb15dc1b8eee111f72ba515ab0781d710e7bdaf",
+      "bytes": 35891158
+    },
+    "inventoryRole": "executor",
+    "nodeExecutable": {
+      "path": "/opt/homebrew/Cellar/node/25.4.0/bin/node",
+      "bytes": 68672,
+      "sha256": "cbc19ebff648855bc1c6309e4e8b457739ef27b30df6282ce78d487edb635ced"
+    },
+    "sourceRefs": [
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/features/web-ui/worker-entry.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-0.txt",
+        "bytes": 288,
+        "sha256": "89b3e386dcdf9f599677dd59a17bed6aae87c5870556be448cbd44f6a050fc2c"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/features/web-ui/central-worker.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-1.txt",
+        "bytes": 13788,
+        "sha256": "2fc2b6042a7c4c76f86b3fcf468795d256f862877b671933c84a1a5956dbc272"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/features/web-ui/central-worker-spawn.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-2.txt",
+        "bytes": 8471,
+        "sha256": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/features/tasks/execute/workflowExecutionApi.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-3.txt",
+        "bytes": 2718,
+        "sha256": "9878ee206b7390f0b912ac304227fceaa23fd2aecd778b5526793fdf683ef0d1"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/core/workflow/review-scope.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-4.txt",
+        "bytes": 17180,
+        "sha256": "5e65c2fbed283fccaa1b0444434704f132b5e457f0074c4396fe124228c4c8dd"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/core/workflow/engine/WorkflowEngineSetup.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-5.txt",
+        "bytes": 20868,
+        "sha256": "f8a42e5e5f892583ccc26e9dfa203b9f1c7d6062907e6727cf334005830e4353"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/core/workflow/engine/OptionsBuilder.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-6.txt",
+        "bytes": 35944,
+        "sha256": "8340c22dc105d92d06bbff65ceae083704098a84f4d3474fadbdc1ad4520e8ba"
+      },
+      {
+        "path": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform/node_modules/takt/dist/infra/task/process.js",
+        "copy": "evidence/enterprise/design-run01d1feb5-iteration7/executor-source-7.txt",
+        "bytes": 2399,
+        "sha256": "7ea4f707d2f503cc3b78669f660232602de4e11465e1a88d7e84b39cfc7ab871"
+      }
+    ]
+  },
+  "isolatedEngine": {
+    "sourceInventory": {
+      "path": "evidence/enterprise/design-run01d1feb5-iteration7/distribution-inventory.json",
+      "sha256": "6f9412eb848c0b5513dc88557fb15dc1b8eee111f72ba515ab0781d710e7bdaf",
+      "bytes": 35891158
+    },
+    "sourceInventoryRole": "executor",
+    "entryCommand": [
+      "/opt/homebrew/Cellar/node/25.4.0/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "tests/enterprise/finalization.test.mjs"
+    ],
+    "copyNotYetCreated": true,
+    "relocationMustPreserveBytesAndResolution": true,
+    "syntheticProviderOnly": true,
+    "actualEngineExecuted": false
+  },
+  "mapping": {
+    "helperEqualsExecutorRequired": false,
+    "testCopyMatchesExecutorInventoryRequired": true,
+    "callerOverrideAllowed": false
+  },
+  "evidenceLevel": "CENTRAL_PROCESS_TUPLE_AND_OS_ORIGIN_WITH_CURRENT_DISK_SNAPSHOT",
+  "missingProofs": [
+    "LAUNCH_TIME_DISTRIBUTION_MANIFEST",
+    "LOADED_MEMORY_BYTES",
+    "ISOLATED_ENGINE_AND_ACTUAL_U_COMPONENT_ACCEPTANCE"
+  ]
+}
