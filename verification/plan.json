@@ -128,7 +128,7 @@
     {
       "id": "full-release-regression",
       "stage": "mechanism",
-      "description": "Full Node test discovery under pinned runtime, sequential real process/volume tests, no skip; subsequent stages regenerate semantic outputs",
+      "description": "Full Node test discovery under pinned runtime, two isolated file workers with ordered tests per file, real process/volume tests, no skip; subsequent stages regenerate semantic outputs",
       "commands": [
         [
           "node",
@@ -169,7 +169,7 @@
       "outputs": [
         "evidence/generated/release/full-release-regression.json"
       ],
-      "timeoutMs": 1250000
+      "timeoutMs": 3350000
     },
     {
       "id": "foundation-local-contracts",
