@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {withFixture} from './helpers.mjs';
+import {connection,conformance} from './connector-scenario.mjs';
+test('ENT-604 AC-01 stable IDs schema mapping source of truth and changes',async t=>t.test('positive ENT-604 executable contract scenario',async t=>t.test('persistence ENT-604 executable contract scenario',async t=>t.test('failure-recovery ENT-604 executable contract scenario',()=>withFixture(async(f,cluster)=>{for(const domain of ['accounting','hr','contract'])await conformance(f,cluster,domain);})))));
+test('ENT-604 AC-02 independent reference contract rejects unauthorized connection and records SaaS gap',async t=>t.test('negative-authorization ENT-604 executable contract scenario',()=>withFixture(async(f,cluster)=>{const c=await connection(f,cluster,'hr');try{await assert.rejects(f.call('other','connectionSet',c.body),{code:'NOT_FOUND'});const result=await f.call('manager','connectionList');assert.ok(result.unconnected.includes('production HR'));assert.ok(result.unconnected.includes('production accounting'));assert.ok(result.unconnected.includes('production contract SaaS'));}finally{await c.server.close();}})));

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "DISCLOSURE-LIFECYCLE-001",
+  "title": "IR・プレスリリースの開示前利用制限と開示後の媒体更新",
+  "source": "User request in this chat on 2026-10-20",
+  "status": "CAPTURED_PENDING_TAKT_INTEGRATION_AND_VERIFICATION",
+  "issueRefs": [
+    "ENT-113",
+    "ENT-114",
+    "ENT-304",
+    "ENT-801",
+    "ENT-903",
+    "ENT-2500",
+    "ENT-2501",
+    "ENT-2502",
+    "ENT-2503",
+    "ENT-2504",
+    "ENT-2505",
+    "ENT-2506"
+  ],
+  "implementationClaim": false,
+  "scope": {
+    "beforeDisclosure": [
+      "営業資料",
+      "発表資料",
+      "検索・AIによる参照と生成",
+      "外部配布"
+    ],
+    "afterDisclosure": [
+      "ホームページ",
+      "SNS",
+      "営業資料",
+      "発表資料",
+      "FAQ"
+    ],
+    "verificationEnvironment": "Synthetic company, information and destinations; no actual disclosure or external publication"
+  },
+  "acceptance": [
+    {
+      "id": "DISC-01",
+      "requirement": "未開示情報に分類・版・利用目的・閲覧権限を持たせ、権限外の検索、AI参照、資料生成、エクスポート、配布から漏れないことをAPIと画面で検証する。"
+    },
+    {
+      "id": "DISC-02",
+      "requirement": "権限のある担当者は更新予定のHP・SNS・資料を非公開で準備できる。承認は内容の版と対象媒体に結び付け、承認後の変更で再承認を要求する。"
+    },
+    {
+      "id": "DISC-03",
+      "requirement": "予定時刻への到達だけでは開示済みにせず、指定された正式媒体に承認済みの版が公開された証拠を確認してから対象情報の利用制限を切り替える。"
+    },
+    {
+      "id": "DISC-04",
+      "requirement": "正式開示が遅延・失敗・取消となった場合、後続のHP・SNS・資料公開を止める。公開状態を確認できない場合も成功扱いしない。"
+    },
+    {
+      "id": "DISC-05",
+      "requirement": "公開済みの事実と未開示の社内補足を区別し、一つの資料の部分開示によって未開示情報まで解禁しない。引用・要約・派生資料へ制約を伝播する。"
+    },
+    {
+      "id": "DISC-06",
+      "requirement": "開示後に更新対象を媒体・資料・担当者ごとに特定し、権限と承認方針に従って更新または更新依頼を起動する。送信受付だけでなく反映内容と版を照合して完了を確定する。"
+    },
+    {
+      "id": "DISC-07",
+      "requirement": "HP成功・SNS失敗などの部分成功を保持し、未完了媒体を可視化する。再実行や停止後の復旧で成功済み投稿を重複配信しない。結果不明時は照合してから次の操作を決める。"
+    },
+    {
+      "id": "DISC-08",
+      "requirement": "訂正・撤回時は情報の参照関係から影響する媒体・資料を特定し、訂正、利用停止、回収依頼を追跡する。回収できない配布物を回収済みと記録しない。"
+    },
+    {
+      "id": "DISC-09",
+      "requirement": "誰がどの版を承認し、何を根拠に解禁し、どの媒体へ何を反映したかを記録し、IR・広報・営業・マーケティング間で同じ状態を確認できる。"
+    },
+    {
+      "id": "DISC-10",
+      "requirement": "正常系に加え、解禁前の混入、古い承認の使用、公開遅延、取消との競合、部分成功、通信断、重複イベント、再起動、訂正のAPI・実画面試験を実施し、現行ソースの証拠と独立レビューを結び付ける。"
+    }
+  ],
+  "completionEvidence": [],
+  "integration": {
+    "activeWorktree": "/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d",
+    "note": "This captures the user's concrete scenario outside the active worktree. It does not amend the running TAKT plan, create GitHub Issues, or count as implementation evidence. Integrate through the next appropriate TAKT requirement/design update and verify the full workflow before claiming completion."
+  },
+  "relatedRequirement": "work/enterprise/INFORMATION_LIFECYCLE_EXPANSION.md"
+}

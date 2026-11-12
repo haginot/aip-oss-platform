@@ -1,0 +1,18 @@
+{
+  "id":"enterprise-foundation","version":"1.0.0",
+  "types":{
+    "LegalEntity":{"name":{"type":"string","classification":"INTERNAL"}},
+    "Department":{"name":{"type":"string","classification":"INTERNAL"}},
+    "Case":{"title":{"type":"string","classification":"INTERNAL"},"amount":{"type":"integer","classification":"CONFIDENTIAL"},"currency":{"type":"string","classification":"INTERNAL"},"memo":{"type":"string","classification":"RESTRICTED"}},
+    "Employment":{"name":{"type":"string","classification":"RESTRICTED"}},
+    "Position":{"name":{"type":"string","classification":"INTERNAL"}},
+    "Classification":{"name":{"type":"string","classification":"INTERNAL"}}
+  },
+  "form":[{"field":"title","label":"件名"},{"field":"amount","label":"金額（最小通貨単位）"},{"field":"currency","label":"通貨"},{"field":"memo","label":"機密メモ"}],
+  "action":{"name":"RequestCase","type":"Case"},
+  "route":[{"approvers":["manager","reviewer"],"quorum":2},{"approvers":["publisher"],"quorum":1}],
+  "amountRoutes":[],
+  "permissions":{"create":"action","approve":"approve"},
+  "fixtures":[{"fields":{"title":"Synthetic case","amount":1200,"currency":"JPY","memo":"synthetic"},"expected":"valid"},{"fields":{"title":"invalid"},"expected":"invalid"}],
+  "calendar":{"timezone":"Asia/Tokyo","weekdays":[1,2,3,4,5],"holidays":[],"businessDays":2}
+}

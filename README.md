@@ -6,7 +6,7 @@ Palantir AIP / Foundry が扱う Ontology、Object、Action、認可、イベン
 
 ## まず動かす
 
-Node.js 22.22以上と、認証済みCodex CLIが必要です。TAKTは検証済みの0.70.0へ固定しています。次は開発ループの準備であり、製品の起動手順ではありません。
+Node.js 22.22以上と、認証済みCodex CLIが必要です。TAKTは検証済みの0.71.0へ固定しています。次は開発ループの準備であり、製品の起動手順ではありません。
 
 ```sh
 npm ci

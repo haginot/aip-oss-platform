@@ -4,7 +4,9 @@ import {traceContext} from '../telemetry.mjs';
 import pg from 'pg';
 import { PlatformError, digest, fail, tokenDigest } from '../contracts.mjs';
 export class PostgresState {
-  constructor(config) { this.pool = new pg.Pool(config); }
+  constructor(config) { this.pool = new pg.Pool(config); this.connectionErrors=[];this.pool.on('error',error=>this.recordConnectionError(error)); }
+  recordConnectionError(error){this.connectionErrors.push({at:new Date().toISOString(),code:error.code??'CONNECTION_LOST'});if(this.connectionErrors.length>100)this.connectionErrors.shift();}
+  watchConnection(client){let broken=false;const listener=error=>{broken=true;this.recordConnectionError(error);};client.on('error',listener);return ()=>{client.removeListener('error',listener);client.release(broken);};}
   async close() { await this.pool.end(); }
   async transaction(fn, deadline, signal) {
     const options=budget({deadline,signal});
@@ -17,7 +19,7 @@ export class PostgresState {
     }
   }
   async attempt(fn,options) {
-    const client = await checkout(this.pool,options);
+    const client = await checkout(this.pool,options),release=this.watchConnection(client);
     let committing=false,cancelling,authorityUntil=Infinity;
     const checkAuthority=()=>{if(Date.now()>=authorityUntil)fail('PERMISSION_DENIED');};
     // A separate connection cancels a blocked query without waiting for a pool
@@ -52,15 +54,15 @@ export class PostgresState {
       if(!committing)checkBudget(options);
       if (error.code === '57014' || error.code === '55P03') fail('DEADLINE_EXCEEDED');
       throw error;
-    } finally { stop();await cancelling;client.release(); }
+    } finally { stop();await cancelling;release(); }
   }
   async admission(fn,options={}) {
-    options=budget(options);const client=await checkout(this.pool,options);let locked=false;
+    options=budget(options);const client=await checkout(this.pool,options),release=this.watchConnection(client);let locked=false;
     try {
       while(!locked){checkBudget(options);locked=(await client.query('SELECT pg_try_advisory_lock(772341) AS locked')).rows[0].locked;
         if(!locked)await delay(Math.min(10,Math.max(1,options.deadline-Date.now())));}
       checkBudget(options);return await fn();
-    } finally {if(locked)await client.query('SELECT pg_advisory_unlock(772341)');client.release();}
+    } finally {try{if(locked)await client.query('SELECT pg_advisory_unlock(772341)');}finally{release();}}
   }
 }
 class UnitOfWork {

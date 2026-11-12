@@ -7,6 +7,7 @@ provider:
       model: gpt-6.1-sol
       permission_mode: full
       options:
+        fast_mode: true
         reasoning_effort: medium
         permission_control: takt
         network_access: true
@@ -14,6 +15,7 @@ provider:
       provider: codex
       model: gpt-6.1-sol
       options:
+        fast_mode: true
         reasoning_effort: high
         permission_control: takt
         network_access: true
@@ -21,6 +23,7 @@ provider:
       provider: codex
       model: gpt-6-luna
       options:
+        fast_mode: true
         reasoning_effort: low
         permission_control: takt
         network_access: true
@@ -29,6 +32,7 @@ provider:
       model: gpt-6-astra
       permission_mode: full
       options:
+        fast_mode: true
         reasoning_effort: high
         permission_control: takt
         network_access: true
@@ -45,7 +49,7 @@ provider:
       design-architecture:
         ladder: [builder, critical]
       build-foundation:
-        ladder: [builder, critical]
+        profile: critical
       build-store-demo:
         ladder: [builder, critical]
       build-bcp:

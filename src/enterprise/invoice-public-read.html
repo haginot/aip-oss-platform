@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>請求書・支払案件の参照</title>
+<style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:2rem auto;padding:0 1rem;color:#202c3b}a{color:#064d9c}button,a{margin:.4rem}button{padding:.6rem}button:focus-visible,a:focus-visible{outline:3px solid #146fc5;outline-offset:3px}section{border-top:1px solid #ccd4df;margin-top:1.5rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f8;padding:1rem}dt{font-weight:bold}dd{margin-bottom:.5rem}#message{min-height:1.8rem;color:#94251b}li{margin:.5rem 0}</style>
+<script type="module" src="/enterprise/ENT-202-public-read.mjs"></script></head>
+<body><header><h1>請求書・支払案件の参照</h1><p id="identity"></p><p>合成環境の支払案件を参照します。請求だけの案件は一覧の対象外です。</p><nav aria-label="参照操作"><a href="/login">再ログイン</a><a href="/enterprise/cases/ENT-202">案件一覧</a><button id="reload" type="button">最新の情報を取得</button></nav></header>
+<p id="message" role="status" aria-live="polite"></p>
+<main><section aria-labelledby="list-title"><h2 id="list-title">現在参照できる支払案件</h2><ul id="case-list"></ul></section>
+<article id="case-detail" hidden><h2 id="detail-title" tabindex="-1">案件詳細</h2><p id="state"></p>
+<section><h3>請求・発注・検収・口座の現在版</h3><dl id="summary"></dl></section>
+<section><h3>三点照合と独立全量検収</h3><pre id="quantity"></pre></section>
+<section><h3>元の操作・定義・内容・版の結合</h3><pre id="binding"></pre></section>
+<section><h3>承認経路と判断</h3><pre id="approvals"></pre></section>
+<section><h3>監査履歴</h3><pre id="history"></pre></section>
+</article></main></body></html>

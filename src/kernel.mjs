@@ -1,4 +1,7 @@
+import {controlWork} from './enterprise/control-worker.mjs';
 import {budget,checkBudget} from './budget.mjs';
+import {enterprise,recoverEnterprise} from './enterprise/service.mjs';
+import {enterpriseWork} from './enterprise/worker.mjs';
 import {continuitySet,recover,compensate,checkContinuity} from './continuity.mjs';
 import {storeEffect,decideStoreAction} from './store-actions.mjs';
 import {scheduleCreate,scheduleStatus,scheduleTick} from './trigger.mjs';
@@ -16,7 +19,11 @@ import { Writeback } from './writeback.mjs';
 const auditedRejections=new WeakSet();
 
 export class Kernel {
-  constructor(state,journal,{fault=async()=>{},clock=Date.now,writebackPort}={}) { this.state=state; this.journal=journal; this.clock=clock; this.fault=fault; this.writeback=writebackPort?new Writeback(this,writebackPort):null; }
+  enterprise(credential,request,options){return enterprise(this,credential,request,options);}
+  enterpriseRecover(credential){return recoverEnterprise(this,credential);}
+  enterpriseControlWork(credential,request){return controlWork(this,credential,request);}
+  enterpriseWork(credential,request,port){return enterpriseWork(this,credential,request,port);}
+  constructor(state,journal,{fault=async()=>{},clock=Date.now,writebackPort,documentScanner,connections={}}={}) { this.documentScanner=documentScanner; this.connections=connections; this.state=state; this.journal=journal; this.clock=clock; this.fault=fault; this.writeback=writebackPort?new Writeback(this,writebackPort):null; }
   continuitySet(credential,body,options) {return this.withBudget('continuitySet',options,b=>continuitySet(this,credential,body,b));}
   recover(credential,body,options) {return this.withBudget('recover',options,b=>recover(this,credential,body,b));}
   compensate(credential,body,options) {return this.withBudget('compensate',options,b=>compensate(this,credential,body,b));}

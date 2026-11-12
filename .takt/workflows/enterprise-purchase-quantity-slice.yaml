@@ -1,0 +1,214 @@
+name: enterprise-purchase-quantity-slice
+description: Bounded purchase ordered/received quantity contract prerequisite for blocked ENT202-P1; preserve legacy procurement and all formal acceptance limits.
+max_steps: 5
+initial_step: slice-plan
+steps:
+  - name: slice-plan
+    session_key: enterprise-purchase-quantity-plan-20261027
+    persona: platform-architect
+    capabilities: readonly
+    edit: false
+    instruction: |-
+      日本語で公開報告を書く。対象は購買の構造化された発注数量・単位と独立検収数量の一業務単位のみ。最大5工程、修正1回、開始から90分。実装はSol/medium、独立レビューは別sessionのAstra/high。時間・工程を延長しない。基盤全体の再設計が必要なら最小根拠を公開してABORTする。
+      ENT-202 run 20261027003434-e024e9fdは計画工程でENT202-P1（発注数量/検収数量の実公開契約欠如）によりABORTした。これは失敗した請求書処理の再試行ではなく、実依存である購買数量契約の実装である。請求書取込・三点照合・支払/口座管理は今回実装しない。ENT-202の4ACを弱めず未達として保持する。
+      ENT-201 run 20261026233229-50606ffdの限定候補レビュー合格は過去の入力に対するもの。正式suite接続と13依存の現行受入、B04/BF-38・42・43・61は未達で、旧承認を新コードへ転用しない。Issue VERIFIED/全体PASSを付与せず、plan/Issue原本/旧progress/receiptを変更しない。
+      保護対象は /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/protected-inputs.json の3ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-201-quantity-protected-history.json の全478ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/historical-public-reports.json の全6公開報告。全件hash照合し、改変・削除・上書きをしない。既存ENT-201のAPI/browserテスト、procurement-helperとseedも保護対象であり削除/弱体化/書換え禁止。新規テスト/補助fixtureを追加する。現在のdirty作業と全失敗証跡を保全し、復元/整理しない。
+      新規結果は evidence/enterprise/ENT-201-quantity-slice-20261027 以下の工程ごとに固有のdirectoryへ保存する。失敗出力も残し、過去入力digest/証跡を成功へ流用しない。既存inputs/snapshot/parseTapを再利用し、別の検証基盤を作らない。public Kernel/Action/Outbox/Audit/認可/承認と既存local synthetic portを使う。business操作のdirect DB bypassや架空PO/検収は禁止。故障注入/SQL復旧の反例テストは既存方法を利用できる。
+      実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスク acffa2a7-06d7-4742-864f-a009381456c4 と旧チャットを再開しない。企業業務全体、事業企画・予算・予実・リソース管理・確率/MLシミュレーション、GitHub反映を残件として保持する。
+
+      必要な業務契約:
+      1. 実公開APIと購買画面から正の安全な整数の発注数量・明示した単位を入力し、同一仕様（数量/単位等）の相見積を比較・選定する。選定金額/通貨/数量/単位/仕入先/見積版を承認対象に結合し、承認後変更は拒否または旧承認を確実に失効させる。数量1の固定、自由記述noteからの数量推測は禁止。
+      2. 実際の発注Action/operationとsynthetic外部ledger payloadが承認済み数量/単位へ結合する。独立受領者が構造化した実検収数量を記録し、purchaseRead等の実公開契約で発注数量/単位/検収数量/元operation/版を取得できる。今回は単一明細の全量検収までとし、部分検収/過剰検収/不一致を明示的に拒否する。拒否は成功や数量0/1に変換しない。
+      3. 既存数量なしレコード/既存manifest/旧fixtureとの互換を明示する。既存呼出しが試験どおり動いても、未記録数量はunknown/absentとして取得され、数量付き三点照合に利用不可と識別できること。旧承認や履歴を移行で捏造せず、旧版の処理安全性を維持する。公開契約のversion/digestの安全な扱いを決める。互換が広範な移行を要するならABORTする。
+      4. 現在認可、CONFIDENTIAL分類、tenant/部門境界、本人/代理自己承認拒否、独立検収、監査/transaction、冪等性、競合、再起動/SQL復旧を維持する。ENT-201 R1（外部送信前journal intent、古いSQL復元の安全停止）とR2（分類取消時の応答/検索/DOM漏えい拒否）を後退させない。UNKNOWNは元operationの結果観測のみで、自動再送禁止。
+      必要な実テストは tests/enterprise/ENT-201-quantity.test.mjs と ENT-201-quantity.browser.test.mjs。APIは positive / negative-authorization / persistence / failure-recovery の4分類を意味のある実assertionに対応付け、無効値、単位/数量不一致、承認後改変、独立検収拒否、重複/競合、権限分類取消、旧数量なし契約、監査失敗、UNKNOWNと復旧を検査する。ブラウザは real-browser-interaction / japanese-keyboard-error-recovery / forbidden-data-absent-in-response-and-dom / persistent-history-after-reload を実操作・HTTP・DOM・ledgerで対応付ける。既存ENT-201 API/browserを現行コードで必須回帰し、変更した安全基盤の関連回帰を追加する。
+
+      公開コードと原本AC/既存契約を読み、ENT202-P1を実際に解消する最小のAPI/データ/画面の変更案を決める。既存legacyを通すために数量を捏造しない設計と、数量の承認binding/外部payload/検収/復旧の結合を具体化する。基盤全体を再設計せずこの一単位で実装できれば次へ進む。読み取りのみの工程ではコード経路を根拠とし、実行していないHTTP再現を実行済みと書かない。
+    output_contracts:
+      report:
+        - name: slice-01-plan.md
+          format: |
+            # Purchase quantity/receipt prerequisite bounded implementation plan
+            ## Contract acceptance and executable checks
+            ## Existing and missing dependency contracts
+            ## Exact implementation scope
+            ## Remaining acceptance and blockers
+    rules:
+      - condition: A safe concrete purchase quantity/receipt candidate can be implemented within the fixed scope
+        next: slice-implement
+      - condition: Safe implementation requires work outside this slice or an unresolved indispensable prerequisite
+        next: ABORT
+  - name: slice-implement
+    session_key: enterprise-purchase-quantity-implement-20261027
+    persona: platform-engineer
+    capabilities: edit
+    edit: true
+    instruction: |-
+      日本語で公開報告を書く。対象は購買の構造化された発注数量・単位と独立検収数量の一業務単位のみ。最大5工程、修正1回、開始から90分。実装はSol/medium、独立レビューは別sessionのAstra/high。時間・工程を延長しない。基盤全体の再設計が必要なら最小根拠を公開してABORTする。
+      ENT-202 run 20261027003434-e024e9fdは計画工程でENT202-P1（発注数量/検収数量の実公開契約欠如）によりABORTした。これは失敗した請求書処理の再試行ではなく、実依存である購買数量契約の実装である。請求書取込・三点照合・支払/口座管理は今回実装しない。ENT-202の4ACを弱めず未達として保持する。
+      ENT-201 run 20261026233229-50606ffdの限定候補レビュー合格は過去の入力に対するもの。正式suite接続と13依存の現行受入、B04/BF-38・42・43・61は未達で、旧承認を新コードへ転用しない。Issue VERIFIED/全体PASSを付与せず、plan/Issue原本/旧progress/receiptを変更しない。
+      保護対象は /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/protected-inputs.json の3ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-201-quantity-protected-history.json の全478ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/historical-public-reports.json の全6公開報告。全件hash照合し、改変・削除・上書きをしない。既存ENT-201のAPI/browserテスト、procurement-helperとseedも保護対象であり削除/弱体化/書換え禁止。新規テスト/補助fixtureを追加する。現在のdirty作業と全失敗証跡を保全し、復元/整理しない。
+      新規結果は evidence/enterprise/ENT-201-quantity-slice-20261027 以下の工程ごとに固有のdirectoryへ保存する。失敗出力も残し、過去入力digest/証跡を成功へ流用しない。既存inputs/snapshot/parseTapを再利用し、別の検証基盤を作らない。public Kernel/Action/Outbox/Audit/認可/承認と既存local synthetic portを使う。business操作のdirect DB bypassや架空PO/検収は禁止。故障注入/SQL復旧の反例テストは既存方法を利用できる。
+      実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスク acffa2a7-06d7-4742-864f-a009381456c4 と旧チャットを再開しない。企業業務全体、事業企画・予算・予実・リソース管理・確率/MLシミュレーション、GitHub反映を残件として保持する。
+
+      必要な業務契約:
+      1. 実公開APIと購買画面から正の安全な整数の発注数量・明示した単位を入力し、同一仕様（数量/単位等）の相見積を比較・選定する。選定金額/通貨/数量/単位/仕入先/見積版を承認対象に結合し、承認後変更は拒否または旧承認を確実に失効させる。数量1の固定、自由記述noteからの数量推測は禁止。
+      2. 実際の発注Action/operationとsynthetic外部ledger payloadが承認済み数量/単位へ結合する。独立受領者が構造化した実検収数量を記録し、purchaseRead等の実公開契約で発注数量/単位/検収数量/元operation/版を取得できる。今回は単一明細の全量検収までとし、部分検収/過剰検収/不一致を明示的に拒否する。拒否は成功や数量0/1に変換しない。
+      3. 既存数量なしレコード/既存manifest/旧fixtureとの互換を明示する。既存呼出しが試験どおり動いても、未記録数量はunknown/absentとして取得され、数量付き三点照合に利用不可と識別できること。旧承認や履歴を移行で捏造せず、旧版の処理安全性を維持する。公開契約のversion/digestの安全な扱いを決める。互換が広範な移行を要するならABORTする。
+      4. 現在認可、CONFIDENTIAL分類、tenant/部門境界、本人/代理自己承認拒否、独立検収、監査/transaction、冪等性、競合、再起動/SQL復旧を維持する。ENT-201 R1（外部送信前journal intent、古いSQL復元の安全停止）とR2（分類取消時の応答/検索/DOM漏えい拒否）を後退させない。UNKNOWNは元operationの結果観測のみで、自動再送禁止。
+      必要な実テストは tests/enterprise/ENT-201-quantity.test.mjs と ENT-201-quantity.browser.test.mjs。APIは positive / negative-authorization / persistence / failure-recovery の4分類を意味のある実assertionに対応付け、無効値、単位/数量不一致、承認後改変、独立検収拒否、重複/競合、権限分類取消、旧数量なし契約、監査失敗、UNKNOWNと復旧を検査する。ブラウザは real-browser-interaction / japanese-keyboard-error-recovery / forbidden-data-absent-in-response-and-dom / persistent-history-after-reload を実操作・HTTP・DOM・ledgerで対応付ける。既存ENT-201 API/browserを現行コードで必須回帰し、変更した安全基盤の関連回帰を追加する。
+
+      slice-01-plan.mdの最小案に従い数量契約一単位だけを実装する。新規API/browser suite、無変更の既存ENT-201両suiteと安全性関連回帰を実行する。実コマンド・開始終了・exit・TAP tests/pass/fail/cancelled/skipped/todo・現行ソース/テスト定義hash・実HTTP/DOM/ledger・成果物hashを工程固有の出力先に保存する。現行入力の実行前後一致も確認する。必要な反例の失敗や未実装をPASSにしない。請求書処理や正式受入へ範囲を広げない。
+    quality_gates:
+      - type: command
+        name: purchase-quantity-api
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-201-quantity-slice-20261027/gates/implement-api mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201-quantity.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: purchase-quantity-browser
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-201-quantity-slice-20261027/gates/implement-browser mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201-quantity.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: ENT-201-regression
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-201-quantity-slice-20261027/gates/implement-purchase-regression mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.test.mjs tests/enterprise/ENT-201.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: slice-02-implementation.md
+          format: |
+            # Purchase quantity/receipt prerequisite candidate implementation
+            ## Changes and contract acceptance mapping
+            ## Actual commands, exits, assertions and hashes
+            ## Negative and recovery cases
+            ## Unmet dependencies and acceptance limits
+    rules:
+      - condition: The scoped candidate has passed its real API and browser tests and is ready for independent review
+        next: slice-review
+      - condition: Implementation or tests are incomplete, blocked or require work outside the fixed scope
+        next: ABORT
+        command_gates: skip
+  - name: slice-review
+    session_key: enterprise-purchase-quantity-review-20261027
+    persona: adversarial-reviewer
+    capabilities: readonly
+    edit: false
+    instruction: |-
+      日本語で公開報告を書く。対象は購買の構造化された発注数量・単位と独立検収数量の一業務単位のみ。最大5工程、修正1回、開始から90分。実装はSol/medium、独立レビューは別sessionのAstra/high。時間・工程を延長しない。基盤全体の再設計が必要なら最小根拠を公開してABORTする。
+      ENT-202 run 20261027003434-e024e9fdは計画工程でENT202-P1（発注数量/検収数量の実公開契約欠如）によりABORTした。これは失敗した請求書処理の再試行ではなく、実依存である購買数量契約の実装である。請求書取込・三点照合・支払/口座管理は今回実装しない。ENT-202の4ACを弱めず未達として保持する。
+      ENT-201 run 20261026233229-50606ffdの限定候補レビュー合格は過去の入力に対するもの。正式suite接続と13依存の現行受入、B04/BF-38・42・43・61は未達で、旧承認を新コードへ転用しない。Issue VERIFIED/全体PASSを付与せず、plan/Issue原本/旧progress/receiptを変更しない。
+      保護対象は /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/protected-inputs.json の3ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-201-quantity-protected-history.json の全478ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/historical-public-reports.json の全6公開報告。全件hash照合し、改変・削除・上書きをしない。既存ENT-201のAPI/browserテスト、procurement-helperとseedも保護対象であり削除/弱体化/書換え禁止。新規テスト/補助fixtureを追加する。現在のdirty作業と全失敗証跡を保全し、復元/整理しない。
+      新規結果は evidence/enterprise/ENT-201-quantity-slice-20261027 以下の工程ごとに固有のdirectoryへ保存する。失敗出力も残し、過去入力digest/証跡を成功へ流用しない。既存inputs/snapshot/parseTapを再利用し、別の検証基盤を作らない。public Kernel/Action/Outbox/Audit/認可/承認と既存local synthetic portを使う。business操作のdirect DB bypassや架空PO/検収は禁止。故障注入/SQL復旧の反例テストは既存方法を利用できる。
+      実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスク acffa2a7-06d7-4742-864f-a009381456c4 と旧チャットを再開しない。企業業務全体、事業企画・予算・予実・リソース管理・確率/MLシミュレーション、GitHub反映を残件として保持する。
+
+      必要な業務契約:
+      1. 実公開APIと購買画面から正の安全な整数の発注数量・明示した単位を入力し、同一仕様（数量/単位等）の相見積を比較・選定する。選定金額/通貨/数量/単位/仕入先/見積版を承認対象に結合し、承認後変更は拒否または旧承認を確実に失効させる。数量1の固定、自由記述noteからの数量推測は禁止。
+      2. 実際の発注Action/operationとsynthetic外部ledger payloadが承認済み数量/単位へ結合する。独立受領者が構造化した実検収数量を記録し、purchaseRead等の実公開契約で発注数量/単位/検収数量/元operation/版を取得できる。今回は単一明細の全量検収までとし、部分検収/過剰検収/不一致を明示的に拒否する。拒否は成功や数量0/1に変換しない。
+      3. 既存数量なしレコード/既存manifest/旧fixtureとの互換を明示する。既存呼出しが試験どおり動いても、未記録数量はunknown/absentとして取得され、数量付き三点照合に利用不可と識別できること。旧承認や履歴を移行で捏造せず、旧版の処理安全性を維持する。公開契約のversion/digestの安全な扱いを決める。互換が広範な移行を要するならABORTする。
+      4. 現在認可、CONFIDENTIAL分類、tenant/部門境界、本人/代理自己承認拒否、独立検収、監査/transaction、冪等性、競合、再起動/SQL復旧を維持する。ENT-201 R1（外部送信前journal intent、古いSQL復元の安全停止）とR2（分類取消時の応答/検索/DOM漏えい拒否）を後退させない。UNKNOWNは元operationの結果観測のみで、自動再送禁止。
+      必要な実テストは tests/enterprise/ENT-201-quantity.test.mjs と ENT-201-quantity.browser.test.mjs。APIは positive / negative-authorization / persistence / failure-recovery の4分類を意味のある実assertionに対応付け、無効値、単位/数量不一致、承認後改変、独立検収拒否、重複/競合、権限分類取消、旧数量なし契約、監査失敗、UNKNOWNと復旧を検査する。ブラウザは real-browser-interaction / japanese-keyboard-error-recovery / forbidden-data-absent-in-response-and-dom / persistent-history-after-reload を実操作・HTTP・DOM・ledgerで対応付ける。既存ENT-201 API/browserを現行コードで必須回帰し、変更した安全基盤の関連回帰を追加する。
+
+      Astraの独立したreadonly sessionで実コード・差分・実API/browser結果と現行hashを確認する。保護された元テストと比較し、数量が承認前から外部送信と独立検収まで同一契約に結び付くか、古いSQL/分類取消で漏えい・改ざん・再送がないか、legacy unknownが偽の数量として利用されないかを重点確認する。可能な再現は新規固有出力先を使用し、過去結果を変更しない。ENT202-P1解消に必要な公開フィールド/契約と、未実装の請求/口座/支払を明示する。候補COMPLETEは数量一単位の合格に限り、ENT-201/202正式受入と混同しない。具体的指摘が同範囲・残予算内で直る場合のみ唯一の修正へ進む。
+    output_contracts:
+      report:
+        - name: slice-03-review.md
+          format: |
+            # Independent Purchase quantity/receipt prerequisite candidate review
+            ## Candidate verdict and contract acceptance evidence
+            ## Reproduced blocking findings
+            ## Exact hashes and reviewer session
+            ## Outstanding formal acceptance
+    rules:
+      - condition: The purchase quantity/receipt candidate behavior passes scoped independent review with all remaining formal acceptance explicitly recorded
+        next: COMPLETE
+      - condition: Concrete findings can be corrected within this same procurement quantity slice and remaining budget
+        next: slice-repair
+      - condition: Missing contracts or findings require work beyond this slice or the remaining budget
+        next: ABORT
+  - name: slice-repair
+    session_key: enterprise-purchase-quantity-implement-20261027
+    persona: platform-engineer
+    capabilities: edit
+    edit: true
+    instruction: |-
+      日本語で公開報告を書く。対象は購買の構造化された発注数量・単位と独立検収数量の一業務単位のみ。最大5工程、修正1回、開始から90分。実装はSol/medium、独立レビューは別sessionのAstra/high。時間・工程を延長しない。基盤全体の再設計が必要なら最小根拠を公開してABORTする。
+      ENT-202 run 20261027003434-e024e9fdは計画工程でENT202-P1（発注数量/検収数量の実公開契約欠如）によりABORTした。これは失敗した請求書処理の再試行ではなく、実依存である購買数量契約の実装である。請求書取込・三点照合・支払/口座管理は今回実装しない。ENT-202の4ACを弱めず未達として保持する。
+      ENT-201 run 20261026233229-50606ffdの限定候補レビュー合格は過去の入力に対するもの。正式suite接続と13依存の現行受入、B04/BF-38・42・43・61は未達で、旧承認を新コードへ転用しない。Issue VERIFIED/全体PASSを付与せず、plan/Issue原本/旧progress/receiptを変更しない。
+      保護対象は /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/protected-inputs.json の3ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-201-quantity-protected-history.json の全478ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/historical-public-reports.json の全6公開報告。全件hash照合し、改変・削除・上書きをしない。既存ENT-201のAPI/browserテスト、procurement-helperとseedも保護対象であり削除/弱体化/書換え禁止。新規テスト/補助fixtureを追加する。現在のdirty作業と全失敗証跡を保全し、復元/整理しない。
+      新規結果は evidence/enterprise/ENT-201-quantity-slice-20261027 以下の工程ごとに固有のdirectoryへ保存する。失敗出力も残し、過去入力digest/証跡を成功へ流用しない。既存inputs/snapshot/parseTapを再利用し、別の検証基盤を作らない。public Kernel/Action/Outbox/Audit/認可/承認と既存local synthetic portを使う。business操作のdirect DB bypassや架空PO/検収は禁止。故障注入/SQL復旧の反例テストは既存方法を利用できる。
+      実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスク acffa2a7-06d7-4742-864f-a009381456c4 と旧チャットを再開しない。企業業務全体、事業企画・予算・予実・リソース管理・確率/MLシミュレーション、GitHub反映を残件として保持する。
+
+      必要な業務契約:
+      1. 実公開APIと購買画面から正の安全な整数の発注数量・明示した単位を入力し、同一仕様（数量/単位等）の相見積を比較・選定する。選定金額/通貨/数量/単位/仕入先/見積版を承認対象に結合し、承認後変更は拒否または旧承認を確実に失効させる。数量1の固定、自由記述noteからの数量推測は禁止。
+      2. 実際の発注Action/operationとsynthetic外部ledger payloadが承認済み数量/単位へ結合する。独立受領者が構造化した実検収数量を記録し、purchaseRead等の実公開契約で発注数量/単位/検収数量/元operation/版を取得できる。今回は単一明細の全量検収までとし、部分検収/過剰検収/不一致を明示的に拒否する。拒否は成功や数量0/1に変換しない。
+      3. 既存数量なしレコード/既存manifest/旧fixtureとの互換を明示する。既存呼出しが試験どおり動いても、未記録数量はunknown/absentとして取得され、数量付き三点照合に利用不可と識別できること。旧承認や履歴を移行で捏造せず、旧版の処理安全性を維持する。公開契約のversion/digestの安全な扱いを決める。互換が広範な移行を要するならABORTする。
+      4. 現在認可、CONFIDENTIAL分類、tenant/部門境界、本人/代理自己承認拒否、独立検収、監査/transaction、冪等性、競合、再起動/SQL復旧を維持する。ENT-201 R1（外部送信前journal intent、古いSQL復元の安全停止）とR2（分類取消時の応答/検索/DOM漏えい拒否）を後退させない。UNKNOWNは元operationの結果観測のみで、自動再送禁止。
+      必要な実テストは tests/enterprise/ENT-201-quantity.test.mjs と ENT-201-quantity.browser.test.mjs。APIは positive / negative-authorization / persistence / failure-recovery の4分類を意味のある実assertionに対応付け、無効値、単位/数量不一致、承認後改変、独立検収拒否、重複/競合、権限分類取消、旧数量なし契約、監査失敗、UNKNOWNと復旧を検査する。ブラウザは real-browser-interaction / japanese-keyboard-error-recovery / forbidden-data-absent-in-response-and-dom / persistent-history-after-reload を実操作・HTTP・DOM・ledgerで対応付ける。既存ENT-201 API/browserを現行コードで必須回帰し、変更した安全基盤の関連回帰を追加する。
+
+      slice-03-review.mdの具体的指摘だけを直す唯一の修正工程。新規数量API/browser、既存ENT-201 API/browserと影響する安全回帰を再実行し、新たな修正出力先へ実コマンド・TAP・現行input/output hashと原因解消の根拠を記録する。旧失敗を保持する。同原因が残る・予算不足・基盤全体の移行が必要ならABORTし、追加修正は行わない。
+    quality_gates:
+      - type: command
+        name: purchase-quantity-api
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-201-quantity-slice-20261027/gates/repair-api mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201-quantity.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: purchase-quantity-browser
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-201-quantity-slice-20261027/gates/repair-browser mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201-quantity.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: ENT-201-regression
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-201-quantity-slice-20261027/gates/repair-purchase-regression mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.test.mjs tests/enterprise/ENT-201.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: slice-04-correction.md
+          format: |
+            # Purchase quantity/receipt prerequisite single correction
+            ## Finding and exact repair
+            ## Actual commands and current evidence
+            ## Remaining limitations
+    rules:
+      - condition: The correction has passed both real scoped test suites
+        next: slice-final-review
+      - condition: The same cause remains, testing fails or broader work is needed
+        next: ABORT
+        command_gates: skip
+  - name: slice-final-review
+    session_key: enterprise-purchase-quantity-final-review-20261027
+    persona: adversarial-reviewer
+    capabilities: readonly
+    edit: false
+    instruction: |-
+      日本語で公開報告を書く。対象は購買の構造化された発注数量・単位と独立検収数量の一業務単位のみ。最大5工程、修正1回、開始から90分。実装はSol/medium、独立レビューは別sessionのAstra/high。時間・工程を延長しない。基盤全体の再設計が必要なら最小根拠を公開してABORTする。
+      ENT-202 run 20261027003434-e024e9fdは計画工程でENT202-P1（発注数量/検収数量の実公開契約欠如）によりABORTした。これは失敗した請求書処理の再試行ではなく、実依存である購買数量契約の実装である。請求書取込・三点照合・支払/口座管理は今回実装しない。ENT-202の4ACを弱めず未達として保持する。
+      ENT-201 run 20261026233229-50606ffdの限定候補レビュー合格は過去の入力に対するもの。正式suite接続と13依存の現行受入、B04/BF-38・42・43・61は未達で、旧承認を新コードへ転用しない。Issue VERIFIED/全体PASSを付与せず、plan/Issue原本/旧progress/receiptを変更しない。
+      保護対象は /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/protected-inputs.json の3ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-201-quantity-protected-history.json の全478ファイル、/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/historical-public-reports.json の全6公開報告。全件hash照合し、改変・削除・上書きをしない。既存ENT-201のAPI/browserテスト、procurement-helperとseedも保護対象であり削除/弱体化/書換え禁止。新規テスト/補助fixtureを追加する。現在のdirty作業と全失敗証跡を保全し、復元/整理しない。
+      新規結果は evidence/enterprise/ENT-201-quantity-slice-20261027 以下の工程ごとに固有のdirectoryへ保存する。失敗出力も残し、過去入力digest/証跡を成功へ流用しない。既存inputs/snapshot/parseTapを再利用し、別の検証基盤を作らない。public Kernel/Action/Outbox/Audit/認可/承認と既存local synthetic portを使う。business操作のdirect DB bypassや架空PO/検収は禁止。故障注入/SQL復旧の反例テストは既存方法を利用できる。
+      実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスク acffa2a7-06d7-4742-864f-a009381456c4 と旧チャットを再開しない。企業業務全体、事業企画・予算・予実・リソース管理・確率/MLシミュレーション、GitHub反映を残件として保持する。
+
+      必要な業務契約:
+      1. 実公開APIと購買画面から正の安全な整数の発注数量・明示した単位を入力し、同一仕様（数量/単位等）の相見積を比較・選定する。選定金額/通貨/数量/単位/仕入先/見積版を承認対象に結合し、承認後変更は拒否または旧承認を確実に失効させる。数量1の固定、自由記述noteからの数量推測は禁止。
+      2. 実際の発注Action/operationとsynthetic外部ledger payloadが承認済み数量/単位へ結合する。独立受領者が構造化した実検収数量を記録し、purchaseRead等の実公開契約で発注数量/単位/検収数量/元operation/版を取得できる。今回は単一明細の全量検収までとし、部分検収/過剰検収/不一致を明示的に拒否する。拒否は成功や数量0/1に変換しない。
+      3. 既存数量なしレコード/既存manifest/旧fixtureとの互換を明示する。既存呼出しが試験どおり動いても、未記録数量はunknown/absentとして取得され、数量付き三点照合に利用不可と識別できること。旧承認や履歴を移行で捏造せず、旧版の処理安全性を維持する。公開契約のversion/digestの安全な扱いを決める。互換が広範な移行を要するならABORTする。
+      4. 現在認可、CONFIDENTIAL分類、tenant/部門境界、本人/代理自己承認拒否、独立検収、監査/transaction、冪等性、競合、再起動/SQL復旧を維持する。ENT-201 R1（外部送信前journal intent、古いSQL復元の安全停止）とR2（分類取消時の応答/検索/DOM漏えい拒否）を後退させない。UNKNOWNは元operationの結果観測のみで、自動再送禁止。
+      必要な実テストは tests/enterprise/ENT-201-quantity.test.mjs と ENT-201-quantity.browser.test.mjs。APIは positive / negative-authorization / persistence / failure-recovery の4分類を意味のある実assertionに対応付け、無効値、単位/数量不一致、承認後改変、独立検収拒否、重複/競合、権限分類取消、旧数量なし契約、監査失敗、UNKNOWNと復旧を検査する。ブラウザは real-browser-interaction / japanese-keyboard-error-recovery / forbidden-data-absent-in-response-and-dom / persistent-history-after-reload を実操作・HTTP・DOM・ledgerで対応付ける。既存ENT-201 API/browserを現行コードで必須回帰し、変更した安全基盤の関連回帰を追加する。
+
+      唯一の修正を別sessionのAstraで独立確認する。数量の承認binding→実発注→構造化検収→公開read、legacy互換とunknown、安全性とENT-201回帰、現行hash付きの根拠を点検する。同じ原因やblocking finding、失敗/不足証跡が残ればABORTする。追加修正・延長・請求書実装は禁止。限定候補の判定とENT202-P1の解消可否を分け、正式受入と13依存その他の残件を明示する。
+    output_contracts:
+      report:
+        - name: slice-05-final-review.md
+          format: |
+            # Final Purchase quantity/receipt prerequisite candidate decision
+            ## Scoped verdict and exact evidence
+            ## Repeated or unresolved findings
+            ## Outstanding formal acceptance and next minimum task
+    rules:
+      - condition: The corrected purchase quantity/receipt candidate passes independent scoped review with outstanding formal acceptance clearly recorded
+        next: COMPLETE
+      - condition: Any blocking finding or missing evidence remains
+        next: ABORT

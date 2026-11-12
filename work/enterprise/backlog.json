@@ -6,7 +6,7 @@
   "items": [
     {
       "id": "ENT-000",
-      "title": "コーポレート・経営・人事・秘書業務を統制できるプラットフォーム",
+      "title": "企業を構成する全部門・全業務の統制と継続的な適用拡張",
       "parent": null,
       "dependsOn": [],
       "kind": "initiative",
@@ -15,7 +15,9 @@
       "acceptance": [
         "全子Issueの現行コードに対する検証と独立監査が完了する",
         "各部門担当者が画面から業務開始・承認・差戻し・完了・証跡確認を実演できる",
-        "実環境への導入条件と未接続の外部サービスを明記する"
+        "実環境への導入条件と未接続の外部サービスを明記する",
+        "企業別業務棚卸で全業務を対応付け、未対応・要追加検証・適用外を責任者/根拠付きで可視化する。",
+        "業種固有の高リスク判断は専門家承認と追加検証なしに対応済としない。"
       ],
       "evidence": [],
       "github": null,
@@ -26,11 +28,29 @@
         "ENT-400",
         "ENT-500",
         "ENT-600",
-        "ENT-700"
+        "ENT-700",
+        "ENT-800",
+        "ENT-900",
+        "ENT-1000",
+        "ENT-1100",
+        "ENT-1200",
+        "ENT-1300",
+        "ENT-1400",
+        "ENT-1500",
+        "ENT-1600",
+        "ENT-1700",
+        "ENT-1800",
+        "ENT-1900",
+        "ENT-2000",
+        "ENT-2100",
+        "ENT-2200",
+        "ENT-2300",
+        "ENT-2400",
+        "ENT-2500"
       ],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -59,7 +79,15 @@
         "ENT-109",
         "ENT-110",
         "ENT-111",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119",
+        "ENT-120"
       ],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
@@ -90,7 +118,7 @@
       ],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -169,7 +197,7 @@
       ],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -195,7 +223,7 @@
       ],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -505,7 +533,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -521,7 +556,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -534,7 +569,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -550,7 +592,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -563,7 +605,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -579,7 +628,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -592,7 +641,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -608,7 +664,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -621,7 +677,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -637,7 +700,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -650,7 +713,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -666,7 +736,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -679,7 +749,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -708,7 +785,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -737,7 +821,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -766,7 +857,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -795,7 +893,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -824,7 +929,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -853,7 +965,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -882,7 +1001,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -911,7 +1037,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -940,7 +1073,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -969,7 +1109,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -998,7 +1145,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -1027,7 +1181,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -1043,7 +1204,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1056,7 +1217,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -1072,7 +1240,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1085,7 +1253,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -1101,7 +1276,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1114,7 +1289,14 @@
         "ENT-105",
         "ENT-106",
         "ENT-108",
-        "ENT-112"
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
       ],
       "kind": "use-case",
       "status": "OPEN",
@@ -1130,7 +1312,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1155,7 +1337,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1178,7 +1360,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1201,7 +1383,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1223,7 +1405,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1248,7 +1430,7 @@
       "children": [],
       "models": {
         "implementation": "gpt-6.1-sol/medium",
-        "review": "gpt-6.1-sol/high"
+        "review": "gpt-6-astra/high"
       }
     },
     {
@@ -1260,14 +1442,32 @@
         "ENT-300",
         "ENT-400",
         "ENT-500",
-        "ENT-601"
+        "ENT-601",
+        "ENT-800",
+        "ENT-900",
+        "ENT-1000",
+        "ENT-1100",
+        "ENT-1200",
+        "ENT-1300",
+        "ENT-1400",
+        "ENT-1500",
+        "ENT-1600",
+        "ENT-1700",
+        "ENT-1800",
+        "ENT-1900",
+        "ENT-2000",
+        "ENT-2100",
+        "ENT-2200",
+        "ENT-2300",
+        "ENT-120"
       ],
       "kind": "implementation",
       "status": "OPEN",
       "gap": "既存の店舗API実演の受入範囲を超えるため追加検証・実装が必要。",
       "acceptance": [
         "全use-caseを申請者・承認者・監査人・越権者で実行する",
-        "同時承認・期限切れ・取消・再起動・送信成功不明・tenant分離を検査する"
+        "同時承認・期限切れ・取消・再起動・送信成功不明・tenant分離を検査する",
+        "拡張後の全業務とlead-to-cash/procure-to-pay/hire-to-retire/公開訂正/事故対応を部門横断で検証する。"
       ],
       "evidence": [],
       "github": null,
@@ -1375,6 +1575,4532 @@
         "implementation": "gpt-6.1-sol/medium",
         "review": "gpt-6-astra/high"
       }
+    },
+    {
+      "id": "ENT-113",
+      "title": "全社情報分類・情報隔壁・目的制限",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "公開/社内/機密/厳秘、法人・案件・部門の隔壁と利用目的を情報派生先まで伝播する",
+        "反例: 文書→検索→集計→AI→出力→通知での分類低下・推論漏洩 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-114",
+      "title": "対外公開・解禁・訂正・撤回エンジン",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "版と根拠に結び付く法務/広報/IR承認、解禁時刻、配信先、公開結果照合と訂正/撤回を永続化する",
+        "反例: 解禁前配信・失効承認・媒体ごとの部分成功・撤回不能な既配信物の成功偽装 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-115",
+      "title": "同意・利用目的・地域・権利台帳",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "個人同意、配信拒否、著作権/肖像権/素材許諾と越境条件を実行時に再照合する",
+        "反例: 撤回済同意・期限切れ素材・対象外地域・間接提供 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-116",
+      "title": "部門横断プロセス・イベント連携",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "lead-to-cash、procure-to-pay、hire-to-retire、incident-to-resolutionの責任移管/補償/追跡を共通IDで管理する",
+        "反例: 部門間の権限拡大・重複イベント・片側成功・中止後の後続実行 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-117",
+      "title": "資源・金額・数量・期間の整合制約",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "通貨/単位/予算/残高/予約/締め期間を型と競合制約で検証し専門計算の版を保持する",
+        "反例: 閾値分割・負数/丸め・通貨混同・二重引当・締め後改変 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-118",
+      "title": "サービス水準・緊急権限・代理の統制",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "SLA時計、休日、優先度、エスカレーション、理由付き期限付緊急権限と事後独立レビューを管理する",
+        "反例: 緊急を口実とした恒久権限・自己代理承認・SLA記録改ざん を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-119",
+      "title": "規制/会社別ポリシーパックと適用判定",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "法人/法域/業種別ルールを根拠/施行日/責任者/版付きで管理し不明要件は未対応として止める",
+        "反例: 未知の法域を既定値で承認・旧版ルールの混用・専門家未承認の法適合主張 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-120",
+      "title": "全社業務網羅性と変更管理",
+      "parent": "ENT-100",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-109",
+        "ENT-110",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "部門×ライフサイクル×情報区分×外部効果×例外の対応表を保守し未対応セルをIssue化する",
+        "反例: 件数達成だけで完了・新業務の未登録・根拠のない適用除外 を拒否/検出し、復旧後にも不変条件を維持する。",
+        "公開API・実画面・永続化・独立監査で検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-800",
+      "title": "広報・PR・ブランド",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-801",
+        "ENT-802",
+        "ENT-803",
+        "ENT-804",
+        "ENT-805",
+        "ENT-806",
+        "ENT-807"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-801",
+      "title": "プレスリリース",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "起案→事実確認→法務/IR承認→解禁→配信→訂正 を合成データの実画面/APIから完走する。",
+        "反例: 未承認版の公開・解禁前漏洩 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-802",
+      "title": "メディア取材・問い合わせ",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "受付→記者確認→回答案→承認→回答→記録 を合成データの実画面/APIから完走する。",
+        "反例: 機密回答・未確認情報の断定 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-803",
+      "title": "危機広報",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "事象受付→対策本部→統一見解→緊急承認→公表→振り返り を合成データの実画面/APIから完走する。",
+        "反例: 相矛盾する発表・緊急権限の恒久化 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-804",
+      "title": "経営者発信・講演",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "依頼→原稿→根拠/機密確認→承認→登壇→記録 を合成データの実画面/APIから完走する。",
+        "反例: 未公表業績の混入・代理名義の悪用 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-805",
+      "title": "社内広報",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "企画→対象者選定→承認→配信→閲覧確認 を合成データの実画面/APIから完走する。",
+        "反例: 労務情報の対象外配信 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-806",
+      "title": "ブランド・商標素材",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "素材登録→権利確認→利用許諾→配布→失効 を合成データの実画面/APIから完走する。",
+        "反例: 期限切れ・地域外ライセンス利用 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-807",
+      "title": "評判・報道モニタリング",
+      "parent": "ENT-800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "収集→出典確認→分類→担当通知→対応判断 を合成データの実画面/APIから完走する。",
+        "反例: 誤検知からの自動公表・第三者個人情報の過剰収集 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-900",
+      "title": "マーケティング・広告・成長",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-901",
+        "ENT-902",
+        "ENT-903",
+        "ENT-904",
+        "ENT-905",
+        "ENT-906",
+        "ENT-907",
+        "ENT-908"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-901",
+      "title": "施策企画・予算",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "目的/KPI設定→予算申請→承認→実行→効果検証 を合成データの実画面/APIから完走する。",
+        "反例: 予算超過・承認後の訴求変更 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-902",
+      "title": "広告制作・出稿",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "制作→根拠/権利審査→媒体承認→予約→出稿→停止 を合成データの実画面/APIから完走する。",
+        "反例: 根拠のない表示・停止後の再出稿 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-903",
+      "title": "コンテンツ・SEO",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "企画→制作→引用/権利確認→校閲→公開→更新 を合成データの実画面/APIから完走する。",
+        "反例: 他社素材の無断利用・古い情報の再公開 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-904",
+      "title": "イベント・ウェビナー",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "企画→登壇/同意管理→募集→開催→フォロー を合成データの実画面/APIから完走する。",
+        "反例: 同意外の参加者情報共有 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-905",
+      "title": "リード・同意管理",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "獲得→同意証跡→重複照合→選別→営業引渡し→削除 を合成データの実画面/APIから完走する。",
+        "反例: 同意撤回後の追跡・過剰な個人推定 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-906",
+      "title": "メール・CRM施策",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "対象抽出→除外/同意確認→承認→配信→停止 を合成データの実画面/APIから完走する。",
+        "反例: 配信拒否者への再送・他顧客情報混入 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-907",
+      "title": "市場調査・競合分析",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "問い設定→適法な資料収集→分析→レビュー→共有 を合成データの実画面/APIから完走する。",
+        "反例: 出典不明・機密情報の不正取得 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-908",
+      "title": "施策実験・効果測定",
+      "parent": "ENT-900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "仮説→実験設計→承認→実施→集計→判断 を合成データの実画面/APIから完走する。",
+        "反例: 対象差別・恣意的な指標変更 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1000",
+      "title": "営業・事業開発・パートナー",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1001",
+        "ENT-1002",
+        "ENT-1003",
+        "ENT-1004",
+        "ENT-1005",
+        "ENT-1006",
+        "ENT-1007"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1001",
+      "title": "アカウント・商談管理",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "リード受領→担当割当→案件化→進捗→受注/失注 を合成データの実画面/APIから完走する。",
+        "反例: 顧客競合間の情報漏洩 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1002",
+      "title": "見積・値引き",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "要件→原価/価格照合→例外承認→見積送付→有効期限管理 を合成データの実画面/APIから完走する。",
+        "反例: 赤字値引き・承認後条件変更 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1003",
+      "title": "提案・入札",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "募集確認→参加判断→提案→法務審査→提出→結果 を合成データの実画面/APIから完走する。",
+        "反例: 提出期限超過・虚偽実績 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1004",
+      "title": "受注・契約引継ぎ",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "契約照合→受注→提供条件引継ぎ→検収→請求依頼 を合成データの実画面/APIから完走する。",
+        "反例: 契約外約束・二重受注 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1005",
+      "title": "代理店・販売パートナー",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "審査→契約→権限設定→取引→精算→解除 を合成データの実画面/APIから完走する。",
+        "反例: 反社/利益相反確認の省略・解除後アクセス を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1006",
+      "title": "新規事業・提携",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "仮説→調査→投資審査→実証→継続/撤退 を合成データの実画面/APIから完走する。",
+        "反例: 承認額超過・機密DD資料の流出 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1007",
+      "title": "売上予測・営業報酬入力",
+      "parent": "ENT-1000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "案件集計→予測レビュー→確定→報酬入力承認 を合成データの実画面/APIから完走する。",
+        "反例: 二重計上・本人による報酬承認 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1100",
+      "title": "顧客サポート・カスタマーサクセス",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1101",
+        "ENT-1102",
+        "ENT-1103",
+        "ENT-1104",
+        "ENT-1105",
+        "ENT-1106"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1101",
+      "title": "問い合わせ・サポート",
+      "parent": "ENT-1100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "受付→本人/契約確認→調査→回答→解決 を合成データの実画面/APIから完走する。",
+        "反例: 顧客なりすまし・別顧客への回答混入 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1102",
+      "title": "顧客導入・教育",
+      "parent": "ENT-1100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "契約受領→導入計画→設定→教育→受入 を合成データの実画面/APIから完走する。",
+        "反例: 未承認設定・顧客間データ転記 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1103",
+      "title": "障害顧客対応・SLA",
+      "parent": "ENT-1100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "影響特定→通知承認→対応→復旧→報告 を合成データの実画面/APIから完走する。",
+        "反例: 影響外顧客への機密通知・SLA時計の改変 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1104",
+      "title": "更新・解約・返金",
+      "parent": "ENT-1100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "申請→条件照合→承認→処理→確認 を合成データの実画面/APIから完走する。",
+        "反例: 二重返金・解約後の課金継続 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1105",
+      "title": "苦情・顧客エスカレーション",
+      "parent": "ENT-1100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "受付→証拠保全→責任者割当→対応承認→終結 を合成データの実画面/APIから完走する。",
+        "反例: 不都合な苦情削除・報復的対応 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1106",
+      "title": "顧客要望・活用支援",
+      "parent": "ENT-1100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "要望収集→同意/契約確認→評価→開発連携→回答 を合成データの実画面/APIから完走する。",
+        "反例: 未確約機能の約束・機密要望の共有 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1200",
+      "title": "財務・経理・税務",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1201",
+        "ENT-1202",
+        "ENT-1203",
+        "ENT-1204",
+        "ENT-1205",
+        "ENT-1206",
+        "ENT-1207",
+        "ENT-1208"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1201",
+      "title": "月次・年次決算",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "証憑収集→仕訳→照合→決算承認→締め を合成データの実画面/APIから完走する。",
+        "反例: 締め後改変・根拠のない仕訳 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1202",
+      "title": "売掛・入金消込",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "請求照合→入金取込→消込→差異確認→督促承認 を合成データの実画面/APIから完走する。",
+        "反例: 別顧客入金の誤消込・二重督促 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1203",
+      "title": "買掛・支払実行管理",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "承認済請求→支払計画→口座照合→二者承認→結果照合 を合成データの実画面/APIから完走する。",
+        "反例: 口座差替え・二重送金 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1204",
+      "title": "資金繰り・財務取引",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "資金予測→調達/運用案→権限承認→実行依頼→照合 を合成データの実画面/APIから完走する。",
+        "反例: 権限外取引・通貨/満期の不一致 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1205",
+      "title": "税務申告準備",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "資料集計→差異確認→専門家レビュー→承認→提出証跡 を合成データの実画面/APIから完走する。",
+        "反例: 適用法域/期間の誤り・無審査申告 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1206",
+      "title": "連結・グループ間取引",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "各社収集→照合→相殺→連結調整→承認 を合成データの実画面/APIから完走する。",
+        "反例: 法人境界越境・不一致の強制相殺 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1207",
+      "title": "固定資産・棚卸評価",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "取得連携→台帳→償却案→棚卸→除却承認 を合成データの実画面/APIから完走する。",
+        "反例: 無断除却・計算規則の未承認変更 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1208",
+      "title": "監査対応・財務証明",
+      "parent": "ENT-1200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "依頼受付→対象確認→証拠抽出→承認→提供 を合成データの実画面/APIから完走する。",
+        "反例: 監査対象への証拠改変権限・過剰開示 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1300",
+      "title": "製品企画・研究開発・エンジニアリング",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1301",
+        "ENT-1302",
+        "ENT-1303",
+        "ENT-1304",
+        "ENT-1305",
+        "ENT-1306",
+        "ENT-1307"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1301",
+      "title": "製品ロードマップ",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "要望→評価→計画→予算承認→進捗→見直し を合成データの実画面/APIから完走する。",
+        "反例: 顧客への未承認納期確約 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1302",
+      "title": "研究・実験管理",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "計画→倫理/安全審査→実験→記録→再現性レビュー を合成データの実画面/APIから完走する。",
+        "反例: 実験結果改ざん・規制対象の無審査実験 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1303",
+      "title": "製品仕様・設計変更",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "要件→設計→レビュー→変更承認→版管理→通知 を合成データの実画面/APIから完走する。",
+        "反例: 旧版仕様の製造投入 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1304",
+      "title": "開発・コードレビュー",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "要求→実装→レビュー→検証→統合 を合成データの実画面/APIから完走する。",
+        "反例: 自己承認・秘密情報のコミット を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1305",
+      "title": "ソフトウェアリリース",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "候補→試験→変更審査→段階展開→監視→切戻し を合成データの実画面/APIから完走する。",
+        "反例: 未検証成果物・承認対象と配布物の不一致 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1306",
+      "title": "脆弱性・依存部品対応",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "通知→影響分析→優先度→修正→配布→検証 を合成データの実画面/APIから完走する。",
+        "反例: 悪用詳細の過剰共有・未修正版の再配布 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1307",
+      "title": "知財・発明管理",
+      "parent": "ENT-1300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "発明届→権利確認→出願判断→専門家承認→期限管理 を合成データの実画面/APIから完走する。",
+        "反例: 公開先行による権利喪失・共同所有無視 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1400",
+      "title": "調達・製造・物流・業務オペレーション",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1401",
+        "ENT-1402",
+        "ENT-1403",
+        "ENT-1404",
+        "ENT-1405",
+        "ENT-1406",
+        "ENT-1407",
+        "ENT-1408"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1401",
+      "title": "取引先登録・再審査",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "申請→適格性審査→契約→登録→定期再審査 を合成データの実画面/APIから完走する。",
+        "反例: 利益相反・口座変更詐欺 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1402",
+      "title": "需給・生産計画",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "需要取込→能力/材料照合→計画承認→指示→実績 を合成データの実画面/APIから完走する。",
+        "反例: 欠品・能力超過を無視した自動確約 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1403",
+      "title": "製造指図・実績",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "指図→材料/設備確認→工程→品質確認→実績 を合成データの実画面/APIから完走する。",
+        "反例: 未承認仕様・ロット追跡欠落 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1404",
+      "title": "在庫・倉庫・棚卸",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "入庫→保管→引当→出庫→棚卸差異承認 を合成データの実画面/APIから完走する。",
+        "反例: 負在庫・二重引当・無断差異調整 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1405",
+      "title": "配送・輸出入",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "出荷指示→規制/書類確認→配送→受領→例外処理 を合成データの実画面/APIから完走する。",
+        "反例: 制裁/輸出管理未確認・誤配送 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1406",
+      "title": "品質不適合・是正",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "検出→隔離→原因分析→是正承認→効果確認 を合成データの実画面/APIから完走する。",
+        "反例: 不良品の再出荷・自己検査のみで解除 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1407",
+      "title": "回収・リコール",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "対象ロット特定→判断承認→通知→回収→完了照合 を合成データの実画面/APIから完走する。",
+        "反例: 対象漏れ・機密顧客一覧の過剰配布 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1408",
+      "title": "保守・設備点検",
+      "parent": "ENT-1400",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "計画→資格確認→作業許可→点検→復帰承認 を合成データの実画面/APIから完走する。",
+        "反例: 無資格作業・故障設備の無断復帰 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1500",
+      "title": "ITサービス・社内システム",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1501",
+        "ENT-1502",
+        "ENT-1503",
+        "ENT-1504",
+        "ENT-1505",
+        "ENT-1506"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1501",
+      "title": "IT問い合わせ・サービス要求",
+      "parent": "ENT-1500",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "受付→権利確認→対応→検証→完了 を合成データの実画面/APIから完走する。",
+        "反例: 本人未確認のアクセス復旧 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1502",
+      "title": "アカウント・権限ライフサイクル",
+      "parent": "ENT-1500",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "入社/異動連携→権限審査→付与→棚卸→失効 を合成データの実画面/APIから完走する。",
+        "反例: 退職後権限・兼務による職務分離違反 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1503",
+      "title": "端末・ソフトウェア管理",
+      "parent": "ENT-1500",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "申請→調達連携→配備→更新→返却/消去 を合成データの実画面/APIから完走する。",
+        "反例: 未管理端末への機密配布・消去証明欠落 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1504",
+      "title": "IT変更・障害管理",
+      "parent": "ENT-1500",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "起票→影響評価→承認→変更→監視→切戻し を合成データの実画面/APIから完走する。",
+        "反例: 緊急変更の無記録・同時変更競合 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1505",
+      "title": "SaaS・クラウド利用管理",
+      "parent": "ENT-1500",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "利用申請→セキュリティ/費用審査→導入→棚卸→停止 を合成データの実画面/APIから完走する。",
+        "反例: シャドーIT・停止漏れ課金 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1506",
+      "title": "バックアップ・復旧訓練",
+      "parent": "ENT-1500",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "対象定義→バックアップ→隔離復元→検証→改善 を合成データの実画面/APIから完走する。",
+        "反例: 削除済情報や失効権限の復活 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1600",
+      "title": "法務・コンプライアンス・ガバナンス",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1601",
+        "ENT-1602",
+        "ENT-1603",
+        "ENT-1604",
+        "ENT-1605",
+        "ENT-1606"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1601",
+      "title": "法律相談・法務審査",
+      "parent": "ENT-1600",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "相談→守秘分類→調査→専門家レビュー→回答 を合成データの実画面/APIから完走する。",
+        "反例: 秘匿特権/法務機密の共有漏れ を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1602",
+      "title": "契約義務・紛争管理",
+      "parent": "ENT-1600",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "義務抽出→期限通知→履行→違反検知→紛争対応 を合成データの実画面/APIから完走する。",
+        "反例: 原文と異なるAI解釈・証拠削除 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1603",
+      "title": "規程・法改正対応",
+      "parent": "ENT-1600",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "変更検知→影響評価→改定承認→周知→適用確認 を合成データの実画面/APIから完走する。",
+        "反例: 未施行規則の適用・旧版規程使用 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1604",
+      "title": "通報・内部調査",
+      "parent": "ENT-1600",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "匿名受付→利益相反排除→調査→判断→是正 を合成データの実画面/APIから完走する。",
+        "反例: 通報者特定・被調査者への閲覧権限 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1605",
+      "title": "贈収賄・利益相反申告",
+      "parent": "ENT-1600",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "申告→相手方/金額審査→承認→記録→再評価 を合成データの実画面/APIから完走する。",
+        "反例: 分割申請による閾値回避 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1606",
+      "title": "法人・株主・機関運営",
+      "parent": "ENT-1600",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "法定事項登録→決議→専門家審査→手続→期限確認 を合成データの実画面/APIから完走する。",
+        "反例: 権限のない決議・法域別要件の混同 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1700",
+      "title": "リスク・内部監査・危機管理",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1701",
+        "ENT-1702",
+        "ENT-1703",
+        "ENT-1704",
+        "ENT-1705"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1701",
+      "title": "全社リスク管理",
+      "parent": "ENT-1700",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "リスク登録→評価→対応責任割当→対策→再評価 を合成データの実画面/APIから完走する。",
+        "反例: 重大リスクの恣意的格下げ を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1702",
+      "title": "内部監査",
+      "parent": "ENT-1700",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "計画→独立性確認→証拠収集→指摘→改善検証 を合成データの実画面/APIから完走する。",
+        "反例: 監査対象者の自己承認・証拠差替え を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1703",
+      "title": "内部統制評価",
+      "parent": "ENT-1700",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "統制定義→サンプル抽出→評価→不備→是正 を合成データの実画面/APIから完走する。",
+        "反例: 都合のよいサンプル選別 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1704",
+      "title": "事業継続・災害対応",
+      "parent": "ENT-1700",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "発動判断→安否/影響確認→代替業務→復旧→訓練評価 を合成データの実画面/APIから完走する。",
+        "反例: 緊急権限残存・個人安否情報の過剰共有 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1705",
+      "title": "保険・事故・損害対応",
+      "parent": "ENT-1700",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "事故受付→保全→責任評価→保険/補償審査→終結 を合成データの実画面/APIから完走する。",
+        "反例: 虚偽請求・重要証拠の消去 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1800",
+      "title": "情報セキュリティ・プライバシー",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1801",
+        "ENT-1802",
+        "ENT-1803",
+        "ENT-1804",
+        "ENT-1805"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1801",
+      "title": "セキュリティ事故対応",
+      "parent": "ENT-1800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "検知→トリアージ→封じ込め承認→調査→復旧→報告 を合成データの実画面/APIから完走する。",
+        "反例: 証拠破壊・過剰な緊急アクセス を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1802",
+      "title": "情報資産・機密分類",
+      "parent": "ENT-1800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "棚卸→所有者指定→分類→取扱規則→再審査 を合成データの実画面/APIから完走する。",
+        "反例: 分類の引下げによる承認回避 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1803",
+      "title": "個人情報権利請求",
+      "parent": "ENT-1800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "受付→本人確認→対象検索→例外審査→対応→証跡 を合成データの実画面/APIから完走する。",
+        "反例: なりすまし削除・法的保全無視 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1804",
+      "title": "委託先・第三者リスク",
+      "parent": "ENT-1800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "依頼→データ/委託範囲確認→審査→契約→再評価 を合成データの実画面/APIから完走する。",
+        "反例: 再委託先への無承認開示 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1805",
+      "title": "アクセス・秘密情報棚卸",
+      "parent": "ENT-1800",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "対象抽出→所有者確認→失効/更新→反映確認 を合成データの実画面/APIから完走する。",
+        "反例: 秘密値のログ漏洩・失効後再利用 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1900",
+      "title": "データ・分析・AI運用",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-1901",
+        "ENT-1902",
+        "ENT-1903",
+        "ENT-1904",
+        "ENT-1905"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1901",
+      "title": "データ利用・提供申請",
+      "parent": "ENT-1900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "目的申告→権利/同意確認→承認→提供→期限失効 を合成データの実画面/APIから完走する。",
+        "反例: 目的外再利用・集計からの個人再識別 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1902",
+      "title": "データ品質・マスター変更",
+      "parent": "ENT-1900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "問題検知→所有者確認→変更案→承認→反映→照合 を合成データの実画面/APIから完走する。",
+        "反例: 企業/顧客の誤統合・下流不整合 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1903",
+      "title": "指標・BIレポート",
+      "parent": "ENT-1900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "定義→データ系譜→検証→公開承認→更新 を合成データの実画面/APIから完走する。",
+        "反例: 部門別数値不一致・少数集団漏洩 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1904",
+      "title": "AI導入・モデル評価",
+      "parent": "ENT-1900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "用途申請→リスク評価→評価データ→承認→配備→監視 を合成データの実画面/APIから完走する。",
+        "反例: 未承認モデルへの機密転送・評価の使い回し を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-1905",
+      "title": "AIエージェント運用",
+      "parent": "ENT-1900",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "権限/予算設定→試験→承認→実行→監視→停止 を合成データの実画面/APIから完走する。",
+        "反例: ツール権限逸脱・停止後の予約処理実行 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2000",
+      "title": "総務・施設・安全衛生",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-2001",
+        "ENT-2002",
+        "ENT-2003",
+        "ENT-2004"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2001",
+      "title": "施設・オフィス運営",
+      "parent": "ENT-2000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "利用申請→承認→手配→点検→精算 を合成データの実画面/APIから完走する。",
+        "反例: 機密区域への無承認入室 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2002",
+      "title": "来訪者・物理アクセス",
+      "parent": "ENT-2000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "招待→本人確認→期間付許可→入退場→失効 を合成データの実画面/APIから完走する。",
+        "反例: 代理招待悪用・退場後の入館権限 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2003",
+      "title": "労働安全・健康配慮",
+      "parent": "ENT-2000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "事象受付→機密分離→有資格者判断→措置→確認 を合成データの実画面/APIから完走する。",
+        "反例: 健康情報の管理職全員への開示 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2004",
+      "title": "不動産・拠点管理",
+      "parent": "ENT-2000",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "要件→比較→法務/投資審査→契約→更新/撤退 を合成データの実画面/APIから完走する。",
+        "反例: 更新期限漏れ・承認額超過 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2100",
+      "title": "サステナビリティ・社会的責任",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-2101",
+        "ENT-2102",
+        "ENT-2103",
+        "ENT-2104"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2101",
+      "title": "環境・排出量集計",
+      "parent": "ENT-2100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "データ収集→算定根拠→検証→承認→開示連携 を合成データの実画面/APIから完走する。",
+        "反例: 二重計上・根拠のない環境表示 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2102",
+      "title": "人権・サプライチェーン調査",
+      "parent": "ENT-2100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "対象選定→調査→リスク判定→改善要求→確認 を合成データの実画面/APIから完走する。",
+        "反例: 回答者特定・不利情報の隠蔽 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2103",
+      "title": "社会貢献・寄付",
+      "parent": "ENT-2100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "提案→受益者/利益相反確認→承認→実施→報告 を合成データの実画面/APIから完走する。",
+        "反例: 贈収賄目的の寄付・二重支出 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2104",
+      "title": "非財務開示・保証",
+      "parent": "ENT-2100",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "指標定義→収集→根拠レビュー→承認→開示 を合成データの実画面/APIから完走する。",
+        "反例: IR数値との不一致・未保証値の保証済表示 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2200",
+      "title": "全社横断・グループ経営・変革",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-2201",
+        "ENT-2202",
+        "ENT-2203",
+        "ENT-2204",
+        "ENT-2205"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2201",
+      "title": "戦略から実行・評価",
+      "parent": "ENT-2200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "戦略→予算→部門目標→実行→評価→再配分 を合成データの実画面/APIから完走する。",
+        "反例: 部門最適による全社制約違反 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2202",
+      "title": "プロジェクト・人員配置",
+      "parent": "ENT-2200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "案件→能力/負荷確認→配置承認→実行→完了 を合成データの実画面/APIから完走する。",
+        "反例: 過剰配置・機密案件への不適格者割当 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2203",
+      "title": "M&A・組織再編",
+      "parent": "ENT-2200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "案件→情報隔壁→DD→承認→統合→統制再設定 を合成データの実画面/APIから完走する。",
+        "反例: 未公表情報漏洩・買収前の権限統合 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2204",
+      "title": "海外・子会社運営",
+      "parent": "ENT-2200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "法人/法域登録→権限委譲→報告→取引照合→監査 を合成データの実画面/APIから完走する。",
+        "反例: 越境移転違反・本社権限による子会社境界無視 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2205",
+      "title": "事業売却・サービス終了",
+      "parent": "ENT-2200",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "対象確定→義務確認→通知承認→移管/削除→完了 を合成データの実画面/APIから完走する。",
+        "反例: 保全データ削除・残存契約の放置 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2300",
+      "title": "業種固有パッケージ・適用範囲管理",
+      "parent": "ENT-000",
+      "dependsOn": [],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "全子Issueの業務固有の正常/拒否/障害復旧を画面/APIで独立検証する。",
+        "隣接部門との責任移管・情報境界・実行結果を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-2301",
+        "ENT-2302",
+        "ENT-2303",
+        "ENT-2304"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2301",
+      "title": "小売・飲食・サービス拠点",
+      "parent": "ENT-2300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "予約/受注→現場割当→提供→精算→例外処理 を合成データの実画面/APIから完走する。",
+        "反例: 店舗境界漏洩・二重予約 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2302",
+      "title": "専門サービス・受託事業",
+      "parent": "ENT-2300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "案件審査→見積→工数→成果物審査→検収→請求 を合成データの実画面/APIから完走する。",
+        "反例: 顧客間機密漏洩・未検収請求 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2303",
+      "title": "規制業種パッケージ受入",
+      "parent": "ENT-2300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "業種/法域選定→専門家による要件定義→追加Issue→検証→適用承認 を合成データの実画面/APIから完走する。",
+        "反例: 金融/医療等を未検証の汎用承認だけで対応済と扱う を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2304",
+      "title": "企業別業務棚卸・適用審査",
+      "parent": "ENT-2300",
+      "dependsOn": [
+        "ENT-103",
+        "ENT-104",
+        "ENT-105",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112",
+        "ENT-113",
+        "ENT-114",
+        "ENT-115",
+        "ENT-116",
+        "ENT-117",
+        "ENT-118",
+        "ENT-119"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "既存の22業務を超える追加範囲。汎用基盤のみで対応済とせず、業務固有の状態遷移・権限制約・画面・反例・復旧を実装/検証する。",
+      "acceptance": [
+        "組織/法人棚卸→業務列挙→要件対応→不足Issue→受入→定期更新 を合成データの実画面/APIから完走する。",
+        "反例: 一覧にない業務を対応済とする・適用除外の無承認化 を再現し、拒否/検出/是正を確認する。",
+        "担当/承認者/情報分類/利用目的/保全期限/法域/外部効果/取消・復旧条件を定義し、現行証跡と独立レビューを保持する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      }
+    },
+    {
+      "id": "ENT-2400",
+      "title": "事業企画・管理とセマンティック情報を用いた確率・MLシミュレーション",
+      "parent": "ENT-000",
+      "dependsOn": [
+        "ENT-301",
+        "ENT-1900"
+      ],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "既存の経営予算・BI・AI導入管理だけでは、事業ドライバー、リソース制約、時点付き情報と予測モデルをつなぐ意思決定フローの仕様・実装・検証が不足する。",
+      "acceptance": [
+        "全子Issueの独立検証を完了する。",
+        "予算・予実・資源計画からシミュレーション、承認、実績追跡までを部門横断の画面/APIで実演する。",
+        "不確実性と適用限界を示し、データを接続しただけで精度向上や因果推論の成立を保証しない。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-2401",
+        "ENT-2402",
+        "ENT-2403",
+        "ENT-2404",
+        "ENT-2405",
+        "ENT-2406",
+        "ENT-2411",
+        "ENT-2412",
+        "ENT-2413",
+        "ENT-2414",
+        "ENT-2415"
+      ],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2401",
+      "title": "事業別のドライバー予算策定",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-301",
+        "ENT-2411"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "事業・製品・顧客セグメント別に販売数量、価格、契約継続率、原価、人員等から予算案を作成し、版・前提・責任者を管理する。",
+        "部門予算と全社予算への集約、内部取引消去、期間・通貨・配賦基準をENT-301と共有し、二重計上・定義不一致を拒否する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2402",
+      "title": "事業別の予実・着地見込と差異分析",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2401",
+        "ENT-1903"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "確定実績、予算、最新見込を区別し、価格・数量・構成・時期・配賦の差異から原資料と指標定義へ遡れる。",
+        "遅延実績、修正仕訳、組織変更、欠損、締め済み期間の再計算を検証し、実績の改変で予算に合わせない。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2403",
+      "title": "人員・費用・設備・処理能力のリソース計画",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2401",
+        "ENT-2411"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "人員、スキル、稼働時間、採用リードタイム、外注、設備容量、支出枠を事業・施策・期間に対応付け、競合・不足・稼働率を表示する。",
+        "兼務の二重割当、利用不能なスキル、容量上限、期間重複を検出し、個人情報の閲覧制約を集計・推計結果にも適用する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2404",
+      "title": "確率シミュレーションによる事業シナリオ比較",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2402",
+        "ENT-2403",
+        "ENT-2412",
+        "ENT-2413",
+        "ENT-2414"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "価格変更、採用、販促投資、顧客継続率、需要・供給制約の施策を同じ時点・定義のデータで比較し、売上・利益・資金・リソースの分布、目標達成確率、感度を画面で確認する。",
+        "悲観・基準・楽観と確率的な結果を区別し、相関、外部ショック、裾の損失、前提変更の影響を示す。観測上の関連を施策の因果効果と断定しない。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2405",
+      "title": "シミュレーションから事業計画への承認・反映",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2404",
+        "ENT-104",
+        "ENT-105"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "比較結果から施策を選び、根拠・制約・リスク・担当者を添えて承認し、承認された版だけを予算・人員計画の変更案へ反映する。",
+        "試算が確定予算や発注・採用・支出を直接変更しない。変更後の再承認、競合、取消、部分反映、重複イベントと再起動を検証する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2406",
+      "title": "ローリングフォーキャストと施策効果の追跡",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2405",
+        "ENT-2415"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "実績更新で見込を再計算し、過去の予測を上書きせず予測時点別に誤差・区間被覆率・意思決定と結果を比較する。",
+        "データ・モデルの劣化、外挿、前提逸脱を検出した場合は結果の有効性を下げ、責任者による見直しを追跡する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2411",
+      "title": "事業計画用セマンティックデータ契約",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-103",
+        "ENT-113",
+        "ENT-1901",
+        "ENT-1902",
+        "ENT-1903"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "事業、製品、案件、契約、売上、費用、人員、設備、施策とKPIをOntology上で関連付け、粒度、単位、通貨、会計期間、有効時点、定義版、系譜を持たせる。",
+        "文言やベクトル類似度だけで結合せず、型・キー・集計規則を検証し、予測時点で利用可能だったデータだけを利用する。",
+        "行・列・目的・未開示情報の制約を特徴量、集計、学習、モデル成果物、試算出力まで伝播し、権限外の情報を推論出力から漏らさない。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2412",
+      "title": "確率モデルと不確実性の表現・評価",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2411"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "確率分布、依存関係、相関、推定パラメータ、制約と外部ショックを版管理し、Monte Carlo等で再現可能に計算する。",
+        "観測ノイズ、パラメータ推定、モデル仮定による不確実性を区別し、分位点・区間・目標達成確率・感度と適用範囲を出力する。",
+        "既知解の合成モデルで分布・相関・収束を検証し、乱数seed、試行回数、不正分布、計算打切りを記録する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2413",
+      "title": "機械学習による予測モデルの学習・検証・登録",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2411",
+        "ENT-1904"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "需要、解約、単価、原価等の予測対象と利用目的を明示し、時点に沿う学習・検証・独立評価を行う。単純な予測基準との比較と確率校正を示す。",
+        "将来情報の混入、時間・顧客をまたぐ漏洩、過学習、選択バイアス、外挿とデータ偏りを検査する。精度目標は評価前に用途別に定義し、未達を合格としない。",
+        "学習データ、特徴量定義、モデル、環境、評価結果、承認、有効期限を関連付け、未承認モデルへの機密転送を拒否する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2414",
+      "title": "再現可能なシミュレーション実行基盤",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2411",
+        "ENT-2412",
+        "ENT-106",
+        "ENT-108",
+        "ENT-112"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "入力スナップショット、データ定義、モデル、コード、パラメータ、乱数seed、実行環境を固定し、計算ジョブと出力を追跡する。",
+        "計算時間・費用・資源上限、キャンセル、隔離、権限失効、再試行を実装し、未完了・失敗・古い結果を成功扱いしない。",
+        "再現許容差を事前定義して同一入力の再計算を照合し、途中結果・再試行・並行実行の混同と承認済み結果の差替えを拒否する。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2415",
+      "title": "事業計画とモデルの横断受入検証",
+      "parent": "ENT-2400",
+      "dependsOn": [
+        "ENT-2401",
+        "ENT-2402",
+        "ENT-2403",
+        "ENT-2404",
+        "ENT-2405",
+        "ENT-2413",
+        "ENT-2414"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "新規要件。実装・API/画面・数値検証・独立レビューは未完了。",
+      "acceptance": [
+        "合成企業で営業・マーケティング・人事・財務の権限付きデータから、予算策定→予実→資源制約→確率試算→施策比較→承認→実績追跡をAPIと実画面で検証する。",
+        "独立した期待値・既知分布と基準予測を使用し、未来情報漏洩、未開示混入、単位不整合、権限外集計、取消競合、再起動を反例に含める。",
+        "モデル評価、業務受入、本番接続の検証範囲を区別し、現行コード・入力・出力・実行結果に結び付いた独立レビューまで完了にしない。",
+        "現行ソース・入力・出力・実行結果に結び付いた証拠と独立レビューを添付し、拒否・競合・失効・障害復旧を検証する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2500",
+      "title": "情報の状態・利用条件の継続管理",
+      "parent": "ENT-000",
+      "dependsOn": [
+        "ENT-113",
+        "ENT-114"
+      ],
+      "kind": "epic",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "全子IssueのAPI・画面・永続化・障害復旧・独立レビューを完了する。",
+        "事実の状態、機密性、公開範囲、利用権限、公開後に必要な業務を別々に管理し、情報が現在どの条件で利用可能か説明できる。",
+        "検討中→破談→過去情報、および検討中→公表→媒体更新を合成企業の情報で実演し、実公表や実取引は行わない。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [
+        "ENT-2501",
+        "ENT-2502",
+        "ENT-2503",
+        "ENT-2504",
+        "ENT-2505",
+        "ENT-2506"
+      ],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2501",
+      "title": "時点・版・根拠を持つ情報状態モデル",
+      "parent": "ENT-2500",
+      "dependsOn": [
+        "ENT-102",
+        "ENT-113"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "情報単位に対象案件・法人、事実の状態、機密性、公開済み範囲、利用目的、有効期間、責任者、根拠、原本版を保持し、文書内の部分情報にも適用する。",
+        "業務上の有効時点とシステムが把握した記録時点を分ける。破談や訂正は過去の事実を消さず、履歴・現行見解・当時把握可能だった情報を区別する。",
+        "状態遷移の権限・必要な承認・根拠を定義し、不明、期限切れ、矛盾する情報を利用可へ自動変更しない。更新責任者と再確認期限を持たせ、期限超過を可視化する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2502",
+      "title": "役割・案件・目的・出力先ごとの動的利用判定",
+      "parent": "ENT-2500",
+      "dependsOn": [
+        "ENT-2501",
+        "ENT-104",
+        "ENT-105"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "経営・担当・部門等のレイヤーを固定的な役職順位とせず、案件参加、情報隔壁、法人、行・項目権限、目的、出力先、現在の情報版を組み合わせて読取り・生成・承認・配布を個別判定する。",
+        "内部閲覧可能でも公開プレゼンへの混入は拒否し、集計・引用・要約・AI生成物には元情報の制約と系譜を伝播する。公開された項目だけを公開用の事実として利用でき、未公開の条件・評価・個人情報を解禁しない。",
+        "生成時だけでなく承認時・配信直前・再試行時にも現行権限と状態を確認する。並行する取消・失効と配信の順序を定義し、版の照合と業務効果の確定を整合させ、既送信の場合は事実を隠さず訂正対象へ記録する。",
+        "過去時点の分析も現在のアクセス権限で制御し、過去に権限があったことを現在の閲覧許可に転用しない。拒否理由は権限外の案件の存在や秘密を漏らさず監査できる。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2503",
+      "title": "変更イベントの反映・失効と情報鮮度の照合",
+      "parent": "ENT-2500",
+      "dependsOn": [
+        "ENT-2501",
+        "ENT-2502",
+        "ENT-108"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "責任者が承認した原本の変更イベントと定期照合の両方で状態を更新する。イベントの重複、順序逆転、欠落、通信断、再起動に対し単調な版と再処理を持ち、古い状態へ戻さない。",
+        "検索索引、ベクトル索引、キャッシュ、会話履歴からの再利用、生成途中・予約済み資料、特徴量・試算出力まで参照関係から影響を特定し、更新・利用停止・再承認を追跡する。利用境界で現行状態を検査し、非同期再索引の遅れを漏えい窓にしない。",
+        "情報源と反映先の版・確認時刻・更新遅延・失敗・担当者を画面で示す。許容鮮度を超えた情報や公開状態不明の情報で外部配布を続行せず、照合・再審査待ちとする。",
+        "学習済みモデルから削除済み情報が即座に消えると主張しない。影響するモデルの利用制限、隔離、再学習・再検証の必要性と未対応範囲を追跡する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2504",
+      "title": "M&Aの検討・破談・公表と履歴の適切な利用",
+      "parent": "ENT-2500",
+      "dependsOn": [
+        "ENT-2502",
+        "ENT-2503"
+      ],
+      "kind": "use-case",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "検討中の案件は案件権限者のみが利用でき、公開プレゼン・検索・AI回答・外部配布への混入を拒否する。案件名だけからも存在が漏れないことを検証する。",
+        "破談を権限者の根拠付き更新として扱い、検討を終了し将来の成立予定として使わない。過去に検討した事実は適切な権限下で保持し、破談を自動公開や一律削除の理由にしない。保存期限・保全指示も適用する。",
+        "公表予定、正式公表、契約締結、取引完了を別の事実として扱う。正式媒体で承認済み版の公開を確認した範囲のみ公開可能にし、公表を取引完了と取り違えない。",
+        "公開部分と機密の取引条件が混在する資料から、公開用資料を項目単位に作成する。後日の訂正・破談・完了に伴う状態変化を既存資料と予測の利用へ反映する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6.1-sol/medium",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2505",
+      "title": "公表後の利用促進・媒体更新と訂正の追跡",
+      "parent": "ENT-2500",
+      "dependsOn": [
+        "ENT-2503",
+        "ENT-114"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "外部利用が許可された状態と、公開・更新すべき業務上の義務を分ける。承認済み方針によりHP・SNS・営業資料・FAQ等の更新対象、担当、期限、公開項目を決定し、更新依頼を起動する。",
+        "予定時刻だけでは解禁しない。正式媒体の公開証拠と対象版を確認し、遅延・失敗・取消・不明では後続公開を止める。下書きの準備と外部公開の権限を分ける。",
+        "反映先ごとの部分成功、結果不明、再試行、重複防止、内容・版の照合を追跡する。訂正・撤回では公開済みの履歴を消さず、回収不能な配布物と是正状況を記録する。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "ENT-2506",
+      "title": "情報状態の変化を跨ぐAPI・画面・復旧検証",
+      "parent": "ENT-2500",
+      "dependsOn": [
+        "ENT-2504",
+        "ENT-2505"
+      ],
+      "kind": "implementation",
+      "status": "OPEN",
+      "gap": "継続的な情報状態・鮮度・利用条件の更新を業務横断で保証する実装と検証は未完了。",
+      "acceptance": [
+        "検討中→破談、検討中→部分公表→完了、公開後訂正の各経路を、閲覧可能な担当者と権限外の利用者・外部公開先でAPIと実画面から検証する。",
+        "承認後の版差替え、生成中の失効、配信と取消の競合、古い会話・索引・キャッシュ、イベント欠落・逆順・重複、部分成功、通信断・再起動・復元、更新期限超過の反例で漏えい・誤利用・重複配布を検証する。",
+        "確率・MLシミュレーションでも、破談案件を成立見込みのまま利用しない。当時の見通しの再現と現在の見通しを区別し、採用情報の版・時点・除外理由を追跡する。",
+        "現行入力・ソース・出力・実行証拠と別セッションの独立レビューを結び付ける。既存DISC-01〜10も対応付け、未検証の業務・外部接続を完成扱いにしない。"
+      ],
+      "evidence": [],
+      "github": null,
+      "children": [],
+      "models": {
+        "implementation": "gpt-6-astra/high",
+        "review": "gpt-6-astra/high"
+      },
+      "integrationStatus": "PENDING_TAKT_DESIGN_AND_INDEPENDENT_REVIEW"
     }
-  ]
+  ],
+  "scopeRevision": 4,
+  "scopeAuthority": "2026-10-21: user requires continuously updated information states and access layers, including confidential M&A consideration, deal break, historical facts, public disclosure and appropriate downstream use; extends revision 3 business planning scope."
 }

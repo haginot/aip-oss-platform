@@ -147,6 +147,7 @@
         "verification/plan.json",
         "src",
         "tests",
+        "fixtures",
         "config",
         "migrations",
         "scripts",
@@ -168,7 +169,7 @@
       "outputs": [
         "evidence/generated/release/full-release-regression.json"
       ],
-      "timeoutMs": 650000
+      "timeoutMs": 1250000
     },
     {
       "id": "foundation-local-contracts",

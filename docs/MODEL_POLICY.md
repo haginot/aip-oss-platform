@@ -4,7 +4,7 @@
 
 全工程をAstraへ割り当てず、限定的な整理はLuna、設計・実装はSol、影響の大きい独立監査はAstraへ割り当てる。モデルだけで品質を保証せず、現在の入力に対する機械検証、別sessionのreview、反例と障害注入を組み合わせる。
 
-正本は `.takt/runtime.yaml` と `.takt/workflows/platform-lifecycle.yaml`。TAKT 0.70.0の実際のcompilerとpromotion resolverを使う `npm run platform:routing` と回帰テストで解決結果を確認する。TAKT更新時はprivate APIへの依存も含めて再検証する。グローバルのCodex/TAKT設定は変更しない。
+正本は `.takt/runtime.yaml` と `.takt/workflows/platform-lifecycle.yaml`。TAKT 0.71.0の実際のcompilerとpromotion resolverを使う `npm run platform:routing` と回帰テストで解決結果を確認する。TAKT更新時はprivate APIへの依存も含めて再検証する。グローバルのCodex/TAKT設定は変更しない。
 
 | Profile | モデル | 推論設定 | 用途 |
 |---|---|---|---|

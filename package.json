@@ -31,12 +31,13 @@
     "release:test": "node scripts/platform-control.mjs run-stage release"
   },
   "devDependencies": {
-    "takt": "0.70.0",
+    "takt": "0.71.0",
     "typescript": "5.9.3",
     "yaml": "2.9.1"
   },
   "overrides": {
-    "adm-zip": "0.6.1"
+    "adm-zip": "0.6.1",
+    "ip-address": "10.7.4"
   },
   "dependencies": {
     "pg": "8.16.3"

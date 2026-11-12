@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-11T17:55:27.810Z",
+  "checkedAt": "2026-10-19T15:39:22.001Z",
   "transport": "takt-codex-provider",
   "cli": {
     "path": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
     "version": "0.162.0-alpha.17.2"
   },
-  "runtimeDigest": "579ee4d14d186a55ea227e280dcffb83f3b07b7839eef05ea803dd56f3e07c19",
+  "runtimeDigest": "4ea591660a4892fdbb21c51fdf5ced09d3861508fa0511b1700aeae3c8ba8574",
   "status": "passed",
   "results": [
     {
@@ -15,9 +15,9 @@
       "status": "passed",
       "providerStatus": "done",
       "usage": {
-        "inputTokens": 16294,
+        "inputTokens": 15120,
         "outputTokens": 5,
-        "totalTokens": 16299,
+        "totalTokens": 15125,
         "usageMissing": false,
         "cachedInputTokens": 0
       }
@@ -28,9 +28,9 @@
       "status": "passed",
       "providerStatus": "done",
       "usage": {
-        "inputTokens": 15752,
+        "inputTokens": 15812,
         "outputTokens": 5,
-        "totalTokens": 15757,
+        "totalTokens": 15817,
         "usageMissing": false,
         "cachedInputTokens": 0
       }
@@ -41,11 +41,11 @@
       "status": "passed",
       "providerStatus": "done",
       "usage": {
-        "inputTokens": 15752,
+        "inputTokens": 15812,
         "outputTokens": 5,
-        "totalTokens": 15757,
+        "totalTokens": 15817,
         "usageMissing": false,
-        "cachedInputTokens": 15616
+        "cachedInputTokens": 7168
       }
     },
     {
@@ -54,11 +54,11 @@
       "status": "passed",
       "providerStatus": "done",
       "usage": {
-        "inputTokens": 15688,
+        "inputTokens": 15748,
         "outputTokens": 5,
-        "totalTokens": 15693,
+        "totalTokens": 15753,
         "usageMissing": false,
-        "cachedInputTokens": 0
+        "cachedInputTokens": 7168
       }
     }
   ]

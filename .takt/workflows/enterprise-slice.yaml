@@ -1,0 +1,140 @@
+name: enterprise-slice
+description: Timeboxed ENT-201 development slice; full enterprise acceptance remains pending.
+max_steps: 5
+initial_step: slice-plan
+steps:
+  - name: slice-plan
+    session_key: enterprise-slice-planner-20261027
+    persona: platform-architect
+    capabilities: readonly
+    edit: false
+    instruction: |
+      This is the supervisor-authorized process intervention of 2026-10-27. Target ONLY ENT-201 (購買稟議・見積比較・発注). All other enterprise Issues remain backlog, with all original acceptance/security requirements retained.
+      Inspect ENT-201's specification, its dependency contracts and actual existing implementation. Produce a concrete plan for one API/browser business flow, relevant negative cases and recovery. Map each of its four ACs to real source and tests. Identify which prerequisites exist and which are missing or lack current approval. Implementation may produce an explicitly unaccepted candidate; missing prerequisite approval must never become a forged pass.
+      Use existing public Kernel/authorization/Action/Outbox/Audit contracts. Keep protected evidence and the old active B04 history unchanged. Do not repair the old run-history migration/writer infrastructure, regenerate global receipts, expand scope, redesign the entire platform, or extend this budget. Those are separate pending work. If the one business slice cannot be implemented safely without that work, report the exact minimal blocker and stop.
+      This run has at most five steps, one correction attempt and 90 minutes total. It is not permission to declare ENT-201 VERIFIED, close Issues, or declare the enterprise complete. Reports must distinguish candidate behavior, independently checked behavior, unmet dependencies and full acceptance.
+    output_contracts:
+      report:
+        - name: slice-01-plan.md
+          format: |
+            # ENT-201 bounded implementation plan
+            ## Four ACs and executable checks
+            ## Existing and missing dependency contracts
+            ## Exact implementation scope
+            ## Remaining acceptance and blockers
+    rules:
+      - condition: A safe concrete ENT-201 candidate can be implemented within the fixed scope
+        next: slice-implement
+      - condition: Safe implementation requires work outside this slice or an unresolved indispensable prerequisite
+        next: ABORT
+  - name: slice-implement
+    session_key: enterprise-slice-builder-20261027
+    persona: platform-engineer
+    capabilities: edit
+    edit: true
+    instruction: |
+      Implement ONLY the ENT-201 slice described in slice-01-plan.md using the current product's public contracts. Target the real purchase-request, quotation comparison, budget/SoD approval, order and receipt path in API and browser with synthetic data, including the specified negative and recovery cases. Preserve every original AC, existing changes, failed tests and protected evidence. No stubs or direct-DB business bypasses may substitute for missing contracts.
+      Add and execute meaningful ENT-201 tests (tests/enterprise/ENT-201.test.mjs and ENT-201.browser.test.mjs), using the existing pinned real-browser driver and durable fixture. Capture actual command, exit, assertion count, input hashes and changed source paths in the report. Existing global verification remains pending; do not create a replacement receipt/approval pipeline or modify the old progress/history to make this candidate pass. Do not mark Issues VERIFIED or close anything.
+      Spend the available time on this business flow, not general verification infrastructure. If an essential prerequisite cannot be addressed as a small direct part of this flow, leave a minimal reproducible blocker and stop. One implementation and at most one review correction are allowed; no budget extensions, planning loops or additional batches.
+    quality_gates:
+      - type: command
+        name: ENT-201-api
+        command: "mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.test.mjs"
+        cwd: "."
+        timeout_ms: 600000
+      - type: command
+        name: ENT-201-browser
+        command: "mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.browser.test.mjs"
+        cwd: "."
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: slice-02-implementation.md
+          format: |
+            # ENT-201 candidate implementation
+            ## Changes and four-AC mapping
+            ## Actual commands, exits, assertions and hashes
+            ## Negative and recovery cases
+            ## Unmet dependencies and acceptance limits
+    rules:
+      - condition: The scoped candidate has passed its real API and browser tests and is ready for independent review
+        next: slice-review
+      - condition: Implementation or tests are incomplete, blocked or require work outside the fixed scope
+        next: ABORT
+        command_gates: skip
+  - name: slice-review
+    session_key: enterprise-slice-reviewer-20261027
+    persona: adversarial-reviewer
+    capabilities: readonly
+    edit: false
+    instruction: |
+      Independently review ONLY the ENT-201 candidate against its unchanged four ACs and required dependency contracts, actual source, API/browser execution, negative authorization, approval binding, duplicate-order prevention, recovery and exact current input hashes. Require observable evidence; passing generic tests or historical approval is insufficient. Identify actionable findings and reproduce them where possible.
+      Keep candidate review separate from formal full-product acceptance. Do not mark an Issue VERIFIED, approve old global receipts or claim the enterprise complete. Missing current dependency/global approval must be stated. A blocker caused by absent safety/domain contracts is not an accepted candidate. At most one bounded correction may follow this review; do not request an architecture redesign or new verification framework.
+    output_contracts:
+      report:
+        - name: slice-03-review.md
+          format: |
+            # Independent ENT-201 candidate review
+            ## Candidate verdict and four-AC evidence
+            ## Reproduced blocking findings
+            ## Exact hashes and reviewer session
+            ## Outstanding formal acceptance
+    rules:
+      - condition: The ENT-201 candidate behavior passes scoped independent review with all remaining formal acceptance explicitly recorded
+        next: COMPLETE
+      - condition: Concrete findings can be corrected within this same ENT-201 slice and remaining budget
+        next: slice-repair
+      - condition: Missing contracts or findings require work beyond this slice or the remaining budget
+        next: ABORT
+  - name: slice-repair
+    session_key: enterprise-slice-builder-20261027
+    persona: platform-engineer
+    capabilities: edit
+    edit: true
+    instruction: |
+      Make the ONE allowed correction to the ENT-201 candidate based on slice-03-review.md. Keep the original four ACs and safety contracts. Re-run the affected real tests and both scoped API/browser gates. Record exact evidence and remaining global acceptance; never edit old evidence, close Issues or extend the slice. If the same cause remains or a broader change is required, report a minimal reproducer and stop.
+    quality_gates:
+      - type: command
+        name: ENT-201-api
+        command: "mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.test.mjs"
+        cwd: "."
+        timeout_ms: 600000
+      - type: command
+        name: ENT-201-browser
+        command: "mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.browser.test.mjs"
+        cwd: "."
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: slice-04-correction.md
+          format: |
+            # ENT-201 single correction
+            ## Finding and exact repair
+            ## Actual commands and current evidence
+            ## Remaining limitations
+    rules:
+      - condition: The correction has passed both real scoped test suites
+        next: slice-final-review
+      - condition: The same cause remains, testing fails or broader work is needed
+        next: ABORT
+        command_gates: skip
+  - name: slice-final-review
+    session_key: enterprise-slice-final-reviewer-20261027
+    persona: adversarial-reviewer
+    capabilities: readonly
+    edit: false
+    instruction: |
+      Independently check the single ENT-201 correction and recheck its unchanged four ACs, safety dependencies and fresh API/browser evidence against current hashes. A repeated cause, failed or missing evidence, or a missing safety contract requires ABORT. No further correction or budget extension is allowed. Completion means only this bounded candidate milestone. List all unmet formal dependency/global acceptance and all other enterprise work; do not mark Issues VERIFIED or claim full completion.
+    output_contracts:
+      report:
+        - name: slice-05-final-review.md
+          format: |
+            # Final ENT-201 candidate decision
+            ## Scoped verdict and exact evidence
+            ## Repeated or unresolved findings
+            ## Outstanding formal acceptance and next minimum task
+    rules:
+      - condition: The corrected ENT-201 candidate passes independent scoped review with outstanding formal acceptance clearly recorded
+        next: COMPLETE
+      - condition: Any blocking finding or missing evidence remains
+        next: ABORT

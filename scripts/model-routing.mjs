@@ -9,7 +9,7 @@ import { resolveStepProviderModel } from '../node_modules/takt/dist/core/workflo
 import { resolvePromotionRuntime } from '../node_modules/takt/dist/core/workflow/promotion/promotion-runtime.js';
 import { resolveProfileScopedProviderOptionsLayers } from '../node_modules/takt/dist/infra/config/providerOptions.js';
 
-// TAKT 0.70.0の実際のcompiler/resolverを使用する。更新時はrouting testも更新する。
+// TAKT 0.71.0の実際のcompiler/resolverを使用する。更新時はrouting testで配分を再検証する。
 export async function routes(root, { globalConfigDir = getGlobalConfigDir() } = {}) {
   const file = resolveRuntimeProviderFile({ globalConfigDir, projectConfigDir: resolve(root, '.takt') });
   const env = compileProviderEnvironment({ kind: 'runtime-v1', section: file.provider });

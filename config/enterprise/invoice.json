@@ -1,0 +1,224 @@
+{
+  "id": "enterprise-invoice",
+  "version": "1.0.0",
+  "types": {
+    "LegalEntity": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "Department": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "Case": {
+      "title": {
+        "type": "string",
+        "classification": "INTERNAL"
+      },
+      "amount": {
+        "type": "integer",
+        "classification": "CONFIDENTIAL"
+      },
+      "currency": {
+        "type": "string",
+        "classification": "INTERNAL"
+      },
+      "memo": {
+        "type": "string",
+        "classification": "RESTRICTED"
+      }
+    },
+    "Employment": {
+      "name": {
+        "type": "string",
+        "classification": "RESTRICTED"
+      }
+    },
+    "Position": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "Classification": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "InvoicePayment": {
+      "invoiceId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "invoiceRevision": {
+        "type": "integer",
+        "classification": "CONFIDENTIAL"
+      },
+      "purchaseId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "sourceDigest": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "supplierId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "amount": {
+        "type": "integer",
+        "classification": "CONFIDENTIAL"
+      },
+      "currency": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "accountId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "accountRevision": {
+        "type": "integer",
+        "classification": "CONFIDENTIAL"
+      },
+      "accountDigest": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "operationKind": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "destination": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "syntheticReference": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      }
+    }
+  },
+  "form": [
+    {
+      "field": "invoiceId",
+      "label": "invoiceId"
+    },
+    {
+      "field": "invoiceRevision",
+      "label": "invoiceRevision"
+    },
+    {
+      "field": "purchaseId",
+      "label": "purchaseId"
+    },
+    {
+      "field": "sourceDigest",
+      "label": "sourceDigest"
+    },
+    {
+      "field": "supplierId",
+      "label": "supplierId"
+    },
+    {
+      "field": "amount",
+      "label": "amount"
+    },
+    {
+      "field": "currency",
+      "label": "currency"
+    },
+    {
+      "field": "accountId",
+      "label": "accountId"
+    },
+    {
+      "field": "accountRevision",
+      "label": "accountRevision"
+    },
+    {
+      "field": "accountDigest",
+      "label": "accountDigest"
+    },
+    {
+      "field": "operationKind",
+      "label": "operationKind"
+    },
+    {
+      "field": "destination",
+      "label": "destination"
+    },
+    {
+      "field": "syntheticReference",
+      "label": "合成口座参照"
+    }
+  ],
+  "action": {
+    "name": "InvoicePayment",
+    "type": "InvoicePayment"
+  },
+  "route": [
+    {
+      "approvers": [
+        "manager",
+        "reviewer"
+      ],
+      "quorum": 2
+    },
+    {
+      "approvers": [
+        "publisher"
+      ],
+      "quorum": 1
+    }
+  ],
+  "amountRoutes": [],
+  "permissions": {
+    "create": "action",
+    "approve": "approve"
+  },
+  "fixtures": [
+    {
+      "fields": {
+        "invoiceId": "synthetic",
+        "invoiceRevision": 1,
+        "purchaseId": "synthetic",
+        "sourceDigest": "synthetic",
+        "supplierId": "synthetic",
+        "amount": 1,
+        "currency": "JPY",
+        "accountId": "synthetic",
+        "accountRevision": 1,
+        "accountDigest": "synthetic",
+        "operationKind": "synthetic",
+        "destination": "synthetic",
+        "syntheticReference": "synthetic:account"
+      },
+      "expected": "valid"
+    },
+    {
+      "fields": {
+        "invoiceId": "invalid"
+      },
+      "expected": "invalid"
+    }
+  ],
+  "calendar": {
+    "timezone": "Asia/Tokyo",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "holidays": [],
+    "businessDays": 2
+  }
+}

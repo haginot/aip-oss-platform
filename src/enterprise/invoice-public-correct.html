@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>請求書の訂正</title>
+<style>body{font:16px sans-serif;max-width:850px;margin:2rem auto;padding:1rem}label{display:block;margin:1rem 0}input,select,button{font:inherit;padding:.4rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}button{margin:.5rem}:focus-visible{outline:3px solid #1464c0}</style>
+<h1>請求書の訂正</h1><p>請求書IDから現在の内容を読み込み、訂正します。発注と現在版は変更できません。</p>
+<p id="identity"></p><p id="message" role="status" aria-live="polite"></p>
+<button id="refresh" type="button">現在の参照権限を確認</button>
+<form id="correct-form" novalidate>
+<label>請求書ID<input id="invoice-id" required maxlength="128"></label><button id="lookup" type="button">請求書の現在版を読み込む</button>
+<label>発注ID<input id="purchase-id" readonly required maxlength="128"></label><label>読み込んだ現在版<input id="revision" type="number" readonly required min="1" step="1"></label>
+<section id="references" hidden><h2>現在の発注・検収</h2><pre id="source"></pre></section>
+<label>請求書番号<input id="number" required maxlength="200"></label>
+<label>取引先ID<input id="supplier-id" required maxlength="128"></label>
+<label>請求金額<input id="amount" type="number" min="1" step="1" required></label>
+<label>通貨<select id="currency" required><option value="">選択してください</option><option>JPY</option><option>USD</option><option>EUR</option></select></label>
+<label>請求数量<input id="quantity" type="number" min="1" step="1" required></label>
+<label>請求単位<input id="unit" required maxlength="200"></label>
+<label>再送キー<input id="request-key" required maxlength="128"></label>
+<button id="correct" type="submit">請求書を訂正する</button>
+</form>
+<section id="result" hidden><h2 id="result-title" tabindex="-1">訂正結果</h2><pre id="summary"></pre></section>
+<script type="module" src="/enterprise/ENT-202-correct.mjs"></script></html>

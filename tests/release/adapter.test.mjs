@@ -1,11 +1,14 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,mkdtemp,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {startCluster,fixture} from '../../scripts/foundation/runtime.mjs';
 import {IndexedPostgresState,refreshProjection,catchUpProjection,AdapterSwitch} from '../../src/adapters/indexed-postgres.mjs';
 import {seedStore} from '../../scripts/demo/seed.mjs';
 import {Kernel} from '../../src/kernel.mjs';
 import {AuthoritativeRetrieval,compareProbe} from '../../src/retrieval.mjs';
 test('persistent index: shadow semantics, corruption fence, cutover, commit/retry, stale index and rollback',async()=>{
+ const output=process.env.AIP_RELEASE_WRITE_EVIDENCE==='1'?'evidence/generated/release':await mkdtemp(join(tmpdir(),'aip-adapter-evidence-'));
  const cluster=await startCluster();let f;try{
  f=await fixture(cluster,{definitionPath:'config/store-ontology.json'});await seedStore(f);await f.owner.query(await readFile('migrations/002-search-projection.sql','utf8'));await refreshProjection(f.owner);
  const candidate=new IndexedPostgresState(f.state),k=new Kernel(candidate,f.journal),route=new AdapterSwitch(f.kernel,f.state,candidate);
@@ -33,6 +36,6 @@ test('persistent index: shadow semantics, corruption fence, cutover, commit/retr
  await f.owner.query("UPDATE principals SET stores='[]' WHERE id='operator'");const revoked=await shadow();assert.ok(revoked.every(p=>p.equal));assert.equal(revoked[0].candidate.value.count,0);
  await assert.rejects(k.search(f.credentials.manager,storeCorpus.query,{deadline:Date.now()-1}),{code:'DEADLINE_EXCEEDED'});
  await f.owner.query('UPDATE policy SET available=false');assert.ok((await shadow()).every(p=>p.equal));await assert.rejects(k.search(f.credentials.operator,{type:'InventoryPosition'}),{code:'UNAVAILABLE'});
- await mkdir('evidence/generated/release',{recursive:true});await writeFile('evidence/generated/release/adapter-trace.json',JSON.stringify({shadow:good,corruption:bad,storeCorpus,catchUpReplay:true,gapRejected:true,tombstone:true,migrationInterruption:true,revocation:true,timeout:true,checkpointRequired:true,cutover:true,reopenRevision:2,rollbackRevision:2,retryActionId:action.actionId,outboxCount:1,policyFailClosed:true},null,2)+'\n');
- }finally{await f?.close();await cluster.close();}
+ await mkdir(output,{recursive:true});await writeFile(join(output,'adapter-trace.json'),JSON.stringify({shadow:good,corruption:bad,storeCorpus,catchUpReplay:true,gapRejected:true,tombstone:true,migrationInterruption:true,revocation:true,timeout:true,checkpointRequired:true,cutover:true,reopenRevision:2,rollbackRevision:2,retryActionId:action.actionId,outboxCount:1,policyFailClosed:true},null,2)+'\n');
+ }finally{await f?.close();await cluster.close();if(process.env.AIP_RELEASE_WRITE_EVIDENCE!=='1')await rm(output,{recursive:true,force:true});}
 });

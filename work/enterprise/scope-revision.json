@@ -1,0 +1,12 @@
+{
+  "revision": 4,
+  "issues": 190,
+  "businessUseCases": 124,
+  "authority": "2026-10-21: user requires continuously updated information states and access layers, including confidential M&A consideration, deal break, historical facts, public disclosure and appropriate downstream use; extends revision 3 business planning scope.",
+  "architectureReview": "REQUIRED",
+  "previousArchitectureApprovalCoversRevision": 2,
+  "execution": "Preserve active TAKT run and useful foundation work. New Issues are captured locally; active worktree plan must be updated and independently reviewed before execution/acceptance.",
+  "companySpecificInventory": "REQUIRED before claiming deployment completeness",
+  "scopeDocument": "work/enterprise/INFORMATION_LIFECYCLE_EXPANSION.md",
+  "previousScopeDocument": "work/enterprise/BUSINESS_PLANNING_EXPANSION.md"
+}

@@ -1,5 +1,5 @@
 name: enterprise-lifecycle
-description: Deliver all 22 enterprise workflows with persisted governance, usable UI, failure evidence and independent review.
+description: Deliver all catalogued enterprise workflows with persisted governance, usable UI, failure evidence and independent review.
 max_steps: 60
 initial_step: design-architecture
 steps:
@@ -11,10 +11,10 @@ steps:
     capabilities: edit
     edit: true
     instruction: |
-      Read work/enterprise/DELIVERY.md, backlog.json and each issue specification. They extend the store-only scope under the current user instruction; preserve original ACs.
+      Read work/enterprise/DELIVERY.md, SCOPE_EXPANSION.md, backlog.json and each issue specification. Scope revision 2 supersedes the original 52-Issue/22-use-case limits; revise plan and coverage and independently review the expanded scope. They extend the store-only scope under the current user instruction; preserve original ACs.
       Inspect c66f5d5 product code and current baseline evidence. Preserve pre-existing changes. Read the previous final audit.
       Design the complete enterprise architecture and threat model, identify real reusable contracts and missing capabilities, and create work/enterprise/plan.json with bounded batches, dependencies and executable acceptance tests.
-      Do not mistake a previous store approval for enterprise approval. Include a real business UI and all 22 use cases. Avoid kernel bypasses and unapproved production effects.
+      Do not mistake a previous store approval for enterprise approval. Include a real business UI and all catalogued use cases. Avoid kernel bypasses and unapproved production effects.
       Run the catalog validation command and inspect actual model routing. Ordinary technical decisions are delegated; resolve them instead of asking a human.
     output_contracts:
       report:
@@ -39,7 +39,7 @@ steps:
     capabilities: readonly
     edit: false
     instruction: |
-      Independently review work/enterprise/DELIVERY.md, all 52 issue specifications and the proposed plan against source. Check all 22 flows, organizational/PII/IR boundaries, SoD, revocation, durable approvals, unknown success and usable UI.
+      Independently review work/enterprise/DELIVERY.md, all current issue specifications and the proposed plan against source. Check all catalogued flows, organizational/PII/IR boundaries, SoD, revocation, durable approvals, unknown success and usable UI.
       Require actionable reproduction or a concrete omitted requirement for blocking findings. Do not require real production access for synthetic implementation. Do not approve undocumented scope reductions.
     output_contracts:
       report:
@@ -63,7 +63,7 @@ steps:
     edit: true
     instruction: |
       Implement the next dependency-ready bounded batch in work/enterprise/plan.json. Use work/enterprise/DELIVERY.md and backlog.json as the enterprise acceptance contract.
-      First implement a real evidence validator at scripts/enterprise/verify.mjs batch|all, with tests against stale/empty/failed evidence. No fake success or status-only receipts.
+      First complete B00 evidence validation and the AR2-01 finalization contract in work/enterprise/FINALIZATION.md: release seal, pure final checks, actual TAKT report/session binding, and readonly compatibility for a frozen workflow's legacy all gate. Prove these with finalization-regressions before later batches. No fake success or status-only receipts.
       Integrate with existing public contracts, persistent PostgreSQL, authorization, Action, Outbox and Audit. Preserve all original ACs and negative tests. Implement browser UI alongside domain slices, independent reference HTTP adapters and synthetic fixtures.
       Address the previous review before selecting another batch. Only mark a leaf VERIFIED when an independent report approved its exact evidence; subsequent edits invalidate affected approval. Record report and source hashes.
       Run relevant real integration tests, fault tests and the batch gate. Local implementation continues even if GitHub destination is pending. Never call real business external services or publish anything.
@@ -102,6 +102,7 @@ steps:
     edit: false
     instruction: |
       Independently audit the latest batch source, real integration assertions, input/output hashes and UI. Attempt counterexamples for cross-tenant/department/field leakage, SoD, stale approvals, revocation, crash/retry and uncertain external success.
+      Read work/enterprise/BATCH_REVIEW.md and include its exact enterprise-batch-attestation object in both Phase 1 and the Phase 2 report. Use the actual reviewer session and completed evidence; never invent an approval.
       Identify the exact issue IDs and evidence hashes approved. Do not approve the whole initiative based on one batch or on catalog tests. Check that verification CLI cannot pass missing/empty/stale evidence.
       If this batch is accepted and further implementation remains, explicitly list it and send back to build-foundation for the next batch. Release is allowed only after every implementation/use-case leaf has reviewed evidence. Final audit/release leaves are handled later.
     output_contracts:
@@ -131,12 +132,12 @@ steps:
     edit: true
     instruction: |
       Complete enterprise cross-domain E2E, adversarial tests, availability/recovery, clean bootstrap, supply chain and deployment runbooks (ENT-701–704). Incorporate all independent batch approvals with exact evidence references.
-      Revalidate original AC-001–009 and all enterprise tests after shared changes. Run scripts/enterprise/verify.mjs all and retain current hashes. Produce a demo entry with every use case accessible in the real UI.
+      Revalidate original AC-001–009 and all enterprise tests after shared changes. The command gate runs scripts/enterprise/verify.mjs all --seal and atomically seals the final machine evidence set after the release report has been emitted. Produce a demo entry with every catalogued use case accessible in the real UI.
       State unsupported/unconnected production adapters and company-specific settings clearly. Do not mark final independent audit ENT-705 complete yourself. Prepare the final per-issue evidence index and residual limitations.
     quality_gates:
       - type: command
         name: enterprise-release
-        command: "mise exec -- node scripts/enterprise/verify.mjs all"
+        command: "mise exec -- node scripts/enterprise/verify.mjs all --seal"
         cwd: "."
         timeout_ms: 3600000
     output_contracts:
@@ -164,13 +165,14 @@ steps:
     capabilities: readonly
     edit: false
     instruction: |
-      Independently audit every leaf in work/enterprise/backlog.json against current source, actual tests, browser execution, receipts and separate reviews. Require all 22 workflows, not a generic CRUD demonstration.
+      Independently audit every leaf in work/enterprise/backlog.json against current source, actual tests, browser execution, receipts and separate reviews. Require all catalogued workflows, not a generic CRUD demonstration.
       Confirm original AC regression, exact authorization/approval semantics, real persistent state and independently observable reference effects. Report production/unconnected limitations without claiming universal safety or compliance.
       Verify current hashes and reject missing/stale/failed evidence. Give ENT-705 final approval only if every requirement passes. GitHub creation/closure unavailable means that administrative request remains unresolved; explicitly report it and do not claim the user's entire request is complete.
+      Read work/enterprise/FINALIZATION.md. Start with scripts/enterprise/verify.mjs final --check-seal; inspect that exact sealed release without regenerating receipts. Return the structured enterprise-attestation block and per-Issue decisions specified there. TAKT writes this report after your response; the subsequent command gate reads it with final --check-report and must not change receipts, index, progress, locks or reports. If evidence needs rerunning, return to harden-release.
     quality_gates:
       - type: command
         name: enterprise-final
-        command: "mise exec -- node scripts/enterprise/verify.mjs all"
+        command: "mise exec -- node scripts/enterprise/verify.mjs final --check-report"
         cwd: "."
         timeout_ms: 3600000
     output_contracts:
@@ -180,6 +182,7 @@ steps:
             # Final enterprise audit
             ## Verdict
             ## All issue IDs and exact evidence
+            ## Enterprise attestation
             ## Counterexamples
             ## Unconnected services and deployment limitations
             ## GitHub synchronization status

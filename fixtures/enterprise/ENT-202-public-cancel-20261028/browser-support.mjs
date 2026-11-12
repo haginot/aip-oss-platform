@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {browser} from '../../../tests/enterprise/browser-helper.mjs';
+import {evidence} from './support.mjs';
+export async function screen(f,name,run,who='operator'){
+ const page=await browser();
+ await page.send('Page.addScriptToEvaluateOnNewDocument',{source:`const original=window.fetch;window.cancelHttp=[];window.fetch=async(...args)=>{const r=await original(...args);if(args[0]==='/enterprise/v2/rpc')window.cancelHttp.push({request:JSON.parse(args[1].body),status:r.status,data:await r.clone().json()});return r;};`});
+ const signIn=async(actor=who,origin=f.env.gateway.origin)=>{await page.navigate(origin+'/login');await page.until('!!document.querySelector("select[name=account]")');await page.fill('select[name=account]',actor);await page.click('button');await page.until(`document.querySelector('#identity')?.textContent===${JSON.stringify('ログイン中: '+actor)}`);};
+ const open=async(origin=f.env.gateway.origin)=>{await page.navigate(origin+'/enterprise/ENT-202-cancel');await page.until("document.querySelector('#message')?.textContent.includes('現在の参照権限と案件')");};
+ const select=async id=>{await page.fill('#case-select',id);await page.click('#inspect');await page.until(`document.querySelector('#references')?.dataset.id===${JSON.stringify(id)}`);};
+ const fill=async(key,purpose='請求・数量確認')=>{await page.fill('#request-key',key);await page.fill('#purpose',purpose);};
+ const capture=()=>page.evaluate(`({html:document.documentElement.outerHTML,text:document.body.textContent,identity:document.querySelector('#identity').textContent,hidden:document.querySelector('#references').hidden,resultHidden:document.querySelector('#result').hidden,source:document.querySelector('#source').textContent,summary:document.querySelector('#summary').textContent,href:document.querySelector('#detail').getAttribute('href'),datasets:[...document.querySelectorAll('*')].filter(x=>Object.keys(x.dataset).length).map(x=>({...x.dataset})),controls:[...document.querySelectorAll('input,textarea,select')].map(x=>({id:x.id,value:x.value,options:x.tagName==='SELECT'?[...x.options].map(o=>o.value):undefined})),http:window.cancelHttp})`);
+ try{await signIn();await open();await run({page,signIn,open,select,fill,capture});}
+ finally{evidence('browser-'+name,{dom:await capture().catch(String),browser:await page.send('Browser.getVersion').catch(String),executable:page.executable});await page.screenshot('cancel-'+name).catch(()=>{});await page.close();}
+}
+export function cleared(dom,secrets=[]){assert.equal(dom.identity,'');assert.equal(dom.hidden,true);assert.equal(dom.resultHidden,true);assert.equal(dom.source,'');assert.equal(dom.summary,'');assert.equal(dom.href,null);assert.deepEqual(dom.datasets,[]);assert.ok(dom.controls.every(x=>x.value===''));assert.ok(dom.controls.filter(x=>x.options).every(x=>x.options.length===0));for(const s of secrets)assert.equal(dom.html.includes(s),false,s);}
+export async function enter(page,selector){await page.evaluate(`document.querySelector(${JSON.stringify(selector)}).focus()`);await page.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,text:'\r'});await page.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});}

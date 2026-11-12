@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>支払案件の未送信取消</title>
+<style>body{font:16px sans-serif;max-width:960px;margin:2rem auto;padding:1rem}label{display:block;margin:1rem 0}input,select{font:inherit;max-width:100%;padding:.4rem}button{font:inherit;padding:.5rem;margin:.3rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}*:focus-visible{outline:3px solid #1263a0}#message{padding:1rem;background:#eef3f8}</style>
+<h1>支払案件の未送信取消</h1><p id="identity"></p><p>現在参照できる支払案件を選び、内容を確認して未送信の支払を取り消してください。</p>
+<button id="refresh" type="button">現在の権限・一覧を確認</button><label>支払案件<select id="case-select" aria-label="支払案件"></select></label><button id="inspect" type="button">選択した案件の現在版を確認</button>
+<section id="references" hidden><h2>案件と関連参照</h2><pre id="source"></pre><a id="detail">公開案件詳細</a></section>
+<form id="cancel-form"><label>目的（任意）<input id="purpose" maxlength="128"></label><label>再送キー<input id="request-key" autocomplete="off"></label><p>応答が不明な場合は同じ内容・キーで明示的に再送してください。別の取消には新しいキーを使ってください。</p><button id="cancel" type="submit">未送信の支払を取り消す</button></form>
+<p id="message" role="status" aria-live="polite"></p><section id="result" hidden><h2 id="result-title" tabindex="-1">受付結果</h2><pre id="summary"></pre></section>
+<script type="module" src="/enterprise/ENT-202-cancel.mjs"></script></html>

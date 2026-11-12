@@ -1,0 +1,169 @@
+name: enterprise-invoice-slice
+description: Timeboxed ENT-202 invoice matching/payment approval candidate using actual ENT-201 public order/receipt contracts; formal acceptance remains pending.
+max_steps: 5
+initial_step: slice-plan
+steps:
+  - name: slice-plan
+    session_key: enterprise-invoice-slice-planner-20261027
+    persona: platform-architect
+    capabilities: readonly
+    edit: false
+    instruction: |-
+      日本語で公開報告を書く。固定上限は5工程・修正1回・開始から90分。正式受入と限定候補を区別し、計画/Issue/旧progressを変更せず、現在の依存承認を捏造しない。実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスクを再開しない。
+      前のENT-201はrun 20261026233229-50606ffdの独立レビューで限定候補のみCOMPLETEとなった。正式suite接続と13依存の現行受入は未達であり、承認を継承しない。ENT-201の実API purchaseRead、発注operation、RECEIVED検収データを実際に再利用し、請求書専用の架空PO/検収を代用しない。既存コード・テスト・失敗ログ・証跡を保全する。前runの入力digestは歴史として保持し、新しいコードへ流用しない。
+      保護対象3ファイルと /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-202-protected-history.json の全472ファイルを変更しない。新規実行は固有の出力directoryへ記録し、ENT-201の既存証跡を上書きしない。安全契約・原本AC・既存assertionを弱めて通さない。基盤の不可欠な契約が欠ける場合は最小再現でABORTし、証跡整備の往復や基盤全体の再設計へ戻らない。
+
+      ENT-202「請求書照合・支払承認」だけを対象に、原本 work/enterprise/issues/ENT-202.md の4ACとplan内の既存suite契約を読む。請求書取込→実発注/検収との三点照合→例外処理→職務分離による支払承認→synthetic送信・結果照合をAPI/実ブラウザで通す具体案を作る。金額/通貨/数量/仕入先/支払口座の一致、重複請求・部分/累積支払による過払いの拒否、口座変更による承認失効、検収不一致と隔離、失効時認可、送信結果不明の照合を設計する。
+      現行public Kernel/Action/Outbox/Audit/認可/承認/workerに接続し、外部副作用は既存local synthetic portだけに限定する。支払と発注のoperation種別・宛先・idempotency bindingを分離し、UNKNOWN時の自動再送を禁止する。古いSQL復元や権限分類取消でENT-201のR1/R2修正を後退させない。実在する安全契約と未承認依存を分け、90分内に安全な一業務候補を作れなければABORTする。
+      必要な実テストは tests/enterprise/ENT-202.test.mjs と ENT-202.browser.test.mjs。planの要求名(AC-01〜04, positive, negative-authorization, persistence, failure-recovery とブラウザ4分類)を満たす実assertionを初回から対応付ける。既存manifest/hash/TAP記録を利用し、新しい検証基盤は作らない。
+    output_contracts:
+      report:
+        - name: slice-01-plan.md
+          format: |
+            # ENT-202 bounded implementation plan
+            ## Four ACs and executable checks
+            ## Existing and missing dependency contracts
+            ## Exact implementation scope
+            ## Remaining acceptance and blockers
+    rules:
+      - condition: A safe concrete ENT-202 candidate can be implemented within the fixed scope
+        next: slice-implement
+      - condition: Safe implementation requires work outside this slice or an unresolved indispensable prerequisite
+        next: ABORT
+  - name: slice-implement
+    session_key: enterprise-invoice-slice-builder-20261027
+    persona: platform-engineer
+    capabilities: edit
+    edit: true
+    instruction: |-
+      日本語で公開報告を書く。固定上限は5工程・修正1回・開始から90分。正式受入と限定候補を区別し、計画/Issue/旧progressを変更せず、現在の依存承認を捏造しない。実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスクを再開しない。
+      前のENT-201はrun 20261026233229-50606ffdの独立レビューで限定候補のみCOMPLETEとなった。正式suite接続と13依存の現行受入は未達であり、承認を継承しない。ENT-201の実API purchaseRead、発注operation、RECEIVED検収データを実際に再利用し、請求書専用の架空PO/検収を代用しない。既存コード・テスト・失敗ログ・証跡を保全する。前runの入力digestは歴史として保持し、新しいコードへ流用しない。
+      保護対象3ファイルと /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-202-protected-history.json の全472ファイルを変更しない。新規実行は固有の出力directoryへ記録し、ENT-201の既存証跡を上書きしない。安全契約・原本AC・既存assertionを弱めて通さない。基盤の不可欠な契約が欠ける場合は最小再現でABORTし、証跡整備の往復や基盤全体の再設計へ戻らない。
+
+      slice-01-plan.mdに従いENT-202候補だけを実装する。請求書取込・実発注/検収との三点照合・不一致の拒否/例外処理・多段/職務分離承認・synthetic支払送信・結果照合を公開API/実ブラウザで完走する。重複請求、金額通貨数量/検収不一致、承認後改変/口座変更、他部門/他tenant/閲覧者、分類取消/承認者権限失効、競合/再送、監査失敗rollback、再起動/送信結果不明を意味のあるassertionで検査する。実送金を行わない。
+      実データ源はENT-201公開契約を通った発注・検収とする。direct-DB business bypass、stubの合格、権限や承認を省く実装を禁止する。必要な小さい公開契約拡張は許されるが、他業務の再実装や全体基盤の再設計は範囲外。既存ENT-201両suiteと変更対象の安全基盤回帰を現在コードで実行し、R1(古いSQL復元の安全停止)・R2(分類取消の応答/DOM漏えい拒否)を維持する。
+      テストはplan既存要求名と実assertionを対応付け、4ACを行動と現行input hashに結ぶ。固有出力先で実コマンド、開始終了、exit、TAP tests/pass/fail/cancelled/skipped/todo、ソースとテスト定義のhash、成果物hash、実HTTP/DOM/ledgerを保存する。失敗ログは保全する。限定成果のみ報告し、正式gate/依存承認や全体PASSを付与しない。
+    quality_gates:
+      - type: command
+        name: ENT-202-api
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-202-slice-20261027/gates/implement-api mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-202.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: ENT-202-browser
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-202-slice-20261027/gates/implement-browser mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-202.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: ENT-201-regression
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-202-slice-20261027/gates/implement-purchase-regression mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.test.mjs tests/enterprise/ENT-201.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: slice-02-implementation.md
+          format: |
+            # ENT-202 candidate implementation
+            ## Changes and four-AC mapping
+            ## Actual commands, exits, assertions and hashes
+            ## Negative and recovery cases
+            ## Unmet dependencies and acceptance limits
+    rules:
+      - condition: The scoped candidate has passed its real API and browser tests and is ready for independent review
+        next: slice-review
+      - condition: Implementation or tests are incomplete, blocked or require work outside the fixed scope
+        next: ABORT
+        command_gates: skip
+  - name: slice-review
+    session_key: enterprise-invoice-slice-reviewer-20261027
+    persona: adversarial-reviewer
+    capabilities: readonly
+    edit: false
+    instruction: |-
+      日本語で公開報告を書く。固定上限は5工程・修正1回・開始から90分。正式受入と限定候補を区別し、計画/Issue/旧progressを変更せず、現在の依存承認を捏造しない。実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスクを再開しない。
+      前のENT-201はrun 20261026233229-50606ffdの独立レビューで限定候補のみCOMPLETEとなった。正式suite接続と13依存の現行受入は未達であり、承認を継承しない。ENT-201の実API purchaseRead、発注operation、RECEIVED検収データを実際に再利用し、請求書専用の架空PO/検収を代用しない。既存コード・テスト・失敗ログ・証跡を保全する。前runの入力digestは歴史として保持し、新しいコードへ流用しない。
+      保護対象3ファイルと /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-202-protected-history.json の全472ファイルを変更しない。新規実行は固有の出力directoryへ記録し、ENT-201の既存証跡を上書きしない。安全契約・原本AC・既存assertionを弱めて通さない。基盤の不可欠な契約が欠ける場合は最小再現でABORTし、証跡整備の往復や基盤全体の再設計へ戻らない。
+
+      ENT-202原本4AC、依存安全契約、実コードと実API/ブラウザ証拠をAstraで独立確認する。三点照合が実ENT-201発注/検収に結び付くこと、請求の重複/競合/過払い、金額通貨数量・検収、口座の現在性と承認binding/職務分離、workerのoperation分離と送信冪等性、UNKNOWN GET照合、SQL復旧、認可取消とHTTP/DOM除外、監査永続性を重点に確認する。保存証拠と現行hashの不一致・不足を合格扱いしない。可能な再現には既存suiteと新規固有出力先を用い、過去の出力を変えない。
+      既存ENT-201 API/browser回帰と安全な基盤の回帰を確認し、既存テストの削除/弱体化で通していないことを比較する。要求されたTAP名が存在するだけでなく本来のassertionを持つことを確認する。限定候補と正式受入不足を明示する。修正は最大1回だけ、同範囲・残予算で直せる具体的指摘に限る。不可欠な安全契約欠如や範囲外の必要作業はABORTとする。
+    output_contracts:
+      report:
+        - name: slice-03-review.md
+          format: |
+            # Independent ENT-202 candidate review
+            ## Candidate verdict and four-AC evidence
+            ## Reproduced blocking findings
+            ## Exact hashes and reviewer session
+            ## Outstanding formal acceptance
+    rules:
+      - condition: The ENT-202 candidate behavior passes scoped independent review with all remaining formal acceptance explicitly recorded
+        next: COMPLETE
+      - condition: Concrete findings can be corrected within this same ENT-202 slice and remaining budget
+        next: slice-repair
+      - condition: Missing contracts or findings require work beyond this slice or the remaining budget
+        next: ABORT
+  - name: slice-repair
+    session_key: enterprise-invoice-slice-builder-20261027
+    persona: platform-engineer
+    capabilities: edit
+    edit: true
+    instruction: |-
+      日本語で公開報告を書く。固定上限は5工程・修正1回・開始から90分。正式受入と限定候補を区別し、計画/Issue/旧progressを変更せず、現在の依存承認を捏造しない。実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスクを再開しない。
+      前のENT-201はrun 20261026233229-50606ffdの独立レビューで限定候補のみCOMPLETEとなった。正式suite接続と13依存の現行受入は未達であり、承認を継承しない。ENT-201の実API purchaseRead、発注operation、RECEIVED検収データを実際に再利用し、請求書専用の架空PO/検収を代用しない。既存コード・テスト・失敗ログ・証跡を保全する。前runの入力digestは歴史として保持し、新しいコードへ流用しない。
+      保護対象3ファイルと /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-202-protected-history.json の全472ファイルを変更しない。新規実行は固有の出力directoryへ記録し、ENT-201の既存証跡を上書きしない。安全契約・原本AC・既存assertionを弱めて通さない。基盤の不可欠な契約が欠ける場合は最小再現でABORTし、証跡整備の往復や基盤全体の再設計へ戻らない。
+
+      slice-03-review.mdの具体的指摘を直す、唯一の修正工程。4ACと安全契約を維持してENT-202両suite、ENT-201両suiteと変更に影響する既存回帰を再実行する。前工程/前runの出力を上書きせず、新しい修正用directoryに実コマンド・TAP・現行入力/出力hashと元失敗の解消を記録する。同じ原因が残る・予算不足・範囲拡大が必要ならABORTする。追加修正や自動延長は認めない。
+    quality_gates:
+      - type: command
+        name: ENT-202-api
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-202-slice-20261027/gates/repair-api mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-202.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: ENT-202-browser
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-202-slice-20261027/gates/repair-browser mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-202.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+      - type: command
+        name: ENT-201-regression
+        command: ENTERPRISE_SUITE_OUTPUT=evidence/enterprise/ENT-202-slice-20261027/gates/repair-purchase-regression mise exec -- node --test --test-reporter=tap tests/enterprise/ENT-201.test.mjs tests/enterprise/ENT-201.browser.test.mjs
+        cwd: .
+        timeout_ms: 600000
+    output_contracts:
+      report:
+        - name: slice-04-correction.md
+          format: |
+            # ENT-202 single correction
+            ## Finding and exact repair
+            ## Actual commands and current evidence
+            ## Remaining limitations
+    rules:
+      - condition: The correction has passed both real scoped test suites
+        next: slice-final-review
+      - condition: The same cause remains, testing fails or broader work is needed
+        next: ABORT
+        command_gates: skip
+  - name: slice-final-review
+    session_key: enterprise-invoice-slice-final-reviewer-20261027
+    persona: adversarial-reviewer
+    capabilities: readonly
+    edit: false
+    instruction: |-
+      日本語で公開報告を書く。固定上限は5工程・修正1回・開始から90分。正式受入と限定候補を区別し、計画/Issue/旧progressを変更せず、現在の依存承認を捏造しない。実送金・実データ・外部メッセージ・課金追加・credential変更・push/公開/PRは禁止。旧全体タスクを再開しない。
+      前のENT-201はrun 20261026233229-50606ffdの独立レビューで限定候補のみCOMPLETEとなった。正式suite接続と13依存の現行受入は未達であり、承認を継承しない。ENT-201の実API purchaseRead、発注operation、RECEIVED検収データを実際に再利用し、請求書専用の架空PO/検収を代用しない。既存コード・テスト・失敗ログ・証跡を保全する。前runの入力digestは歴史として保持し、新しいコードへ流用しない。
+      保護対象3ファイルと /Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/supervision/20261027-takeover/ENT-202-protected-history.json の全472ファイルを変更しない。新規実行は固有の出力directoryへ記録し、ENT-201の既存証跡を上書きしない。安全契約・原本AC・既存assertionを弱めて通さない。基盤の不可欠な契約が欠ける場合は最小再現でABORTし、証跡整備の往復や基盤全体の再設計へ戻らない。
+
+      唯一の修正をAstraで独立確認し、ENT-202原本4AC、実発注/検収との結合、承認/認可/監査/副作用/UNKNOWN/復旧とENT-201の回帰を現行入力hash付きで再点検する。同じ原因、blocking finding、失敗/不足証跡、不可欠な安全契約の欠如が残ればABORT。追加修正・時間延長・新業務追加は禁止。COMPLETEは限定実装候補とこの独立レビューのみ。正式suite登録/依存の現行受入、ENT-201未達、全企業業務と追加事業企画/予算/予実/リソース/確率・MLシミュレーションは残件として列挙する。
+    output_contracts:
+      report:
+        - name: slice-05-final-review.md
+          format: |
+            # Final ENT-202 candidate decision
+            ## Scoped verdict and exact evidence
+            ## Repeated or unresolved findings
+            ## Outstanding formal acceptance and next minimum task
+    rules:
+      - condition: The corrected ENT-202 candidate passes independent scoped review with outstanding formal acceptance clearly recorded
+        next: COMPLETE
+      - condition: Any blocking finding or missing evidence remains
+        next: ABORT

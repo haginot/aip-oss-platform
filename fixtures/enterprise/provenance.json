@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Portable test fixtures; not execution receipts or approval authority",
+  "files": [
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1j/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-r1j",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "288d75f4021961542b8f3085757b16ae6a910105456fb264b5ccae7ce658f9b4",
+      "currentSha256": "288d75f4021961542b8f3085757b16ae6a910105456fb264b5ccae7ce658f9b4"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1j/browser-cdp.mjs",
+      "originalUnit": "ENT-202-public-import-r1j",
+      "originalName": "browser-cdp.mjs",
+      "originalSha256": "7dafb052d282df802404937a62a670db667c9e0d650a7e90e3ee20209f20f00d",
+      "currentSha256": "f2612309d593cd5aab12967ecd8ede16e741d6e670e51e2f02072c150d3326aa"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-submit-20261028/browser-support.mjs",
+      "originalUnit": "ENT-202-public-submit-20261028",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "0306df038793f70b9a508b7bb9e2c0426d1e572714a50f84c463fdcf39723211",
+      "currentSha256": "0306df038793f70b9a508b7bb9e2c0426d1e572714a50f84c463fdcf39723211"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-submit-20261028/support.mjs",
+      "originalUnit": "ENT-202-public-submit-20261028",
+      "originalName": "support.mjs",
+      "originalSha256": "cccdc7c8b6609c18a7c226b1956bffa9d681c0d1a464ceea0a9eb3192758eb07",
+      "currentSha256": "cccdc7c8b6609c18a7c226b1956bffa9d681c0d1a464ceea0a9eb3192758eb07"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-read-20261028/support.mjs",
+      "originalUnit": "ENT-202-public-read-20261028",
+      "originalName": "support.mjs",
+      "originalSha256": "999dfc25cab7d26220f33a22a5acd75c1e00dddc8b8495096725d339e8e0acde",
+      "currentSha256": "999dfc25cab7d26220f33a22a5acd75c1e00dddc8b8495096725d339e8e0acde"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-return-resubmit-20261027122740-4651bfda/scenario.mjs",
+      "originalUnit": "ENT-202-return-resubmit-20261027122740-4651bfda",
+      "originalName": "scenario.mjs",
+      "originalSha256": "bc8c092f39ae4ed21ce1291bc058600b134a4ba1bda9739e52c6b85eda68c6d3",
+      "currentSha256": "19fd6e69d2de6af454d140dc1bfb42dfadc404bbf6f06912acc8ed115b262257"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-return-resubmit-20261027122740-4651bfda/gateway-child.mjs",
+      "originalUnit": "ENT-202-return-resubmit-20261027122740-4651bfda",
+      "originalName": "gateway-child.mjs",
+      "originalSha256": "af97c9aba7b835f540971f94d65a280d20518f572763a11e05da22be9c80cb57",
+      "currentSha256": "af97c9aba7b835f540971f94d65a280d20518f572763a11e05da22be9c80cb57"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-201-effect-contract-20261027/contracts.mjs",
+      "originalUnit": "ENT-201-effect-contract-20261027",
+      "originalName": "contracts.mjs",
+      "originalSha256": "42f92fd23779646221345776c49743292cdd6d269ffeb93d8b999f374133571d",
+      "currentSha256": "42f92fd23779646221345776c49743292cdd6d269ffeb93d8b999f374133571d"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-201-effect-contract-20261027/scenario.mjs",
+      "originalUnit": "ENT-201-effect-contract-20261027",
+      "originalName": "scenario.mjs",
+      "originalSha256": "ccdf87bf2df5d861e02045b5f8ab8504b9dbc779f54eff6abf3ad2b7be482f42",
+      "currentSha256": "4494b9de52d72788cf9609d9b0eb1bbc0f78d31eb064828c7fc5acd1874c1cb7"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-201-effect-contract-20261027/gateway-child.mjs",
+      "originalUnit": "ENT-201-effect-contract-20261027",
+      "originalName": "gateway-child.mjs",
+      "originalSha256": "af97c9aba7b835f540971f94d65a280d20518f572763a11e05da22be9c80cb57",
+      "currentSha256": "af97c9aba7b835f540971f94d65a280d20518f572763a11e05da22be9c80cb57"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1h/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-r1h",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "93faf31b88d9d449978cd6d4ecfc6271f985915c62753a008b93859540e32604",
+      "currentSha256": "93faf31b88d9d449978cd6d4ecfc6271f985915c62753a008b93859540e32604"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1h/browser-cdp.mjs",
+      "originalUnit": "ENT-202-public-import-r1h",
+      "originalName": "browser-cdp.mjs",
+      "originalSha256": "21ea57c5e1179161992283f3538fb776f0c18b17091dd1333ede950768a1603d",
+      "currentSha256": "cd46e849a9fcb07c6cb817efacf4164ea9885887bfff28407e1d5a6881e47ab1"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1j/support.mjs",
+      "originalUnit": "ENT-202-public-import-r1j",
+      "originalName": "support.mjs",
+      "originalSha256": "20a2f5a5dfb20b3dcfe522b8f07a0617e1bedc09d72650fa46b68579a5442f38",
+      "currentSha256": "b77f5f7ba9f5155cceec7e3dfb7249560a29363b21461ee586bf91badf3679ed"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1i/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-r1i",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "2e61e0e6af6b039c8a1b177f06374fd67805129f415050d69d8eb26f00f045a7",
+      "currentSha256": "2e61e0e6af6b039c8a1b177f06374fd67805129f415050d69d8eb26f00f045a7"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1i/browser-cdp.mjs",
+      "originalUnit": "ENT-202-public-import-r1i",
+      "originalName": "browser-cdp.mjs",
+      "originalSha256": "eb29830ceff9bfd330bdef166d163a12e99f1a98098295bde35c32e347450b50",
+      "currentSha256": "4f29cc4eeed684f9a861cec6f16ca125768a8aef4c3901d67a568d568d7dd3ba"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1g/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-r1g",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "a4bf3efe022d853d47a12e143718b6b5e03c0d767492976c60a9e0b60609269c",
+      "currentSha256": "a4bf3efe022d853d47a12e143718b6b5e03c0d767492976c60a9e0b60609269c"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1g/browser-cdp.mjs",
+      "originalUnit": "ENT-202-public-import-r1g",
+      "originalName": "browser-cdp.mjs",
+      "originalSha256": "2e40925357a7bde17096fb26542c830c4d8bf1e02ea089cacfe15defe816dc01",
+      "currentSha256": "585f207ad01a6569e1d3683383136d9d6abd1e221d19f4c5d1c304e52ceb55df"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1e/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-r1e",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "2baa790a1dc3440fed3faee5288587a87841701034dedcdc3e86bffaba3b8013",
+      "currentSha256": "2baa790a1dc3440fed3faee5288587a87841701034dedcdc3e86bffaba3b8013"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1e/support.mjs",
+      "originalUnit": "ENT-202-public-import-r1e",
+      "originalName": "support.mjs",
+      "originalSha256": "e270fc728e09e9df13865e1ed807b95ec8e0087cd2ed7c4a76718e966e8b8439",
+      "currentSha256": "9c860039a7704a53d59c039800bdf7838d40b596ef886bdb051605c88e3e1cce"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1h/support.mjs",
+      "originalUnit": "ENT-202-public-import-r1h",
+      "originalName": "support.mjs",
+      "originalSha256": "5c1affc0dcfef9fa81b00286e73756f9666626d792e5c35ce6698bd72d78ea9b",
+      "currentSha256": "e16142e50f659123ed0bfc4cdb2aa128f330edd79c971f2ed5ceae463aa8cec2"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-read-20261028/bpr-01-support.mjs",
+      "originalUnit": "ENT-202-public-read-20261028",
+      "originalName": "bpr-01-support.mjs",
+      "originalSha256": "00b366916a19411bf62b7d1e65574382ed7576be8fdf410b501cae476908d1e9",
+      "currentSha256": "00b366916a19411bf62b7d1e65574382ed7576be8fdf410b501cae476908d1e9"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-reconcile-c2a/reconcile-fixture.mjs",
+      "originalUnit": "ENT-202-public-reconcile-c2a",
+      "originalName": "reconcile-fixture.mjs",
+      "originalSha256": "6c8b049cc9fae7a019b587d64527053a10dcde61cd561349763933b5a071c584",
+      "currentSha256": "6c8b049cc9fae7a019b587d64527053a10dcde61cd561349763933b5a071c584"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-reconcile-c2a/api-support.mjs",
+      "originalUnit": "ENT-202-public-reconcile-c2a",
+      "originalName": "api-support.mjs",
+      "originalSha256": "7e761a39394cd6734c3281db0731ab0bc6e76c12cc41e62eb72aaed1a5138073",
+      "currentSha256": "7e761a39394cd6734c3281db0731ab0bc6e76c12cc41e62eb72aaed1a5138073"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-cancel-20261028/support.mjs",
+      "originalUnit": "ENT-202-public-cancel-20261028",
+      "originalName": "support.mjs",
+      "originalSha256": "0913f0288a94023a8e131c3b375d57f669209a2cb883f7f06a58014b49929481",
+      "currentSha256": "0913f0288a94023a8e131c3b375d57f669209a2cb883f7f06a58014b49929481"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-approve-20261028/support.mjs",
+      "originalUnit": "ENT-202-public-approve-20261028",
+      "originalName": "support.mjs",
+      "originalSha256": "9dd3360fb384f627fd4c8708d44d6ca73909efc820c3bd4be68d454269af75ba",
+      "currentSha256": "9dd3360fb384f627fd4c8708d44d6ca73909efc820c3bd4be68d454269af75ba"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-reconcile-c2a/browser-support.mjs",
+      "originalUnit": "ENT-202-public-reconcile-c2a",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "3f9efee39c774e38b2cfcf9c13ce717aa7cacd2c05163542853bbb9f8623d747",
+      "currentSha256": "3f9efee39c774e38b2cfcf9c13ce717aa7cacd2c05163542853bbb9f8623d747"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-reconcile-c2c/submit-completion.mjs",
+      "originalUnit": "ENT-202-public-reconcile-c2c",
+      "originalName": "submit-completion.mjs",
+      "originalSha256": "48ec17c90d27ef6caa2e7e7f8e683e94efe9cf39b09216fb52ee0f76044b866e",
+      "currentSha256": "48ec17c90d27ef6caa2e7e7f8e683e94efe9cf39b09216fb52ee0f76044b866e"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1f/support.mjs",
+      "originalUnit": "ENT-202-public-import-r1f",
+      "originalName": "support.mjs",
+      "originalSha256": "83bdb8ab2b23be4d74387e41f2c4f97ffe9908ca3f04f99d0dab674679f775fc",
+      "currentSha256": "03e43c91ac268770d31f1311f10a6f30174dcc7aeb6b8aa003da07c742619cda"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1f/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-r1f",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "3faffbdfaa4fd5d4fae20520e55415033e6dfc7479a62be2b374d3d521466981",
+      "currentSha256": "3faffbdfaa4fd5d4fae20520e55415033e6dfc7479a62be2b374d3d521466981"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1f/browser-cdp.mjs",
+      "originalUnit": "ENT-202-public-import-r1f",
+      "originalName": "browser-cdp.mjs",
+      "originalSha256": "ca7964e6bcd0572df3ddd42d56bf96b92ae14a9d9e0cabedafb56e3485b02bf7",
+      "currentSha256": "1e2920cbfe1efd8186bbd02b3875ce22a2b8d1880a18855fbdb31059b5e28474"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-correct-c1a/api-support.mjs",
+      "originalUnit": "ENT-202-public-correct-c1a",
+      "originalName": "api-support.mjs",
+      "originalSha256": "ba9e8201763776c9f2c4f78f7485832042f7f5f532200a2d0feae02e67e1dda5",
+      "currentSha256": "ba9e8201763776c9f2c4f78f7485832042f7f5f532200a2d0feae02e67e1dda5"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-approve-20261028/browser-support.mjs",
+      "originalUnit": "ENT-202-public-approve-20261028",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "9d9c3b8d44eb689cc1e3af76b2f5191c48f24b124606bbd3d2a5fe3de6bc0304",
+      "currentSha256": "9d9c3b8d44eb689cc1e3af76b2f5191c48f24b124606bbd3d2a5fe3de6bc0304"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-cancel-20261028/browser-support.mjs",
+      "originalUnit": "ENT-202-public-cancel-20261028",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "54fdd7948ba363cba0364d7c692077b1551a9eabcba66efcd46962e50bdadcd0",
+      "currentSha256": "54fdd7948ba363cba0364d7c692077b1551a9eabcba66efcd46962e50bdadcd0"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1g/support.mjs",
+      "originalUnit": "ENT-202-public-import-r1g",
+      "originalName": "support.mjs",
+      "originalSha256": "a864adeb73acb7883f00a9033d3cfce38b32d8a4d16ffce1e86ea0f3139106bc",
+      "currentSha256": "09403ac199def641828ac5c19fc5186fdb758f9a4bb6cea967f2798486f7b323"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-r1i/support.mjs",
+      "originalUnit": "ENT-202-public-import-r1i",
+      "originalName": "support.mjs",
+      "originalSha256": "96abe4d386d25190e30160f37e3733d13e8dd2f5cfe097f32c11f4efee78741b",
+      "currentSha256": "d19244cb7cfdb211f810da8d1861a86246dad72cb8758abff4486ab042abd3fe"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-20261028/support.mjs",
+      "originalUnit": "ENT-202-public-import-20261028",
+      "originalName": "support.mjs",
+      "originalSha256": "fdd225ca2945439115cb0c6a29fb57a1febd040947be169ddeafbc5d62a27a9c",
+      "currentSha256": "fdd225ca2945439115cb0c6a29fb57a1febd040947be169ddeafbc5d62a27a9c"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-correct-c1a/browser-support.mjs",
+      "originalUnit": "ENT-202-public-correct-c1a",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "acfec484fc325bc6b26c2e39fa9475b831cea6cbdfec623577faf33cf22e15de",
+      "currentSha256": "acfec484fc325bc6b26c2e39fa9475b831cea6cbdfec623577faf33cf22e15de"
+    },
+    {
+      "path": "fixtures/enterprise/ENT-202-public-import-20261028/browser-support.mjs",
+      "originalUnit": "ENT-202-public-import-20261028",
+      "originalName": "browser-support.mjs",
+      "originalSha256": "b86aa59e3b181f971a5f599d6663a23a2b9d4957692b8c615718cb82e06e47bc",
+      "currentSha256": "b86aa59e3b181f971a5f599d6663a23a2b9d4957692b8c615718cb82e06e47bc"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/manifest.json",
+      "originalSha256": "0ba33f64827c47cc5d8fcd635bb39f951dcbe8c7a3085a9241e3999c2743d38e",
+      "currentSha256": "0ba33f64827c47cc5d8fcd635bb39f951dcbe8c7a3085a9241e3999c2743d38e"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/manifest.sha256",
+      "originalSha256": "d9d5ba0dc9f12d292d7c3ba6e0cebd8cd19b706fa25e84de6314d8e32c6a0b04",
+      "currentSha256": "d9d5ba0dc9f12d292d7c3ba6e0cebd8cd19b706fa25e84de6314d8e32c6a0b04"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/objects/30904ca84d6db6833a50aa0d6d84c5ff3883fe16124ace51c31bd9cfac5098e1.json",
+      "originalSha256": "7373fbd499d61d3e8722e830f9108819072cf2662840b13b827ea1ae8aac8afb",
+      "currentSha256": "7373fbd499d61d3e8722e830f9108819072cf2662840b13b827ea1ae8aac8afb"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/resources/1c3b8f1353a8b7d4ae119d113a2c5c2147a364b8bd29d92db5873d29872e6ada",
+      "originalSha256": "1c3b8f1353a8b7d4ae119d113a2c5c2147a364b8bd29d92db5873d29872e6ada",
+      "currentSha256": "1c3b8f1353a8b7d4ae119d113a2c5c2147a364b8bd29d92db5873d29872e6ada"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/resources/84cbe2b2d5743614ebc6a2301e9481b8780c5f3b976ae65ca875b4e6373b901e",
+      "originalSha256": "84cbe2b2d5743614ebc6a2301e9481b8780c5f3b976ae65ca875b4e6373b901e",
+      "currentSha256": "84cbe2b2d5743614ebc6a2301e9481b8780c5f3b976ae65ca875b4e6373b901e"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/resources/910f27ebc8c73f839e6c97cdb1b47b376f16e6d5303ba2df206e9166acdff862",
+      "originalSha256": "910f27ebc8c73f839e6c97cdb1b47b376f16e6d5303ba2df206e9166acdff862",
+      "currentSha256": "910f27ebc8c73f839e6c97cdb1b47b376f16e6d5303ba2df206e9166acdff862"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/20261024121802-56fec935/workflow-bundle/resources/e27378adbf371568648628f46e689234acab8342d69dfa7631cd38763ee9776b",
+      "originalSha256": "e27378adbf371568648628f46e689234acab8342d69dfa7631cd38763ee9776b",
+      "currentSha256": "e27378adbf371568648628f46e689234acab8342d69dfa7631cd38763ee9776b"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/control-scope.json",
+      "originalSha256": "951e6cda1c236d4690bec360f0fe7273ff3563a88ad7f624c93e904bdf1fd540",
+      "currentSha256": "951e6cda1c236d4690bec360f0fe7273ff3563a88ad7f624c93e904bdf1fd540"
+    },
+    {
+      "path": "fixtures/enterprise/preparation/routing-diagnosis.json",
+      "originalSha256": "2816aa76a9b7a268a3dc2c426ec126e1fa6765b272695cc0b46f5d1f864eb0d7",
+      "currentSha256": "2816aa76a9b7a268a3dc2c426ec126e1fa6765b272695cc0b46f5d1f864eb0d7"
+    }
+  ]
+}

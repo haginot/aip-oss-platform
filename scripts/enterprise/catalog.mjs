@@ -10,7 +10,7 @@ assert.equal(catalog.items.filter(i => !i.parent).length, 1, 'Exactly one initia
 assert.equal(ids.get('ENT-000')?.kind, 'initiative');
 const allowed = new Set(['OPEN', 'IN_PROGRESS', 'READY_FOR_REVIEW', 'VERIFIED', 'BLOCKED']);
 for (const item of catalog.items) {
-  assert.match(item.id, /^ENT-\d{3}$/);
+  assert.match(item.id, /^ENT-\d{3,4}$/);
   assert.ok(allowed.has(item.status), `${item.id}: unknown status`);
   assert.ok(item.acceptance.length > 0 && item.acceptance.every(s => typeof s === 'string' && s.trim()), `${item.id}: empty acceptance`);
   assert.ok(Array.isArray(item.evidence));

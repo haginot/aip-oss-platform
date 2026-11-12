@@ -1,0 +1,170 @@
+{
+  "id": "enterprise-procurement",
+  "version": "1.0.0",
+  "types": {
+    "LegalEntity": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "Department": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "Case": {
+      "title": {
+        "type": "string",
+        "classification": "INTERNAL"
+      },
+      "amount": {
+        "type": "integer",
+        "classification": "CONFIDENTIAL"
+      },
+      "currency": {
+        "type": "string",
+        "classification": "INTERNAL"
+      },
+      "memo": {
+        "type": "string",
+        "classification": "RESTRICTED"
+      }
+    },
+    "Employment": {
+      "name": {
+        "type": "string",
+        "classification": "RESTRICTED"
+      }
+    },
+    "Position": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "Classification": {
+      "name": {
+        "type": "string",
+        "classification": "INTERNAL"
+      }
+    },
+    "PurchaseRequest": {
+      "title": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "amount": {
+        "type": "integer",
+        "classification": "CONFIDENTIAL"
+      },
+      "currency": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "budgetId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "comparisonDigest": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "supplierId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      },
+      "quoteId": {
+        "type": "string",
+        "classification": "CONFIDENTIAL"
+      }
+    }
+  },
+  "form": [
+    {
+      "field": "title",
+      "label": "購買目的"
+    },
+    {
+      "field": "amount",
+      "label": "選定金額（最小通貨単位）"
+    },
+    {
+      "field": "currency",
+      "label": "通貨"
+    },
+    {
+      "field": "budgetId",
+      "label": "予算"
+    },
+    {
+      "field": "comparisonDigest",
+      "label": "見積比較hash"
+    },
+    {
+      "field": "supplierId",
+      "label": "発注先仕入先ID"
+    },
+    {
+      "field": "quoteId",
+      "label": "選定見積ID"
+    }
+  ],
+  "action": {
+    "name": "PurchaseRequest",
+    "type": "PurchaseRequest"
+  },
+  "route": [
+    {
+      "approvers": [
+        "manager",
+        "reviewer"
+      ],
+      "quorum": 2
+    },
+    {
+      "approvers": [
+        "publisher"
+      ],
+      "quorum": 1
+    }
+  ],
+  "amountRoutes": [],
+  "permissions": {
+    "create": "action",
+    "approve": "approve"
+  },
+  "fixtures": [
+    {
+      "fields": {
+        "title": "Synthetic purchase",
+        "amount": 1200,
+        "currency": "JPY",
+        "budgetId": "synthetic-budget",
+        "comparisonDigest": "synthetic",
+        "supplierId": "synthetic-supplierId",
+        "quoteId": "synthetic-quoteId"
+      },
+      "expected": "valid"
+    },
+    {
+      "fields": {
+        "title": "invalid"
+      },
+      "expected": "invalid"
+    }
+  ],
+  "calendar": {
+    "timezone": "Asia/Tokyo",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "holidays": [],
+    "businessDays": 2
+  }
+}

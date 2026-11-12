@@ -1,0 +1,42 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {scenario,evidence,business,grant,ops} from '../../fixtures/enterprise/ENT-202-public-import-20261028/support.mjs';
+import {screen,enter,cleared} from '../../fixtures/enterprise/ENT-202-public-import-20261028/browser-support.mjs';
+
+test('public import Japanese keyboard selection input error recovery kernel match and no automatic writes on reload',()=>scenario('import-browser-positive',async f=>{
+ const before=await business(f);await screen(f,'positive',async s=>{
+ assert.equal(await s.page.evaluate('document.documentElement.lang'),'ja');await s.page.click('#import');assert.equal((await s.capture()).http.some(x=>x.request.operation==='import'),false);await s.select();await s.fill('bad key');await enter(s.page,'#import');await s.page.until("document.querySelector('#message').textContent.includes('下書きは保持')");assert.equal((await s.capture()).controls.find(x=>x.id==='number').value,f.body.number);assert.deepEqual(await business(f),before);
+ await s.fill(randomUUID());await enter(s.page,'#import');await s.page.until("!document.querySelector('#result').hidden");const dom=await s.capture();assert.equal(await s.page.evaluate('document.activeElement.id'),'result-title');assert.ok(dom.summary.includes('照合: 一致'));assert.ok(dom.source.includes('7 台'));assert.ok(dom.source.includes('agent'));assert.ok(dom.http.some(x=>x.request.operation==='import'&&x.status===200));assert.equal((await f.invoice()).state,'MATCHED');assert.equal(f.env.payments.requests().length,0);evidence('positive',{dom,before,after:await business(f)});await s.page.screenshot('import-matched');await s.open();assert.equal((await s.capture()).http.some(x=>x.request.operation==='import'),false);
+ });
+}));
+for(const kind of ['scope','classification','session'])test('public import browser '+kind+' clears retained options references drafts',()=>scenario('import-browser-clear-'+kind,async f=>{
+ const key=randomUUID();await screen(f,kind,async s=>{await s.select();await s.fill(key);
+ if(kind==='session')await s.page.evaluate(`(async()=>fetch('/api',{method:'POST',headers:{'content-type':'application/json','x-csrf-token':(await(await fetch('/session')).json()).csrf},body:JSON.stringify({contractVersion:'2.0.0',operation:'logout',body:{},key:crypto.randomUUID()})}))()`);else await grant(f,'operator',kind==='scope'?{scopes:[]}:{fields:['PUBLIC','INTERNAL']});const before=await business(f);await s.page.click('#refresh');await s.page.until("document.querySelector('#message').textContent.includes('入力を消去')");const dom=await s.capture();cleared(dom,[f.po.id,f.body.id,key,f.body.number]);assert.deepEqual(await business(f),before);evidence('clear',{kind,dom,before,after:await business(f)});
+ });
+}));
+for(const kind of ['scope','classification'])for(const action of ['refresh','import'])test('PS-R1 public import '+kind+' '+action+' delayed denial clears after actual input',()=>scenario('import-browser-PS-R1-'+kind+'-'+action,async f=>{
+ const key=randomUUID();await screen(f,'PS-R1-'+kind+'-'+action,async s=>{await s.select();await s.fill(key);await grant(f,'operator',kind==='scope'?{scopes:[]}:{fields:['PUBLIC','INTERNAL']});const before=await business(f);
+ await s.page.evaluate(`window.held=false;window.delivered=false;const prior=window.fetch;window.fetch=async(...args)=>{if(window.held&&!window.delivered)throw TypeError('intervening refresh unavailable');const r=await prior(...args);if(!window.held&&[403,404].includes(r.status)){window.held=true;window.denialStatus=r.status;await new Promise(resolve=>window.releaseDenial=resolve);const json=r.json.bind(r);r.json=async()=>{const v=await json();setTimeout(()=>window.delivered=true,0);return v;};}return r;};`);
+ await s.page.click('#'+action);await s.page.until('window.held');assert.equal(await s.page.evaluate('window.denialStatus'),kind==='scope'?404:403);await s.page.evaluate("document.querySelector('#number').focus();document.querySelector('#number').select()");await s.page.send('Input.insertText',{text:'入力途中の訂正'});await s.page.evaluate('window.releaseDenial()');await s.page.until('window.delivered');const dom=await s.capture();cleared(dom,[f.po.id,f.body.id,key]);assert.deepEqual(await business(f),before);evidence('PS-R1',{kind,action,dom,before,after:await business(f)});
+ });
+}));
+test('public import lost response explicit identical retry keeps one invoice and one import command',()=>scenario('import-browser-loss',async f=>{
+ const key=randomUUID();await screen(f,'loss',async s=>{await s.select();await s.fill(key);await s.page.evaluate(`const prior=window.fetch;let armed=true;window.fetch=async(...args)=>{const r=await prior(...args);if(armed&&args[0]==='/enterprise/v2/rpc'){armed=false;throw TypeError('controlled response loss');}return r;};`);
+ await s.page.click('#import');await s.page.until("document.querySelector('#message').textContent.includes('下書きは保持')");const before=await business(f);await s.page.click('#import');await s.page.until("!document.querySelector('#result').hidden");const dom=await s.capture(),rows=dom.http.filter(x=>x.request.operation==='import');assert.equal(rows.length,2);assert.deepEqual(rows[0].request,rows[1].request);assert.deepEqual(await business(f),before);evidence('loss',{key,dom,before,after:await business(f)});
+ });
+}));
+test('public import readable action refusal keeps draft and does not clear currently authorized PO',()=>scenario('import-browser-readable-denial',async f=>{
+ await grant(f,'operator',{operations:ops.filter(x=>x!=='action')});const before=await business(f),key=randomUUID();await screen(f,'readable-denial',async s=>{await s.select();await s.fill(key);await s.page.click('#import');await s.page.until("document.querySelector('#message').textContent.includes('下書きは保持')");const dom=await s.capture();assert.equal(dom.controls.find(x=>x.id==='request-key').value,key);assert.equal(dom.controls.find(x=>x.id==='number').value,f.body.number);assert.equal(dom.hidden,false);assert.deepEqual(await business(f),before);evidence('readable-denial',{dom,before,after:await business(f)});});
+}));
+for(const kind of ['success','write-denial'])test('public import delayed '+kind+' cannot retain or repaint after revocation',()=>scenario('import-browser-late-'+kind,async f=>{
+ if(kind==='write-denial')await grant(f,'operator',{operations:ops.filter(x=>x!=='action')});const key=randomUUID();await screen(f,'late-'+kind,async s=>{await s.select();await s.fill(key);await s.page.evaluate(`window.held=false;const prior=window.fetch;window.fetch=async(...args)=>{const r=await prior(...args);if(args[0]==='/enterprise/v2/rpc'){window.held=true;await new Promise(resolve=>window.releaseResponse=resolve);}return r;};`);await s.page.click('#import');await s.page.until('window.held');await grant(f,'operator',{scopes:[]});const before=await business(f);
+ if(kind==='success'){await s.page.click('#refresh');await s.page.until("document.querySelector('#message').textContent.includes('入力を消去')");}await s.page.evaluate('window.releaseResponse()');await s.page.until("!document.querySelector('#import').disabled");const dom=await s.capture();cleared(dom,[f.po.id,f.body.id,key]);assert.deepEqual(await business(f),before);evidence('late',{kind,dom,before,after:await business(f)});
+ });
+}));
+for(const point of ['purchaseRead','invoiceRead'])test('BPR-01 import '+point+' final policy release clears every retained source',()=>scenario('import-browser-BPR01-'+point,async f=>{
+ const key=randomUUID();await screen(f,'BPR01-'+point,async s=>{await s.select();await s.fill(key);const native=f.env.f.kernel.enterprise.bind(f.env.f.kernel);let armed=true,change;
+ f.env.f.kernel.enterprise=async(...args)=>{const value=await native(...args);if(armed&&args[1].operation===point){armed=false;const body={id:randomUUID(),scope:f.seed.scope,source:{kind:'object',id:f.po.id,projection:['amount']},label:'STRICT',purposes:['finance-review']};await f.call('publisher','informationCreate',body);change=await business(f);}return value;};
+ try{await s.page.click(point==='purchaseRead'?'#refresh':'#import');await s.page.until("document.querySelector('#message').textContent.includes('入力を消去')");assert.ok(change);const dom=await s.capture();cleared(dom,[f.po.id,f.body.id,key]);assert.deepEqual(await business(f),change);evidence('BPR01',{point,change,dom});}finally{f.env.f.kernel.enterprise=native;}
+ });
+}));

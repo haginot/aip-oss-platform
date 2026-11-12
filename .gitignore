@@ -18,3 +18,8 @@ evidence/runs/*.log
 
 # Owned OSS runtime cache for release bootstrap
 .release-runtime/
+
+# Local execution history is retained in separate recovery archives.
+evidence/enterprise/
+work/enterprise/progress.json
+.codex/

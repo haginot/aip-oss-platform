@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "kind": "PREPARATION_REVIEW_ROUTING_DIAGNOSIS",
+  "runSlug": "20261024121802-56fec935",
+  "iteration": 16,
+  "issueId": "ENT-101",
+  "finding": "PREPARATION_REVIEW_ROUTE_REQUIRES_PRODUCT_BATCH_SUCCESS",
+  "nextRequiredStep": "design-architecture",
+  "productSourceChanged": false,
+  "productBatchPassed": false,
+  "currentApprovals": [],
+  "migrationAuthorization": "ABSENT",
+  "checkedSavedInputEntries": 489,
+  "savedInputsDigest": "6b8283dde8d529f85b9142597d11f2f39ff275339b8d682ea45e6828ceacf8e0",
+  "checkedHandoffReferences": 2055,
+  "reviewFoundationEventsObserved": [],
+  "observedThroughIteration": 16,
+  "actualBuildQualityGates": [
+    {
+      "command": "mise exec -- node scripts/enterprise/verify.mjs batch",
+      "cwd": ".",
+      "name": "enterprise-batch",
+      "timeoutMs": 3600000,
+      "type": "command"
+    }
+  ],
+  "actualBuildRules": [
+    {
+      "condition": {
+        "kind": "semantic",
+        "label": "A bounded batch has passed actual verification and is ready for independent review"
+      },
+      "next": "review-foundation"
+    },
+    {
+      "commandGates": "skip",
+      "condition": {
+        "kind": "semantic",
+        "label": "Repairable implementation or test failures remain"
+      },
+      "next": "build-foundation"
+    },
+    {
+      "commandGates": "skip",
+      "condition": {
+        "kind": "semantic",
+        "label": "Architecture must change to preserve the requirements"
+      },
+      "next": "design-architecture"
+    },
+    {
+      "commandGates": "skip",
+      "condition": {
+        "kind": "semantic",
+        "label": "An indispensable external decision prevents all further work"
+      },
+      "next": "ABORT"
+    }
+  ],
+  "reviewInstruction": "Independently audit the latest batch source, real integration assertions, input/output hashes and UI. Attempt counterexamples for cross-tenant/department/field leakage, SoD, stale approvals, revocation, crash/retry and uncertain external success.\nRead work/enterprise/BATCH_REVIEW.md and include its exact enterprise-batch-attestation object in both Phase 1 and the Phase 2 report. Use the actual reviewer session and completed evidence; never invent an approval.\nIdentify the exact issue IDs and evidence hashes approved. Do not approve the whole initiative based on one batch or on catalog tests. Check that verification CLI cannot pass missing/empty/stale evidence.\nIf this batch is accepted and further implementation remains, explicitly list it and send back to build-foundation for the next batch. Release is allowed only after every implementation/use-case leaf has reviewed evidence. Final audit/release leaves are handled later.\n",
+  "requiredDesignDecisions": [
+    "Define an authenticated preparation-component review route without granting product batch success.",
+    "Define exact component evidence/report/session binding separately from enterprise-batch-attestation.",
+    "Account for frozen bundle execution; source YAML edits alone cannot change this run.",
+    "Preserve foreign-run refusal, old progress and approvals, original ACs and runtime/migration restrictions."
+  ],
+  "diagnosticFailure": {
+    "firstAttemptExitCode": 1,
+    "cause": "Compared raw object bytes hash with canonical JSON object identifier",
+    "filesWrittenBeforeFailure": false,
+    "correction": "Record raw SHA-256 separately; compare sorted compact JSON hash to object identifier.",
+    "originalFailureLocation": "tool output, stdin line 10, AssertionError"
+  },
+  "references": [
+    {
+      "path": ".takt/quality-gates/logs/1792856905792-command-gate-68bb8099-19b9-4a1d-844a-26488c304ae0.log",
+      "sha256": "dd951bc5f8fc660042e0c19ae93237f4e2ddd5b86088fe2105ff35126d3a2e6d",
+      "bytes": 341
+    },
+    {
+      "path": ".takt/workflows/enterprise-lifecycle.yaml",
+      "sha256": "0354f5ce28f5d262fa49e009341bf7b543bc7224aff3a34527d6877a4d4d3d05",
+      "bytes": 11736
+    },
+    {
+      "path": "/Users/haginota/.takt/state/projects/1f55f464-a70a-4f4e-abd5-68720a923e59/runs/20261024121802-56fec935/workflow-bundle/objects/30904ca84d6db6833a50aa0d6d84c5ff3883fe16124ace51c31bd9cfac5098e1.json",
+      "sha256": "7373fbd499d61d3e8722e830f9108819072cf2662840b13b827ea1ae8aac8afb",
+      "bytes": 21352
+    },
+    {
+      "path": "work/enterprise/PREPARATION_ENTRY.md",
+      "sha256": "43f6a0e6d9545969956bdb4b9168b5b75a6e1de2d21d1797e4094b08d5be36c8",
+      "bytes": 28804
+    },
+    {
+      "path": "work/enterprise/BATCH_REVIEW.md",
+      "sha256": "ab289a05cd97c27c5c30cb2be1a13c5d21607424efa1836be40dd1d5d7eadcd4",
+      "bytes": 14721
+    },
+    {
+      "path": "work/enterprise/plan.json",
+      "sha256": "b34ea1f12c03c4845ef3628dad37de351acc51a96aef4c5eb79556d4998a01df",
+      "bytes": 883497
+    },
+    {
+      "path": "work/enterprise/progress.json",
+      "sha256": "24b2d30994b4183310987828b2a9f406135a7eaa65a932ae1137c432152b0fa7",
+      "bytes": 14937
+    },
+    {
+      "path": "/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/enterprise/seal-publication-run56fec935-iteration14/handoff.json",
+      "sha256": "4eee65d76ee3ad94e250a9956fa6023c53039675261e9c87e0f679fec3c87ea9",
+      "bytes": 699907
+    },
+    {
+      "path": "/Users/haginota/Repositories/chatgpt-projects/takt-worktrees/20261011T1824-product-goal-md-wo-toshite-ac-ed915a459ce3d41d/evidence/enterprise/seal-publication-run56fec935-iteration14/repaired/regression.stdout",
+      "sha256": "c2e4a18c5d4a927556db89e0cdd854df7c6216ada5dd0e297482aeecbb4dec0f",
+      "bytes": 195143
+    },
+    {
+      "path": "evidence/generated/release/adapter-trace.json",
+      "sha256": "7cdc30620fd3f6cf62d50b31761409aa2350c7c81d74c083d229caf4c653aee6",
+      "bytes": 23750
+    },
+    {
+      "path": "evidence/model-smoke.json",
+      "sha256": "dce2d7cb780ef7ea704b468e58fdb9801fbbbe68afb2854427cc48c5e01b2c52",
+      "bytes": 1592
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>支払申請 ENT-202</title>
+<style>body{font-family:system-ui,sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem}label{display:block;margin:1rem 0}input{display:block;width:95%;padding:.5rem}button,a{margin:.5rem;padding:.5rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}input:focus,button:focus,a:focus{outline:3px solid #2463bf}</style></head>
+<body><h1>支払申請</h1><p id="identity"></p><p>取込済みの請求書から支払を申請します。請求書の取込は<a href="/invoice">請求書画面</a>で行ってください。</p>
+<p>申請しても承認や送金は実行されません。応答が確認できないときは、同じ支払IDと再送キーを使って明示的に再送してください。再読込後は自動送信しません。</p>
+<p>拒否された申請の内容を修正するときは、新しい再送キーを入力してください。応答が不明な申請は、先に支払IDで結果を確認してください。</p>
+<p id="message" role="status" aria-live="polite"></p>
+<form id="submit-form"><label for="payment-id">支払ID（案件ID）</label><input id="payment-id" name="id" required maxlength="128" autocomplete="off">
+<label for="invoice-id">取込済み請求書ID</label><input id="invoice-id" name="invoiceId" required maxlength="128" autocomplete="off">
+<label for="revision">請求書の現在版</label><input id="revision" name="revision" type="number" min="1" step="1" required>
+<label for="account-id">登録済み口座ID</label><input id="account-id" name="accountId" required maxlength="128" autocomplete="off">
+<label for="amount">支払金額（通貨の最小単位）</label><input id="amount" name="amount" type="number" min="1" step="1" required>
+<label for="request-key">再送キー（同じ申請では同じ値）</label><input id="request-key" name="key" required maxlength="128" autocomplete="off">
+<button id="check" type="button">現在の請求書・口座を確認</button><button id="submit" type="submit">支払を申請</button></form>
+<button id="refresh" type="button">現在の権限を再確認</button><button id="lookup" type="button">支払IDの結果を確認</button>
+<section id="references" hidden><h2>現在の参照情報</h2><pre id="source"></pre></section>
+<section id="result" hidden><h2 tabindex="-1" id="result-title">申請結果</h2><pre id="summary"></pre><a id="detail">監査付き案件詳細へ</a><p>案件詳細には監査の参照権限が必要です。</p></section>
+<p><a href="/login">再ログイン</a> <a href="/enterprise/cases/ENT-202">支払案件一覧</a></p>
+<script type="module" src="/enterprise/ENT-202-submit.mjs"></script></body></html>

@@ -26,11 +26,16 @@ test('light planning starts on Luna and promotes to Sol, then Astra', () => {
   }
 });
 
-test('implementation starts on Sol and uses Astra from its third visit', () => {
-  for (const name of ['design-architecture', 'build-foundation', 'build-store-demo', 'build-bcp', 'harden-release']) {
+test('ladder-based implementation starts on Sol and uses Astra from its third visit', () => {
+  for (const name of ['design-architecture', 'build-store-demo', 'build-bcp', 'harden-release']) {
     assert.deepEqual(step(name).progression, ['gpt-6.1-sol', 'gpt-6.1-sol', 'gpt-6-astra', 'gpt-6-astra']);
     assert.deepEqual(step(name).efforts, ['medium', 'medium', 'high', 'high']);
   }
+});
+
+test('build-foundation uses the approved critical seat from its first visit', () => {
+  assert.deepEqual(step('build-foundation').progression, Array(4).fill('gpt-6-astra'));
+  assert.deepEqual(step('build-foundation').efforts, Array(4).fill('high'));
 });
 
 test('architecture, security, BCP and final audits never downgrade from Astra', () => {

@@ -24,7 +24,7 @@ await check('Node/TAKT', () => {
   const [major, minor] = process.versions.node.split('.').map(Number);
   assert(major > 22 || (major === 22 && minor >= 22), 'Node.js 22.22以上が必要です');
   assert(existsSync(resolve(root, 'node_modules/.bin/takt')), 'npm ciを実行してください');
-  assert(JSON.parse(readFileSync(resolve(root, 'node_modules/takt/package.json'))).version === '0.70.0', 'TAKTは検証済みの0.70.0に固定してください');
+  assert(JSON.parse(readFileSync(resolve(root, 'node_modules/takt/package.json'))).version === '0.71.0', 'TAKTは検証済みの0.71.0に固定してください');
 });
 await check('Git/隔離実行入力', () => {
   assert(git('rev-parse', '--verify', 'HEAD').status === 0, '初回commitが必要です');
