@@ -1,0 +1,109 @@
+{
+  "hashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "c392925a85b6ad26842fb76d23f33e499303d4ce419bb1e91199f1453457583b",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "ebbc75b634b97f039d30fba120dec23ab73dd39190ebdfef32b8fe3db5837819",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "add90e482629956293f66f8bff31c9ce3d8b54d22a8677c469c45e4441ab444e",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349"
+  },
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "output": ""
+  },
+  "result": {
+    "checks": [
+      {
+        "name": "conflict-first",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113004644-fdd3d8b9"
+      },
+      {
+        "name": "conflict-successor",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113004645-23e82ad2"
+      },
+      {
+        "name": "independent",
+        "status": "completed",
+        "runId": "20261113004645-305657c0"
+      },
+      {
+        "name": "real-cli-run",
+        "code": 1
+      },
+      {
+        "name": "real-cli-watch",
+        "code": 1
+      },
+      {
+        "name": "hold",
+        "status": "completed",
+        "runId": "20261113004646-ea5c2402"
+      },
+      {
+        "name": "follow",
+        "status": "completed",
+        "runId": "20261113004648-4a84d626"
+      },
+      {
+        "name": "crash-SIGTERM",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113004648-0a5d8717"
+      },
+      {
+        "name": "crash-SIGKILL",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113004649-287f3661"
+      },
+      {
+        "name": "recovery-control",
+        "status": "completed",
+        "runId": "20261113004650-3dbc5a13"
+      }
+    ],
+    "processes": [
+      {
+        "pid": 44909,
+        "guardian": 44905,
+        "descendant": 44910
+      },
+      {
+        "pid": 44977,
+        "guardian": 44975,
+        "descendant": 44978
+      },
+      {
+        "pid": 45090,
+        "guardian": 45087,
+        "descendant": 45092
+      },
+      {
+        "pid": 45161,
+        "guardian": 45159,
+        "descendant": 45162
+      },
+      {
+        "pid": 45239,
+        "guardian": 45237,
+        "descendant": 45240
+      }
+    ],
+    "capacityBytes": 805265408,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794530804"
+    },
+    "capacity": {
+      "unproven": "Nested mount unavailable; outer volume must not be filled"
+    },
+    "ok": true
+  }
+}

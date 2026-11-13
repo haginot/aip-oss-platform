@@ -1,0 +1,43 @@
+{
+  "mode": "watch",
+  "oldSnapshot": {
+    "ownerId": "8313e9b7-3340-4665-a87d-912246bdece0",
+    "pid": 56625,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794533218"
+    },
+    "kind": "run",
+    "state": "starting"
+  },
+  "published": {
+    "ownerId": "8313e9b7-3340-4665-a87d-912246bdece0",
+    "pid": 56625,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794533218"
+    },
+    "kind": "run",
+    "state": "starting",
+    "gateGroups": [
+      {
+        "pid": 56629,
+        "processIdentity": {
+          "startTime": "darwin-start-v2:1794533218"
+        }
+      }
+    ]
+  },
+  "admission": {
+    "acquired": true,
+    "owner": {
+      "ownerId": "f45ba02b-a55d-47a8-b9a8-ecbd4346a460",
+      "pid": 56627,
+      "processIdentity": {
+        "startTime": "darwin-start-v2:1794533218"
+      },
+      "kind": "watch",
+      "state": "starting"
+    }
+  },
+  "before": 42,
+  "after": 64
+}

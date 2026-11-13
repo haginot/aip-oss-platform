@@ -1,0 +1,18 @@
+{
+  "kind": "actual-post-review-host-verification",
+  "command": "mise exec -- node --test --test-concurrency=1 tests/native-controls/*.test.mjs",
+  "exitCode": 1,
+  "tests": 18,
+  "pass": 17,
+  "fail": 1,
+  "skip": 0,
+  "failure": {
+    "test": "official HTTP -> real central workers -> gates in the bounded launch path",
+    "message": "Writable root must be on bounded volume",
+    "location": "tests/native-controls/http.test.mjs:29",
+    "reason": "The enclosing-volume discovery test reaches / on an ordinary host checkout; the bounded launcher correctly refuses it."
+  },
+  "aggregateCapacityTest": "passed actual 64 MiB filesystem ENOSPC",
+  "formalEnterpriseAcceptance": false,
+  "pushDecision": "withheld until authentic TAKT correction and separate review"
+}

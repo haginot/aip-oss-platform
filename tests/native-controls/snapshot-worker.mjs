@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { quote, until, put } from './helpers.mjs';
+const [runtime, base] = process.argv.slice(2);
+const { acquireProjectExecutionLock } = await import(pathToFileURL(join(runtime, 'dist/infra/task/project-execution-lock.js')));
+const { runCommandQualityGate } = await import(pathToFileURL(join(runtime, 'dist/core/workflow/quality-gates/commandGateRunner.js')));
+const lock = acquireProjectExecutionLock(base, 'run');
+put(join(base, 'ready.json'), lock.owner);
+await until('start gate', () => fs.existsSync(join(base, 'start')));
+const command = 'exec ' + [process.execPath, join(import.meta.dirname, 'http-gate.mjs'), 'hold', join(base, 'gate.json'), join(base, 'finish'), 'unused'].map(quote).join(' ');
+await runCommandQualityGate({ projectRoot: base, gate: { type: 'command', command, timeoutMs: 30000 } });
+lock.release();

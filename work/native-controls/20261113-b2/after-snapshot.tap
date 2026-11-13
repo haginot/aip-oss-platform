@@ -1,0 +1,37 @@
+TAP version 13
+# Subtest: explicit release retains live gate group, then permits admission while old owner is still alive
+ok 1 - explicit release retains live gate group, then permits admission while old owner is still alive
+  ---
+  duration_ms: 404.494625
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/snapshot-run-B1mL1e/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: run
+ok 2 - stale pre-registration snapshot cannot reclaim live gate: run
+  ---
+  duration_ms: 470.235416
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/snapshot-watch-mf6nls/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: watch
+ok 3 - stale pre-registration snapshot cannot reclaim live gate: watch
+  ---
+  duration_ms: 505.148083
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/snapshot-inspect-otghUQ/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: inspect
+ok 4 - stale pre-registration snapshot cannot reclaim live gate: inspect
+  ---
+  duration_ms: 510.385167
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1959.185792

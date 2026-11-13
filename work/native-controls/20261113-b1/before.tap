@@ -1,0 +1,34 @@
+TAP version 13
+# Native HTTP evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/http-native-p8bAcA/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+not ok 1 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 5488.628958
+  type: 'test'
+  location: '/private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http.test.mjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"result":{"checks":[{"name":"conflict-first","status":"failed","failure":"project_execution_conflict","runId":"20261113010124-b503a45e"},{"name":"conflict-successor","status":"failed","failure":"project_execution_conflict","runId":"20261113010124-49c1df8b"},{"name":"independent","status":"completed","runId":"20261113010125-f43b2121"},{"name":"real-cli-run","code":1},{"name":"real-cli-watch","code":1},{"name":"hold","status":"completed","runId":"20261113010126-317ccdf5"},{"name":"follow","status":"completed","runId":"20261113010127-9c89a049"}],"processes":[{"pid":49347,"guardian":49344,"descendant":49349},{"pid":49418,"guardian":49416,"descendant":49419},{"pid":49531,"guardian":49528,"descendant":49533},{"pid":49601,"guardian":49599,"descendant":49602}],"capacityBytes":805265408,"processIdentity":{"startTime":"darwin-start-v2:1794531683"},"error":"AssertionError [ERR_ASSERTION]: Missing expected exception.\n    at file:///private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http-fixture.mjs:149:51"},"output":""}
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http.test.mjs:17:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5526.45875

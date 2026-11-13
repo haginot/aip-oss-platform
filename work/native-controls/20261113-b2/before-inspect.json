@@ -1,0 +1,34 @@
+{
+  "mode": "inspect",
+  "oldSnapshot": {
+    "ownerId": "c51b097e-0568-4ffb-bd19-f5fcc78eae5a",
+    "pid": 56649,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794533219"
+    },
+    "kind": "run",
+    "state": "starting"
+  },
+  "published": {
+    "ownerId": "c51b097e-0568-4ffb-bd19-f5fcc78eae5a",
+    "pid": 56649,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794533219"
+    },
+    "kind": "run",
+    "state": "starting",
+    "gateGroups": [
+      {
+        "pid": 56657,
+        "processIdentity": {
+          "startTime": "darwin-start-v2:1794533219"
+        }
+      }
+    ]
+  },
+  "admission": {
+    "owner": null
+  },
+  "before": 46,
+  "after": 68
+}

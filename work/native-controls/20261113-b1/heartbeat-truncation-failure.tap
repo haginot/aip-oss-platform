@@ -1,0 +1,116 @@
+TAP version 13
+# Per-file refusal evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/file-limit-yfxGo5/result.json
+# Subtest: kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+ok 1 - kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+  ---
+  duration_ms: 356.441375
+  type: 'test'
+  ...
+# Subtest: real command gate owns and reaps its process group
+    # Subtest: normal
+    ok 1 - normal
+      ---
+      duration_ms: 234.217791
+      type: 'test'
+      ...
+    # Subtest: verbose
+    ok 2 - verbose
+      ---
+      duration_ms: 265.204459
+      type: 'test'
+      ...
+    # Subtest: failure
+    ok 3 - failure
+      ---
+      duration_ms: 260.610375
+      type: 'test'
+      ...
+    # Subtest: timeout
+    ok 4 - timeout
+      ---
+      duration_ms: 808.045167
+      type: 'test'
+      ...
+    # Subtest: worker-term
+    ok 5 - worker-term
+      ---
+      duration_ms: 266.976834
+      type: 'test'
+      ...
+    # Subtest: worker-kill
+    ok 6 - worker-kill
+      ---
+      duration_ms: 265.720417
+      type: 'test'
+      ...
+    # Subtest: guardian-kill
+    ok 7 - guardian-kill
+      ---
+      duration_ms: 293.954166
+      type: 'test'
+      ...
+    1..7
+ok 2 - real command gate owns and reaps its process group
+  ---
+  duration_ms: 2398.425875
+  type: 'test'
+  ...
+# Native HTTP evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/http-native-AnWBYb/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+not ok 3 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 7024.307583
+  type: 'test'
+  location: '/private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http.test.mjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"result":{"checks":[{"name":"conflict-first","status":"failed","failure":"project_execution_conflict","runId":"20261113010616-202a7c31"},{"name":"conflict-successor","status":"failed","failure":"project_execution_conflict","runId":"20261113010617-5b54495f"},{"name":"independent","status":"completed","runId":"20261113010617-fc295471"},{"name":"real-cli-run","code":1},{"name":"real-cli-watch","code":1},{"name":"hold","status":"completed","runId":"20261113010618-5d9fba52"},{"name":"follow","status":"completed","runId":"20261113010620-c27728f2"},{"name":"during-cleanup-SIGTERM","status":"failed","failure":"project_execution_conflict","runId":"20261113010621-a16ee995"},{"name":"crash-SIGTERM","status":"failed","failure":"worker_crashed","runId":"20261113010620-28e03b48"}],"processes":[{"pid":51356,"guardian":51351,"descendant":51358},{"pid":51427,"guardian":51424,"descendant":51428},{"pid":51547,"guardian":51542,"descendant":51549},{"pid":51621,"guardian":51618,"descendant":51622},{"pid":51728,"guardian":51724,"descendant":51729}],"capacityBytes":805265408,"processIdentity":{"startTime":"darwin-start-v2:1794531976"},"cleanupExclusion":[{"signal":"SIGTERM","killGuardian":false,"worker":51562,"guardian":51618,"sentinel":51619,"before":0,"after":98,"lockRefusedWhileWriting":true}],"error":"AssertionError [ERR_ASSERTION]: Old gate must still be writing during refusal\n    at file:///private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http-fixture.mjs:160:7"},"output":""}
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http.test.mjs:17:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# HTTP evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/http-0tGrWe/evidence.json
+# hdiutil: attach failed - アクセス権がありません
+# Subtest: official HTTP -> real central workers -> gates in the bounded launch path
+ok 4 - official HTTP -> real central workers -> gates in the bounded launch path # SKIP Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.
+  ---
+  duration_ms: 8.72525
+  type: 'test'
+  ...
+# Subtest: real 64 MiB filesystem capacity refusal through HTTP gate
+ok 5 - real 64 MiB filesystem capacity refusal through HTTP gate # SKIP Outer environment denied real image mount; aggregate ENOSPC is UNPROVEN. Image removed.
+  ---
+  duration_ms: 1225.428625
+  type: 'test'
+  ...
+# Subtest: hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+ok 6 - hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+  ---
+  duration_ms: 11.301875
+  type: 'test'
+  ...
+# Subtest: bounded launcher refuses ordinary directories before executing anything
+ok 7 - bounded launcher refuses ordinary directories before executing anything
+  ---
+  duration_ms: 0.281292
+  type: 'test'
+  ...
+1..7
+# tests 14
+# suites 0
+# pass 11
+# fail 1
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 11173.409083

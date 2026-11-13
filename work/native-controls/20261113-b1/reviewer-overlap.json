@@ -1,0 +1,111 @@
+{
+  "checks": [
+    {
+      "name": "conflict-first",
+      "status": "failed",
+      "failure": "project_execution_conflict",
+      "runId": "20261113005516-a4f3c615"
+    },
+    {
+      "name": "conflict-successor",
+      "status": "failed",
+      "failure": "project_execution_conflict",
+      "runId": "20261113005516-456e201d"
+    },
+    {
+      "name": "independent",
+      "status": "completed",
+      "runId": "20261113005516-3e881706"
+    },
+    {
+      "name": "real-cli-run",
+      "code": 1
+    },
+    {
+      "name": "real-cli-watch",
+      "code": 1
+    },
+    {
+      "name": "hold",
+      "status": "completed",
+      "runId": "20261113005517-641908f1"
+    },
+    {
+      "name": "follow",
+      "status": "completed",
+      "runId": "20261113005519-6f4eb752"
+    },
+    {
+      "name": "crash-SIGTERM",
+      "status": "failed",
+      "failure": "worker_crashed",
+      "runId": "20261113005520-dc397aa5"
+    },
+    {
+      "name": "crash-SIGKILL",
+      "status": "failed",
+      "failure": "worker_crashed",
+      "runId": "20261113005520-686ddba1"
+    },
+    {
+      "name": "recovery-control",
+      "status": "completed",
+      "runId": "20261113005521-9bf890bd"
+    }
+  ],
+  "processes": [
+    {
+      "pid": 47869,
+      "guardian": 47865,
+      "descendant": 47871
+    },
+    {
+      "pid": 47939,
+      "guardian": 47937,
+      "descendant": 47940
+    },
+    {
+      "pid": 48057,
+      "guardian": 48054,
+      "descendant": 48059
+    },
+    {
+      "pid": 48127,
+      "guardian": 48125,
+      "descendant": 48128
+    },
+    {
+      "pid": 48202,
+      "guardian": 48200,
+      "descendant": 48203
+    }
+  ],
+  "capacityBytes": 805265408,
+  "processIdentity": {
+    "startTime": "darwin-start-v2:1794531315"
+  },
+  "reviewOverlap": [
+    {
+      "signal": "SIGTERM",
+      "worker": 48069,
+      "gate": 48127,
+      "newOwnerPid": 47755,
+      "before": 31,
+      "after": 48,
+      "oldGateWroteWhileNewLockHeld": true
+    },
+    {
+      "signal": "SIGKILL",
+      "worker": 48144,
+      "gate": 48202,
+      "newOwnerPid": 47755,
+      "before": 39,
+      "after": 56,
+      "oldGateWroteWhileNewLockHeld": true
+    }
+  ],
+  "capacity": {
+    "unproven": "Nested mount unavailable; outer volume must not be filled"
+  },
+  "ok": true
+}

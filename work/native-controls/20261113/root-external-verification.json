@@ -1,0 +1,152 @@
+{
+  "time": "2026-11-13T00:43:58.495Z",
+  "source": {
+    "scripts/native-controls/patch.mjs": "566ebef453fe4f47a091598f0a16e3169c5f685705a4c8a2b50f14118cf33d6d",
+    "scripts/native-controls/gate-supervisor.mjs": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349",
+    "scripts/native-controls/run-bounded.mjs": "318f8ce7dc47167e0c0a92cd330ad4cc3d5252f1cd7fc498802a8be3bd1f7acb",
+    "scripts/native-controls/file-limit.mjs": "3728231dd82736b64507286b124a475b4f04dcbad1f9b46f35f15754786c02f3",
+    "scripts/native-controls/upstream.json": "1fc12d8f2cab35d311d58eaa181d104eece1a02fb50d486d385f890a34b484a6",
+    "tests/native-controls/helpers.mjs": "c6736c3da35047d1c7f3d4df74b80feb5e2f1bd174ab8c349c74272246b1db05",
+    "tests/native-controls/http-fixture.mjs": "48b6208206d864829bd22b8a714d64a1c04027ae840ef61aef26c821d6f770d2",
+    "tests/native-controls/http-gate.mjs": "7b05e161dbdd54b4087e045f6d52bad1536e7b370b186cdbd77e8412665ec91f"
+  },
+  "runtime": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "c392925a85b6ad26842fb76d23f33e499303d4ce419bb1e91199f1453457583b",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "ebbc75b634b97f039d30fba120dec23ab73dd39190ebdfef32b8fe3db5837819",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "add90e482629956293f66f8bff31c9ce3d8b54d22a8677c469c45e4441ab444e",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349"
+  },
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "capacityBytes": 67067904,
+    "logPath": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/mount/logs/launch-1794530629162-43078.log"
+  },
+  "result": {
+    "checks": [
+      {
+        "name": "conflict-first",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113004349-c146c0f1"
+      },
+      {
+        "name": "conflict-successor",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113004350-6d76dfef"
+      },
+      {
+        "name": "independent",
+        "status": "completed",
+        "runId": "20261113004350-7f3e4224"
+      },
+      {
+        "name": "real-cli-run",
+        "code": 1
+      },
+      {
+        "name": "real-cli-watch",
+        "code": 1
+      },
+      {
+        "name": "hold",
+        "status": "completed",
+        "runId": "20261113004351-a5538f4d"
+      },
+      {
+        "name": "follow",
+        "status": "completed",
+        "runId": "20261113004353-d1e29b74"
+      },
+      {
+        "name": "crash-SIGTERM",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113004353-b071cb1e"
+      },
+      {
+        "name": "crash-SIGKILL",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113004354-369937c8"
+      },
+      {
+        "name": "write-confinement",
+        "status": "completed",
+        "runId": "20261113004355-65631d4f"
+      },
+      {
+        "name": "capacity",
+        "status": "failed",
+        "failure": "workflow_failed",
+        "runId": "20261113004356-ecf13081"
+      },
+      {
+        "name": "recovery-control",
+        "status": "completed",
+        "runId": "20261113004357-5caf758e"
+      }
+    ],
+    "processes": [
+      {
+        "pid": 43187,
+        "guardian": 43183,
+        "descendant": 43189
+      },
+      {
+        "pid": 43219,
+        "guardian": 43217,
+        "descendant": 43220
+      },
+      {
+        "pid": 43301,
+        "guardian": 43298,
+        "descendant": 43303
+      },
+      {
+        "pid": 43335,
+        "guardian": 43333,
+        "descendant": 43336
+      },
+      {
+        "pid": 43375,
+        "guardian": 43373,
+        "descendant": 43376
+      },
+      {
+        "pid": 43436,
+        "guardian": 43432,
+        "descendant": 43437
+      },
+      {
+        "pid": 43528,
+        "guardian": 43525,
+        "descendant": 43530,
+        "code": "ENOSPC",
+        "bytes": 62914560
+      }
+    ],
+    "capacityBytes": 67067904,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794530629"
+    },
+    "capacity": {
+      "pid": 43528,
+      "guardian": 43525,
+      "descendant": 43530,
+      "code": "ENOSPC",
+      "bytes": 62914560
+    },
+    "ok": true
+  },
+  "log": "",
+  "sourceUnchanged": true,
+  "escapeAbsent": true,
+  "formalEnterpriseAcceptance": false
+}

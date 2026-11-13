@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "version": "0.71.0",
+  "source": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "2fc2b6042a7c4c76f86b3fcf468795d256f862877b671933c84a1a5956dbc272",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "ebbc75b634b97f039d30fba120dec23ab73dd39190ebdfef32b8fe3db5837819",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "c617b0ca26ec4d02630dacfcf6069f64c799025fa9ee91bf1af84458a1febe72"
+  },
+  "patchSha256": "620f5753544da6b826161a7156cac94d463caba28e76b0a898686ad94f48b30a",
+  "runtime": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "4746ee0c6c1660fd541f20d9dc34dfd1c471f5b8060d5dac54116f230e25f302",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "c7e68563b3d42e46742c3209fd6f2dd3805595b5eec5854ac6be6f2d8d5bc656",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "f571241e8034c1b94385807dc50bcec6a47888e149810004409ab93f9cd0d75d",
+    "dist/infra/task/native-gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133"
+  }
+}

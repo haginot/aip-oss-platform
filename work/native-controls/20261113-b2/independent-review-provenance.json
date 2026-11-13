@@ -1,0 +1,24 @@
+{
+  "kind": "operator-preservation-of-authentic-engineering-review",
+  "scope": "Native controls only; not enterprise acceptance",
+  "reviewerSession": "01a1d263-cef7-7a51-964d-9d6e9a3d0959",
+  "builderSession": "01a1d250-222b-7ad1-af87-c24ce52594eb",
+  "reviewSha256": "f600c83c9e9635f123461e99c0daa79a8a8a0ecfed7791d1e7434a9fd03ffcb9",
+  "runArchiveSha256": "6caafca77b67a1a1165fd67b1b9af3da91a4325fea6a4dead0607b9f88816b8d",
+  "operatorProofSha256": "cbc09e97eee352bbe632760fa62148057fe27b38626c5d6e77c9158c0413b943",
+  "result": {
+    "time": "2026-11-13T01:39:51.426Z",
+    "baseline": "788c940873aeca4971abe5766f81481d404ce850",
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "capacityBytes": 805265408,
+    "patchSha256": "9a399eae9c922f41c2700611f695f9376b522841c82d0f162b2e3341431c3e63",
+    "evidenceSha256": "6caafca77b67a1a1165fd67b1b9af3da91a4325fea6a4dead0607b9f88816b8d",
+    "formalEnterpriseAcceptance": false,
+    "sourceUnmodified": true,
+    "status": "completed",
+    "cleanup": "complete"
+  }
+}

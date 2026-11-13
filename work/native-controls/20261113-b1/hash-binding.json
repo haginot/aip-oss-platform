@@ -1,0 +1,70 @@
+{
+  "time": "2026-11-13T01:12:07.214Z",
+  "sourceMatches": 21,
+  "runtimeMatches": 10,
+  "sourceHashes": {
+    "scripts/native-controls/README.md": "3c7ba9bdff602c567fa2e22e44c0ac16a67ff1bcb1547c5783934c0f0fee63f2",
+    "scripts/native-controls/file-limit.mjs": "3728231dd82736b64507286b124a475b4f04dcbad1f9b46f35f15754786c02f3",
+    "scripts/native-controls/gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "scripts/native-controls/gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133",
+    "scripts/native-controls/patch.mjs": "43de59357f15e8c9271fe5404275eeb14f22f423130a58d05f9fb096e3018ce6",
+    "scripts/native-controls/run-bounded.mjs": "119d69d0351c86639f19179333abd073fdf061bcc6e51d375fefd78ed8a45c40",
+    "scripts/native-controls/upstream.json": "1fc12d8f2cab35d311d58eaa181d104eece1a02fb50d486d385f890a34b484a6",
+    "tests/native-controls/external-proof.mjs": "ce52ef5f28364e0ce03284be16c904418b1eb7acaa925814b67b73aaa5bde20a",
+    "tests/native-controls/file-limit-payload.mjs": "eb22c4f26758ca811fd56cb37dc24a0223bfe14e638f46f88f7941b827c1f97a",
+    "tests/native-controls/file-limit.test.mjs": "ff81ec00b5221944c49ad792fa203ce62c91d22580c519e705190bce633299df",
+    "tests/native-controls/gate-payload.mjs": "98b055dc1e72be5ef79a0fb565a724882acdf7ce59b29506bd4186b1973f3dcd",
+    "tests/native-controls/gate-worker.mjs": "312f74c885a1754a0ca0aff1047578f70832433161739d6c49151566509fec6a",
+    "tests/native-controls/gates.test.mjs": "765c276b2353b2c3ddbdef884734d8ba150c85991eaa756c1b1eb4947a336fdb",
+    "tests/native-controls/helpers.mjs": "7c9533af52803a0fbdb883a9658d993eab85b4f0c3af3653edaa43ed09b7d3d6",
+    "tests/native-controls/http-fixture.mjs": "f2d61fbc16ab2e5e31399b47bf0bc68606edb4e56d6efc73d9b5695493c1ad69",
+    "tests/native-controls/http-gate.mjs": "c25535ba1aa797b75276e244ee0164b2c6d4202af4ccd810f0dd4bc2da9368a8",
+    "tests/native-controls/http.test.mjs": "be74b3325ad60a3da12ea9abebbf3dcc8efa0ca1ac3e66dc93e3b72a9716d441",
+    "tests/native-controls/lease.test.mjs": "2376353d6b5915e9d9a2d9df19c20596f8780e16989761e414b03f39b7c167c1",
+    "tests/native-controls/patch.test.mjs": "15875b1b683acf2c6af17bfed2c372bf3d94409525b82a7d0b51b486cfbbf504",
+    "tests/native-controls/release-worker.mjs": "ff78239ee15cf224a2ffc8646e9d5e9e5e292aa92e2e280ba87df564574f2a9e",
+    "tests/native-controls/volume.mjs": "2b80f8f0863701d7e577c8368c9d8acc3d9401ff4cf317aaee57f8ee96b998e9"
+  },
+  "runtimeHashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "4746ee0c6c1660fd541f20d9dc34dfd1c471f5b8060d5dac54116f230e25f302",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "1675596623facdb9a969e865d6fffeb57a16b9719d5a974176fb759905ef6376",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "f571241e8034c1b94385807dc50bcec6a47888e149810004409ab93f9cd0d75d",
+    "dist/infra/task/native-gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133"
+  },
+  "operatorProofSha256": "f54069010d8e203cc814ccef9702ac7d48218b264fbb897555eab7c6e4f76642",
+  "upstreamVerified": true,
+  "ownedImagesAttached": [],
+  "outer": {
+    "capacityBytes": 805265408,
+    "freeBytes": 185249792
+  },
+  "evidence": [
+    {
+      "path": "work/native-controls/20261113-b1/operator-proof.json",
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/b1-reproof-1/proof.json",
+      "sha256": "f54069010d8e203cc814ccef9702ac7d48218b264fbb897555eab7c6e4f76642"
+    },
+    {
+      "path": "work/native-controls/20261113-b1/operator-exit.json",
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/b1-reproof-1/exit.json",
+      "sha256": "dbfaa28462ba8a4cb2eb0bdd3dd3bcca99be9ac9b3252504f82a5eca3e6bef40"
+    },
+    {
+      "path": "work/native-controls/20261113-b1/operator-cleanup.json",
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/b1-reproof-1/cleanup.json",
+      "sha256": "58a88d6bc0040b6749a653e0ff3b1ead5a1f1e9176f6e105c14e2cf6cc4e579e"
+    },
+    {
+      "path": "work/native-controls/20261113-b1/operator-capacity-admission.json",
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/b1-reproof-1/capacity-admission.json",
+      "sha256": "1ba268117c75c64c6d8af07a51ff488eaf1923e2e5f086b9ae3e89a03c4d9f59"
+    }
+  ],
+  "formalEnterpriseAcceptance": false
+}

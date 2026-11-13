@@ -1,0 +1,64 @@
+{
+  "time": "2026-11-13T00:48:14.715Z",
+  "node": "v22.23.3",
+  "platform": "darwin",
+  "tests": {
+    "command": "node --test --test-concurrency=1 tests/native-controls/*.test.mjs",
+    "exitCode": 0,
+    "tests": 14,
+    "pass": 12,
+    "fail": 0,
+    "skipped": 2
+  },
+  "externalCommand": "node tests/native-controls/external-proof.mjs OWNED_64_MIB_MOUNT COPIED_TAKT",
+  "externalExitCode": 0,
+  "evidence": [
+    {
+      "path": "work/native-controls/20261113/cleanup.json",
+      "sha256": "84f6930e3adc571b1cb3ec590ebf458f63b5edab5d46fc6536fd11ee3f4786cb"
+    },
+    {
+      "path": "work/native-controls/20261113/hash-binding.json",
+      "sha256": "9a1cda41b8aa82336e089969a7ccfa55ebb945b10598406611c3f400f4b67865"
+    },
+    {
+      "path": "work/native-controls/20261113/local-confinement-refusal.json",
+      "sha256": "845f3dbe5e1b369910e9c9211c31abdc78017dee063e4e5012333789019a8e49"
+    },
+    {
+      "path": "work/native-controls/20261113/local-file-limit.json",
+      "sha256": "8729d9c92d87b614c97394f2eeba0bee42abc1dc6723d6bc699ec6cc385b4712"
+    },
+    {
+      "path": "work/native-controls/20261113/local-http.json",
+      "sha256": "9e3a911fb04832b3a7e8e6899f1024a81e2c5ddc2161aa0e946481962d444ff6"
+    },
+    {
+      "path": "work/native-controls/20261113/local-tests.tap",
+      "sha256": "9f36f21e4b1182bf5e2929346222a6859642e4098b93835109da4b13d3189169"
+    },
+    {
+      "path": "work/native-controls/20261113/root-candidate-external-exit.json",
+      "sha256": "eb073be3e363afcb49a5b3c3bfad9ddeba4b572468c279a6213577979fc03ed4"
+    },
+    {
+      "path": "work/native-controls/20261113/root-candidate-external-proof.json",
+      "sha256": "70e835a85eb776cc227d93588935d40df2bacbce5e017bc335477bd098e0c54b"
+    },
+    {
+      "path": "work/native-controls/20261113/root-external-verification.json",
+      "sha256": "dacca4ccdbaf1a6e2f3c9721c75696777e1803eb1775f75be565319a3cd18113"
+    },
+    {
+      "path": "work/native-controls/20261113/root-http-evidence.json",
+      "sha256": "6a630f38203fd68d49f8db46cf5ae4357e26bda8948cf8e343a8e7b0fe9e52c9"
+    }
+  ],
+  "outer": {
+    "capacityBytes": 805265408,
+    "freeBytes": 195866624
+  },
+  "hostFreeBytes": 67817373696,
+  "protectedDiffExitCode": 0,
+  "formalEnterpriseAcceptance": false
+}

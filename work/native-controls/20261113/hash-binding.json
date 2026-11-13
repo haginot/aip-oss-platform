@@ -1,0 +1,182 @@
+{
+  "time": "2026-11-13T00:47:01.874Z",
+  "command": "source/runtime SHA-256 comparison and original upstream verification",
+  "exitCode": 0,
+  "bindings": [
+    {
+      "path": "scripts/native-controls/file-limit.mjs",
+      "sha256": "3728231dd82736b64507286b124a475b4f04dcbad1f9b46f35f15754786c02f3",
+      "matches": true
+    },
+    {
+      "path": "scripts/native-controls/gate-supervisor.mjs",
+      "sha256": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349",
+      "matches": true
+    },
+    {
+      "path": "scripts/native-controls/patch.mjs",
+      "sha256": "566ebef453fe4f47a091598f0a16e3169c5f685705a4c8a2b50f14118cf33d6d",
+      "matches": true
+    },
+    {
+      "path": "scripts/native-controls/run-bounded.mjs",
+      "sha256": "318f8ce7dc47167e0c0a92cd330ad4cc3d5252f1cd7fc498802a8be3bd1f7acb",
+      "matches": true
+    },
+    {
+      "path": "scripts/native-controls/upstream.json",
+      "sha256": "1fc12d8f2cab35d311d58eaa181d104eece1a02fb50d486d385f890a34b484a6",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/external-proof.mjs",
+      "sha256": "ce52ef5f28364e0ce03284be16c904418b1eb7acaa925814b67b73aaa5bde20a",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/file-limit-payload.mjs",
+      "sha256": "eb22c4f26758ca811fd56cb37dc24a0223bfe14e638f46f88f7941b827c1f97a",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/file-limit.test.mjs",
+      "sha256": "ff81ec00b5221944c49ad792fa203ce62c91d22580c519e705190bce633299df",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/gate-payload.mjs",
+      "sha256": "98b055dc1e72be5ef79a0fb565a724882acdf7ce59b29506bd4186b1973f3dcd",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/gate-worker.mjs",
+      "sha256": "312f74c885a1754a0ca0aff1047578f70832433161739d6c49151566509fec6a",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/gates.test.mjs",
+      "sha256": "765c276b2353b2c3ddbdef884734d8ba150c85991eaa756c1b1eb4947a336fdb",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/helpers.mjs",
+      "sha256": "c6736c3da35047d1c7f3d4df74b80feb5e2f1bd174ab8c349c74272246b1db05",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/http-fixture.mjs",
+      "sha256": "48b6208206d864829bd22b8a714d64a1c04027ae840ef61aef26c821d6f770d2",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/http-gate.mjs",
+      "sha256": "7b05e161dbdd54b4087e045f6d52bad1536e7b370b186cdbd77e8412665ec91f",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/http.test.mjs",
+      "sha256": "be74b3325ad60a3da12ea9abebbf3dcc8efa0ca1ac3e66dc93e3b72a9716d441",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/patch.test.mjs",
+      "sha256": "722fc5f5e00703de476f75df78d0f1c57f54bf176d3b8e89fccebc42a3b8c7e4",
+      "matches": true
+    },
+    {
+      "path": "tests/native-controls/volume.mjs",
+      "sha256": "2b80f8f0863701d7e577c8368c9d8acc3d9401ff4cf317aaee57f8ee96b998e9",
+      "matches": true
+    }
+  ],
+  "runtime": [
+    {
+      "path": "package.json",
+      "sha256": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+      "matches": true
+    },
+    {
+      "path": "dist/features/web-ui/central-worker.js",
+      "sha256": "c392925a85b6ad26842fb76d23f33e499303d4ce419bb1e91199f1453457583b",
+      "matches": true
+    },
+    {
+      "path": "dist/features/web-ui/central-worker-spawn.js",
+      "sha256": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+      "matches": true
+    },
+    {
+      "path": "dist/features/web-ui/launcher.js",
+      "sha256": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+      "matches": true
+    },
+    {
+      "path": "dist/features/web-ui/server.js",
+      "sha256": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+      "matches": true
+    },
+    {
+      "path": "dist/infra/task/project-execution-lock.js",
+      "sha256": "ebbc75b634b97f039d30fba120dec23ab73dd39190ebdfef32b8fe3db5837819",
+      "matches": true
+    },
+    {
+      "path": "dist/infra/task/process.js",
+      "sha256": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+      "matches": true
+    },
+    {
+      "path": "dist/core/workflow/quality-gates/commandGateRunner.js",
+      "sha256": "add90e482629956293f66f8bff31c9ce3d8b54d22a8677c469c45e4441ab444e",
+      "matches": true
+    },
+    {
+      "path": "dist/core/workflow/quality-gates/native-gate-supervisor.mjs",
+      "sha256": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349",
+      "matches": true
+    }
+  ],
+  "externalEvidence": [
+    {
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/cleanup.json",
+      "copy": "work/native-controls/20261113/cleanup.json",
+      "sha256": "84f6930e3adc571b1cb3ec590ebf458f63b5edab5d46fc6536fd11ee3f4786cb"
+    },
+    {
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/root-candidate-external-exit.json",
+      "copy": "work/native-controls/20261113/root-candidate-external-exit.json",
+      "sha256": "eb073be3e363afcb49a5b3c3bfad9ddeba4b572468c279a6213577979fc03ed4"
+    },
+    {
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/root-candidate-external-proof.json",
+      "copy": "work/native-controls/20261113/root-candidate-external-proof.json",
+      "sha256": "70e835a85eb776cc227d93588935d40df2bacbce5e017bc335477bd098e0c54b"
+    },
+    {
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/root-external-verification.json",
+      "copy": "work/native-controls/20261113/root-external-verification.json",
+      "sha256": "dacca4ccdbaf1a6e2f3c9721c75696777e1803eb1775f75be565319a3cd18113"
+    },
+    {
+      "original": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/root-http-evidence.json",
+      "copy": "work/native-controls/20261113/root-http-evidence.json",
+      "sha256": "6a630f38203fd68d49f8db46cf5ae4357e26bda8948cf8e343a8e7b0fe9e52c9"
+    }
+  ],
+  "protectedInputs": [
+    {
+      "path": "work/enterprise/plan.json",
+      "sha256": "9f3efe7efab7d1ad1658ba4856ea74f80b373e911cf0029725009088f1ac18b4"
+    },
+    {
+      "path": "work/enterprise/backlog.json",
+      "sha256": "893cb770540accf17ee2066e83da6322baec15031653e12290ecd6a73bb64c49"
+    },
+    {
+      "path": "work/enterprise/github-open-20261113.json",
+      "sha256": "133d2b68c178f26f3edd94e370e1994b156ae9a6e9d250c557361991ab19f33b"
+    }
+  ],
+  "ownedImagesAttached": [],
+  "formalEnterpriseAcceptance": false
+}

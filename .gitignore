@@ -23,3 +23,6 @@ evidence/runs/*.log
 evidence/enterprise/
 work/enterprise/progress.json
 .codex/
+
+# Disposable, copied TAKT distribution and isolated native-control fixtures.
+.native-controls-runtime/

@@ -1,0 +1,99 @@
+TAP version 13
+# Per-file refusal evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/file-limit-nCNHvn/result.json
+# Subtest: kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+ok 1 - kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+  ---
+  duration_ms: 356.613166
+  type: 'test'
+  ...
+# Subtest: real command gate owns and reaps its process group
+    # Subtest: normal
+    ok 1 - normal
+      ---
+      duration_ms: 234.798167
+      type: 'test'
+      ...
+    # Subtest: verbose
+    ok 2 - verbose
+      ---
+      duration_ms: 260.059834
+      type: 'test'
+      ...
+    # Subtest: failure
+    ok 3 - failure
+      ---
+      duration_ms: 236.799959
+      type: 'test'
+      ...
+    # Subtest: timeout
+    ok 4 - timeout
+      ---
+      duration_ms: 676.7025
+      type: 'test'
+      ...
+    # Subtest: worker-term
+    ok 5 - worker-term
+      ---
+      duration_ms: 264.88375
+      type: 'test'
+      ...
+    # Subtest: worker-kill
+    ok 6 - worker-kill
+      ---
+      duration_ms: 262.030708
+      type: 'test'
+      ...
+    # Subtest: guardian-kill
+    ok 7 - guardian-kill
+      ---
+      duration_ms: 271.221875
+      type: 'test'
+      ...
+    1..7
+ok 2 - real command gate owns and reaps its process group
+  ---
+  duration_ms: 2210.6305
+  type: 'test'
+  ...
+# Native HTTP evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/http-native-LEDENH/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+ok 3 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 7339.168209
+  type: 'test'
+  ...
+# HTTP evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/http-nOw7xm/evidence.json
+# hdiutil: attach failed - アクセス権がありません
+# Subtest: official HTTP -> real central workers -> gates in the bounded launch path
+ok 4 - official HTTP -> real central workers -> gates in the bounded launch path # SKIP Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.
+  ---
+  duration_ms: 8.514208
+  type: 'test'
+  ...
+# Subtest: real 64 MiB filesystem capacity refusal through HTTP gate
+ok 5 - real 64 MiB filesystem capacity refusal through HTTP gate # SKIP Outer environment denied real image mount; aggregate ENOSPC is UNPROVEN. Image removed.
+  ---
+  duration_ms: 1208.571
+  type: 'test'
+  ...
+# Subtest: hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+ok 6 - hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+  ---
+  duration_ms: 10.661125
+  type: 'test'
+  ...
+# Subtest: bounded launcher refuses ordinary directories before executing anything
+ok 7 - bounded launcher refuses ordinary directories before executing anything
+  ---
+  duration_ms: 0.30075
+  type: 'test'
+  ...
+1..7
+# tests 14
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 11275.23825

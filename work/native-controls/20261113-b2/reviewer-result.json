@@ -1,0 +1,48 @@
+{
+  "base": "/private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/review-stale-snapshot-fjvOpD",
+  "oldSnapshot": {
+    "ownerId": "38992c60-d51c-49e2-8c35-befc02f647c1",
+    "pid": 55859,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794532900"
+    },
+    "kind": "run",
+    "state": "starting"
+  },
+  "published": {
+    "ownerId": "38992c60-d51c-49e2-8c35-befc02f647c1",
+    "pid": 55859,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794532900"
+    },
+    "kind": "run",
+    "state": "starting",
+    "gateGroups": [
+      {
+        "pid": 55865,
+        "processIdentity": {
+          "startTime": "darwin-start-v2:1794532900"
+        }
+      }
+    ]
+  },
+  "admission": {
+    "acquired": true,
+    "owner": {
+      "ownerId": "e87cceeb-5c7e-4ebe-b547-6d1ac1b0bf7e",
+      "pid": 55862,
+      "processIdentity": {
+        "startTime": "darwin-start-v2:1794532900"
+      },
+      "kind": "run",
+      "state": "starting"
+    }
+  },
+  "worker": 55859,
+  "guardian": 55865,
+  "sentinel": 55866,
+  "gate": 55868,
+  "before": 53,
+  "after": 73,
+  "overlap": true
+}

@@ -1,0 +1,17 @@
+TAP version 13
+# Native HTTP evidence: /private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/http-native-sBBQIv/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+ok 1 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 8720.028916
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8759.041125

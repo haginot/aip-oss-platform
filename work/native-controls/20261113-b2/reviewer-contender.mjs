@@ -1,0 +1,6 @@
+import fs from 'node:fs';import {syncBuiltinESMExports} from 'node:module';import {setTimeout as sleep} from 'node:timers/promises';
+const [base,project,ownerId]=process.argv.slice(2);const original=fs.readFileSync;let paused=false;
+fs.readFileSync=function(...args){const value=original.apply(this,args);if(!paused&&typeof args[0]==='number'&&value.toString().includes(ownerId)){paused=true;fs.writeFileSync(base+'/snapshot',value);while(!fs.existsSync(base+'/resume'))Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,5);}return value;};syncBuiltinESMExports();
+const {acquireProjectExecutionLock}=await import("file:///private/tmp/aip-native-mlotYs/v/repo/.native-controls-runtime/takt/dist/infra/task/project-execution-lock.js");
+let lock;try{lock=acquireProjectExecutionLock(project,'run');fs.writeFileSync(base+'/admission',JSON.stringify({acquired:true,owner:lock.owner}));}catch(e){fs.writeFileSync(base+'/admission',JSON.stringify({acquired:false,error:e.message}));}
+while(!fs.existsSync(base+'/done'))await sleep(5);lock?.release();

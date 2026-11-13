@@ -1,0 +1,162 @@
+{
+  "time": "2026-11-13T00:44:44.079Z",
+  "hashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "c392925a85b6ad26842fb76d23f33e499303d4ce419bb1e91199f1453457583b",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "ebbc75b634b97f039d30fba120dec23ab73dd39190ebdfef32b8fe3db5837819",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "add90e482629956293f66f8bff31c9ce3d8b54d22a8677c469c45e4441ab444e",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349"
+  },
+  "sourceHashes": {
+    "scripts/native-controls/file-limit.mjs": "3728231dd82736b64507286b124a475b4f04dcbad1f9b46f35f15754786c02f3",
+    "scripts/native-controls/gate-supervisor.mjs": "86cf604b5aee27e1074073a06b8ee19d15e272dcf7bb8ad348c97e63ab17f349",
+    "scripts/native-controls/patch.mjs": "566ebef453fe4f47a091598f0a16e3169c5f685705a4c8a2b50f14118cf33d6d",
+    "scripts/native-controls/run-bounded.mjs": "318f8ce7dc47167e0c0a92cd330ad4cc3d5252f1cd7fc498802a8be3bd1f7acb",
+    "scripts/native-controls/upstream.json": "1fc12d8f2cab35d311d58eaa181d104eece1a02fb50d486d385f890a34b484a6",
+    "tests/native-controls/external-proof.mjs": "ce52ef5f28364e0ce03284be16c904418b1eb7acaa925814b67b73aaa5bde20a",
+    "tests/native-controls/file-limit-payload.mjs": "eb22c4f26758ca811fd56cb37dc24a0223bfe14e638f46f88f7941b827c1f97a",
+    "tests/native-controls/file-limit.test.mjs": "ff81ec00b5221944c49ad792fa203ce62c91d22580c519e705190bce633299df",
+    "tests/native-controls/gate-payload.mjs": "98b055dc1e72be5ef79a0fb565a724882acdf7ce59b29506bd4186b1973f3dcd",
+    "tests/native-controls/gate-worker.mjs": "312f74c885a1754a0ca0aff1047578f70832433161739d6c49151566509fec6a",
+    "tests/native-controls/gates.test.mjs": "765c276b2353b2c3ddbdef884734d8ba150c85991eaa756c1b1eb4947a336fdb",
+    "tests/native-controls/helpers.mjs": "c6736c3da35047d1c7f3d4df74b80feb5e2f1bd174ab8c349c74272246b1db05",
+    "tests/native-controls/http-fixture.mjs": "48b6208206d864829bd22b8a714d64a1c04027ae840ef61aef26c821d6f770d2",
+    "tests/native-controls/http-gate.mjs": "7b05e161dbdd54b4087e045f6d52bad1536e7b370b186cdbd77e8412665ec91f",
+    "tests/native-controls/http.test.mjs": "be74b3325ad60a3da12ea9abebbf3dcc8efa0ca1ac3e66dc93e3b72a9716d441",
+    "tests/native-controls/patch.test.mjs": "722fc5f5e00703de476f75df78d0f1c57f54bf176d3b8e89fccebc42a3b8c7e4",
+    "tests/native-controls/volume.mjs": "2b80f8f0863701d7e577c8368c9d8acc3d9401ff4cf317aaee57f8ee96b998e9"
+  },
+  "sourcesUnchanged": true,
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "capacityBytes": 67067904,
+    "logPath": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/mount/native-proof-4NOvNs/logs/launch-1794530674604-43787.log"
+  },
+  "result": {
+    "checks": [
+      {
+        "name": "conflict-first",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113004435-be37e77f"
+      },
+      {
+        "name": "conflict-successor",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113004435-48d52ca5"
+      },
+      {
+        "name": "independent",
+        "status": "completed",
+        "runId": "20261113004435-fdfea8d8"
+      },
+      {
+        "name": "real-cli-run",
+        "code": 1
+      },
+      {
+        "name": "real-cli-watch",
+        "code": 1
+      },
+      {
+        "name": "hold",
+        "status": "completed",
+        "runId": "20261113004436-5cb31d8a"
+      },
+      {
+        "name": "follow",
+        "status": "completed",
+        "runId": "20261113004438-10b068b6"
+      },
+      {
+        "name": "crash-SIGTERM",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113004439-a31ce684"
+      },
+      {
+        "name": "crash-SIGKILL",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113004440-30923a33"
+      },
+      {
+        "name": "write-confinement",
+        "status": "completed",
+        "runId": "20261113004440-925f47af"
+      },
+      {
+        "name": "capacity",
+        "status": "failed",
+        "failure": "workflow_failed",
+        "runId": "20261113004441-b87824c3"
+      },
+      {
+        "name": "recovery-control",
+        "status": "completed",
+        "runId": "20261113004443-921d16c7"
+      }
+    ],
+    "processes": [
+      {
+        "pid": 43865,
+        "guardian": 43862,
+        "descendant": 43867
+      },
+      {
+        "pid": 43897,
+        "guardian": 43895,
+        "descendant": 43898
+      },
+      {
+        "pid": 43979,
+        "guardian": 43975,
+        "descendant": 43980
+      },
+      {
+        "pid": 44013,
+        "guardian": 44011,
+        "descendant": 44014
+      },
+      {
+        "pid": 44053,
+        "guardian": 44051,
+        "descendant": 44054
+      },
+      {
+        "pid": 44117,
+        "guardian": 44114,
+        "descendant": 44119
+      },
+      {
+        "pid": 44209,
+        "guardian": 44206,
+        "descendant": 44211,
+        "code": "ENOSPC",
+        "bytes": 62914560
+      }
+    ],
+    "capacityBytes": 67067904,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794530674"
+    },
+    "capacity": {
+      "pid": 44209,
+      "guardian": 44206,
+      "descendant": 44211,
+      "code": "ENOSPC",
+      "bytes": 62914560
+    },
+    "ok": true
+  },
+  "log": "",
+  "escapedWrite": false,
+  "fixture": "/Users/haginota/.local/state/aip-takt-recovery/native-capacity-fixture-20261113/mount/native-proof-4NOvNs",
+  "formalEnterpriseAcceptance": false
+}

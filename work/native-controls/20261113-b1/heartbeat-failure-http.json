@@ -1,0 +1,114 @@
+{
+  "hashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "4746ee0c6c1660fd541f20d9dc34dfd1c471f5b8060d5dac54116f230e25f302",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "1675596623facdb9a969e865d6fffeb57a16b9719d5a974176fb759905ef6376",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "f571241e8034c1b94385807dc50bcec6a47888e149810004409ab93f9cd0d75d",
+    "dist/infra/task/native-gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133"
+  },
+  "exit": {
+    "code": 1,
+    "signal": null,
+    "output": ""
+  },
+  "result": {
+    "checks": [
+      {
+        "name": "conflict-first",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113010616-202a7c31"
+      },
+      {
+        "name": "conflict-successor",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113010617-5b54495f"
+      },
+      {
+        "name": "independent",
+        "status": "completed",
+        "runId": "20261113010617-fc295471"
+      },
+      {
+        "name": "real-cli-run",
+        "code": 1
+      },
+      {
+        "name": "real-cli-watch",
+        "code": 1
+      },
+      {
+        "name": "hold",
+        "status": "completed",
+        "runId": "20261113010618-5d9fba52"
+      },
+      {
+        "name": "follow",
+        "status": "completed",
+        "runId": "20261113010620-c27728f2"
+      },
+      {
+        "name": "during-cleanup-SIGTERM",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113010621-a16ee995"
+      },
+      {
+        "name": "crash-SIGTERM",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113010620-28e03b48"
+      }
+    ],
+    "processes": [
+      {
+        "pid": 51356,
+        "guardian": 51351,
+        "descendant": 51358
+      },
+      {
+        "pid": 51427,
+        "guardian": 51424,
+        "descendant": 51428
+      },
+      {
+        "pid": 51547,
+        "guardian": 51542,
+        "descendant": 51549
+      },
+      {
+        "pid": 51621,
+        "guardian": 51618,
+        "descendant": 51622
+      },
+      {
+        "pid": 51728,
+        "guardian": 51724,
+        "descendant": 51729
+      }
+    ],
+    "capacityBytes": 805265408,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794531976"
+    },
+    "cleanupExclusion": [
+      {
+        "signal": "SIGTERM",
+        "killGuardian": false,
+        "worker": 51562,
+        "guardian": 51618,
+        "sentinel": 51619,
+        "before": 0,
+        "after": 98,
+        "lockRefusedWhileWriting": true
+      }
+    ],
+    "error": "AssertionError [ERR_ASSERTION]: Old gate must still be writing during refusal\n    at file:///private/tmp/aip-native-mlotYs/v/repo/tests/native-controls/http-fixture.mjs:160:7"
+  }
+}
