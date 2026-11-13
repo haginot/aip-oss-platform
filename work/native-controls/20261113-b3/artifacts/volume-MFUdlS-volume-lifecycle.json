@@ -1,0 +1,10 @@
+{
+  "image": "/private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-MFUdlS/bounded.sparseimage",
+  "mount": "/private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-MFUdlS/mount",
+  "phase": "attach",
+  "cleanup": "removed",
+  "error": {
+    "message": "Command failed: /usr/bin/hdiutil attach -nobrowse -noverify -mountpoint /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-MFUdlS/mount /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-MFUdlS/bounded.sparseimage\nhdiutil: attach failed - アクセス権がありません\n",
+    "stderr": "hdiutil: attach failed - アクセス権がありません\n"
+  }
+}

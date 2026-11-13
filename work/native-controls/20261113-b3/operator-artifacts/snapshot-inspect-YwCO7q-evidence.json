@@ -1,0 +1,54 @@
+{
+  "mode": "inspect",
+  "oldSnapshot": {
+    "ownerId": "fdd42a90-9b36-4caa-a506-dc91a6f008e5",
+    "revision": "5ce9b86a-6d20-4997-8d24-349e4e1f9d2d",
+    "pid": 75581,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534777"
+    },
+    "kind": "run",
+    "state": "starting"
+  },
+  "published": {
+    "ownerId": "fdd42a90-9b36-4caa-a506-dc91a6f008e5",
+    "revision": "4fbcf4e5-3831-4b66-9adb-26dfd24a2bdc",
+    "pid": 75581,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534777"
+    },
+    "kind": "run",
+    "state": "starting",
+    "gateGroups": [
+      {
+        "pid": 75584,
+        "processIdentity": {
+          "startTime": "darwin-start-v2:1794534777"
+        }
+      }
+    ]
+  },
+  "admission": {
+    "owner": {
+      "ownerId": "fdd42a90-9b36-4caa-a506-dc91a6f008e5",
+      "pid": 75581,
+      "kind": "run",
+      "state": "starting",
+      "processIdentity": {
+        "startTime": "darwin-start-v2:1794534777"
+      },
+      "revision": "4fbcf4e5-3831-4b66-9adb-26dfd24a2bdc",
+      "gateGroups": [
+        {
+          "pid": 75584,
+          "processIdentity": {
+            "startTime": "darwin-start-v2:1794534777"
+          }
+        }
+      ]
+    }
+  },
+  "before": 42,
+  "after": 63,
+  "reacquiredAfterCleanup": true
+}

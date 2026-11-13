@@ -1,0 +1,37 @@
+{
+  "time": "2026-11-13T01:48:37.993Z",
+  "command": "node --test --test-concurrency=1 tests/native-controls/*.test.mjs",
+  "exitCode": 0,
+  "node": "v22.23.3",
+  "nodeExecutable": "/Users/haginota/.local/share/mise/installs/node/22.23.3/bin/node",
+  "platform": "darwin",
+  "counts": {
+    "tests": 27,
+    "pass": 24,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 3
+  },
+  "sourceHashesUnchangedSinceBeforeFinalRun": true,
+  "runtimeHashesMatch": true,
+  "changedSources": [
+    "scripts/native-controls/README.md",
+    "tests/native-controls/http.test.mjs",
+    "tests/native-controls/volume.mjs",
+    "tests/native-controls/volume.test.mjs"
+  ],
+  "preservedHashes": {
+    "evidence/generated/release/adapter-trace.json": "7cdc30620fd3f6cf62d50b31761409aa2350c7c81d74c083d229caf4c653aee6",
+    "evidence/model-smoke.json": "dce2d7cb780ef7ea704b468e58fdb9801fbbbe68afb2854427cc48c5e01b2c52",
+    "work/native-controls/20261113-b3/operator-before.json": "a23a6c336a498703a10480edd995d2c963070546a94ca3e85c7104eba2c9f7e1"
+  },
+  "ownedImagesRemaining": [],
+  "backingImagesRemaining": [],
+  "skipReasons": [
+    "ok 4 - official HTTP -> real central workers -> gates in the bounded launch path # SKIP Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.",
+    "ok 5 - real 64 MiB filesystem capacity refusal through HTTP gate # SKIP Aggregate ENOSPC is UNPROVEN. Image attachment denied; cleaned up. Evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-ADnivo",
+    "ok 20 - real owned image detaches even when the callback throws # SKIP Real failure-path detach UNPROVEN. Image attachment denied; cleaned up. Evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-rPaybK"
+  ],
+  "normalHostCurrentCandidateVerified": false,
+  "formalEnterpriseAcceptance": false
+}

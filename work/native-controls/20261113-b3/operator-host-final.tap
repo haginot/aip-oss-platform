@@ -1,0 +1,193 @@
+TAP version 13
+# Per-file refusal evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/file-limit-4VSR7x/result.json
+# Subtest: kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+ok 1 - kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+  ---
+  duration_ms: 3433.199792
+  type: 'test'
+  ...
+# Subtest: real command gate owns and reaps its process group
+    # Subtest: normal
+    ok 1 - normal
+      ---
+      duration_ms: 238.213208
+      type: 'test'
+      ...
+    # Subtest: verbose
+    ok 2 - verbose
+      ---
+      duration_ms: 238.148291
+      type: 'test'
+      ...
+    # Subtest: failure
+    ok 3 - failure
+      ---
+      duration_ms: 235.363209
+      type: 'test'
+      ...
+    # Subtest: timeout
+    ok 4 - timeout
+      ---
+      duration_ms: 661.666375
+      type: 'test'
+      ...
+    # Subtest: worker-term
+    ok 5 - worker-term
+      ---
+      duration_ms: 263.744542
+      type: 'test'
+      ...
+    # Subtest: worker-kill
+    ok 6 - worker-kill
+      ---
+      duration_ms: 267.891292
+      type: 'test'
+      ...
+    # Subtest: guardian-kill
+    ok 7 - guardian-kill
+      ---
+      duration_ms: 277.338042
+      type: 'test'
+      ...
+    1..7
+ok 2 - real command gate owns and reaps its process group
+  ---
+  duration_ms: 2186.445125
+  type: 'test'
+  ...
+# Native HTTP evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/http-native-sXp2qd/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+ok 3 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 9243.886083
+  type: 'test'
+  ...
+# HTTP evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/evidence.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/volume-lifecycle.json
+# Subtest: official HTTP -> real central workers -> gates in the bounded launch path
+ok 4 - official HTTP -> real central workers -> gates in the bounded launch path
+  ---
+  duration_ms: 11316.054625
+  type: 'test'
+  ...
+# HTTP evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-7rVmgB/evidence.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-7rVmgB/volume-lifecycle.json
+# Subtest: real 64 MiB filesystem capacity refusal through HTTP gate
+ok 5 - real 64 MiB filesystem capacity refusal through HTTP gate
+  ---
+  duration_ms: 12138.454834
+  type: 'test'
+  ...
+# Subtest: explicit release retains live gate group, then permits admission while old owner is still alive
+ok 6 - explicit release retains live gate group, then permits admission while old owner is still alive
+  ---
+  duration_ms: 335.080333
+  type: 'test'
+  ...
+# Subtest: hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+ok 7 - hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+  ---
+  duration_ms: 10.477917
+  type: 'test'
+  ...
+# Subtest: bounded launcher refuses ordinary directories before executing anything
+ok 8 - bounded launcher refuses ordinary directories before executing anything
+  ---
+  duration_ms: 0.364708
+  type: 'test'
+  ...
+# Snapshot evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/snapshot-run-ylYwmB/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: run
+ok 9 - stale pre-registration snapshot cannot reclaim live gate: run
+  ---
+  duration_ms: 445.191792
+  type: 'test'
+  ...
+# Snapshot evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/snapshot-watch-fnWgF3/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: watch
+ok 10 - stale pre-registration snapshot cannot reclaim live gate: watch
+  ---
+  duration_ms: 457.873583
+  type: 'test'
+  ...
+# Snapshot evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/snapshot-inspect-YwCO7q/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: inspect
+ok 11 - stale pre-registration snapshot cannot reclaim live gate: inspect
+  ---
+  duration_ms: 458.857166
+  type: 'test'
+  ...
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-hwRjX6/volume-ARU9un/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-cmVMXr/volume-1NtAQd/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-BbsYJI/volume-9uO9rZ/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-y6i1F1/volume-hLGNhq/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-5x6AqX/volume-zJ0J2Z/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-FyipGx/volume-h92T93/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-jq05aO/volume-1ZXCDF/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-bFtTLi/volume-vZwKbK/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-siCwcs/volume-SajxpJ/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-unit-QFpwg6/volume-ZZl3oO/volume-lifecycle.json
+# Volume lifecycle evidence: /Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-f0tOG4/volume-lifecycle.json
+# Subtest: fixture selection rejects host root, oversized and exhausted mounts; accepts a bounded mount
+ok 12 - fixture selection rejects host root, oversized and exhausted mounts; accepts a bounded mount
+  ---
+  duration_ms: 0.736291
+  type: 'test'
+  ...
+# Subtest: ordinary host fixture provisions a private write root and detaches after awaited success
+ok 13 - ordinary host fixture provisions a private write root and detaches after awaited success
+  ---
+  duration_ms: 3.091125
+  type: 'test'
+  ...
+# Subtest: bounded engineering fixture reuses its mount without owning or detaching it
+ok 14 - bounded engineering fixture reuses its mount without owning or detaching it
+  ---
+  duration_ms: 0.472833
+  type: 'test'
+  ...
+# Subtest: owned fixture detaches after callback failure and preserves the original failure
+ok 15 - owned fixture detaches after callback failure and preserves the original failure
+  ---
+  duration_ms: 1.535334
+  type: 'test'
+  ...
+# Subtest: partial attach refusal detaches only its owned device before classifying environmental refusal
+ok 16 - partial attach refusal detaches only its owned device before classifying environmental refusal
+  ---
+  duration_ms: 1.130042
+  type: 'test'
+  ...
+# Subtest: cleanup failures retain ownership and cannot turn into environmental skips
+ok 17 - cleanup failures retain ownership and cannot turn into environmental skips
+  ---
+  duration_ms: 1.54
+  type: 'test'
+  ...
+# Subtest: unknown attach and inventory failures remain failures; only cleaned attach permission refusals qualify
+ok 18 - unknown attach and inventory failures remain failures; only cleaned attach permission refusals qualify
+  ---
+  duration_ms: 2.000833
+  type: 'test'
+  ...
+# Subtest: attached fixture rejects non-mount and oversized capacity before callback, then detaches
+ok 19 - attached fixture rejects non-mount and oversized capacity before callback, then detaches
+  ---
+  duration_ms: 5.902208
+  type: 'test'
+  ...
+# Subtest: real owned image detaches even when the callback throws
+ok 20 - real owned image detaches even when the callback throws
+  ---
+  duration_ms: 1461.626834
+  type: 'test'
+  ...
+1..20
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 41764.98125

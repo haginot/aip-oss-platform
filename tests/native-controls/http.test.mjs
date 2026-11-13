@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { dirname, join } from 'node:path';
+import { join } from 'node:path';
 import { runtime, verifyRuntime, put, fixture, isolatedEnv, launch } from './helpers.mjs';
-import { withVolume } from './volume.mjs';
+import { withVolume, withBoundedVolume, VolumeAttachRefusal } from './volume.mjs';
 import { boundedSpawn, verifyCopy } from '../../scripts/native-controls/run-bounded.mjs';
 
 test('official HTTP -> real central workers -> gates in an isolated process', { timeout: 120000 }, async () => {
@@ -21,26 +21,37 @@ test('official HTTP -> real central workers -> gates in an isolated process', { 
 test('official HTTP -> real central workers -> gates in the bounded launch path', { timeout: 120000, skip: process.platform !== 'darwin' }, async t => {
   verifyRuntime();
   const hashes = verifyCopy(runtime);
-  const base = fixture('http');
-  let volume = base;
-  while (fs.statSync(volume).dev === fs.statSync(dirname(volume)).dev && dirname(volume) !== volume) volume = dirname(volume);
-  const scenario = join(base, 'scenario.json');
-  put(scenario, []);
-  const child = boundedSpawn({ volume, writeRoot: base, cwd: base,
-    args: [join(import.meta.dirname, 'http-fixture.mjs'), runtime, base, join(dirname(base), 'must-not-exist-' + process.pid), 'no-fill'],
-    environment: { TAKT_MOCK_SCENARIO: scenario } });
-  const exit = await child.completion;
-  const result = fs.existsSync(join(base, 'http-result.json')) ? JSON.parse(fs.readFileSync(join(base, 'http-result.json'))) : undefined;
-  const log = fs.readFileSync(exit.logPath, 'utf8');
-  put(join(base, 'evidence.json'), { hashes, exit, result, log });
-  console.log('HTTP evidence: ' + join(base, 'evidence.json'));
-  if (exit.code === 71 && log.includes('sandbox_apply: Operation not permitted')) {
-    assert.equal(result, undefined, 'Refused confinement must not execute fixture');
-    t.skip('Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.');
-    return;
+  try {
+    const refusal = await withBoundedVolume(async ({ base, mount, writeRoot, owned, capacityBytes }) => {
+      const scenario = join(writeRoot, 'scenario.json');
+      const outside = writeRoot + '-must-not-exist';
+      put(scenario, []);
+      const child = boundedSpawn({ volume: mount, writeRoot, cwd: writeRoot,
+        args: [join(import.meta.dirname, 'http-fixture.mjs'), runtime, writeRoot, outside, 'no-fill'],
+        environment: { TAKT_MOCK_SCENARIO: scenario } });
+      const exit = await child.completion;
+      const result = fs.existsSync(join(writeRoot, 'http-result.json')) ? JSON.parse(fs.readFileSync(join(writeRoot, 'http-result.json'))) : undefined;
+      const log = fs.readFileSync(exit.logPath, 'utf8');
+      // The owned mount is detached on return, so retain results outside it first.
+      put(join(base, 'evidence.json'), { hashes, mount, writeRoot, owned, capacityBytes, exit, result, log });
+      console.log('HTTP evidence: ' + join(base, 'evidence.json'));
+      if (exit.code === 71 && log.includes('sandbox_apply: Operation not permitted')) {
+        assert.equal(result, undefined, 'Refused confinement must not execute fixture');
+        return 'Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.';
+      }
+      assert.equal(exit.code, 0, JSON.stringify({ result, log }));
+      assert.equal(result.ok, true);
+      assert(!fs.existsSync(outside));
+    });
+    // Cleanup must finish successfully before a refusal can become a skip.
+    if (refusal) t.skip(refusal);
+  } catch (error) {
+    if (error instanceof VolumeAttachRefusal) {
+      t.skip('Bounded route UNPROVEN. ' + error.message);
+      return;
+    }
+    throw error;
   }
-  assert.equal(exit.code, 0, JSON.stringify({ result, log }));
-  assert.equal(result.ok, true);
 });
 
 test('real 64 MiB filesystem capacity refusal through HTTP gate', { timeout: 120000, skip: process.platform !== 'darwin' }, async t => {
@@ -61,8 +72,8 @@ test('real 64 MiB filesystem capacity refusal through HTTP gate', { timeout: 120
     assert.equal(result.ok, true);
     assert(!fs.existsSync(join(base, 'must-not-exist')));
   }); } catch (error) {
-    if (error.message.includes('hdiutil attach') && /アクセス権がありません|Permission denied/.test(String(error.stderr))) {
-      t.skip('Outer environment denied real image mount; aggregate ENOSPC is UNPROVEN. Image removed.');
+    if (error instanceof VolumeAttachRefusal) {
+      t.skip('Aggregate ENOSPC is UNPROVEN. ' + error.message);
       return;
     }
     throw error;

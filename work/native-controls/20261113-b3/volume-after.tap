@@ -1,0 +1,100 @@
+TAP version 13
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-QYxLGU/volume-xK7p0S/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-xpHfY9/volume-hmGVLo/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-9aAGOK/volume-cgrkg1/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-143n2g/volume-27AIAP/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-GF0UOl/volume-5xrAgy/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-GjjYEX/volume-0bOW9a/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-Gzz8fQ/volume-qUL3RL/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-6RoqeM/volume-bxdP1u/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-aCg6rx/volume-EY9vqF/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-vZGxyS/volume-Nf80iA/volume-lifecycle.json
+# hdiutil: attach failed - アクセス権がありません
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-SevbGt/volume-lifecycle.json
+# Subtest: fixture selection rejects host root, oversized and exhausted mounts; accepts a bounded mount
+not ok 1 - fixture selection rejects host root, oversized and exhausted mounts; accepts a bounded mount
+  ---
+  duration_ms: 0.892834
+  type: 'test'
+  location: '/private/tmp/aip-native-9KxfTm/v/repo/tests/native-controls/volume.test.mjs:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   capacityBytes: 67108864,
+    +   mount: '/volume'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    mount: '/volume'
+    capacityBytes: 67108864
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/aip-native-9KxfTm/v/repo/tests/native-controls/volume.test.mjs:16:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: ordinary host fixture provisions a private write root and detaches after awaited success
+ok 2 - ordinary host fixture provisions a private write root and detaches after awaited success
+  ---
+  duration_ms: 2.903125
+  type: 'test'
+  ...
+# Subtest: bounded engineering fixture reuses its mount without owning or detaching it
+ok 3 - bounded engineering fixture reuses its mount without owning or detaching it
+  ---
+  duration_ms: 0.455458
+  type: 'test'
+  ...
+# Subtest: owned fixture detaches after callback failure and preserves the original failure
+ok 4 - owned fixture detaches after callback failure and preserves the original failure
+  ---
+  duration_ms: 2.249333
+  type: 'test'
+  ...
+# Subtest: partial attach refusal detaches only its owned device before classifying environmental refusal
+ok 5 - partial attach refusal detaches only its owned device before classifying environmental refusal
+  ---
+  duration_ms: 1.22425
+  type: 'test'
+  ...
+# Subtest: cleanup failures retain ownership and cannot turn into environmental skips
+ok 6 - cleanup failures retain ownership and cannot turn into environmental skips
+  ---
+  duration_ms: 3.232708
+  type: 'test'
+  ...
+# Subtest: unknown attach and inventory failures remain failures; only cleaned attach permission refusals qualify
+ok 7 - unknown attach and inventory failures remain failures; only cleaned attach permission refusals qualify
+  ---
+  duration_ms: 1.861416
+  type: 'test'
+  ...
+# Subtest: attached fixture rejects non-mount and oversized capacity before callback, then detaches
+ok 8 - attached fixture rejects non-mount and oversized capacity before callback, then detaches
+  ---
+  duration_ms: 5.127583
+  type: 'test'
+  ...
+# Subtest: real owned image detaches even when the callback throws
+ok 9 - real owned image detaches even when the callback throws # SKIP Real failure-path detach UNPROVEN. Image attachment denied; cleaned up. Evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-SevbGt
+  ---
+  duration_ms: 1234.345083
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 7
+# fail 1
+# cancelled 0
+# skipped 1
+# todo 0
+# duration_ms 1295.119417

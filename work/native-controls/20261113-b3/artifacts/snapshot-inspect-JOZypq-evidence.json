@@ -1,0 +1,54 @@
+{
+  "mode": "inspect",
+  "oldSnapshot": {
+    "ownerId": "be71fc60-4d59-4803-96fb-2bbb7dad2a95",
+    "revision": "d8733251-0e81-4ee5-b352-911adc6946b6",
+    "pid": 67756,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534481"
+    },
+    "kind": "run",
+    "state": "starting"
+  },
+  "published": {
+    "ownerId": "be71fc60-4d59-4803-96fb-2bbb7dad2a95",
+    "revision": "8298ac48-9fad-406c-bf1d-e203f4a86dea",
+    "pid": 67756,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534481"
+    },
+    "kind": "run",
+    "state": "starting",
+    "gateGroups": [
+      {
+        "pid": 67763,
+        "processIdentity": {
+          "startTime": "darwin-start-v2:1794534481"
+        }
+      }
+    ]
+  },
+  "admission": {
+    "owner": {
+      "ownerId": "be71fc60-4d59-4803-96fb-2bbb7dad2a95",
+      "pid": 67756,
+      "kind": "run",
+      "state": "starting",
+      "processIdentity": {
+        "startTime": "darwin-start-v2:1794534481"
+      },
+      "revision": "8298ac48-9fad-406c-bf1d-e203f4a86dea",
+      "gateGroups": [
+        {
+          "pid": 67763,
+          "processIdentity": {
+            "startTime": "darwin-start-v2:1794534481"
+          }
+        }
+      ]
+    }
+  },
+  "before": 42,
+  "after": 62,
+  "reacquiredAfterCleanup": true
+}

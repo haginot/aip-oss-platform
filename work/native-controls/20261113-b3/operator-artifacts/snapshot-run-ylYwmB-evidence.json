@@ -1,0 +1,38 @@
+{
+  "mode": "run",
+  "oldSnapshot": {
+    "ownerId": "1dfcfe4e-a2db-4f13-b848-572ea5580c77",
+    "revision": "9d6d85e1-ed82-4aad-8854-0a903777f584",
+    "pid": 75520,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534776"
+    },
+    "kind": "run",
+    "state": "starting"
+  },
+  "published": {
+    "ownerId": "1dfcfe4e-a2db-4f13-b848-572ea5580c77",
+    "revision": "c63b758f-dfa4-4a54-a8a4-f7ac710622d7",
+    "pid": 75520,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534776"
+    },
+    "kind": "run",
+    "state": "starting",
+    "gateGroups": [
+      {
+        "pid": 75524,
+        "processIdentity": {
+          "startTime": "darwin-start-v2:1794534776"
+        }
+      }
+    ]
+  },
+  "admission": {
+    "acquired": false,
+    "error": "TAKT run is already running for this project (PID 75520)"
+  },
+  "before": 40,
+  "after": 60,
+  "reacquiredAfterCleanup": true
+}

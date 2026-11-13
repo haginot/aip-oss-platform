@@ -1,0 +1,193 @@
+TAP version 13
+# Per-file refusal evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/file-limit-PPVw4p/result.json
+# Subtest: kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+ok 1 - kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+  ---
+  duration_ms: 346.306083
+  type: 'test'
+  ...
+# Subtest: real command gate owns and reaps its process group
+    # Subtest: normal
+    ok 1 - normal
+      ---
+      duration_ms: 236.909666
+      type: 'test'
+      ...
+    # Subtest: verbose
+    ok 2 - verbose
+      ---
+      duration_ms: 262.827917
+      type: 'test'
+      ...
+    # Subtest: failure
+    ok 3 - failure
+      ---
+      duration_ms: 234.945541
+      type: 'test'
+      ...
+    # Subtest: timeout
+    ok 4 - timeout
+      ---
+      duration_ms: 660.053916
+      type: 'test'
+      ...
+    # Subtest: worker-term
+    ok 5 - worker-term
+      ---
+      duration_ms: 265.469
+      type: 'test'
+      ...
+    # Subtest: worker-kill
+    ok 6 - worker-kill
+      ---
+      duration_ms: 266.26075
+      type: 'test'
+      ...
+    # Subtest: guardian-kill
+    ok 7 - guardian-kill
+      ---
+      duration_ms: 266.849417
+      type: 'test'
+      ...
+    1..7
+ok 2 - real command gate owns and reaps its process group
+  ---
+  duration_ms: 2197.379792
+  type: 'test'
+  ...
+# Native HTTP evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/http-native-iYafed/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+ok 3 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 9586.137833
+  type: 'test'
+  ...
+# HTTP evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/http-bounded-HBd5Qg/evidence.json
+# hdiutil: attach failed - アクセス権がありません
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-eeeHG8/volume-lifecycle.json
+# Subtest: official HTTP -> real central workers -> gates in the bounded launch path
+ok 4 - official HTTP -> real central workers -> gates in the bounded launch path # SKIP Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.
+  ---
+  duration_ms: 8.562542
+  type: 'test'
+  ...
+# Subtest: real 64 MiB filesystem capacity refusal through HTTP gate
+ok 5 - real 64 MiB filesystem capacity refusal through HTTP gate # SKIP Aggregate ENOSPC is UNPROVEN. Image attachment denied; cleaned up. Evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-eeeHG8
+  ---
+  duration_ms: 1213.959208
+  type: 'test'
+  ...
+# Subtest: explicit release retains live gate group, then permits admission while old owner is still alive
+ok 6 - explicit release retains live gate group, then permits admission while old owner is still alive
+  ---
+  duration_ms: 392.360042
+  type: 'test'
+  ...
+# Subtest: hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+ok 7 - hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+  ---
+  duration_ms: 11.237417
+  type: 'test'
+  ...
+# Subtest: bounded launcher refuses ordinary directories before executing anything
+ok 8 - bounded launcher refuses ordinary directories before executing anything
+  ---
+  duration_ms: 0.273667
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/snapshot-run-AOnxR5/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: run
+ok 9 - stale pre-registration snapshot cannot reclaim live gate: run
+  ---
+  duration_ms: 501.357041
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/snapshot-watch-BZDjj2/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: watch
+ok 10 - stale pre-registration snapshot cannot reclaim live gate: watch
+  ---
+  duration_ms: 563.119125
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/snapshot-inspect-JOZypq/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: inspect
+ok 11 - stale pre-registration snapshot cannot reclaim live gate: inspect
+  ---
+  duration_ms: 457.314708
+  type: 'test'
+  ...
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-FGR6pP/volume-uJPqSC/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-8kovO3/volume-wQba5i/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-kr8wz3/volume-2VvxpI/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-Mxh4bg/volume-sXPNu7/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-VOors3/volume-YEPPAW/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-v7tjh4/volume-7fAtGl/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-XBOKmr/volume-LpXhg3/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-87cQ1R/volume-gdkFzX/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-gsKoKE/volume-phmk1I/volume-lifecycle.json
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-unit-sa0VhA/volume-eRSEpP/volume-lifecycle.json
+# hdiutil: attach failed - アクセス権がありません
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-tOuZe7/volume-lifecycle.json
+# Subtest: fixture selection rejects host root, oversized and exhausted mounts; accepts a bounded mount
+ok 12 - fixture selection rejects host root, oversized and exhausted mounts; accepts a bounded mount
+  ---
+  duration_ms: 0.717
+  type: 'test'
+  ...
+# Subtest: ordinary host fixture provisions a private write root and detaches after awaited success
+ok 13 - ordinary host fixture provisions a private write root and detaches after awaited success
+  ---
+  duration_ms: 3.100458
+  type: 'test'
+  ...
+# Subtest: bounded engineering fixture reuses its mount without owning or detaching it
+ok 14 - bounded engineering fixture reuses its mount without owning or detaching it
+  ---
+  duration_ms: 0.473667
+  type: 'test'
+  ...
+# Subtest: owned fixture detaches after callback failure and preserves the original failure
+ok 15 - owned fixture detaches after callback failure and preserves the original failure
+  ---
+  duration_ms: 1.173916
+  type: 'test'
+  ...
+# Subtest: partial attach refusal detaches only its owned device before classifying environmental refusal
+ok 16 - partial attach refusal detaches only its owned device before classifying environmental refusal
+  ---
+  duration_ms: 1.026084
+  type: 'test'
+  ...
+# Subtest: cleanup failures retain ownership and cannot turn into environmental skips
+ok 17 - cleanup failures retain ownership and cannot turn into environmental skips
+  ---
+  duration_ms: 1.490542
+  type: 'test'
+  ...
+# Subtest: unknown attach and inventory failures remain failures; only cleaned attach permission refusals qualify
+ok 18 - unknown attach and inventory failures remain failures; only cleaned attach permission refusals qualify
+  ---
+  duration_ms: 1.8405
+  type: 'test'
+  ...
+# Subtest: attached fixture rejects non-mount and oversized capacity before callback, then detaches
+ok 19 - attached fixture rejects non-mount and oversized capacity before callback, then detaches
+  ---
+  duration_ms: 4.102667
+  type: 'test'
+  ...
+# Subtest: real owned image detaches even when the callback throws
+ok 20 - real owned image detaches even when the callback throws # SKIP Real failure-path detach UNPROVEN. Image attachment denied; cleaned up. Evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-tOuZe7
+  ---
+  duration_ms: 1187.58875
+  type: 'test'
+  ...
+1..20
+# tests 27
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 3
+# todo 0
+# duration_ms 16724.867417

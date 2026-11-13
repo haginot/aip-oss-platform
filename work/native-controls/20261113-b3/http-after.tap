@@ -1,0 +1,32 @@
+TAP version 13
+# Native HTTP evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/http-native-jlM5Gz/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+ok 1 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 9675.146583
+  type: 'test'
+  ...
+# HTTP evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/http-bounded-NUqJKE/evidence.json
+# hdiutil: attach failed - アクセス権がありません
+# Volume lifecycle evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-FxNxO4/volume-lifecycle.json
+# Subtest: official HTTP -> real central workers -> gates in the bounded launch path
+ok 2 - official HTTP -> real central workers -> gates in the bounded launch path # SKIP Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.
+  ---
+  duration_ms: 9.003459
+  type: 'test'
+  ...
+# Subtest: real 64 MiB filesystem capacity refusal through HTTP gate
+ok 3 - real 64 MiB filesystem capacity refusal through HTTP gate # SKIP Aggregate ENOSPC is UNPROVEN. Image attachment denied; cleaned up. Evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/volume-FxNxO4
+  ---
+  duration_ms: 1213.015
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 10937.1145

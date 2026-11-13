@@ -1,0 +1,38 @@
+{
+  "role": "operator preservation of original independent review, not a synthesized approval",
+  "builderSession": "01a1d295-226a-79e2-877c-f0cfdb049414",
+  "independentReviewerSession": "01a1d298-b57c-72e2-aa54-7e120a94a583",
+  "distinctSessions": true,
+  "reviewSha256": "4907e248ee8a5e207465ba6572e56e7fb900bd34ccbc302692d9cae71278a4ea",
+  "candidatePatchSha256": "5e1c848c0bf7e441f3a28af6e903df4fb5ac9de805185c5381b3aba5b3539e5c",
+  "runEvidenceSha256": "24717a5b26401ef8c2b0c41e341be808f230c111b0e92852b1550962294c68f2",
+  "result": {
+    "time": "2026-11-13T01:51:23.977Z",
+    "baseline": "185d8c4c29f3d4a35de5aa942bb3b948c6403eb8",
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "capacityBytes": 805265408,
+    "patchSha256": "5e1c848c0bf7e441f3a28af6e903df4fb5ac9de805185c5381b3aba5b3539e5c",
+    "evidenceSha256": "24717a5b26401ef8c2b0c41e341be808f230c111b0e92852b1550962294c68f2",
+    "formalEnterpriseAcceptance": false,
+    "sourceUnmodified": true,
+    "status": "completed",
+    "cleanup": "complete"
+  },
+  "operatorProofSha256": "5caa201840c7b00ea2ecf13858c0b7e49409b8dee5a671e81fe9ddc32e6c616d",
+  "performance": {
+    "source": "Actual Codex session event thread_settings; request configuration, not a server latency guarantee",
+    "sessions": [
+      {
+        "sessionFile": "rollout-2026-11-13T10-45-51-01a1d295-226a-79e2-877c-f0cfdb049414.jsonl",
+        "model": "gpt-6-astra",
+        "effort": "high",
+        "serviceTier": "ultrafast"
+      }
+    ],
+    "userAuthorized": true
+  },
+  "formalEnterpriseAcceptance": false
+}

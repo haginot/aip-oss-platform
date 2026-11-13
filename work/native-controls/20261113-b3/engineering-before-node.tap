@@ -1,0 +1,126 @@
+TAP version 13
+# Per-file refusal evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/file-limit-bbkLXm/result.json
+# Subtest: kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+ok 1 - kernel per-file refusal is inherited by the real gate and becomes a diagnosed failure
+  ---
+  duration_ms: 9273.466583
+  type: 'test'
+  ...
+# Subtest: real command gate owns and reaps its process group
+    # Subtest: normal
+    ok 1 - normal
+      ---
+      duration_ms: 239.435792
+      type: 'test'
+      ...
+    # Subtest: verbose
+    ok 2 - verbose
+      ---
+      duration_ms: 232.985125
+      type: 'test'
+      ...
+    # Subtest: failure
+    ok 3 - failure
+      ---
+      duration_ms: 233.412791
+      type: 'test'
+      ...
+    # Subtest: timeout
+    ok 4 - timeout
+      ---
+      duration_ms: 654.497542
+      type: 'test'
+      ...
+    # Subtest: worker-term
+    ok 5 - worker-term
+      ---
+      duration_ms: 262.143542
+      type: 'test'
+      ...
+    # Subtest: worker-kill
+    ok 6 - worker-kill
+      ---
+      duration_ms: 263.0555
+      type: 'test'
+      ...
+    # Subtest: guardian-kill
+    ok 7 - guardian-kill
+      ---
+      duration_ms: 271.166709
+      type: 'test'
+      ...
+    1..7
+ok 2 - real command gate owns and reaps its process group
+  ---
+  duration_ms: 2160.721125
+  type: 'test'
+  ...
+# Native HTTP evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/http-native-Snnujk/evidence.json
+# Subtest: official HTTP -> real central workers -> gates in an isolated process
+ok 3 - official HTTP -> real central workers -> gates in an isolated process
+  ---
+  duration_ms: 9543.961584
+  type: 'test'
+  ...
+# HTTP evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/http-E5kgQH/evidence.json
+# hdiutil: attach failed - アクセス権がありません
+# Subtest: official HTTP -> real central workers -> gates in the bounded launch path
+ok 4 - official HTTP -> real central workers -> gates in the bounded launch path # SKIP Outer policy denied nested sandbox; implementation path is UNPROVEN. Evidence retained.
+  ---
+  duration_ms: 8.2285
+  type: 'test'
+  ...
+# Subtest: real 64 MiB filesystem capacity refusal through HTTP gate
+ok 5 - real 64 MiB filesystem capacity refusal through HTTP gate # SKIP Outer environment denied real image mount; aggregate ENOSPC is UNPROVEN. Image removed.
+  ---
+  duration_ms: 1197.427916
+  type: 'test'
+  ...
+# Subtest: explicit release retains live gate group, then permits admission while old owner is still alive
+ok 6 - explicit release retains live gate group, then permits admission while old owner is still alive
+  ---
+  duration_ms: 376.643958
+  type: 'test'
+  ...
+# Subtest: hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+ok 7 - hash-pinned recipe rejects wrong versions, changed upstream, existing targets and changed runtimes
+  ---
+  duration_ms: 10.860208
+  type: 'test'
+  ...
+# Subtest: bounded launcher refuses ordinary directories before executing anything
+ok 8 - bounded launcher refuses ordinary directories before executing anything
+  ---
+  duration_ms: 0.264541
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/snapshot-run-aHycSw/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: run
+ok 9 - stale pre-registration snapshot cannot reclaim live gate: run
+  ---
+  duration_ms: 487.880292
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/snapshot-watch-LM7zaS/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: watch
+ok 10 - stale pre-registration snapshot cannot reclaim live gate: watch
+  ---
+  duration_ms: 489.826167
+  type: 'test'
+  ...
+# Snapshot evidence: /private/tmp/aip-native-9KxfTm/v/repo/.native-controls-runtime/snapshot-inspect-5sOAvV/evidence.json
+# Subtest: stale pre-registration snapshot cannot reclaim live gate: inspect
+ok 11 - stale pre-registration snapshot cannot reclaim live gate: inspect
+  ---
+  duration_ms: 462.11025
+  type: 'test'
+  ...
+1..11
+# tests 18
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 24214.560667

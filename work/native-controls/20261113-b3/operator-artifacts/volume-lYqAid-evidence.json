@@ -1,0 +1,187 @@
+{
+  "hashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "4746ee0c6c1660fd541f20d9dc34dfd1c471f5b8060d5dac54116f230e25f302",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "c7e68563b3d42e46742c3209fd6f2dd3805595b5eec5854ac6be6f2d8d5bc656",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "f571241e8034c1b94385807dc50bcec6a47888e149810004409ab93f9cd0d75d",
+    "dist/infra/task/native-gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133"
+  },
+  "mount": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/mount",
+  "writeRoot": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/mount/work",
+  "owned": true,
+  "capacityBytes": 67067904,
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "capacityBytes": 67067904,
+    "logPath": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/mount/work/logs/launch-1794534753562-72912.log"
+  },
+  "result": {
+    "checks": [
+      {
+        "name": "conflict-first",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015234-aac04f1c"
+      },
+      {
+        "name": "conflict-successor",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015234-767ac04a"
+      },
+      {
+        "name": "independent",
+        "status": "completed",
+        "runId": "20261113015234-dfbad43c"
+      },
+      {
+        "name": "real-cli-run",
+        "code": 1
+      },
+      {
+        "name": "real-cli-watch",
+        "code": 1
+      },
+      {
+        "name": "hold",
+        "status": "completed",
+        "runId": "20261113015235-10eb47a7"
+      },
+      {
+        "name": "follow",
+        "status": "completed",
+        "runId": "20261113015237-41311859"
+      },
+      {
+        "name": "during-cleanup-SIGTERM",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015238-66d7afd0"
+      },
+      {
+        "name": "crash-SIGTERM",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113015238-01aa4d58"
+      },
+      {
+        "name": "during-cleanup-SIGKILL",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015239-da4b47bf"
+      },
+      {
+        "name": "crash-SIGKILL",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113015239-f197e3e6"
+      },
+      {
+        "name": "during-cleanup-SIGKILL-guardian",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015241-6a85dc17"
+      },
+      {
+        "name": "crash-SIGKILL-guardian",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113015240-2b889d25"
+      },
+      {
+        "name": "write-confinement",
+        "status": "completed",
+        "runId": "20261113015241-9fea1e54"
+      },
+      {
+        "name": "recovery-control",
+        "status": "completed",
+        "runId": "20261113015242-8b1ef14f"
+      }
+    ],
+    "processes": [
+      {
+        "pid": 74214,
+        "guardian": 74209,
+        "descendant": 74216
+      },
+      {
+        "pid": 74250,
+        "guardian": 74247,
+        "descendant": 74251
+      },
+      {
+        "pid": 74337,
+        "guardian": 74332,
+        "descendant": 74339
+      },
+      {
+        "pid": 74374,
+        "guardian": 74371,
+        "descendant": 74375
+      },
+      {
+        "pid": 74443,
+        "guardian": 74440,
+        "descendant": 74444
+      },
+      {
+        "pid": 74513,
+        "guardian": 74510,
+        "descendant": 74514
+      },
+      {
+        "pid": 74605,
+        "guardian": 74600,
+        "descendant": 74607
+      }
+    ],
+    "capacityBytes": 67067904,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534753"
+    },
+    "cleanupExclusion": [
+      {
+        "signal": "SIGTERM",
+        "killGuardian": false,
+        "worker": 74351,
+        "guardian": 74371,
+        "sentinel": 74372,
+        "before": 46,
+        "after": 56,
+        "lockRefusedWhileWriting": true
+      },
+      {
+        "signal": "SIGKILL",
+        "killGuardian": false,
+        "worker": 74420,
+        "guardian": 74440,
+        "sentinel": 74441,
+        "before": 45,
+        "after": 57,
+        "lockRefusedWhileWriting": true
+      },
+      {
+        "signal": "SIGKILL",
+        "killGuardian": true,
+        "worker": 74490,
+        "guardian": 74510,
+        "sentinel": 74511,
+        "before": 63,
+        "after": 73,
+        "lockRefusedWhileWriting": true
+      }
+    ],
+    "capacity": {
+      "unproven": "Nested mount unavailable; outer volume must not be filled"
+    },
+    "ok": true
+  },
+  "log": ""
+}

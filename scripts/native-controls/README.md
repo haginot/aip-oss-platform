@@ -122,14 +122,40 @@ succeed and the old heartbeat must remain unchanged. No fixture identity is used
 
 Run disk tests serially. `volume.mjs` checks outer free capacity before creating a
 64 MiB APFS image, keeps the image inside this checkout, and detaches/removes its
-owned fixture. Failed attachment is checked for residual owned devices. The
+owned fixture, including when the test callback rejects. Failed attachment is
+checked for residual owned devices. If detach or inventory inspection fails,
+the test fails and retains the backing image for diagnosis; it cannot become an
+environmental skip. `volume-lifecycle.json` records the failure and cleanup result
+outside the mount. The
 capacity gate writes a fill file until real ENOSPC, then removes its fill to
 allow failure publication. Durable publication while the ledger filesystem is
 completely full is not claimed; free space and reconcile are required for recovery.
 
+The B3 bounded-route fixture reuses the checkout's enclosing mount only when it
+is a distinct device with positive capacity at most 20 GiB and at least 8 MiB
+available. On an ordinary host checkout (including `/` or a larger filesystem),
+it provisions its own 64 MiB APFS image and creates a private writable directory
+inside it. HTTP results and logs are copied outside that mount before detach.
+The product launcher still independently checks its existing boundary. The
+capacity test always uses its own small image and never fills the enclosing
+engineering mount. Direct fixture tests cover selection and injected lifecycle
+failures; a separate real-image test checks detach after a callback failure.
+Simulated lifecycle tests do not establish confinement or aggregate capacity.
+
+On a normal macOS host, rerun the current candidate with:
+
+```sh
+mise exec -- node --test --test-concurrency=1 tests/native-controls/*.test.mjs
+```
+
+Retain the actual output and current source/runtime hashes. A zero-failure,
+zero-skip normal-host run remains required; local environmental refusals do not
+establish that result.
+
 The current enclosing engineering environment rejects nested `sandbox-exec` and
-cannot attach the images created within its own APFS image. These two tests mark
-only the specifically observed environmental refusal as SKIP/UNPROVEN. Native
+cannot attach the images created within its own APFS image. The bounded-route,
+capacity and real failure-path detach tests mark only the specifically observed
+environmental refusal as SKIP/UNPROVEN, after successful owned-image cleanup. Native
 HTTP tests and the 1 MiB EFBIG subprocess test still run; neither substitutes for
 bounded-route or aggregate-capacity proof. To require zero skips in a deployable
 environment, use the operator entrypoint against an already owned small mount:

@@ -1,0 +1,11 @@
+{
+  "image": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-f0tOG4/bounded.sparseimage",
+  "mount": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-f0tOG4/mount",
+  "phase": "run",
+  "cleanup": "removed",
+  "capacityBytes": 67067904,
+  "error": {
+    "message": "intentional real-volume callback failure",
+    "stderr": ""
+  }
+}

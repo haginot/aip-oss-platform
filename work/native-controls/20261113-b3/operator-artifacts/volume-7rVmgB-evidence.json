@@ -1,0 +1,190 @@
+{
+  "hashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "4746ee0c6c1660fd541f20d9dc34dfd1c471f5b8060d5dac54116f230e25f302",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "c7e68563b3d42e46742c3209fd6f2dd3805595b5eec5854ac6be6f2d8d5bc656",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "f571241e8034c1b94385807dc50bcec6a47888e149810004409ab93f9cd0d75d",
+    "dist/infra/task/native-gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133"
+  },
+  "capacityBytes": 67067904,
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "output": ""
+  },
+  "result": {
+    "checks": [
+      {
+        "name": "conflict-first",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015245-669e2a6b"
+      },
+      {
+        "name": "conflict-successor",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015245-ad34f63f"
+      },
+      {
+        "name": "independent",
+        "status": "completed",
+        "runId": "20261113015246-9fed1df1"
+      },
+      {
+        "name": "real-cli-run",
+        "code": 1
+      },
+      {
+        "name": "real-cli-watch",
+        "code": 1
+      },
+      {
+        "name": "hold",
+        "status": "completed",
+        "runId": "20261113015247-c849b73a"
+      },
+      {
+        "name": "follow",
+        "status": "completed",
+        "runId": "20261113015248-9053738b"
+      },
+      {
+        "name": "during-cleanup-SIGTERM",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015250-823f63f5"
+      },
+      {
+        "name": "crash-SIGTERM",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113015249-558d1976"
+      },
+      {
+        "name": "during-cleanup-SIGKILL",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015251-7b0f5906"
+      },
+      {
+        "name": "crash-SIGKILL",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113015250-28011945"
+      },
+      {
+        "name": "during-cleanup-SIGKILL-guardian",
+        "status": "failed",
+        "failure": "project_execution_conflict",
+        "runId": "20261113015252-e2953c83"
+      },
+      {
+        "name": "crash-SIGKILL-guardian",
+        "status": "failed",
+        "failure": "worker_crashed",
+        "runId": "20261113015252-b3f3e66e"
+      },
+      {
+        "name": "capacity",
+        "status": "failed",
+        "failure": "workflow_failed",
+        "runId": "20261113015253-2a52679f"
+      },
+      {
+        "name": "recovery-control",
+        "status": "completed",
+        "runId": "20261113015254-a0be63be"
+      }
+    ],
+    "processes": [
+      {
+        "pid": 74868,
+        "guardian": 74863,
+        "descendant": 74870
+      },
+      {
+        "pid": 74903,
+        "guardian": 74900,
+        "descendant": 74904
+      },
+      {
+        "pid": 75028,
+        "guardian": 75023,
+        "descendant": 75029
+      },
+      {
+        "pid": 75065,
+        "guardian": 75062,
+        "descendant": 75066
+      },
+      {
+        "pid": 75135,
+        "guardian": 75132,
+        "descendant": 75136
+      },
+      {
+        "pid": 75205,
+        "guardian": 75202,
+        "descendant": 75206
+      },
+      {
+        "pid": 75341,
+        "guardian": 75335,
+        "descendant": 75343,
+        "code": "ENOSPC",
+        "bytes": 62914560
+      }
+    ],
+    "capacityBytes": 67067904,
+    "processIdentity": {
+      "startTime": "darwin-start-v2:1794534764"
+    },
+    "cleanupExclusion": [
+      {
+        "signal": "SIGTERM",
+        "killGuardian": false,
+        "worker": 75042,
+        "guardian": 75062,
+        "sentinel": 75063,
+        "before": 49,
+        "after": 60,
+        "lockRefusedWhileWriting": true
+      },
+      {
+        "signal": "SIGKILL",
+        "killGuardian": false,
+        "worker": 75112,
+        "guardian": 75132,
+        "sentinel": 75133,
+        "before": 64,
+        "after": 74,
+        "lockRefusedWhileWriting": true
+      },
+      {
+        "signal": "SIGKILL",
+        "killGuardian": true,
+        "worker": 75182,
+        "guardian": 75202,
+        "sentinel": 75203,
+        "before": 47,
+        "after": 58,
+        "lockRefusedWhileWriting": true
+      }
+    ],
+    "capacity": {
+      "pid": 75341,
+      "guardian": 75335,
+      "descendant": 75343,
+      "code": "ENOSPC",
+      "bytes": 62914560
+    },
+    "ok": true
+  },
+  "log": ""
+}

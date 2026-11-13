@@ -1,0 +1,104 @@
+{
+  "time": "2026-11-13T01:53:59.334397+00:00",
+  "role": "operator verification after independent source review; not a formal enterprise approval",
+  "command": "mise exec -- node --test --test-concurrency=1 tests/native-controls/*.test.mjs",
+  "cwd": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112",
+  "exitCode": 0,
+  "summary": {
+    "tests": 27,
+    "pass": 27,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "sourceHashes": {
+    "scripts/native-controls/README.md": "f5984ca282349c474ded8d79978a1fd95f208306e46ffb7602d93b21558e10ff",
+    "scripts/native-controls/file-limit.mjs": "3728231dd82736b64507286b124a475b4f04dcbad1f9b46f35f15754786c02f3",
+    "scripts/native-controls/gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "scripts/native-controls/gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133",
+    "scripts/native-controls/patch.mjs": "620f5753544da6b826161a7156cac94d463caba28e76b0a898686ad94f48b30a",
+    "scripts/native-controls/run-bounded.mjs": "119d69d0351c86639f19179333abd073fdf061bcc6e51d375fefd78ed8a45c40",
+    "scripts/native-controls/upstream.json": "1fc12d8f2cab35d311d58eaa181d104eece1a02fb50d486d385f890a34b484a6",
+    "tests/native-controls/external-proof.mjs": "ce52ef5f28364e0ce03284be16c904418b1eb7acaa925814b67b73aaa5bde20a",
+    "tests/native-controls/file-limit-payload.mjs": "eb22c4f26758ca811fd56cb37dc24a0223bfe14e638f46f88f7941b827c1f97a",
+    "tests/native-controls/file-limit.test.mjs": "ff81ec00b5221944c49ad792fa203ce62c91d22580c519e705190bce633299df",
+    "tests/native-controls/gate-payload.mjs": "98b055dc1e72be5ef79a0fb565a724882acdf7ce59b29506bd4186b1973f3dcd",
+    "tests/native-controls/gate-worker.mjs": "312f74c885a1754a0ca0aff1047578f70832433161739d6c49151566509fec6a",
+    "tests/native-controls/gates.test.mjs": "765c276b2353b2c3ddbdef884734d8ba150c85991eaa756c1b1eb4947a336fdb",
+    "tests/native-controls/helpers.mjs": "7c9533af52803a0fbdb883a9658d993eab85b4f0c3af3653edaa43ed09b7d3d6",
+    "tests/native-controls/http-fixture.mjs": "f2d61fbc16ab2e5e31399b47bf0bc68606edb4e56d6efc73d9b5695493c1ad69",
+    "tests/native-controls/http-gate.mjs": "c25535ba1aa797b75276e244ee0164b2c6d4202af4ccd810f0dd4bc2da9368a8",
+    "tests/native-controls/http.test.mjs": "42c3a8c60b725b0b29efeafee674cbea95b060bc7ef669271518634861c24779",
+    "tests/native-controls/lease.test.mjs": "2376353d6b5915e9d9a2d9df19c20596f8780e16989761e414b03f39b7c167c1",
+    "tests/native-controls/patch.test.mjs": "15875b1b683acf2c6af17bfed2c372bf3d94409525b82a7d0b51b486cfbbf504",
+    "tests/native-controls/release-worker.mjs": "ff78239ee15cf224a2ffc8646e9d5e9e5e292aa92e2e280ba87df564574f2a9e",
+    "tests/native-controls/snapshot-contender.mjs": "af729f6693dafc4dcf0b7e6593c76e848efe910b7064760ba02f85020ab4f8f8",
+    "tests/native-controls/snapshot-worker.mjs": "831723cd0d7a62acaaf508d6f8cf73ca7bb800ee950b2d279603a6ee2671cc96",
+    "tests/native-controls/snapshot.test.mjs": "39df4ff285f4515ce4ee96f6f54199986603aa9afae29d90a55760b0822f2f10",
+    "tests/native-controls/volume.mjs": "91522fbbc515a55f0a9595ad586aeb37d19b0e72bac5a3d29cd9299da0954dc5",
+    "tests/native-controls/volume.test.mjs": "02f09a7b7918ec080f0f7ab69b0d2ebf49139eb6c28cf7c6978658f874df7594"
+  },
+  "runtimeHashes": {
+    "package.json": "2542444f13be289c37675c3b50367c3dc09356dfb00cae87d08b4993e4bf630d",
+    "dist/features/web-ui/central-worker.js": "4746ee0c6c1660fd541f20d9dc34dfd1c471f5b8060d5dac54116f230e25f302",
+    "dist/features/web-ui/central-worker-spawn.js": "a4f6592c586527dec5276839feab6de4bc41aceabcb5bf151fab66f108770e44",
+    "dist/features/web-ui/launcher.js": "afa8b077f589618a96c013df24c720ed2c396a13f9b6a1773c5eb2540c8fac87",
+    "dist/features/web-ui/server.js": "4e79838e2388aba670eccba74e26ebf63d78e7b4a1edc9e57a8b634cdc1320a6",
+    "dist/infra/task/project-execution-lock.js": "c7e68563b3d42e46742c3209fd6f2dd3805595b5eec5854ac6be6f2d8d5bc656",
+    "dist/infra/task/process.js": "5965f11b4360dc71f1ed87e45c2d1a2a9fc433a7ec315e4e80e20e23dc7fd743",
+    "dist/core/workflow/quality-gates/commandGateRunner.js": "f571241e8034c1b94385807dc50bcec6a47888e149810004409ab93f9cd0d75d",
+    "dist/infra/task/native-gate-groups.mjs": "f089eaee38fb8e265f62671eb897395a0cda859afd947bb22ee05d4cc5f022bc",
+    "dist/core/workflow/quality-gates/native-gate-supervisor.mjs": "26180870eeba5cebef671e10e06d9b136774f40216300f51772d7e775971f133"
+  },
+  "tapSha256": "0739fd134849b157edaf3c1c0da8ca9da2c61d7d61089dd6d54f44a42a7671f8",
+  "ownedImagesRemaining": [],
+  "artifacts": [
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/http-native-sXp2qd/evidence.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/http-native-sXp2qd-evidence.json",
+      "sha256": "448cd463767aa98cb3b788839fc75a0d01c8d723daeecf09345f01ec097299a7"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/evidence.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/volume-lYqAid-evidence.json",
+      "sha256": "63d1ba44102e23c10b0cf739918fb31c23961e5227460dad3e55b3e8d3fe71a0"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-lYqAid/volume-lifecycle.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/volume-lYqAid-volume-lifecycle.json",
+      "sha256": "4062178bdb404645b5a7a447e531cd43d011fb921250fdfe24575c0bf7abed8b"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-7rVmgB/evidence.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/volume-7rVmgB-evidence.json",
+      "sha256": "39ec3f8ddef74201ad55439439a3e03eca3d6f7dfbd8d7c1d86c58d7c29aa4ed"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-7rVmgB/volume-lifecycle.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/volume-7rVmgB-volume-lifecycle.json",
+      "sha256": "0de98d6dc2a00272272fb3320738dbf223fd70244d63a285e473cb591cf504f6"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/snapshot-run-ylYwmB/evidence.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/snapshot-run-ylYwmB-evidence.json",
+      "sha256": "df1d77e9ed89d1569cb0b06ba09ed5a2c9a8bfa5d5c9c2ba894f62b9c355388a"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/snapshot-watch-fnWgF3/evidence.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/snapshot-watch-fnWgF3-evidence.json",
+      "sha256": "0a42d7ac42f4283a9d70747612f04cb7c98fe918ab4c52fcde8097b46902c8ac"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/snapshot-inspect-YwCO7q/evidence.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/snapshot-inspect-YwCO7q-evidence.json",
+      "sha256": "4e0e7b1e62f1c8dd7e4e7d91801f2d2336c788b19a6567fb2bcbca5e0d32808a"
+    },
+    {
+      "source": "/Users/haginota/Repositories/chatgpt-projects/aip-oss-platform-enterprise-checkpoint-20261112/.native-controls-runtime/volume-f0tOG4/volume-lifecycle.json",
+      "saved": "work/native-controls/20261113-b3/operator-artifacts/volume-f0tOG4-volume-lifecycle.json",
+      "sha256": "304fcbacdf67b49bf54aae965bd9328ca1b12253f0c74feeea59bda30e7f11a4"
+    }
+  ],
+  "formalEnterpriseAcceptance": false
+}
